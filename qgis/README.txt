@@ -1,9 +1,17 @@
 This is the QGIS installation script
 
+THIS SCRIPT IS MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THINGS SHOULD STILL WORK BUT STUFF MAY NOT WORK PROPERLY...
+
 
 HOW TO USE:
 open a terminal
-type "sudo curl -LO https://github.com/onthelink-tk/scripts/qgis/QgisStart.sh && sudo bash QgisStart.sh"
+
+NL:
+type "sudo curl -LO https://github.com/onthelink-tk/scripts/blob/master/qgis/QgisStartNL.sh && sudo bash QgisStartNL.sh"
+Follow the instructions on screen
+
+EN:
+type "sudo curl -LO https://github.com/onthelink-tk/scripts/blob/master/qgis/QgisStartEN.sh && sudo bash QgisStartEN.sh"
 Follow the instructions on screen
 
 The password is for anti-bot protection:
@@ -13,7 +21,7 @@ This is the unique code: Z1UDzOJg2KJU
 ____________________________________________________________________________________________
 
 In the QGIS script we make use of Flatpak to make the installation quicker and easier to do,
-Please support the Flatpak team for making this possible!
+Please support the Flatpak team for making this all possible!
 Link: https://flatpak.org/
 
 

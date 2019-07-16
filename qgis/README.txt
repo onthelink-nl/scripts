@@ -3,7 +3,7 @@ This is the QGIS installation script
 
 HOW TO USE:
 open a terminal
-type "sudo curl -LO https://github.com/onthelink-tk/scripts/qgis/QgisStart.sh && sudo bash QgisStart.sh
+type "sudo curl -LO https://github.com/onthelink-tk/scripts/qgis/QgisStart.sh && sudo bash QgisStart.sh"
 Follow the instructions on screen
 
 

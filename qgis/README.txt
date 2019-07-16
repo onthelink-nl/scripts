@@ -26,4 +26,6 @@ After the installation make sure you reboot so that you can save projects!!!!
 
 
 
-If you want to help us build the script you are allowed to change the script where you think it needs a change! Our script without password protection can be found in the "Help us make it better" folder. (it's a txt file (otherwise bot's could just use that link xD))
+If you want to help us build the script you are allowed to change the script where you think it needs a change! We also want the script to be available in multiple languages so feel free to translate it in yours, but if you do please tell us in english which language the translation is in and who you are so that we can put your name in the translated script!
+
+Our script without password protection can be found in the "Help us make it better" folder. (it's a txt file (otherwise bot's could just use that link xD))

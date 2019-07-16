@@ -5,6 +5,7 @@ THIS SCRIPT IS MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THINGS
 
 HOW TO USE:
 open a terminal
+
 ___-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_----
 NL:
 Type "sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartNL.sh && sudo bash QgisStartNL.sh" zonder de "" tekens
@@ -25,6 +26,7 @@ Don't forget to restart after the installation!
 
 The password is for anti-bot protection:
 This is the code: Z1UDzOJg2KJU
+
 
 
 ____________________________________________________________________________________________

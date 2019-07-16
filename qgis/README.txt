@@ -25,7 +25,7 @@ https://github.com/onthelink-tk/scripts/blob/master/qgis/qgis%20handleiding.pdf
 
 After the installation make sure you reboot so that you can save projects!!!!
 
-
+____________________________________________________________________________________________
 
 If you want to help us build the script you are allowed to change the script where you think it needs a change! We also want the script to be available in multiple languages so feel free to translate it in yours, but if you do please tell us in english which language the translation is in and who you are so that we can put your name in the translated script!
 

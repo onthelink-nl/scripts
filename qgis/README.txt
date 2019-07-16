@@ -13,6 +13,7 @@ This is the unique code: Z1UDzOJg2KJU
 You can also use our official website to install the script when GitHub is offline for some reason....
 Link: https://onthelink.tk/scripts/
 
+____________________________________________________________________________________________
 
 In the QGIS script we make use of Flatpak to make the installation quicker and easier to do,
 Please support the Flatpak team for making this possible!

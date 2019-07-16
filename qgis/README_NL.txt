@@ -7,7 +7,7 @@ INSTRUCTIES:
 Open een terminal venster
 
 NL:
-Type "sudo curl -LO https://github.com/onthelink-tk/scripts/blob/master/qgis/QgisStartNL.sh && sudo bash QgisStartNL.sh"
+Type "sudo curl -LO https://github.com/onthelink-tk/scripts/blob/master/qgis/Startup/QgisStartNL.sh && sudo bash QgisStartNL.sh" zonder de "" tekens
 Druk dan op enter en volg de instructies op het scherm
 
 Vergeet niet te herstarten na de installatie!
@@ -16,7 +16,7 @@ Het wachtwoord is voor anti-bot beveiliging:
 Dit is de code: Z1UDzOJg2KJU
 
 EN:
-Type "sudo curl -LO https://github.com/onthelink-tk/scripts/blob/master/qgis/QgisStartEN.sh && sudo bash QgisStartEN.sh"
+Type "sudo curl -LO https://github.com/onthelink-tk/scripts/blob/master/qgis/Startup/QgisStartEN.sh && sudo bash QgisStartEN.sh" without the "" ofcourse
 Then press "Return" and follow the instructions on the screen
 
 Don't forget to restart after the installation!

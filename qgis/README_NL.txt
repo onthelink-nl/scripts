@@ -6,6 +6,7 @@ DIT SCRIPT IS BEDOELD VOOR CHROMEBOOKS, ALS U HET OP EEN ANDER SYSTEEM GEBRUIKT 
 INSTRUCTIES:
 Open een terminal venster
 
+___-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_----
 NL:
 Type "sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartNL.sh && sudo bash QgisStartNL.sh" zonder de "" tekens
 Druk dan op enter en volg de instructies op het scherm
@@ -15,14 +16,17 @@ Vergeet niet te herstarten na de installatie!
 Het wachtwoord is voor anti-bot beveiliging:
 Dit is de code: Z1UDzOJg2KJU
 
+----_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-____
+
 EN:
-Type "sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartNL.sh && sudo bash QgisStartEN.sh" without the "" ofcourse
+Type "sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartEN.sh && sudo bash QgisStartEN.sh" without the "" ofcourse
 Then press "Return" and follow the instructions on the screen
 
 Don't forget to restart after the installation!
 
 The password is for anti-bot protection:
 This is the code: Z1UDzOJg2KJU
+
 
 
 ____________________________________________________________________________________________

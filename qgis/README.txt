@@ -13,8 +13,6 @@ Druk dan op enter en volg de instructies op het scherm
 
 Vergeet niet te herstarten na de installatie!
 
-Het wachtwoord is voor anti-bot beveiliging:
-Dit is de code: Z1UDzOJg2KJU
 
 ----_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-____
 
@@ -23,10 +21,6 @@ Type "sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/maste
 Then press "Return" and follow the instructions on the screen
 
 Don't forget to restart after the installation!
-
-The password is for anti-bot protection:
-This is the code: Z1UDzOJg2KJU
-
 
 
 ____________________________________________________________________________________________

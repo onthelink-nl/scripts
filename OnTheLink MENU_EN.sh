@@ -1,3 +1,4 @@
+tput reset
 selection=
 until [ "$selection" = "0" ]; do
 echo "

@@ -23,6 +23,7 @@ case $selection in
         exit
         ;;
     * ) 
-        tput setaf 3; echo "Please enter 1 or 0"
+        tput setaf 3; echo "Please enter choice 1 or 0..."
+		sleep 1 ; tput reset
 esac
 done

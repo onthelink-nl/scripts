@@ -3,8 +3,10 @@
 tput reset
 selection=
 until [ "$selection" = "0" ]; do
-echo "
+tput bold && tput setaf 4; echo "
 OnTheLink MENU
+"
+tput sgr0 && tput setaf 1; echo "
 1 - install/reïnstall QGIS
 0 - Exit Script
 "
@@ -13,7 +15,7 @@ OnTheLink MENU
     echo ""
 case $selection in
     1 ) 
-        echo "Preparing to install QGIS"
+        tput setaf 5; echo "Preparing to install QGIS"
         sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartEN.sh
         sleep 2 ; sudo bash QgisStartEN.sh
         ;;
@@ -21,6 +23,6 @@ case $selection in
         exit
         ;;
     * ) 
-        echo "Please enter 1 or 0"
+        tput setaf 3; echo "Please enter 1 or 0"
 esac
 done

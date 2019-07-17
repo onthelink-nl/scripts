@@ -10,7 +10,7 @@ tput sgr0 && tput setaf 1; echo "
 1 - install/reïnstall QGIS
 0 - Exit Script
 "
-    echo -n "Enter selection: "
+    tput setaf 6; echo -n "Enter selection: "
     read -r selection
     echo ""
 case $selection in

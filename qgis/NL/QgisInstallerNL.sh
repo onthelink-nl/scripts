@@ -16,6 +16,7 @@ echo Flatpak wordt gebruikt voor het belangrijkste deel van de installatie!
 echo Wij zijn niet de makers van QGIS of flatpak en dit is een onofficieel script.
 echo "Onze website: https://onthelink.tk"
 echo "De Flatpak website: https://flatpak.org"
+echo "Onze GitHub: https://github.com/onthelink-tk/"
 echo Alvast bedankt voor het gebruiken van ons script!
 tput bold && tput setaf 1; echo -----------------------------------
 tput bold && tput setaf 5; echo           INSTALLATIE IS GESTART

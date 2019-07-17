@@ -36,4 +36,4 @@ ________________________________________________________________________________
 
 Als je ons wilt helpen met het script dan is dat geen enkel probleem, verander het script waar jij denkt dat het nodig is en wij zullen dan kijken of we de wijzigingen doorvoeren naar het script zelf! Wij willen ook dat het script in meerdere talen beschikbaar zal worden dus als je mee wilt helpen met het vertalen zou dat geweldig zijn, als je dat doet graag wel in het engels zeggen welke taal de vertaling is en wie jij bent zodat wij je naam in het vertaalde script kunnen zetten!
 
-Ons script zonder een wachtwoord beveiliging is te vinden onder het mapje "Help us make it better". (Het is een .txt bestand (Anders zouden bot's gewoon die link kunnen gebruiken...))
+Indien u een aanpassing wilt maken aan het script doe dat dan via de bestanden in de map "Help us make it better" en niet in het echte script (wij kijken alleen naar de bestanden in dat mapje en niet in de echte...

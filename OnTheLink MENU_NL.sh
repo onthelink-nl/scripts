@@ -7,7 +7,7 @@ tput bold && tput setaf 4; echo "
 OnTheLink MENU
 "
 tput sgr0 && tput setaf 1; echo "
-1 - installeer/herinstalleer QGIS
+1 - installeer/herinstalleer/update QGIS
 0 - Sluit dit menu
 "
     tput setaf 6; echo -n "Voer uw keuze in: "

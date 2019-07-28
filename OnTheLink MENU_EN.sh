@@ -7,7 +7,7 @@ tput bold && tput setaf 4; echo "
 OnTheLink MENU
 "
 tput sgr0 && tput setaf 1; echo "
-1 - install/reïnstall QGIS
+1 - install/reïnstall/update QGIS
 0 - Exit Script
 "
     tput setaf 6; echo -n "Enter selection: "

@@ -21,7 +21,7 @@ case $selection in
         sleep 2 ; sudo bash QgisStartNL.sh
         ;;
 	1 ) 
-        echo 'sudo rm -r /home/$USER/org.qgis.qgis/*' >> ~/.bashrc
+        echo "sudo rm -r /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc
 		sudo rm -rf /home/$USER/qgis
 		exit
 		;;

@@ -4,23 +4,18 @@ THIS SCRIPT IS MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THINGS
 
 
 HOW TO USE:
-open a terminal
 
-___-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_----
-NL:
-Type "sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartNL.sh && bash QgisStartNL.sh" zonder de "" tekens
-Druk dan op enter en volg de instructies op het scherm
+Open a terminal
 
-Vergeet niet te herstarten na de installatie!
+Copy and paste this command for the EN version:
+sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
+
+Copy and paste this command for the NL version:
+sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
 
 
-----_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-____
-
-EN:
-Type "sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartEN.sh && bash QgisStartEN.sh" without the "" ofcourse
-Then press "Return" and follow the instructions on the screen
-
-Don't forget to restart after the installation!
+Press "Return"
+Now you just have to follow the instructions on the screen
 
 
 ____________________________________________________________________________________________

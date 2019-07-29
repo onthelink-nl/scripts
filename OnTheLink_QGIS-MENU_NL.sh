@@ -8,7 +8,7 @@ OnTheLink QGIS-MENU
 "
 tput sgr0 && tput setaf 45; echo "
 1 - installeer/herinstalleer/update QGIS
-2 - Sluit dit menu en installeer het automatisch verwijderen van bestanden script (Voor scholen, KIES DEZE OPTIE MAAR 1 KEER!!!!!!!)
+2 - Sluit dit menu en installeer het automatisch verwijderen van bestanden script (Voor scholen en voor chromebooks met één account met meerdere personen)
 3 - Sluit dit menu
 "
     tput setaf 6; echo -n "Voer uw keuze in: "
@@ -21,7 +21,8 @@ case $selection in
         sleep 2 ; sudo bash QgisStartNL.sh
         ;;
 	2 ) 
-        echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
+		echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc
 		echo "sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*" >> /home/$USER/.bashrc
 		sudo rm -rf /home/$USER/qgis
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"

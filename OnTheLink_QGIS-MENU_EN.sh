@@ -8,7 +8,7 @@ OnTheLink QGIS-MENU
 "
 tput sgr0 && tput setaf 45; echo "
 1 - install/reïnstall/update QGIS
-2 - Exit Script and install the auto remove files script (For schools, ONLY CHOOSE THIS OPTION ONCE!!!!!!!)
+2 - Exit Script and install the auto remove files script (For schools and for multiple users on one account people)
 3 - Exit Script normally
 "
     tput setaf 6; echo -n "Enter selection: "
@@ -21,7 +21,8 @@ case $selection in
         sleep 2 ; sudo bash QgisStartEN.sh
         ;;
 	2 ) 
-        echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
+		echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc
 		echo "sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*" >> /home/$USER/.bashrc
 		sudo rm -rf /home/$USER/qgis
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"

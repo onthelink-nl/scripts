@@ -17,7 +17,7 @@ tput sgr0 && tput setaf 45; echo "
 case $selection in
     1 ) 
 		tput setaf 5; echo "Preparing to install QGIS"
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartEN.sh
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Startup/QgisStartEN.sh
         sleep 2 ; sudo bash QgisStartEN.sh
         ;;
 	2 ) 

@@ -17,7 +17,7 @@ tput sgr0 && tput setaf 45; echo "
 case $selection in
     1 ) 
 		tput setaf 5; echo "Voorbereiden om QGIS te installeren"
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartNL.sh
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Startup/QgisStartNL.sh
         sleep 2 ; sudo bash QgisStartNL.sh
         ;;
 	2 ) 

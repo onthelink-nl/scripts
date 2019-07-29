@@ -23,6 +23,7 @@ case $selection in
 	1 ) 
         echo 'sudo rm -r /home/$USER/org.qgis.qgis/*' >> ~/.bashrc
 		exit
+		;;
     0 ) 
         sudo rm -r /home/$USER/.qgis/*
 		exit

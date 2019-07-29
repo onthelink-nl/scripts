@@ -22,11 +22,11 @@ case $selection in
         ;;
 	1 ) 
         echo 'sudo rm -r /home/$USER/org.qgis.qgis/*' >> ~/.bashrc
-		sudo rm -rf /home/$USER/.qgis/*
+		sudo rm -rf /home/$USER/qgis
 		exit
 		;;
     0 ) 
-        sudo rm -rf /home/$USER/.qgis/*
+        sudo rm -rf /home/$USER/qgis
 		exit
         ;;
     * ) 

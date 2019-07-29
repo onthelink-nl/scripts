@@ -25,17 +25,17 @@ case $selection in
 		echo "sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*" >> /home/$USER/.bashrc
 		sudo rm -rf /home/$USER/qgis
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
-		sudo rm -rf "/home/$USER/OnTheLink%20MENU_NL.sh"
+		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"
 		sudo rm -rf "/home/$USER/QgisStartEN.sh"
-		sudo rm -rf "/home/$USER/OnTheLink%20MENU_EN.sh"
+		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_EN.sh"
 		exit
 		;;
     3 ) 
         sudo rm -rf /home/$USER/qgis
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
-		sudo rm -rf "/home/$USER/OnTheLink%20MENU_NL.sh"
+		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"
 		sudo rm -rf "/home/$USER/QgisStartEN.sh"
-		sudo rm -rf "/home/$USER/OnTheLink%20MENU_EN.sh"
+		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_EN.sh"
 		exit
         ;;
     * ) 

@@ -20,7 +20,6 @@ Now you just have to follow the instructions on the screen
 
 # Version History
 
-==========
 ## QGIS
 ==========
 

@@ -11,7 +11,7 @@ tput sgr0 && tput setaf 45; echo "
 2 - Sluit dit menu en installeer het automatisch verwijderen van bestanden script (Voor scholen, KIES DEZE OPTIE MAAR 1 KEER!!!!!!!)
 3 - Sluit dit menu
 "
-    tput setaf 88; echo -n "Voer uw keuze in: "
+    tput setaf 6; echo -n "Voer uw keuze in: "
     read -r selection
     echo ""
 case $selection in

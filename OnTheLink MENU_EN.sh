@@ -11,7 +11,7 @@ tput sgr0 && tput setaf 45; echo "
 2 - Exit Script and install the auto remove files script (For schools, ONLY CHOOSE THIS OPTION ONCE!!!!!!!)
 3 - Exit Script normally
 "
-    tput setaf 88; echo -n "Enter selection: "
+    tput setaf 6; echo -n "Enter selection: "
     read -r selection
     echo ""
 case $selection in

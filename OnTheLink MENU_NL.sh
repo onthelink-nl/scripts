@@ -39,7 +39,7 @@ case $selection in
 		exit
         ;;
     * ) 
-        tput setaf 196; echo "Voer alstublieft alleen de keuzes 1, 2 of 3 in..."
+        tput setaf 1; echo "Voer alstublieft alleen de keuzes 1, 2 of 3 in..."
         sleep 1 ; tput reset
 esac
 done

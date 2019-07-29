@@ -20,7 +20,9 @@ Now you just have to follow the instructions on the screen
 
 # Version History
 
+==========
 ## QGIS
+==========
 
 ### **MUFU** - *This is the first working version (This version has no checks for files so this one would require you to choose your options carefully (otherwise you will have to do a manual removal of the things you did wrong, ALWAYS READ EVERYTHING IN THIS VERSION TO NEVER MAKE A MISTAKE!!!)
 

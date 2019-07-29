@@ -2,26 +2,27 @@
 
 tput reset
 selection=
-until [ "$selection" = "0" ]; do
-tput bold && tput setaf 4; echo "
-OnTheLink MENU
+until [ "$selection" = "3" ]; do
+tput bold && tput setaf 46; echo "
+OnTheLink QGIS-MENU
 "
-tput sgr0 && tput setaf 1; echo "
-2 - install/reïnstall/update QGIS
-1 - Exit Script and install the auto remove files script (For schools, ONLY CHOOSE THIS OPTION ONCE!!!!!!!)
-0 - Exit Script normally
+tput sgr0 && tput setaf 45; echo "
+1 - install/reïnstall/update QGIS
+2 - Exit Script and install the auto remove files script (For schools, ONLY CHOOSE THIS OPTION ONCE!!!!!!!)
+3 - Exit Script normally
 "
     tput setaf 6; echo -n "Enter selection: "
     read -r selection
     echo ""
 case $selection in
-    2 ) 
+    1 ) 
 		tput setaf 5; echo "Preparing to install QGIS"
         sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartEN.sh
         sleep 2 ; sudo bash QgisStartEN.sh
         ;;
-	1 ) 
-        echo "sudo rm -r /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc
+	2 ) 
+        echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc
+		echo "sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*" >> /home/$USER/.bashrc
 		sudo rm -rf /home/$USER/qgis
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
 		sudo rm -rf "/home/$USER/OnTheLink%20MENU_NL.sh"
@@ -29,7 +30,7 @@ case $selection in
 		sudo rm -rf "/home/$USER/OnTheLink%20MENU_EN.sh"
 		exit
 		;;
-    0 ) 
+    3 ) 
         sudo rm -rf /home/$USER/qgis
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
 		sudo rm -rf "/home/$USER/OnTheLink%20MENU_NL.sh"
@@ -38,7 +39,7 @@ case $selection in
 		exit
         ;;
     * ) 
-        tput setaf 3; echo "Please enter choice 1 or 0..."
+        tput setaf 177; echo "Please enter choice 1, 2 or 3..."
 		sleep 1 ; tput reset
 esac
 done

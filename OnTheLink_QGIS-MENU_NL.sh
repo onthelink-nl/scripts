@@ -29,6 +29,7 @@ case $selection in
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"
 		sudo rm -rf "/home/$USER/QgisStartEN.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_EN.sh"
+		tput reset
 		exit
 		;;
     3 ) 
@@ -37,6 +38,7 @@ case $selection in
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"
 		sudo rm -rf "/home/$USER/QgisStartEN.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_EN.sh"
+		tput reset
 		exit
         ;;
     * ) 

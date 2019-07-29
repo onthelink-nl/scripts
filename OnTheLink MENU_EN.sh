@@ -8,7 +8,7 @@ OnTheLink MENU
 "
 tput sgr0 && tput setaf 1; echo "
 2 - install/reïnstall/update QGIS
-1 - Exit Script and install the auto remove files in the /home/$USER/org.qgis.qgis folder on startup script
+1 - Exit Script and install the auto remove files script (For schools, ONLY CHOOSE THIS OPTION ONCE!!!!!!!)
 0 - Exit Script normally
 "
     tput setaf 6; echo -n "Enter selection: "
@@ -18,7 +18,7 @@ case $selection in
     2 ) 
 		tput setaf 5; echo "Preparing to install QGIS"
         sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/Startup/QgisStartEN.sh
-        sleep 2 ; sudo bash QgisStartEN.sh
+        sleep 2 ; bash QgisStartEN.sh
         ;;
 	1 ) 
         echo "sudo rm -r /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc

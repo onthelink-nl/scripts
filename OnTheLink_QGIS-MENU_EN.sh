@@ -18,7 +18,7 @@ case $selection in
     1 ) 
 		sudo rm -rf /home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5; echo "Preparing the QGIS-VERSIONSELECTOR..."
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
         sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
         ;;
 	2 ) 

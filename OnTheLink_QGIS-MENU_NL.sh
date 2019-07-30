@@ -17,7 +17,7 @@ tput sgr0 && tput setaf 45; echo "
 case $selection in
     1 ) 
 		tput setaf 5; echo "Het QGIS-VERSIE_KEUZEMENU voorbereiden..."
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
         sleep 2 ; sudo bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
         ;;
 	2 ) 

@@ -4,7 +4,7 @@
 tput reset
 
 #Verwijderen van oudere versie van het script
-tput bold && tput setaf 5; echo "Oudere versies verwijderen..." && exec 1> log.txt sudo apt-get --yes --assume-yes remove wget apt-utils nautilus 2> /dev/null | exec 1> /dev/tty && sudo flatpak uninstall -y org.qgis.qgis && exec 1> log.txt sudo apt-get --yes --assume-yes remove flatpak 2> /dev/null | exec 1> /dev/tty && crontab -r && tput sgr0
+tput bold && tput setaf 5; echo "Oudere versies verwijderen..." && sudo flatpak uninstall -y org.qgis.qgis && exec 1> log.txt sudo apt-get --yes --assume-yes remove flatpak 2> /dev/null | exec 1> /dev/tty && crontab -r && tput sgr0
 
 #Script daadwerkelijke starten
 tput reset

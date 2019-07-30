@@ -29,6 +29,9 @@ case $selection in
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
+		sudo rm -rf "/run/user/1000/doc/by-app/org.qgis.qgis/*"
+		sudo rm -rf "/home/$USER/org.qgis.qgis/*"
+		sudo rm -rf "/home/$USER/org.qgis.qgis"
 		tput reset
 		;;
 	3 ) 

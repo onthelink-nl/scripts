@@ -2,14 +2,15 @@
 
 tput reset
 selection=
-until [ "$selection" = "3" ]; do
+until [ "$selection" = "4" ]; do
 tput bold && tput setaf 46; echo "
 OnTheLink QGIS-MENU
 "
 tput sgr0 && tput setaf 45; echo "
-1 - install/reïnstall/update QGIS
-2 - Exit Script and install the auto remove files script (For schools and for multiple users on one account people)
-3 - Exit Script normally
+1 - Install/reïnstall/update QGIS
+2 - Remove QGIS
+3 - Exit Script and install the auto remove files script (For schools and for multiple users on one account people)
+4 - Exit Script normally
 "
     tput setaf 6; echo -n "Enter selection: "
     read -r selection
@@ -22,6 +23,15 @@ case $selection in
         sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
         ;;
 	2 ) 
+		tput reset
+		tput setaf 1; echo "Removing QGIS..."
+		sudo flatpak -y uninstall org.qgis.qgis
+		sudo apt-get --yes --assume-yes remove flatpak
+		crontab -r
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
+		tput reset
+		;;
+	3 ) 
         sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
 		echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc
 		echo "sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*" >> /home/$USER/.bashrc
@@ -35,7 +45,7 @@ case $selection in
 		tput reset
 		exit
 		;;
-    3 ) 
+    4 ) 
         sudo rm -rf "/home/$USER/qgis"
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"

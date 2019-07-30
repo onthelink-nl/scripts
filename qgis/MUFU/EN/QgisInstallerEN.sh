@@ -4,7 +4,7 @@
 tput reset
 
 #Remove older versions
-tput bold && tput setaf 5; echo "Removing older versions..." && sudo flatpak uninstall -y org.qgis.qgis && exec 1> log.txt sudo apt-get --yes --assume-yes remove flatpak 2> /dev/null | exec 1> /dev/tty && crontab -r && tput sgr0
+tput bold && tput setaf 5; echo "Removing older versions..." && sudo flatpak uninstall org.qgis.qgis && exec 1> log.txt sudo apt-get --yes --assume-yes remove flatpak 2> /dev/null | exec 1> /dev/tty && crontab -r && tput sgr0
 
 #Initializing Script
 tput reset

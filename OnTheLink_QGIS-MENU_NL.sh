@@ -17,6 +17,7 @@ tput sgr0 && tput setaf 45; echo "
     echo ""
 case $selection in
     1 ) 
+		sudo rm -rf /home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		tput setaf 5; echo "Het QGIS-VERSIE_KEUZEMENU voorbereiden..."
         sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
         sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
@@ -28,6 +29,9 @@ case $selection in
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
+		sudo rm -rf "/run/user/1000/doc/by-app/org.qgis.qgis/*"
+		sudo rm -rf "/home/$USER/org.qgis.qgis/*"
+		sudo rm -rf "/home/$USER/org.qgis.qgis"
 		tput reset
 		;;
 	3 ) 

@@ -37,8 +37,7 @@ case $selection in
 		;;
 	3 ) 
         sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.profile > /home/$USER/.profile
-		echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.profile
-		echo "sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*" >> /home/$USER/.profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/.profile > /home/$USER/.profile
 		sudo rm -rf "/home/$USER/qgis"
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"

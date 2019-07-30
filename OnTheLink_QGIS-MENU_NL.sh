@@ -25,7 +25,7 @@ case $selection in
 	2 ) 
 		tput reset
 		tput setaf 1; echo "Verwijderen van QGIS gestart..."
-		sudo flatpak -y uninstall org.qgis.qgis
+		sudo flatpak uninstall org.qgis.qgis
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc

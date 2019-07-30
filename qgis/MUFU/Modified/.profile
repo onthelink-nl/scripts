@@ -20,7 +20,7 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-sudo chown -R /home/$USER/org.qgis.qgis/ $USER:$USER
-sudo chown -R /run/user/1000/doc/by-app/org.qgis.qgis/ $USER:$USER
+sudo chown -R $USER:$USER /home/$USER/org.qgis.qgis/
+sudo chown -R $USER:$USER /run/user/1000/doc/by-app/org.qgis.qgis/
 sudo rm -rf /home/$USER/org.qgis.qgis/*
 sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*

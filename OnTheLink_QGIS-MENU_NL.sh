@@ -16,9 +16,9 @@ tput sgr0 && tput setaf 45; echo "
     echo ""
 case $selection in
     1 ) 
-		tput setaf 5; echo "Voorbereiden om QGIS te installeren"
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Startup/QgisStartNL.sh
-        sleep 2 ; sudo bash QgisStartNL.sh
+		tput setaf 5; echo "Het QGIS-VERSIE_KEUZEMENU voorbereiden..."
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+        sleep 2 ; sudo bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
         ;;
 	2 ) 
         sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
@@ -29,15 +29,19 @@ case $selection in
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"
 		sudo rm -rf "/home/$USER/QgisStartEN.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_EN.sh"
+		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
+		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
 		tput reset
 		exit
 		;;
     3 ) 
-        sudo rm -rf /home/$USER/qgis
+        sudo rm -rf "/home/$USER/qgis"
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"
 		sudo rm -rf "/home/$USER/QgisStartEN.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_EN.sh"
+		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
+		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
 		tput reset
 		exit
         ;;

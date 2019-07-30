@@ -67,6 +67,8 @@ case $selection in
     5 ) 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
 		tput setaf 2; echo "Terminal protection script has been installed!"
+		sleep 2
+		tput reset
 		;;
 	* ) 
         tput setaf 202; echo "Please enter choice 1, 2 or 3..."

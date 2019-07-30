@@ -67,6 +67,8 @@ case $selection in
     5 ) 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
 		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
+		sleep 2
+		tput reset
 		;;
 	* ) 
         tput setaf 202; echo "Voer alstublieft alleen de keuzes 1, 2 of 3 in..."

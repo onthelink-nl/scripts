@@ -11,6 +11,7 @@ tput sgr0 && tput setaf 45; echo "
 2 - Remove QGIS
 3 - Exit Script and install the auto remove files script (For schools and for multiple users on one account people)
 4 - Exit Script normally
+5 - Install the terminal protection software (replaces the .bashrc file in the home dir, to remove please manually remove the lines after the last fi)
 "
     tput setaf 6; echo -n "Enter selection: "
     read -r selection
@@ -28,16 +29,16 @@ case $selection in
 		sudo flatpak uninstall -y org.qgis.qgis
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.profile > /home/$USER/.profile
 		sudo rm -rf "/run/user/1000/doc/by-app/org.qgis.qgis/*"
 		sudo rm -rf "/home/$USER/org.qgis.qgis/*"
 		sudo rm -rf "/home/$USER/org.qgis.qgis"
 		tput reset
 		;;
 	3 ) 
-        sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
-		echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc
-		echo "sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*" >> /home/$USER/.bashrc
+        sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.profile > /home/$USER/.profile
+		echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.profile
+		echo "sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*" >> /home/$USER/.profile
 		sudo rm -rf "/home/$USER/qgis"
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"
@@ -63,7 +64,11 @@ case $selection in
 		tput reset
 		exit
         ;;
-    * ) 
+    5 ) 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		tput setaf 2; echo "Terminal protection script has been installed!"
+		;;
+	* ) 
         tput setaf 202; echo "Please enter choice 1, 2 or 3..."
 		sleep 1 ; tput reset
 esac

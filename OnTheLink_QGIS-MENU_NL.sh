@@ -11,6 +11,7 @@ tput sgr0 && tput setaf 45; echo "
 2 - Verwijder QGIS
 3 - Sluit dit menu en installeer het automatisch verwijderen van bestanden script (Voor scholen en voor chromebooks met één account met meerdere personen)
 4 - Sluit dit menu
+5 - Installeer de terminal beveiligings software (vervangt de .bashrc in de hoofdmap, voor verwijderen handmatig de lijnen na de laatste fi weghalen...)
 "
     tput setaf 6; echo -n "Voer uw keuze in: "
     read -r selection
@@ -28,16 +29,16 @@ case $selection in
 		sudo flatpak uninstall -y org.qgis.qgis
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.profile > /home/$USER/.profile
 		sudo rm -rf "/run/user/1000/doc/by-app/org.qgis.qgis/*"
 		sudo rm -rf "/home/$USER/org.qgis.qgis/*"
 		sudo rm -rf "/home/$USER/org.qgis.qgis"
 		tput reset
 		;;
 	3 ) 
-        sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.bashrc > /home/$USER/.bashrc
-		echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.bashrc
-		echo "sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*" >> /home/$USER/.bashrc
+        sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.profile > /home/$USER/.profile
+		echo "sudo rm -rf /home/$USER/org.qgis.qgis/*" >> /home/$USER/.profile
+		echo "sudo rm -rf /run/user/1000/doc/by-app/org.qgis.qgis/*" >> /home/$USER/.profile
 		sudo rm -rf "/home/$USER/qgis"
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"
@@ -63,7 +64,11 @@ case $selection in
 		tput reset
 		exit
         ;;
-    * ) 
+    5 ) 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
+		;;
+	* ) 
         tput setaf 202; echo "Voer alstublieft alleen de keuzes 1, 2 of 3 in..."
         sleep 1 ; tput reset
 esac

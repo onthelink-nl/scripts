@@ -45,6 +45,8 @@ case $selection in
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		crontab -r
+		crontab -l | { cat; echo "*/1 * * * * rsync -a /run/user/1000/doc/by-app/org.qgis.qgis /home/$USER"; } | crontab -
 		tput reset
 		exit
 		;;
@@ -56,6 +58,8 @@ case $selection in
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		crontab -r
+		crontab -l | { cat; echo "*/1 * * * * rsync -a /run/user/1000/doc/by-app/org.qgis.qgis /home/$USER"; } | crontab -
 		tput reset
 		exit
         ;;

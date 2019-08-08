@@ -29,6 +29,7 @@ case $selection in
 		sudo flatpak uninstall org.qgis.qgis
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
+		sudo su
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile > /home/$USER/profile
 		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
 		chattr -i /home/$USER/org.qgis.qgis/
@@ -38,7 +39,8 @@ case $selection in
 		tput reset
 		;;
 	3 ) 
-        sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile > /etc/profile
+        sudo su
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile > /etc/profile
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/profile > /etc/profile
 		sudo rm -rf "/home/$USER/qgis"
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"

@@ -67,7 +67,9 @@ case $selection in
         ;;
     5 ) 
 		chattr -i /home/$USER/.bashrc
+		sleep 1
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sleep 1
 		chattr +i /home/$USER/.bashrc
 		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2

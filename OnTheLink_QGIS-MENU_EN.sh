@@ -29,15 +29,17 @@ case $selection in
 		sudo flatpak uninstall -y org.qgis.qgis
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.profile > /home/$USER/.profile
-		sudo rm -rf "/run/user/1000/doc/by-app/org.qgis.qgis/*"
-		sudo rm -rf "/home/$USER/org.qgis.qgis/*"
-		sudo rm -rf "/home/$USER/org.qgis.qgis"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile > /home/$USER/profile
+		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
+		chattr -i /home/$USER/org.qgis.qgis/
+		sudo mv "/run/user/1000/doc/by-app/org.qgis.qgis/*" /tmp
+		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
+		sudo mv "/home/$USER/org.qgis.qgis" /tmp
 		tput reset
 		;;
 	3 ) 
-        sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/.profile > /home/$USER/.profile
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/.profile > /home/$USER/.profile
+        sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile > /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/profile > /etc/profile
 		sudo rm -rf "/home/$USER/qgis"
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"
@@ -64,13 +66,15 @@ case $selection in
 		exit
         ;;
     5 ) 
+		chattr -i /home/$USER/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		chattr +i /home/$USER/.bashrc
 		tput setaf 2; echo "Terminal protection script has been installed!"
 		sleep 2
 		tput reset
 		;;
 	* ) 
-        tput setaf 202; echo "Please enter choice 1, 2 or 3..."
+        tput setaf 202; echo "Please enter choice 1, 2, 3, 4 or 5..."
 		sleep 1 ; tput reset
 esac
 done

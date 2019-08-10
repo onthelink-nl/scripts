@@ -8,8 +8,8 @@ OnTheLink QGIS-MENU
 "
 tput sgr0 && tput setaf 45; echo "
 1 - Install/reïnstall/update QGIS
-2 - Remove QGIS
-3 - Exit Script and install the auto remove files script (For schools and for multiple users on one account people)
+2 - Remove QGIS and restore settings
+3 - Exit Script and install the auto remove files script (For schools and for multiple users on one account people, THIS WILL REMOVE EVERYTHING IN THE HOME DIR!!!)
 4 - Exit Script normally
 5 - Install the terminal protection software (replaces the .bashrc file in the home dir, to remove please manually remove the lines after the last fi)
 "

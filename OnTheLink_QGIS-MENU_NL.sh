@@ -8,8 +8,8 @@ OnTheLink QGIS-MENU
 "
 tput sgr0 && tput setaf 45; echo "
 1 - Installeer/herinstalleer/update QGIS
-2 - Verwijder QGIS
-3 - Sluit dit menu en installeer het automatisch verwijderen van bestanden script (Voor scholen en voor chromebooks met één account met meerdere personen)
+2 - Verwijder QGIS en zet alles terug naar standaardwaardes
+3 - Sluit dit menu en installeer het automatisch verwijderen van bestanden script (Voor scholen en voor chromebooks met één account met meerdere personen, DIT VERWIJDERD ALLES IN DE HOOFDMAP!!!)
 4 - Sluit dit menu
 5 - Installeer de terminal beveiligings software (vervangt de .bashrc in de hoofdmap, voor verwijderen handmatig de lijnen na de laatste fi weghalen...)
 "

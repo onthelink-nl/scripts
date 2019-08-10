@@ -29,9 +29,8 @@ case $selection in
 		sudo flatpak uninstall org.qgis.qgis
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
-		sudo su
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile
-		sudo cp -f profile /etc/profile
+		sudo rm -rf /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf /etc/init.d/qgisremovefiles.sh
 		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
 		chattr -i /home/$USER/org.qgis.qgis/
 		sudo mv "/run/user/1000/doc/by-app/org.qgis.qgis/*" /tmp
@@ -52,8 +51,13 @@ case $selection in
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
 		sudo rm -rf "/home/$USER/profile"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/qgisremovefiles.sh
+		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		crontab -r
-		crontab -l | { cat; echo "*/1 * * * * rsync -a /run/user/1000/doc/by-app/org.qgis.qgis /home/$USER"; } | crontab - 
+		crontab -l | { cat; echo "* * * * * sudo bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
+		crontab -l | { cat; echo "@reboot sudo bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		tput reset
 		exit
 		;;
@@ -66,8 +70,10 @@ case $selection in
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
 		sudo rm -rf "/home/$USER/profile"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		crontab -r
-		crontab -l | { cat; echo "*/1 * * * * rsync -a /run/user/1000/doc/by-app/org.qgis.qgis /home/$USER"; } | crontab - 
+		crontab -l | { cat; echo "* * * * * sudo bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		tput reset
 		exit
         ;;

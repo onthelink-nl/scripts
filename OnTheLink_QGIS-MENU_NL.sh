@@ -42,6 +42,7 @@ case $selection in
         sudo su
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile > /etc/profile
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/profile > /etc/profile
+		exit
 		sudo rm -rf "/home/$USER/qgis"
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"

@@ -53,6 +53,8 @@ case $selection in
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
+		sudo rm -rf "/home/$USER/qgiscopyfiles.sh"
+		sudo rm -rf "/home/$USER/qgisremovefiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * sudo bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot sudo bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 

@@ -39,10 +39,6 @@ case $selection in
 		tput reset
 		;;
 	3 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile
-		sudo cp -f profile /etc/profile
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/profile
-		sudo cp -f profile /etc/profile
 		sudo rm -rf "/home/$USER/qgis"
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"
 		sudo rm -rf "/home/$USER/OnTheLink_QGIS-MENU_NL.sh"
@@ -57,6 +53,8 @@ case $selection in
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
+		sudo rm -rf "/home/$USER/qgiscopyfiles.sh"
+		sudo rm -rf "/home/$USER/qgisremovefiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * sudo bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot sudo bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 

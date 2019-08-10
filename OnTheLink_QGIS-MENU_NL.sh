@@ -73,6 +73,7 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf "/home/$USER/qgiscopyfiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * sudo bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		tput reset

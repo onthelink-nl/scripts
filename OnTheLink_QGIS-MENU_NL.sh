@@ -30,7 +30,7 @@ case $selection in
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
 		sudo su
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile > /home/$USER/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile | sudo tee /etc/profile
 		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
 		chattr -i /home/$USER/org.qgis.qgis/
 		sudo mv "/run/user/1000/doc/by-app/org.qgis.qgis/*" /tmp
@@ -40,8 +40,8 @@ case $selection in
 		;;
 	3 ) 
         sudo su
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile > /etc/profile
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/profile > /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/profile | sudo tee /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/profile | sudo tee /etc/profile
 		exit
 		sudo rm -rf "/home/$USER/qgis"
 		sudo rm -rf "/home/$USER/QgisStartNL.sh"

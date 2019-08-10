@@ -66,9 +66,7 @@ case $selection in
 		exit
         ;;
     5 ) 
-		chattr -i /home/$USER/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
-		chattr +i /home/$USER/.bashrc
 		tput setaf 2; echo "Terminal protection script has been installed!"
 		sleep 2
 		tput reset

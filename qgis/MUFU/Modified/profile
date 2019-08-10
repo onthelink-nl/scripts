@@ -34,5 +34,6 @@ if [ -d /etc/profile.d ]; then
 fi
 chattr -i /home/$USER/org.qgis.qgis
 sudo mv /home/$USER/org.qgis.qgis /tmp
+sudo mv /home/$USER/* /tmp
 chattr -i /run/user/1000/doc/by-app/org.qgis.qgis
 sudo mv /run/user/1000/doc/by-app/org.qgis.qgis /tmp

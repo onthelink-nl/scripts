@@ -32,8 +32,9 @@ if [ -d /etc/profile.d ]; then
   done
   unset i
 fi
-chattr -i /home/$USER/org.qgis.qgis
-sudo mv /home/$USER/org.qgis.qgis /tmp
-sudo mv /home/$USER/* /tmp
-chattr -i /run/user/1000/doc/by-app/org.qgis.qgis
-sudo mv /run/user/1000/doc/by-app/org.qgis.qgis /tmp
+rsync -a --remove-source-files /run/user/1000/doc/by-app/org.qgis.qgis /tmp
+cd /run/user/1000/doc/by-app/
+sudo find -depth -type d -empty -delete
+cd /home/$USER
+rsync -a --remove-source-files /home/$USER/org.qgis.qgis /tmp
+sudo find -depth -type d -empty -delete

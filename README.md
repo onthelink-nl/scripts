@@ -14,7 +14,6 @@ The reason why this protection is so minimal is because QGIS is a free to use pr
 
 How to restore the .bashrc file?
 Please follow this tutorial to restore the .bashrc file:
-https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Tutorials/HowToRestoreBashrcFile.txt
 [Restore .bashrc file](https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Tutorials/HowToRestoreBashrcFile.txt "Tutorial to restore .bashrc file")
 
 Still want that better "Terminal Lockdown"?

@@ -47,13 +47,13 @@ Release Date TLS: ??/??/????
 3. Press "Return" (ENTER)
 4. Follow the instructions on your screen
 
-## ===================================================
+## ==================================================
 
 <H5 align="center">
 QGIS INSTALLER
 </H5>
 
-## ===================================================
+## ==================================================
 
 Copy and paste this command for the EN version:
 sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"

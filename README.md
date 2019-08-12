@@ -18,7 +18,7 @@ In the file you need to remove the following lines:
 
 ======================================================================================================
 #Kill Switch, will be activated when ctrl+c is pressed (Sometimes the chromebooks need to be powerwashed or reset by a recovery to make QGIS work after this)
-# trap ctrl-c and call ctrl_c()
+#. trap ctrl-c and call ctrl_c()
 trap ctrl_c INT
 
 function ctrl_c() {

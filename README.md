@@ -5,7 +5,11 @@ Here you can find all of our scripts we create to make installations easier, we 
 THESE SCRIPTS ARE MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THINGS SHOULD STILL WORK BUT STUFF MAY NOT WORK PROPERLY...
 
 # =======================================
-### We are not responsible for any damage done to your device by using our scripts!!
+
+<H3 align="center">
+We are not responsible for any damage done to your device by using our scripts!!
+</H3>
+
 # =======================================
 
 The terminal protection software (TPS) is a minimum protection that only helps if the user doesn't know about the .bashrc file in the home directory of their laptop

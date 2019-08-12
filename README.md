@@ -4,7 +4,10 @@ Here you can find all of our scripts we create to make installations easier, we 
 # Before you begin
 THIS SCRIPT IS MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THINGS SHOULD STILL WORK BUT STUFF MAY NOT WORK PROPERLY...
 
-The terminal protection software (TPS) is a minimum protection that only helps if the user doesn't know about the .bashrc file in the home dir of their laptop
+
+
+The terminal protection software (TPS) is a minimum protection that only helps if the user doesn't know about the .bashrc file in the home directory of their laptop
+
 
 The TPS replaces that .bashrc file with a modified one, this will cause the terminal to close automatically
 It does say some stuff before it closes but that's just for fun, ofcourse it isn't updating or checking if the user may or may not use the terminal, but it does exit the terminal (even if users try to cancel the .bashrc file using ctrl_c)
@@ -14,7 +17,9 @@ The reason why this protection is so minimal is because QGIS is a free to use pr
 
 How to restore the .bashrc file?
 Please follow this tutorial to restore the .bashrc file:
+
 [Restore .bashrc file](https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Tutorials/HowToRestoreBashrcFile.txt "Tutorial to restore .bashrc file")
+
 
 Still want that better "Terminal Lockdown"?
 We are working on our new Terminal Lockdown Script (TLS), it will be available in a few months...

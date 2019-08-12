@@ -26,7 +26,6 @@ tput sgr0 && tput setaf 45; echo "
 tput sgr0 && tput setaf 202; echo "
 a - Install/reïnstall/update QGIS LATEST + Exit Script normally (1+4)
 b - Install/reïnstall/update QGIS LATEST + The terminal protection software + Exit and install the auto remove files script (FOR SCHOOLS) (1+5+3)
-c - Remove QGIS and restore settings + Exit Script (2+ctrl_c)
 "
     tput setaf 6; echo -n "Enter selection: "
     read -r selection
@@ -52,6 +51,7 @@ case $selection in
 		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis" /tmp
 		tput reset
+		exit
 		;;
 	3 ) 
 		sudo rm -rf "qgis/"
@@ -132,22 +132,6 @@ case $selection in
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
-		tput reset
-		exit
-		;;
-	c ) 
-		tput reset
-		tput setaf 1; echo "Removing QGIS..."
-		sudo flatpak uninstall org.qgis.qgis
-		sudo apt-get --yes --assume-yes remove flatpak
-		crontab -r
-		sudo rm -rf /etc/init.d/qgiscopyfiles.sh
-		sudo rm -rf /etc/init.d/qgisremovefiles.sh
-		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
-		chattr -i /home/$USER/org.qgis.qgis/
-		sudo mv "/run/user/1000/doc/by-app/org.qgis.qgis/*" /tmp
-		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
-		sudo mv "/home/$USER/org.qgis.qgis" /tmp
 		tput reset
 		exit
 		;;

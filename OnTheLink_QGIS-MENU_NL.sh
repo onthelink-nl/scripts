@@ -28,6 +28,8 @@ tput sgr0 && tput setaf 202; echo "
 a - Installeer/herinstalleer/update QGIS LATEST + Verlaat het script (1+4)
 b - Installeer/herinstalleer/update QGIS LATEST + Verlaat het script en installeer het automatisch bestanden verwijderen script (1+3)
 c - Installeer/herinstalleer/update QGIS LATEST + De terminal beveiligings software + Verlaat het script en installeer het automatisch verwijderen van bestanden script (VOOR SCHOLEN) (1+5+3)
+d - Herinstalleer het automatisch verwijderen van bestanden script + Het kopiëren script
+e - Reïnstall auto remove files script + copy script + The terminal protection software
 "
     tput setaf 6; echo -n "Voer uw keuze in: "
     read -r selection
@@ -171,6 +173,39 @@ case $selection in
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
+		tput reset
+		exit
+		;;
+	d ) 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/qgisremovefiles.sh
+		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgisremovefiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
+		sudo rm -rf "qgisremovefiles.sh"
+		crontab -r
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
+		tput reset
+		exit
+		;;
+	e ) 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/qgisremovefiles.sh
+		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgisremovefiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
+		sudo rm -rf "qgisremovefiles.sh"
+		crontab -r
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		tput setaf 2; echo "De terminal beveiligings software is opnieuw geïnstalleerd!"
+		sleep 2
 		tput reset
 		exit
 		;;

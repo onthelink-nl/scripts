@@ -27,7 +27,7 @@ tput sgr0 && tput setaf 45; echo "
 tput sgr0 && tput setaf 202; echo "
 a - Installeer/herinstalleer/update QGIS LATEST + Verlaat het script (1+4)
 b - Installeer/herinstalleer/update QGIS LATEST + Verlaat het script en installeer het automatisch bestanden verwijderen script (1+3)
-c - Installeer/herinstalleer/update QGIS LATEST + De terminal beveiligings software + Verlaat het script en installeer het automatisch bestanden verwijderen script (VOOR SCHOLEN) (1+5+3)
+c - Installeer/herinstalleer/update QGIS LATEST + De terminal beveiligings software + Verlaat het script en installeer het automatisch verwijderen van bestanden script (VOOR SCHOLEN) (1+5+3)
 "
     tput setaf 6; echo -n "Voer uw keuze in: "
     read -r selection

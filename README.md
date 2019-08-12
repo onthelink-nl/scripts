@@ -12,13 +12,13 @@ We are not responsible for any damage done to your device by using our scripts!!
 
 # =======================================
 
-## ===================================================
+## ==================================================
 
 <H4 align="center">
 The following section is only for the QGIS-MENU
 </H4>
 
-## ===================================================
+## ==================================================
 
 The terminal protection software (TPS) is a minimum protection that only helps if the user doesn't know about the .bashrc file in his home directory of his Chromebook (Please do not install the TPS on a chromebook that you do not own, we are not responsible for anything when and if you do this)
 

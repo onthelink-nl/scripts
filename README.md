@@ -12,46 +12,10 @@ It does say some stuff before it closes but that's just for fun, ofcourse it isn
 The reason why this protection is so minimal is because QGIS is a free to use program and we just simply can't give stuff to "granted" users because that would be changing their project and we just simply do not have the rights to do that, so we won't!
 
 
-How do i reset this back to normal?
-you need to go into your home dir (~/) and edit the hidden file .bashrc.
-In the file you need to remove the following lines:
-
-======================================================================================================
-#Kill Switch, will be activated when ctrl+c is pressed (Sometimes the chromebooks need to be powerwashed or reset by a recovery to make QGIS work after this)
-#. trap ctrl-c and call ctrl_c()
-trap ctrl_c INT
-
-function ctrl_c() {
-        echo "** Nice try!" && exit
-}
-
-for i in `seq 1 5`; do
-    sleep 1
-    echo -n "."
-done
-
-tput reset
-tput setaf 2; echo "OnTheLink - TERMINAL PROTECTION SOFTWARE"
-sleep 1
-tput setaf 6; echo "Checking for updates..."
-sleep 2
-tput setaf 5; echo "No updates found!"
-tput setaf 3; echo "Checking terminal protection config file...."
-sleep 1
-tput setaf 1; echo "You do NOT have the permission to use the terminal! Closing in 4 seconds..."
-sleep 1
-tput setaf 1; echo "3"
-sleep 1
-tput setaf 1; echo "2"
-sleep 1
-tput setaf 1; echo "1"
-sleep 1
-tput setaf 2; echo "Goodbye!"
-sleep 1
-exit
-======================================================================================================
-After removing those lines you can save the file and exit
-
+How to restore the .bashrc file?
+Please follow this tutorial to restore the .bashrc file:
+https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Tutorials/HowToRestoreBashrcFile.txt
+[Restore .bashrc file](https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Tutorials/HowToRestoreBashrcFile.txt "Tutorial to restore .bashrc file")
 
 Still want that better "Terminal Lockdown"?
 We are working on our new Terminal Lockdown Script (TLS), it will be available in a few months...

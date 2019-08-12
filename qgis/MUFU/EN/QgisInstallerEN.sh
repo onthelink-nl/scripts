@@ -17,9 +17,9 @@ echo We are not the creators of QGIS or Flatpak and this is an unofficial script
 echo "Our website: https://onthelink.tk"
 echo "The Flatpak website: https://flatpak.org"
 echo Thank you for using our script!
-tput bold && tput setaf 1; echo -----------------------------------
-tput bold && tput setaf 5; echo           INSTALLATION STARTED
-tput bold && tput setaf 1; echo -----------------------------------
+tput bold && tput setaf 1; echo "===================================="
+tput bold && tput setaf 5; echo ">>>>>>>>INSTALLATION STARTED<<<<<<<<"
+tput bold && tput setaf 1; echo "===================================="
 tput sgr0 && tput setaf 4; echo "WARNING: We advise you to always have a stable internetconnection when using the script and never press ctrl+c during the installation... (When you do this there is a chance that you will have to reset the chromebook using powerwash or a recovery)" && tput sgr0
 
 #Kill Switch, will be activated when ctrl+c is pressed (Sometimes the chromebooks need to be powerwashed or reset by a recovery to make QGIS work after this)

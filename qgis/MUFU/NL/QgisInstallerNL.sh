@@ -17,9 +17,9 @@ echo Wij zijn niet de makers van QGIS of flatpak en dit is een onofficieel scrip
 echo "Onze website: https://onthelink.tk"
 echo "De Flatpak website: https://flatpak.org"
 echo Alvast bedankt voor het gebruiken van ons script!
-tput bold && tput setaf 1; echo -----------------------------------
-tput bold && tput setaf 5; echo           INSTALLATIE IS GESTART
-tput bold && tput setaf 1; echo -----------------------------------
+tput bold && tput setaf 1; echo "===================================="
+tput bold && tput setaf 5; echo ">>>>>>>INSTALLATIE IS GESTART<<<<<<<"
+tput bold && tput setaf 1; echo "===================================="
 tput sgr0 && tput setaf 4; echo "WAARSCHUWING: Het wordt aangeraden om altijd een stabiele internetverbinding te hebben en niet op ctrl+c te drukken (Wanneer u dit doet zult u de chromebook moeten resetten met een herstel-usb of via powerwash)" && tput sgr0
 
 #Kill Switch, wordt geactiveerd wanneer ctrl+c wordt ingedrukt (herinstallatie benodigt van de chromebook nadat de gebruiker dit doet indien hij hierna toch QGIS wilt)

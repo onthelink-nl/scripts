@@ -17,7 +17,7 @@ case $selection in
     1 ) 
 		sudo rm -rf /home/$USER/QgisStartNL.sh
 		tput setaf 5; echo "Voorbereiden om QGIS te installeren met update MUFU"
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Startup/QgisStartNL.sh
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStartNL.sh
         sleep 2 ; sudo bash QgisStartNL.sh
         ;;
 	2 ) 

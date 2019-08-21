@@ -43,10 +43,11 @@ tput setaf 2; echo Dit script is gemaakt door Misha Opstal en Leopold Siccama Hi
 echo Het script zal QGIS installeren op uw chromebook.
 echo Flatpak wordt gebruikt voor het belangrijkste deel van de installatie!
 tput bold; echo Wij zijn niet de makers van QGIS of flatpak en dit is een onofficieel script.
-tput sgr0
-echo "Onze website: https://onthelink.nl"
-echo "De Flatpak website: https://flatpak.org"
-echo Alvast bedankt voor het gebruiken van ons script!
+tput setaf 5; echo -n "Onze website: "
+echo -e '\e]8;;https://onthelink.nl\aOnTheLink\e]8;;\a'
+echo -n "De Flatpak website: "
+echo -e '\e]8;;https://flatpak.org\aFlatpak\e]8;;\a'
+tput setaf 69; echo Alvast bedankt voor het gebruiken van ons script!
 tput bold && tput setaf 1; echo "===================================="
 tput bold && tput setaf 5; echo ">>>>>>>INSTALLATIE IS GESTART<<<<<<<"
 tput bold && tput setaf 1; echo "===================================="

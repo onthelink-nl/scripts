@@ -42,7 +42,8 @@ kill -9 $SPIN_PID
 tput setaf 2; echo The script is originally created by Misha Opstal and Leopold Siccama Hiemstra.
 echo This script will install QGIS on your chromebook.
 echo Flatpak is being used for the most important part of the installation!
-echo We are not the creators of QGIS or Flatpak and this is an unofficial script.
+tput bold; echo We are not the creators of QGIS or Flatpak and this is an unofficial script.
+tput sgr0
 echo "Our website: https://onthelink.nl"
 echo "The Flatpak website: https://flatpak.org"
 echo Thank you for using our script!

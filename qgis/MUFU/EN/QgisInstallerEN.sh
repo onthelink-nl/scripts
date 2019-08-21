@@ -51,23 +51,10 @@ tput bold && tput setaf 5; echo ">>>>>>>>INSTALLATION STARTED<<<<<<<<"
 tput bold && tput setaf 1; echo "===================================="
 tput sgr0 && tput setaf 4; echo "WARNING: We advise you to always have a stable internetconnection when using the script and never press ctrl+c during the installation... (When you do this there is a chance that you will have to reset the chromebook using powerwash or a recovery)" && tput sgr0
 
-#Kill Switch, will be activated when ctrl+c is pressed (Sometimes the chromebooks need to be powerwashed or reset by a recovery to make QGIS work after this)
-# trap ctrl-c and call ctrl_c()
-trap ctrl_c INT
-
-function ctrl_c() {
-        echo "** Kill Switch is activated, restart required..." && sleep 1 && reboot
-}
-
-for i in `seq 1 5`; do
-    sleep 1
-    echo -n "."
-done
-
 #Waiting for user input
 read -n 1 -s -r -p "Press any key to continue..."
 
-#Commands after user input
+#sending positive reaction
 echo ";)"
 
 # Start the Spinner:
@@ -76,4 +63,5 @@ spin &
 # Make a note of its Process ID (PID):
 SPIN_PID=$!
 
+#Commands after user input
 tput sgr0 && exec 1> log.txt sudo apt-get --yes update | exec 1> /dev/tty && tput setaf 5; echo "Installation of QGIS has begon:" && tput setaf 6; echo "Creating a temporary folder..." && mkdir qgisfiles && cd qgisfiles && tput sgr0 && tput setaf 2; echo "Temporary folder created!" && tput sgr0 && tput setaf 6; echo "Installing requirements..." && tput sgr0 && exec 1> log.txt 2> /dev/null | sudo apt-get --yes --assume-yes install wget apt-utils nautilus 2> /dev/null | exec 1> /dev/tty && tput setaf 2; echo "Requirements have been installed!" && tput sgr0 && tput setaf 6; echo "Installing Flatpak..." && tput sgr0 && exec 1> log.txt 2> /dev/null | sudo apt-get --yes --assume-yes install flatpak 2> /dev/null | exec 1> /dev/tty && tput setaf 2; echo "Installed Flatpak!" && tput setaf 6; echo "Updating apt:" && tput sgr0 && exec 1> log.txt 2> /dev/null | sudo apt-get --yes --assume-yes update | exec 1> /dev/tty && tput setaf 2; echo "apt updated!" && tput sgr0 && tput setaf 6; echo "Installing QGIS..." && tput sgr0 && sudo apt-get --yes --assume-yes install gnome-software-plugin-flatpak 2> /dev/null | exec 1> /dev/tty && sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/qgis.flatpakref 2> /dev/null && kill -9 $SPIN_PID && flatpak -y install qgis.flatpakref && tput reset && tput bold && tput setaf 5; echo "QGIS has been installed!!!" 2> /dev/tty && sleep 1 && tput sgr0 && tput setaf 1; echo "Exiting in 10 seconds..." && sleep 5 && tput setaf 1; echo "5" && sleep 1 && tput setaf 1; echo "4" && sleep 1 && tput setaf 1; echo "3" && sleep 1 && tput setaf 1; echo "2" && sleep 1 && tput setaf 1; echo "1" && sleep 1 && tput setaf 2; echo "Goodbye!" && sleep 1 && tput reset && exit

@@ -63,7 +63,7 @@ sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTh
 
 ### =============================================================
 
-WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGIS INSTALLATION
+WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGIS INSTALLATION ####
 [OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/master/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
 
 # Version History

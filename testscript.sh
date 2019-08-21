@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # term_size3 - Dynamically display terminal window size
     #              with text centering
 

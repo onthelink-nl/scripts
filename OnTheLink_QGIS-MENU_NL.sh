@@ -21,7 +21,7 @@ tput sgr0 && tput setaf 202; echo "
 5 - Sluit dit menu normaal (KIES DEZE ALLEEN ALS U NIETS HEEFT GEÏNSTALLEERD)
 6 - Installeer de terminal beveiligings software
 "
-tput sgr0 && tput setaf 45; echo "
+tput sgr0 && tput setaf 45; echo -n "
 ==================================
 >>>>>>>"
 tput setaf 191; echo -n "GECOMBINEERDE OPTIES"

@@ -8,8 +8,7 @@ OnTheLink QGIS-MENU | Versie: 2.8.6 STABIEL
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
->>>>>>>
-"
+>>>>>>>"
 tput setaf 191; echo -n "ALLEENSTAANDE OPTIES"
 tput setaf 45; echo "<<<<<<<
 ==================================
@@ -24,8 +23,7 @@ tput sgr0 && tput setaf 202; echo "
 "
 tput sgr0 && tput setaf 45; echo "
 ==================================
->>>>>>>
-"
+>>>>>>>"
 tput setaf 191; echo -n "GECOMBINEERDE OPTIES"
 tput setaf 45; echo "<<<<<<<
 ==================================

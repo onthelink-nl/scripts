@@ -6,9 +6,11 @@ until [ "$selection" = "5" ]; do
 tput bold && tput setaf 46; echo "
 OnTheLink QGIS-MENU | Version: 2.8.6 STABLE
 "
-tput sgr0 && tput setaf 45; echo "
+tput sgr0 && tput setaf 45; echo -n "
 ==================================
->>>>>>>>STANDALONE OPTIONS<<<<<<<<
+>>>>>>>>"
+tput setaf 191; echo -n "STANDALONE OPTIONS"
+tput setaf 45; echo "<<<<<<<<
 ==================================
 "
 tput sgr0 && tput setaf 202; echo "
@@ -21,7 +23,9 @@ tput sgr0 && tput setaf 202; echo "
 "
 tput sgr0 && tput setaf 45; echo "
 ==================================
->>>>>>>>>COMBINED OPTIONS<<<<<<<<<
+>>>>>>>>>"
+tput setaf 191; echo -n "COMBINED OPTIONS"
+tput setaf 45; echo -n "<<<<<<<<<
 ==================================
 "
 tput sgr0 && tput setaf 202; echo "

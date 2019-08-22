@@ -61,7 +61,10 @@ sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTh
 Copy and paste this command for the NL version:
 sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
 
+### =============================================================
 
+WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGIS INSTALLATION ####
+[OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/master/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
 
 # Version History
 
@@ -74,4 +77,4 @@ sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTh
 # Credits
 Creating: Misha Opstal & Leopold Siccama Hiemstra
 
-[Team OnTheLink](https://onthelink.tk/ "Official Website")
+[Team OnTheLink](https://onthelink.nl/ "Official Website")

@@ -4,50 +4,50 @@ tput clear
 selection=
 until [ "$selection" = "5" ]; do
 tput bold && tput setaf 46; echo "
-OnTheLink QGIS-MENU | Version: 2.8.7 BÈTA
+OnTheLink QGIS-MENU | Versie: 2.8.6 STABIEL
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
->>>>>>>>"
-tput setaf 191; echo -n "STANDALONE OPTIONS"
-tput setaf 45; echo "<<<<<<<<
+>>>>>>>"
+tput setaf 191; echo -n "ALLEENSTAANDE OPTIES"
+tput setaf 45; echo "<<<<<<<
 ==================================
 "
 tput sgr0 && tput setaf 202; echo "
-1 - Install/reïnstall/update QGIS
-2 - Remove QGIS and restore settings
-3 - Exit Script and install the auto remove files script
-4 - Exit Script (RUN THIS ONE AFTER THE INSTALLATION)
-5 - Exit Script normally (RUN THIS ONE IF YOU DIDN'T INSTALL STUFF)
-6 - Install the terminal protection software
+1 - Installeer/herinstalleer/update QGIS
+2 - Verwijder QGIS en zet alles terug naar standaardwaardes
+3 - Sluit dit menu en installeer het automatisch verwijderen van bestanden script
+4 - Sluit dit menu (KIES DEZE ALLEEN NA DE INSTALLATIE)
+5 - Sluit dit menu normaal (KIES DEZE ALLEEN ALS U NIETS HEEFT GEÏNSTALLEERD)
+6 - Installeer de terminal beveiligings software
 "
-tput sgr0 && tput setaf 45; echo "
+tput sgr0 && tput setaf 45; echo -n "
 ==================================
->>>>>>>>>"
-tput setaf 191; echo -n "COMBINED OPTIONS"
-tput setaf 45; echo -n "<<<<<<<<<
+>>>>>>>"
+tput setaf 191; echo -n "GECOMBINEERDE OPTIES"
+tput setaf 45; echo "<<<<<<<
 ==================================
 "
 tput sgr0 && tput setaf 202; echo "
-a - Install/reïnstall/update QGIS LATEST + Exit Script (1+4)
-b - Install/reïnstall/update QGIS LATEST + Exit and install the auto remove files script (1+3)
-c - Install/reïnstall/update QGIS LATEST + The terminal protection software + Exit and install the auto remove files script (FOR SCHOOLS) (1+5+3)
-d - Reïnstall auto remove files script + copy script
+a - Installeer/herinstalleer/update QGIS LATEST + Verlaat het script (1+4)
+b - Installeer/herinstalleer/update QGIS LATEST + Verlaat het script en installeer het automatisch bestanden verwijderen script (1+3)
+c - Installeer/herinstalleer/update QGIS LATEST + De terminal beveiligings software + Verlaat het script en installeer het automatisch verwijderen van bestanden script (VOOR SCHOLEN) (1+5+3)
+d - Herinstalleer het automatisch verwijderen van bestanden script + Het kopiëren script
 e - Reïnstall auto remove files script + copy script + The terminal protection software
 "
-    tput setaf 6; echo -n "Enter selection: "
+    tput setaf 6; echo -n "Voer uw keuze in: "
     read -r selection
     echo ""
 case $selection in
     1 ) 
-		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		tput setaf 5; echo "Preparing the QGIS-VERSIONSELECTOR..."
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-        sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		tput setaf 5; echo "Het QGIS-VERSIE_KEUZEMENU voorbereiden..."
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+        sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
         ;;
 	2 ) 
 		tput reset
-		tput setaf 1; echo "Removing QGIS..."
+		tput setaf 1; echo "Verwijderen van QGIS gestart..."
 		sudo flatpak uninstall org.qgis.qgis
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
@@ -113,30 +113,23 @@ case $selection in
 		;;
     6 ) 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
-		mkdir temp
-		cd temp
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc
-		sudo cp -f .bashrc /etc/init.d/.bashrc
-		sudo chmod +x /etc/init.d/.bashrc
-		cd ..
-		sudo rm -rf temp/
-		tput setaf 2; echo "Terminal protection script has been installed!"
+		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2
 		tput reset
 		;;
 	a ) 
-		sudo rm -rf QgisStartEN.sh
-		tput setaf 5; echo "Preparing your combination..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStartEN.sh
-		sleep 2 ; sudo bash QgisStartEN.sh
+		sudo rm -rf QgisStartNL.sh
+		tput setaf 5; echo "Uw combinatie voorbereiden..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStartNL.sh
+		sleep 2 ; sudo bash QgisStartNL.sh
 		tput reset
 		exit
 		;;
 	b ) 
-		sudo rm -rf QgisStartEN.sh
-		tput setaf 5; echo "Preparing your combination..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStartEN.sh
-		sleep 2 ; sudo bash QgisStartEN.sh
+		sudo rm -rf QgisStartNL.sh
+		tput setaf 5; echo "Uw combinatie voorbereiden..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStartNL.sh
+		sleep 2 ; sudo bash QgisStartNL.sh
 		sudo rm -rf "qgis/"
 		sudo rm -rf "QgisStartNL.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
@@ -160,18 +153,11 @@ case $selection in
 		;;
 	c ) 
 		sudo rm -rf QgisStartEN.sh
-		tput setaf 5; echo "Preparing your combination..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStartEN.sh
-		sleep 2 ; sudo bash QgisStartEN.sh
+		tput setaf 5; echo "Uw combinatie voorbereiden..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStartNL.sh
+		sleep 2 ; sudo bash QgisStartNL.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
-		mkdir temp
-		cd temp
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc
-		sudo cp -f .bashrc /etc/init.d/.bashrc
-		sudo chmod +x /etc/init.d/.bashrc
-		cd ..
-		sudo rm -rf temp/
-		tput setaf 2; echo "Terminal protection script has been installed!"
+		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2
 		sudo rm -rf "qgis/"
 		sudo rm -rf "QgisStartNL.sh"
@@ -222,20 +208,13 @@ case $selection in
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
-		mkdir temp
-		cd temp
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc
-		sudo cp -f .bashrc /etc/init.d/.bashrc
-		sudo chmod +x /etc/init.d/.bashrc
-		cd ..
-		sudo rm -rf temp/
-		tput setaf 2; echo "Terminal protection script has been installed!"
+		tput setaf 2; echo "De terminal beveiligings software is opnieuw geïnstalleerd!"
 		sleep 2
 		tput reset
 		exit
 		;;
 	* ) 
-        tput setaf 202; echo "Please enter standalone choice 1, 2, 3, 4, 5, 6 or combined choice a, b or c..."
+        tput setaf 202; echo "Voer alstublieft alleen de alleenstaande keuzes 1, 2, 3, 4, 5, 6 of de gecombineerde keuzes a,b of c in..."
 		sleep 1 ; tput reset
 esac
 done

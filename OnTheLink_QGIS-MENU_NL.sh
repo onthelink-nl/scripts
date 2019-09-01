@@ -4,7 +4,7 @@ tput clear
 selection=
 until [ "$selection" = "5" ]; do
 tput bold && tput setaf 46; echo "
-OnTheLink QGIS-MENU | Versie: 2.8.6 STABIEL
+OnTheLink QGIS-MENU | Versie: 2.8.7 BÈTA
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
@@ -113,6 +113,13 @@ case $selection in
 		;;
     6 ) 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		mkdir temp
+		cd temp
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc
+		sudo cp -f .bashrc /etc/init.d/.bashrc
+		sudo chmod +x /etc/init.d/.bashrc
+		cd ..
+		sudo rm -rf temp/
 		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2
 		tput reset
@@ -157,6 +164,13 @@ case $selection in
 		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStartNL.sh
 		sleep 2 ; sudo bash QgisStartNL.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		mkdir temp
+		cd temp
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc
+		sudo cp -f .bashrc /etc/init.d/.bashrc
+		sudo chmod +x /etc/init.d/.bashrc
+		cd ..
+		sudo rm -rf temp/
 		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2
 		sudo rm -rf "qgis/"
@@ -208,6 +222,13 @@ case $selection in
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		mkdir temp
+		cd temp
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc
+		sudo cp -f .bashrc /etc/init.d/.bashrc
+		sudo chmod +x /etc/init.d/.bashrc
+		cd ..
+		sudo rm -rf temp/
 		tput setaf 2; echo "De terminal beveiligings software is opnieuw geïnstalleerd!"
 		sleep 2
 		tput reset

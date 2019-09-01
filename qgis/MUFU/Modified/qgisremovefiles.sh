@@ -8,4 +8,6 @@ rsync -a --remove-source-files /home/$USER/org.qgis.qgis /tmp
 sudo find -depth -type d -empty -delete
 rsync -a --exclude=".*" --remove-source-files /home/$USER/* /tmp
 sudo find -depth -type d -empty -delete
-sudo cp /etc/init.d/.bashrc /home/$USER/.bashrc
+cd /etc/init.d
+sudo cp -f .bashrc /home/$USER/.bashrc
+cd /home/$USER

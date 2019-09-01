@@ -59,7 +59,6 @@ case $selection in
 		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis" /tmp
 		tput reset
-		exit
 		;;
 	3 ) 
 		sudo rm -rf "qgis/"
@@ -207,7 +206,6 @@ case $selection in
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		tput reset
-		exit
 		;;
 	e ) 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
@@ -232,7 +230,6 @@ case $selection in
 		tput setaf 2; echo "Terminal protection script has been installed!"
 		sleep 2
 		tput reset
-		exit
 		;;
 	* ) 
         tput setaf 202; echo "Please enter standalone choice 1, 2, 3, 4, 5, 6 or combined choice a, b or c..."

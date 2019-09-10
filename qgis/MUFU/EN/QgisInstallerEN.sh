@@ -47,6 +47,8 @@ tput setaf 5; echo -n "Our website: "
 echo -e '\e]8;;https://onthelink.nl\aOnTheLink\e]8;;\a'
 echo -n "The Flatpak website: "
 echo -e '\e]8;;https://flatpak.org\aFlatpak\e]8;;\a'
+echo -n "The QGIS website: "
+echo -e '\e]8;;https://qgis.org\aQGIS\e]8;;\a'
 tput setaf 69; echo Thank you for using our script!
 tput bold && tput setaf 1; echo "===================================="
 tput bold && tput setaf 5; echo ">>>>>>>>INSTALLATION STARTED<<<<<<<<"

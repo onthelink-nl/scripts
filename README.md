@@ -4,6 +4,9 @@ Here you can find all of our scripts we create to make installations easier, we 
 # Before you begin
 THESE SCRIPTS ARE MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THINGS SHOULD STILL WORK BUT THEY MIGHT NOT WORK PROPERLY...
 
+# SCRIPTS INCOMPATIBLE WITH LINUX (ANY) (SO THEY ARE COMPATIBLE WITH CHROMEOS)
+- The QGIS script
+
 # =======================================
 
 <H3 align="center">

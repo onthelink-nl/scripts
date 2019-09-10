@@ -4,7 +4,7 @@ tput clear
 selection=
 until [ "$selection" = "5" ]; do
 tput bold && tput setaf 46; echo "
-OnTheLink QGIS-MENU | Version: 2.8.6 STABLE
+OnTheLink QGIS-MENU | Version: 2.8.7 STABLE
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
@@ -21,7 +21,7 @@ tput sgr0 && tput setaf 202; echo "
 5 - Exit Script normally (RUN THIS ONE IF YOU DIDN'T INSTALL STUFF)
 6 - Install the terminal protection software
 "
-tput sgr0 && tput setaf 45; echo "
+tput sgr0 && tput setaf 45; echo -n "
 ==================================
 >>>>>>>>>"
 tput setaf 191; echo -n "COMBINED OPTIONS"
@@ -34,6 +34,7 @@ b - Install/reïnstall/update QGIS LATEST + Exit and install the auto remove fil
 c - Install/reïnstall/update QGIS LATEST + The terminal protection software + Exit and install the auto remove files script (FOR SCHOOLS) (1+5+3)
 d - Reïnstall auto remove files script + copy script
 e - Reïnstall auto remove files script + copy script + The terminal protection software
+f - Reïnstall copy script (this script makes it possible to save your files, should be automatically installed)
 "
     tput setaf 6; echo -n "Enter selection: "
     read -r selection
@@ -128,6 +129,12 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
+		crontab -r
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		tput reset
 		exit
 		;;
@@ -216,6 +223,16 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
 		tput setaf 2; echo "Terminal protection script has been reïnstalled!"
 		sleep 2
+		tput reset
+		exit
+		;;
+	f ) 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
+		crontab -r
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		tput reset
 		exit
 		;;

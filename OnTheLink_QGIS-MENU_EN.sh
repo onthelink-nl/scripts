@@ -62,6 +62,8 @@ case $selection in
 		sudo flatpak remote-delete --force org.qgis.qgis-9-origin
 		sudo flatpak remote-delete --force org.qgis.qgis-10-origin
 		sudo flatpak remote-delete --force flathub
+		sudo flatpak uninstall --force-remove org.kde.Platform
+		sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
 		sudo rm -rf /etc/init.d/qgiscopyfiles.sh

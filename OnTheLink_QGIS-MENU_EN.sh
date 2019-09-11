@@ -29,9 +29,9 @@ tput setaf 45; echo "<<<<<<<<<
 ==================================
 "
 tput sgr0 && tput setaf 202; echo "
-a - Install/reïnstall/update QGIS LATEST + Exit Script (1+4)
+a - Install/reïnstall/update QGIS LATEST + copy script + Exit Script (1+4)
 b - Install/reïnstall/update QGIS LATEST + Exit and install the auto remove files script (1+3)
-c - Install/reïnstall/update QGIS LATEST + The terminal protection software + Exit and install the auto remove files script (FOR SCHOOLS) (1+5+3)
+c - Install/reïnstall/update QGIS LATEST + The terminal protection software + Exit and install the auto remove files script (FOR SCHOOLS) (REMOVES ALL FILES FOUND IN THE HOME DIR) (1+5+3)
 d - Reïnstall auto remove files script + copy script
 e - Reïnstall auto remove files script + copy script + The terminal protection software
 f - Reïnstall copy script (this script makes it possible to save your files, should be automatically installed)

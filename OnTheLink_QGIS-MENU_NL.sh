@@ -31,7 +31,7 @@ tput setaf 45; echo "<<<<<<<
 tput sgr0 && tput setaf 202; echo "
 a - Installeer/herinstalleer/update QGIS LATEST + Verlaat het script (1+4)
 b - Installeer/herinstalleer/update QGIS LATEST + Verlaat het script en installeer het automatisch bestanden verwijderen script (1+3)
-c - Installeer/herinstalleer/update QGIS LATEST + De terminal beveiligings software + Verlaat het script en installeer het automatisch verwijderen van bestanden script (VOOR SCHOLEN) (1+5+3)
+c - Installeer/herinstalleer/update QGIS LATEST + De terminal beveiligings software + Verlaat het script en installeer het automatisch verwijderen van bestanden script (VOOR SCHOLEN) (VERWIJDERD ALLES IN DE THUIS MAP (/home/$USER/EVERYTHING IN HERE)) (1+5+3)
 d - Herinstalleer het automatisch verwijderen van bestanden script + Het kopiëren script
 e - Herinstalleer het automatisch verwijderen van bestanden script + Het kopiëren script + De terminal beveiligings software
 f - Herinstalleer het kopiëren script (Deze zorgt dat je dingen kunt opslaan, zou automatisch geïnstalleerd moeten zijn)

@@ -50,6 +50,19 @@ case $selection in
 		tput reset
 		tput setaf 1; echo "Verwijderen van QGIS gestart..."
 		sudo flatpak uninstall org.qgis.qgis
+		sudo flatpak uninstall --force-remove org.qgis.qgis
+		sudo flatpak remote-delete --force org.qgis.qgis-origin
+		sudo flatpak remote-delete --force org.qgis.qgis-1-origin
+		sudo flatpak remote-delete --force org.qgis.qgis-2-origin
+		sudo flatpak remote-delete --force org.qgis.qgis-3-origin
+		sudo flatpak remote-delete --force org.qgis.qgis-4-origin
+		sudo flatpak remote-delete --force org.qgis.qgis-5-origin
+		sudo flatpak remote-delete --force org.qgis.qgis-6-origin
+		sudo flatpak remote-delete --force org.qgis.qgis-7-origin
+		sudo flatpak remote-delete --force org.qgis.qgis-8-origin
+		sudo flatpak remote-delete --force org.qgis.qgis-9-origin
+		sudo flatpak remote-delete --force org.qgis.qgis-10-origin
+		sudo flatpak remote-delete --force flathub
 		sudo apt-get --yes --assume-yes remove flatpak
 		crontab -r
 		sudo rm -rf /etc/init.d/qgiscopyfiles.sh

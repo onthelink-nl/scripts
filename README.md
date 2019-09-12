@@ -7,21 +7,21 @@ THESE SCRIPTS ARE MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THI
 # SCRIPTS INCOMPATIBLE WITH LINUX (ANY)
 ## - The QGIS script
 
-# =======================================
+<b><h1 align="center">=======================================</h1></b>
 
 <H3 align="center">
 We are not responsible for any damage done to your device by using our scripts!!
 </H3>
 
-# =======================================
+<b><h1 align="center">=======================================</h1></b>
 
-## ==================================================
+<b><h2 align="center">==================================================</h2></b>
 
 <H4 align="center">
 The following section is only for the QGIS-MENU
 </H4>
 
-## ==================================================
+<b><h2 align="center">==================================================</h2></b>
 
 The terminal protection software (TPS) is a minimum protection that only helps if the user doesn't know about the .bashrc file in his home directory of his Chromebook (Please do not install the TPS on a chromebook that you do not own, we are not responsible for anything when and if you do this)
 
@@ -50,13 +50,13 @@ Release Date TLS: ??/??/????
 3. Press "Return" (ENTER)
 4. Follow the instructions on your screen
 
-## ==================================================
+<b><h2 align="center">==================================================</h2></b>
 
 <H2 align="center">
 QGIS INSTALLER
 </H2>
 
-## ==================================================
+<b><h2 align="center">==================================================</h2></b>
 
 Copy and paste this command for the EN version:
 sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
@@ -64,7 +64,8 @@ sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTh
 Copy and paste this command for the NL version:
 sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
 
-### =============================================================
+<b><h3 align="center">========================================================================</h3></b>
+
 
 WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGIS INSTALLATION ####
 [OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/master/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")

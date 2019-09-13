@@ -64,7 +64,10 @@ case $selection in
 		sudo flatpak remote-delete --force flathub
 		sudo flatpak uninstall --force-remove org.kde.Platform
 		sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs
-		sudo apt-get --yes --assume-yes remove flatpak
+		sudo apt-get --yes --assume-yes remove --purge flatpak
+		sudo apt-get --yes --assume-yes clean
+		sudo apt-get --yes --assume-yes autoremove --purge
+		sudo apt-get --yes --assume-yes clean
 		crontab -r
 		sudo rm -rf /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf /etc/init.d/qgisremovefiles.sh

@@ -73,7 +73,12 @@ case $selection in
 		sudo rm -rf /etc/init.d/qgisremovefiles.sh
 		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
 		chattr -i /home/$USER/org.qgis.qgis/
-		sudo mv "/run/user/1000/doc/by-app/org.qgis.qgis/*" /tmp
+		sudo mv "/run/user/1000/doc/*" /tmp
+		sudo mv "/run/user/1000/doc" /tmp
+		sudo mv "/run/user/1000/flatpak-monitor/*" /tmp
+		sudo mv "/run/user/1000/flatpak-monitor" /tmp
+		sudo mv "/run/user/1000/app/*" /tmp
+		sudo mv "/run/user/1000/app" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis" /tmp
 		tput reset

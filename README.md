@@ -4,21 +4,24 @@ Here you can find all of our scripts we create to make installations easier, we 
 # Before you begin
 THESE SCRIPTS ARE MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THINGS SHOULD STILL WORK BUT THEY MIGHT NOT WORK PROPERLY...
 
-# =======================================
+# SCRIPTS ONLY COMPATIBLE WITH CHROMEBOOKS
+## - The QGIS script
+
+<b><h1 align="center">=======================================</h1></b>
 
 <H3 align="center">
 We are not responsible for any damage done to your device by using our scripts!!
 </H3>
 
-# =======================================
+<b><h1 align="center">=======================================</h1></b>
 
-## ==================================================
+<b><h2 align="center">==================================================</h2></b>
 
 <H4 align="center">
 The following section is only for the QGIS-MENU
 </H4>
 
-## ==================================================
+<b><h2 align="center">==================================================</h2></b>
 
 The terminal protection software (TPS) is a minimum protection that only helps if the user doesn't know about the .bashrc file in his home directory of his Chromebook (Please do not install the TPS on a chromebook that you do not own, we are not responsible for anything when and if you do this)
 
@@ -32,7 +35,7 @@ The reason why this protection is so minimal is because QGIS is a free to use pr
 How to restore the .bashrc file?
 Please follow this tutorial to restore the .bashrc file:
 
-[Restore .bashrc file](https://raw.githubusercontent.com/onthelink-tk/scripts/master/qgis/MUFU/Tutorials/HowToRestoreBashrcFile.txt "Tutorial to restore .bashrc file")
+[Restore .bashrc file](https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Tutorials/HowToRestoreBashrcFile.txt "Tutorial to restore .bashrc file")
 
 
 Still want that better "Terminal Lockdown"?
@@ -47,21 +50,25 @@ Release Date TLS: ??/??/????
 3. Press "Return" (ENTER)
 4. Follow the instructions on your screen
 
-## ==================================================
+<b><h2 align="center">==================================================</h2></b>
 
 <H2 align="center">
 QGIS INSTALLER
 </H2>
 
-## ==================================================
+<b><h2 align="center">==================================================</h2></b>
 
 Copy and paste this command for the EN version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
+sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
 
 Copy and paste this command for the NL version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
+sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
+
+<b><h3 align="center">========================================================================</h3></b>
 
 
+WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGIS INSTALLATION ####
+[OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/master/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
 
 # Version History
 
@@ -74,4 +81,4 @@ sudo curl -LO https://raw.githubusercontent.com/onthelink-tk/scripts/master/OnTh
 # Credits
 Creating: Misha Opstal & Leopold Siccama Hiemstra
 
-[Team OnTheLink](https://onthelink.tk/ "Official Website")
+[Team OnTheLink](https://onthelink.nl/ "Official Website")

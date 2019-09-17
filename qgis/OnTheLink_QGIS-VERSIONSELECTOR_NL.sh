@@ -18,7 +18,7 @@ tput sgr0 && tput setaf 45; echo "
 case $selection in
     1 ) 
 		sudo rm -rf /home/$USER/QgisStartNL.sh
-		tput setaf 5; echo "Voorbereiden om QGIS te installeren met update MUFU"
+		tput setaf 5; echo "Voorbereiden om QGIS te installeren met update LATEST"
         sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Startup/QgisStartNL.sh
         sleep 2 ; sudo bash QgisStartNL.sh
         ;;

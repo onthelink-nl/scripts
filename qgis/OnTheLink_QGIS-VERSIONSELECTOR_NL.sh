@@ -7,8 +7,8 @@ tput bold && tput setaf 46; echo "
 OnTheLink QGIS-VERSIE_KEUZEMENU
 "
 tput sgr0 && tput setaf 45; echo "
-1 - Installeer update LATEST
-2 - Installeer update 3.6
+1 - Installeer update "LATEST"
+2 - Installeer update "3.6"
 3 - Sluit dit menu en ga terug naar het QGIS-MENU
 "
     tput setaf 6; echo -n "Voer uw keuze in: "

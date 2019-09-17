@@ -30,7 +30,7 @@ case $selection in
 	3 ) 
 		tput reset
 		sudo flatpak update
-		echo "Updated Flatpak and it's apps"
+		echo "Updates voor Flatpak en zijn apps zijn voltooid"
 		sleep 3
 		;;
 	4 ) 

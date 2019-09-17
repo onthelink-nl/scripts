@@ -65,6 +65,9 @@ case $selection in
 		sudo flatpak uninstall --force-remove org.kde.Platform
 		sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs
 		sudo flatpak uninstall --unused
+		sudo rm -rf /home/$USER/.var/app/org.qgis.qgis
+		sudo rm -rf /home/$USER/.var/app/org.kde.Platform
+		sudo rm -rf /home/$USER/.var/app/org.freedesktop.Platform.html5-codecs
 		sudo apt-get --yes --assume-yes remove --purge flatpak
 		sudo apt-get --yes --assume-yes clean
 		sudo apt-get --yes --assume-yes autoremove --purge

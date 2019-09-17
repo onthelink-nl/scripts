@@ -9,7 +9,8 @@ OnTheLink QGIS-VERSIONSELECTOR
 tput sgr0 && tput setaf 45; echo "
 1 - Install update "LATEST"
 2 - Install update "3.6"
-3 - Exit to the QGIS-MENU
+3 - REGULAR FLATPAK UPDATER (SHOULD AUTOMATICALLY UPDATE ALL APPLICATIONS THAT ARE INSTALLED USING THIS SCRIPT)
+4 - Exit to the QGIS-MENU
 "
     tput setaf 6; echo -n "Enter selection: "
     read -r selection
@@ -28,6 +29,12 @@ case $selection in
         sleep 2 ; sudo bash QgisStart3.6EN.sh
         ;;
 	3 ) 
+		tput reset
+		sudo flatpak update
+		echo "Updated Flatpak and it's apps"
+		sleep 3
+		;;
+	4 ) 
 		tput reset
 		exit
 		;;

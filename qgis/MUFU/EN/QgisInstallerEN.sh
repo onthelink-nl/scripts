@@ -60,6 +60,12 @@ sudo mv "/run/user/1000/app/*" /tmp
 sudo mv "/run/user/1000/app" /tmp
 sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
 sudo mv "/home/$USER/org.qgis.qgis" /tmp
+sudo rm -rf "/home/$USER/.var/app/org.qgis.qgis"
+sudo rm -rf "/home/$USER/.var/app/org.kde.Platform"
+sudo rm -rf "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs"
+sudo mv "/home/$USER/.var/app/org.qgis.qgis"
+sudo mv "/home/$USER/.var/app/org.kde.Platform"
+sudo mv "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs"
 
 #Initializing Script
 tput reset

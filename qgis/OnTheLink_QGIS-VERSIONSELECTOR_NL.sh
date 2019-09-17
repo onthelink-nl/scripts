@@ -9,7 +9,8 @@ OnTheLink QGIS-VERSIE_KEUZEMENU
 tput sgr0 && tput setaf 45; echo "
 1 - Installeer update "LATEST"
 2 - Installeer update "3.6"
-3 - Sluit dit menu en ga terug naar het QGIS-MENU
+3 - NORMALE FLATPAK UPDATER (UPDATE ALLE FLATPAK GEÏNSTALLEERDE APPS)
+4 - Sluit dit menu en ga terug naar het QGIS-MENU
 "
     tput setaf 6; echo -n "Voer uw keuze in: "
     read -r selection
@@ -27,6 +28,12 @@ case $selection in
         sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Startup/QgisStart3.6NL.sh
         sleep 2 ; sudo bash QgisStart3.6NL.sh
 	3 ) 
+		tput reset
+		sudo flatpak update
+		echo "Updated Flatpak and it's apps"
+		sleep 3
+		;;
+	4 ) 
 		tput reset
 		exit
 		;;

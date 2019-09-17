@@ -59,16 +59,16 @@ QGIS INSTALLER
 <b><h2 align="center">==================================================</h2></b>
 
 Copy and paste this command for the EN version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
+sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
 
 Copy and paste this command for the NL version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
+sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
 
 <b><h3 align="center">========================================================================</h3></b>
 
 
 WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGIS INSTALLATION ####
-[OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/master/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
+[OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/Testing/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
 
 # Version History
 

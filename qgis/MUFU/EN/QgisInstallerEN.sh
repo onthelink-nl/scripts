@@ -30,7 +30,36 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 tput reset
 
 #Remove older versions
-tput bold && tput setaf 5; echo "Removing older versions..." && sudo flatpak uninstall org.qgis.qgis && exec 1> log.txt sudo apt-get --yes --assume-yes remove flatpak 2> /dev/null | exec 1> /dev/tty && crontab -r && tput sgr0
+tput bold && tput setaf 5; echo "Removing older versions..."
+sudo flatpak uninstall --force-remove org.qgis.qgis
+sudo flatpak remote-delete --force org.qgis.qgis-origin
+sudo flatpak remote-delete --force org.qgis.qgis-1-origin
+sudo flatpak remote-delete --force org.qgis.qgis-2-origin
+sudo flatpak remote-delete --force org.qgis.qgis-3-origin
+sudo flatpak remote-delete --force org.qgis.qgis-4-origin
+sudo flatpak remote-delete --force org.qgis.qgis-5-origin
+sudo flatpak remote-delete --force org.qgis.qgis-6-origin
+sudo flatpak remote-delete --force org.qgis.qgis-7-origin
+sudo flatpak remote-delete --force org.qgis.qgis-8-origin
+sudo flatpak remote-delete --force org.qgis.qgis-9-origin
+sudo flatpak remote-delete --force org.qgis.qgis-10-origin
+sudo flatpak remote-delete --force flathub
+sudo flatpak uninstall --force-remove org.kde.Platform
+sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs
+sudo apt-get --yes --assume-yes remove --purge flatpak
+sudo apt-get --yes --assume-yes clean
+sudo apt-get --yes --assume-yes autoremove --purge
+sudo apt-get --yes --assume-yes clean
+chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
+chattr -i /home/$USER/org.qgis.qgis/
+sudo mv "/run/user/1000/doc/*" /tmp
+sudo mv "/run/user/1000/doc" /tmp
+sudo mv "/run/user/1000/flatpak-monitor/*" /tmp
+sudo mv "/run/user/1000/flatpak-monitor" /tmp
+sudo mv "/run/user/1000/app/*" /tmp
+sudo mv "/run/user/1000/app" /tmp
+sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
+sudo mv "/home/$USER/org.qgis.qgis" /tmp
 
 #Initializing Script
 tput reset

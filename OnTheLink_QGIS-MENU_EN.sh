@@ -95,6 +95,10 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		sudo rm -rf "QgisStart3.6EN.sh"
+		sudo rm -rf "QgisStart3.6NL.sh"
+		sudo rm -rf "QgisInstaller3.6EN.sh"
+		sudo rm -rf "QgisInstaller3.6NL.sh"
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgisremovefiles.sh
@@ -117,6 +121,10 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		sudo rm -rf "QgisStart3.6EN.sh"
+		sudo rm -rf "QgisStart3.6NL.sh"
+		sudo rm -rf "QgisInstaller3.6EN.sh"
+		sudo rm -rf "QgisInstaller3.6NL.sh"
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
@@ -134,6 +142,10 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		sudo rm -rf "QgisStart3.6EN.sh"
+		sudo rm -rf "QgisStart3.6NL.sh"
+		sudo rm -rf "QgisInstaller3.6EN.sh"
+		sudo rm -rf "QgisInstaller3.6NL.sh"
 		tput reset
 		exit
 		;;
@@ -155,6 +167,10 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		sudo rm -rf "QgisStart3.6EN.sh"
+		sudo rm -rf "QgisStart3.6NL.sh"
+		sudo rm -rf "QgisInstaller3.6EN.sh"
+		sudo rm -rf "QgisInstaller3.6NL.sh"
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
@@ -176,6 +192,10 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		sudo rm -rf "QgisStart3.6EN.sh"
+		sudo rm -rf "QgisStart3.6NL.sh"
+		sudo rm -rf "QgisInstaller3.6EN.sh"
+		sudo rm -rf "QgisInstaller3.6NL.sh"
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgisremovefiles.sh
@@ -205,6 +225,10 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		sudo rm -rf "QgisStart3.6EN.sh"
+		sudo rm -rf "QgisStart3.6NL.sh"
+		sudo rm -rf "QgisInstaller3.6EN.sh"
+		sudo rm -rf "QgisInstaller3.6NL.sh"
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgisremovefiles.sh

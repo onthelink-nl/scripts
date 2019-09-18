@@ -156,10 +156,10 @@ case $selection in
 		tput reset
 		;;
 	a ) 
-		sudo rm -rf QgisStartNL.sh
-		tput setaf 5; echo "Uw combinatie voorbereiden..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Startup/QgisStartNL.sh
-		sleep 2 ; sudo bash QgisStartNL.sh
+		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		tput setaf 5; echo "Preparing your combination..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sudo rm -rf "qgis/"
 		sudo rm -rf "QgisStartNL.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
@@ -181,10 +181,10 @@ case $selection in
 		exit
 		;;
 	b ) 
-		sudo rm -rf QgisStartNL.sh
-		tput setaf 5; echo "Uw combinatie voorbereiden..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Startup/QgisStartNL.sh
-		sleep 2 ; sudo bash QgisStartNL.sh
+		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		tput setaf 5; echo "Preparing your combination..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sudo rm -rf "qgis/"
 		sudo rm -rf "QgisStartNL.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
@@ -211,10 +211,10 @@ case $selection in
 		exit
 		;;
 	c ) 
-		sudo rm -rf QgisStartEN.sh
-		tput setaf 5; echo "Uw combinatie voorbereiden..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Startup/QgisStartNL.sh
-		sleep 2 ; sudo bash QgisStartNL.sh
+		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		tput setaf 5; echo "Preparing your combination..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
 		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2

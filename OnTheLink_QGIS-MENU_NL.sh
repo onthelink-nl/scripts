@@ -128,7 +128,7 @@ case $selection in
 		;;
 	a ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		tput setaf 5; echo "Preparing your combination..."
+		tput setaf 5; echo "Combinatie voorbereiden..."
 		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sudo rm -rf "qgis/"
@@ -155,7 +155,7 @@ case $selection in
 		;;
 	b ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		tput setaf 5; echo "Preparing your combination..."
+		tput setaf 5; echo "Combinatie voorbereiden..."
 		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sudo rm -rf "qgis/"
@@ -187,7 +187,7 @@ case $selection in
 		;;
 	c ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		tput setaf 5; echo "Preparing your combination..."
+		tput setaf 5; echo "Combinatie voorbereiden..."
 		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc

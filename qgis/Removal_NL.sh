@@ -7,7 +7,7 @@ tput bold && tput setaf 46; echo "
 OnTheLink QGIS-VERWIJDERING
 "
 tput sgr0 && tput setaf 45; echo "
-1 - Verwijder QGIS + Flatpak
+1 - Verwijder QGIS + Flatpak (Dit zal andere Flatpak apps onfunctioneel maken (niet langer te gebruiken...))
 2 - Verwijder QGIS
 3 - Ga terug naar het QGIS-MENU
 "

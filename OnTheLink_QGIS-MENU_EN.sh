@@ -47,7 +47,7 @@ case $selection in
         sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
         ;;
 	2 ) 
-		sudo rm -rf OnTheLink_QGIS-Removal_EN.sh
+		sudo rm -rf Removal_EN.sh
 		tput setaf 5; echo "Preparing QGIS-REMOVAL..."
 		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/Removal_EN.sh
 		sleep 2 ; bash Removal_EN.sh

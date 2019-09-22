@@ -47,56 +47,10 @@ case $selection in
         sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
         ;;
 	2 ) 
-		tput reset
-		tput setaf 1; echo "Verwijderen van QGIS gestart..."
-		sudo flatpak uninstall --force-remove org.qgis.qgis
-		sudo flatpak remote-delete --force org.qgis.qgis-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-1-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-2-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-3-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-4-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-5-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-6-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-7-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-8-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-9-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-10-origin
-		sudo flatpak remote-delete --force flathub
-		sudo flatpak remote-delete --force flathub-1
-		sudo flatpak remote-delete --force flathub-2
-		sudo flatpak remote-delete --force flathub-3
-		sudo flatpak remote-delete --force flathub-4
-		sudo flatpak remote-delete --force flathub-5
-		sudo flatpak remote-delete --force flathub-6
-		sudo flatpak remote-delete --force flathub-7
-		sudo flatpak remote-delete --force flathub-8
-		sudo flatpak remote-delete --force flathub-9
-		sudo flatpak remote-delete --force flathub-10
-		sudo flatpak uninstall --force-remove org.kde.Platform
-		sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs
-		sudo flatpak uninstall --unused
-		sudo rm -rf /home/$USER/.var/app/org.qgis.qgis
-		sudo rm -rf /home/$USER/.var/app/org.kde.Platform
-		sudo rm -rf /home/$USER/.var/app/org.freedesktop.Platform.html5-codecs
-		sudo apt-get --yes --assume-yes remove --purge flatpak
-		sudo apt-get --yes --assume-yes clean
-		sudo apt-get --yes --assume-yes autoremove --purge
-		sudo apt-get --yes --assume-yes clean
-		crontab -r
-		sudo rm -rf /etc/apt/sources.list.d/OTL.list
-		sudo rm -rf /etc/init.d/qgiscopyfiles.sh
-		sudo rm -rf /etc/init.d/qgisremovefiles.sh
-		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
-		chattr -i /home/$USER/org.qgis.qgis/
-		sudo mv "/run/user/1000/doc/*" /tmp
-		sudo mv "/run/user/1000/doc" /tmp
-		sudo mv "/run/user/1000/flatpak-monitor/*" /tmp
-		sudo mv "/run/user/1000/flatpak-monitor" /tmp
-		sudo mv "/run/user/1000/app/*" /tmp
-		sudo mv "/run/user/1000/app" /tmp
-		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
-		sudo mv "/home/$USER/org.qgis.qgis" /tmp
-		tput reset
+		sudo rm -rf Removal_NL.sh
+		tput setaf 5; echo "QGIS-VERWIJDERING voorbereiden..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/Removal_NL.sh
+		sleep 2 ; bash Removal_NL.sh
 		;;
 	3 ) 
 		sudo rm -rf "qgis/"
@@ -108,6 +62,8 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
 		sudo rm -rf "QgisStart3.6EN.sh"
 		sudo rm -rf "QgisStart3.6NL.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		sudo rm -rf "QgisInstaller3.6EN.sh"
 		sudo rm -rf "QgisInstaller3.6NL.sh"
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgiscopyfiles.sh
@@ -132,6 +88,8 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		sudo rm -rf "QgisStart3.6EN.sh"
 		sudo rm -rf "QgisStart3.6NL.sh"
 		sudo rm -rf "QgisInstaller3.6EN.sh"
@@ -151,6 +109,8 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
 		sudo rm -rf "QgisStartEN.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
 		sudo rm -rf "QgisStart3.6EN.sh"
@@ -182,6 +142,8 @@ case $selection in
 		sudo rm -rf "QgisStart3.6NL.sh"
 		sudo rm -rf "QgisInstaller3.6EN.sh"
 		sudo rm -rf "QgisInstaller3.6NL.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
@@ -204,6 +166,8 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
 		sudo rm -rf "QgisStart3.6EN.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		sudo rm -rf "QgisStart3.6NL.sh"
 		sudo rm -rf "QgisInstaller3.6EN.sh"
 		sudo rm -rf "QgisInstaller3.6NL.sh"
@@ -233,6 +197,8 @@ case $selection in
 		sudo rm -rf "QgisStartNL.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
 		sudo rm -rf "QgisStartEN.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
@@ -263,6 +229,8 @@ case $selection in
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
@@ -278,6 +246,8 @@ case $selection in
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
@@ -292,6 +262,8 @@ case $selection in
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		tput reset

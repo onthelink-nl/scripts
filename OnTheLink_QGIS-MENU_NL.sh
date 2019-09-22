@@ -73,6 +73,7 @@ case $selection in
 		sudo apt-get --yes --assume-yes autoremove --purge
 		sudo apt-get --yes --assume-yes clean
 		crontab -r
+		sudo rm -rf /etc/apt/sources.list.d/OTL.list
 		sudo rm -rf /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf /etc/init.d/qgisremovefiles.sh
 		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/

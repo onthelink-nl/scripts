@@ -44,6 +44,16 @@ sudo flatpak remote-delete --force org.qgis.qgis-8-origin
 sudo flatpak remote-delete --force org.qgis.qgis-9-origin
 sudo flatpak remote-delete --force org.qgis.qgis-10-origin
 sudo flatpak remote-delete --force flathub
+sudo flatpak remote-delete --force flathub-1
+sudo flatpak remote-delete --force flathub-2
+sudo flatpak remote-delete --force flathub-3
+sudo flatpak remote-delete --force flathub-4
+sudo flatpak remote-delete --force flathub-5
+sudo flatpak remote-delete --force flathub-6
+sudo flatpak remote-delete --force flathub-7
+sudo flatpak remote-delete --force flathub-8
+sudo flatpak remote-delete --force flathub-9
+sudo flatpak remote-delete --force flathub-10
 sudo flatpak uninstall --force-remove org.kde.Platform
 sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs
 sudo flatpak uninstall --unused

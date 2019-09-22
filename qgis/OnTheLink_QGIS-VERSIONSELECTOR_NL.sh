@@ -29,6 +29,7 @@ case $selection in
         sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStart3.6NL.sh
         sleep 2 ; sudo bash QgisStart3.6NL.sh
 	tput reset
+	;;
 	3 ) 
 		tput reset
 		sudo flatpak update

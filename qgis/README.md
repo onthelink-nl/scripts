@@ -8,10 +8,10 @@ HOW TO USE:
 Open a terminal
 
 Copy and paste this command for the EN version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
+sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
 
 Copy and paste this command for the NL version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
+sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
 
 
 Press "Return"

@@ -7,7 +7,7 @@ tput bold && tput setaf 46; echo "
 OnTheLink QGIS-REMOVAL
 "
 tput sgr0 && tput setaf 45; echo "
-1 - Remove QGIS + Flatpak
+1 - Remove QGIS + Flatpak (This will break other Flatpak apps!!!)
 2 - Remove QGIS
 3 - Exit to the QGIS-MENU
 "

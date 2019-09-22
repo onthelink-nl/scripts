@@ -49,8 +49,6 @@ case $selection in
 		sudo rm -rf /home/$USER/.var/app/org.freedesktop.Platform.html5-codecs
 		sudo apt-get --yes --assume-yes remove --purge flatpak
 		sudo apt-get --yes --assume-yes clean
-		sudo apt-get --yes --assume-yes autoremove --purge
-		sudo apt-get --yes --assume-yes clean
 		crontab -r
 		sudo rm -rf /etc/apt/sources.list.d/OTL.list
 		sudo rm -rf /etc/init.d/qgiscopyfiles.sh
@@ -92,8 +90,6 @@ case $selection in
 		sudo flatpak remote-delete --force org.qgis.qgis-10-origin
 		sudo flatpak uninstall --unused
 		sudo rm -rf /home/$USER/.var/app/org.qgis.qgis
-		sudo apt-get --yes --assume-yes clean
-		sudo apt-get --yes --assume-yes autoremove --purge
 		sudo apt-get --yes --assume-yes clean
 		crontab -r
 		sudo rm -rf /etc/apt/sources.list.d/OTL.list

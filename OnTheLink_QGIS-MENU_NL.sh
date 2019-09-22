@@ -229,13 +229,10 @@ case $selection in
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		tput reset
-		exit
 		;;
 	e ) 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgiscopyfiles.sh
@@ -246,8 +243,6 @@ case $selection in
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
@@ -255,19 +250,15 @@ case $selection in
 		tput setaf 2; echo "De terminal beveiligings software is opnieuw geïnstalleerd!"
 		sleep 2
 		tput reset
-		exit
 		;;
 	f ) 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		tput reset
-		exit
 		;;
 	* ) 
         tput setaf 202; echo "Voer alstublieft alleen de alleenstaande keuzes 1, 2, 3, 4, 5, 6 of de gecombineerde keuzes a,b of c in..."

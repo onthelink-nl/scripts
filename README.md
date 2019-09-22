@@ -59,23 +59,23 @@ QGIS INSTALLER
 <b><h2 align="center">==================================================</h2></b>
 
 Copy and paste this command for the EN version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
+sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
 
 Copy and paste this command for the NL version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
+sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/Testing/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
 
 <b><h3 align="center">========================================================================</h3></b>
 
 
 WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGIS INSTALLATION ####
-[OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/master/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
+[OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/Testing/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
 
 # Version History
 
 ## QGIS
 ==========
 
-### **MUFU** - *This is the first working version (This version has no checks for files so this one would require you to choose your options carefully (otherwise you will have to do a manual removal of the things you did wrong, ALWAYS READ EVERYTHING IN THIS VERSION TO NEVER MAKE A MISTAKE!!!)*
+### **MUFU** - *This is the first working main-version (This version has no checks for files but it should try to get rid of any files when reïnstalling or updating QGIS (so it'll just try to remove things (if those things even exist on your chromebook ofcourse... (Don't forget that this version is for the most part stable but there could be bugs hiding in the darkness, if you find any, please report them to us!!!)))*
 
 
 # Credits

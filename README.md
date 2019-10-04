@@ -80,7 +80,11 @@ WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGI
 
 # Credits
 Creating: Misha Opstal & Leopold Siccama Hiemstra
+
+
 Tools used: [Flatpak](https://flatpak.org/ "The Future Of Apps On Linux")
+
+
 Software: [QGIS](https://qgis.org/en/site/ "A Free and Open Source Geographic Information System")
 
 [Team OnTheLink](https://onthelink.nl/ "Official Website")

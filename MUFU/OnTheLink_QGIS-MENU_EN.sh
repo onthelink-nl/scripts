@@ -4,53 +4,53 @@ tput clear
 selection=
 until [ "$selection" = "5" ]; do
 tput bold && tput setaf 46; echo "
-OnTheLink QGIS-MENU | Versie: 2.8.7 STABIEL
+OnTheLink QGIS-MENU | Version: 2.8.7 STABLE
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
->>>>>>>"
-tput setaf 191; echo -n "ALLEENSTAANDE OPTIES"
-tput setaf 45; echo "<<<<<<<
+>>>>>>>>"
+tput setaf 191; echo -n "STANDALONE OPTIONS"
+tput setaf 45; echo "<<<<<<<<
 ==================================
 "
 tput sgr0 && tput setaf 202; echo "
-1 - Installeer/herinstalleer/update QGIS
-2 - Verwijder QGIS en zet alles terug naar standaardwaardes
-3 - Sluit dit menu en installeer het automatisch verwijderen van bestanden script
-4 - Sluit dit menu (KIES DEZE ALLEEN NA DE INSTALLATIE)
-5 - Sluit dit menu normaal (KIES DEZE ALLEEN ALS U NIETS HEEFT GEÏNSTALLEERD)
-6 - Installeer de terminal beveiligings software
+1 - Install/reïnstall/update QGIS
+2 - Remove QGIS and restore settings
+3 - Exit Script and install the auto remove files script
+4 - Exit Script (RUN THIS ONE AFTER THE INSTALLATION)
+5 - Exit Script normally (RUN THIS ONE IF YOU DIDN'T INSTALL STUFF)
+6 - Install the terminal protection software
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
->>>>>>>"
-tput setaf 191; echo -n "GECOMBINEERDE OPTIES"
-tput setaf 45; echo "<<<<<<<
+>>>>>>>>>"
+tput setaf 191; echo -n "COMBINED OPTIONS"
+tput setaf 45; echo "<<<<<<<<<
 ==================================
 "
 tput sgr0 && tput setaf 202; echo "
-a - Installeer/herinstalleer/update QGIS + Verlaat het script (1+4)
-b - Installeer/herinstalleer/update QGIS + Verlaat het script en installeer het automatisch bestanden verwijderen script (1+3)
-c - Installeer/herinstalleer/update QGIS + De terminal beveiligings software + Verlaat het script en installeer het automatisch verwijderen van bestanden script (VOOR SCHOLEN) (VERWIJDERD ALLES IN DE THUIS MAP (/home/$USER/EVERYTHING IN HERE)) (1+5+3)
-d - Herinstalleer het automatisch verwijderen van bestanden script + Het kopiëren script
-e - Herinstalleer het automatisch verwijderen van bestanden script + Het kopiëren script + De terminal beveiligings software
-f - Herinstalleer het kopiëren script (Deze zorgt dat je dingen kunt opslaan, zou automatisch geïnstalleerd moeten zijn)
+a - Install/reïnstall/update QGIS LATEST + copy script + Exit Script (1+4)
+b - Install/reïnstall/update QGIS LATEST + Exit and install the auto remove files script (1+3)
+c - Install/reïnstall/update QGIS LATEST + The terminal protection software + Exit and install the auto remove files script (FOR SCHOOLS) (REMOVES ALL FILES FOUND IN THE HOME DIR) (1+5+3)
+d - Reïnstall auto remove files script + copy script
+e - Reïnstall auto remove files script + copy script + The terminal protection software
+f - Reïnstall copy script (this script makes it possible to save your files, should be automatically installed)
 "
-    tput setaf 6; echo -n "Voer uw keuze in: "
+    tput setaf 6; echo -n "Enter selection: "
     read -r selection
     echo ""
 case $selection in
     1 ) 
-		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		tput setaf 5; echo "Het QGIS-VERSIE_KEUZEMENU voorbereiden..."
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-        sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		tput setaf 5; echo "Preparing the QGIS-VERSIONSELECTOR..."
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+        sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
         ;;
 	2 ) 
-		sudo rm -rf Removal_NL.sh
-		tput setaf 5; echo "QGIS-VERWIJDERING voorbereiden..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/Removal_NL.sh
-		sleep 2 ; bash Removal_NL.sh
+		sudo rm -rf Removal_EN.sh
+		tput setaf 5; echo "Preparing QGIS-REMOVAL..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/Removal_EN.sh
+		sleep 2 ; bash Removal_EN.sh
 		;;
 	3 ) 
 		sudo rm -rf "qgis/"
@@ -66,9 +66,9 @@ case $selection in
 		sudo rm -rf "Removal_NL.sh"
 		sudo rm -rf "QgisInstaller3.6EN.sh"
 		sudo rm -rf "QgisInstaller3.6NL.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgisremovefiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
@@ -88,13 +88,13 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		sudo rm -rf "QgisStart3.6EN.sh"
 		sudo rm -rf "Removal_EN.sh"
 		sudo rm -rf "Removal_NL.sh"
-		sudo rm -rf "QgisStart3.6EN.sh"
 		sudo rm -rf "QgisStart3.6NL.sh"
 		sudo rm -rf "QgisInstaller3.6EN.sh"
 		sudo rm -rf "QgisInstaller3.6NL.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
@@ -109,10 +109,10 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
 		sudo rm -rf "QgisStartEN.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		sudo rm -rf "QgisStart3.6EN.sh"
 		sudo rm -rf "QgisStart3.6NL.sh"
 		sudo rm -rf "QgisInstaller3.6EN.sh"
@@ -121,16 +121,16 @@ case $selection in
 		exit
 		;;
     6 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
-		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		tput setaf 2; echo "Terminal protection script has been installed!"
 		sleep 2
 		tput reset
 		;;
 	a ) 
-		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		tput setaf 5; echo "Combinatie voorbereiden..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		tput setaf 5; echo "Preparing your combination..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		sudo rm -rf "qgis/"
 		sudo rm -rf "QgisStartNL.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
@@ -144,7 +144,7 @@ case $selection in
 		sudo rm -rf "QgisInstaller3.6NL.sh"
 		sudo rm -rf "Removal_EN.sh"
 		sudo rm -rf "Removal_NL.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
@@ -154,10 +154,10 @@ case $selection in
 		exit
 		;;
 	b ) 
-		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		tput setaf 5; echo "Combinatie voorbereiden..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		tput setaf 5; echo "Preparing your combination..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		sudo rm -rf "qgis/"
 		sudo rm -rf "QgisStartNL.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
@@ -166,14 +166,14 @@ case $selection in
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
 		sudo rm -rf "QgisStart3.6EN.sh"
+		sudo rm -rf "QgisStart3.6NL.sh"
 		sudo rm -rf "Removal_EN.sh"
 		sudo rm -rf "Removal_NL.sh"
-		sudo rm -rf "QgisStart3.6NL.sh"
 		sudo rm -rf "QgisInstaller3.6EN.sh"
 		sudo rm -rf "QgisInstaller3.6NL.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgisremovefiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
@@ -186,29 +186,29 @@ case $selection in
 		exit
 		;;
 	c ) 
-		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		tput setaf 5; echo "Combinatie voorbereiden..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
-		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
+		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		tput setaf 5; echo "Preparing your combination..."
+		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		tput setaf 2; echo "Terminal protection script has been installed!"
 		sleep 2
 		sudo rm -rf "qgis/"
 		sudo rm -rf "QgisStartNL.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
 		sudo rm -rf "QgisStartEN.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
 		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
 		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
 		sudo rm -rf "QgisStart3.6EN.sh"
 		sudo rm -rf "QgisStart3.6NL.sh"
+		sudo rm -rf "Removal_EN.sh"
+		sudo rm -rf "Removal_NL.sh"
 		sudo rm -rf "QgisInstaller3.6EN.sh"
 		sudo rm -rf "QgisInstaller3.6NL.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgisremovefiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
@@ -221,9 +221,9 @@ case $selection in
 		exit
 		;;
 	d ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgisremovefiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
@@ -235,9 +235,9 @@ case $selection in
 		tput reset
 		;;
 	e ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgisremovefiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
@@ -246,13 +246,13 @@ case $selection in
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
-		tput setaf 2; echo "De terminal beveiligings software is opnieuw geïnstalleerd!"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		tput setaf 2; echo "Terminal protection script has been reïnstalled!"
 		sleep 2
 		tput reset
 		;;
 	f ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Modified/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
@@ -261,7 +261,7 @@ case $selection in
 		tput reset
 		;;
 	* ) 
-        tput setaf 202; echo "Voer alstublieft alleen de alleenstaande keuzes 1, 2, 3, 4, 5, 6 of de gecombineerde keuzes a,b of c in..."
+        tput setaf 202; echo "Please enter standalone choice 1, 2, 3, 4, 5, 6 or combined choice a, b or c..."
 		sleep 1 ; tput reset
 esac
 done

@@ -35,7 +35,7 @@ The reason why this protection is so minimal is because QGIS is a free to use pr
 How to restore the .bashrc file?
 Please follow this tutorial to restore the .bashrc file:
 
-[Restore .bashrc file](https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Tutorials/HowToRestoreBashrcFile.txt "Tutorial to restore .bashrc file")
+[Restore .bashrc file](https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Tutorials/HowToRestoreBashrcFile.txt "Tutorial to restore .bashrc file")
 
 
 Still want that better "Terminal Lockdown"?
@@ -59,16 +59,16 @@ QGIS INSTALLER
 <b><h2 align="center">==================================================</h2></b>
 
 Copy and paste this command for the EN version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
+sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
 
 Copy and paste this command for the NL version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
+sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
 
 <b><h3 align="center">========================================================================</h3></b>
 
 
 WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGIS INSTALLATION ####
-[OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/master/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
+[OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
 
 # Version History
 

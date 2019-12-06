@@ -19,14 +19,14 @@ case $selection in
     1 ) 
 		sudo rm -rf /home/$USER/QgisStartEN.sh
 		tput setaf 5; echo "Preparing to install QGIS with update LATEST"
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStartEN.sh
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Startup/QgisStartEN.sh
         sleep 2 ; sudo bash QgisStartEN.sh
 	tput reset
         ;;
 	2 ) 
 		sudo rm -rf /home/$USER/QgisStart3.6EN.sh
 		tput setaf 5; echo "Preparing to install QGIS with update 3.6"
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/qgis/MUFU/Startup/QgisStart3.6EN.sh
+        sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Startup/QgisStart3.6EN.sh
         sleep 2 ; sudo bash QgisStart3.6EN.sh
 	tput reset
         ;;

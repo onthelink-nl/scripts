@@ -63,7 +63,7 @@ case $selection in
 		sudo mv "/run/user/1000/app" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis" /tmp
-		tput setaf 1; echo "QGIS + FLATPAK REMOVED"
+		tput setaf 1; echo "QGIS + FLATPAK REMOVED, restart your chromebook to clean the tmp directory"
     sleep 1
     tput setaf 2; echo "3"
     sleep 1
@@ -99,7 +99,7 @@ case $selection in
 		chattr -i /home/$USER/org.qgis.qgis/
 		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis" /tmp
-    tput setaf 1; echo "QGIS REMOVED"
+    tput setaf 1; echo "QGIS REMOVED, restart your chromebook to clean the tmp directory"
     sleep 1
     tput setaf 2; echo "3"
     sleep 1

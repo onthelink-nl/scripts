@@ -41,39 +41,19 @@ f - Reïnstall copy script (this script makes it possible to save your files, sh
     echo ""
 case $selection in
     1 ) 
-		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5; echo "Preparing the QGIS-VERSIONSELECTOR..."
-        sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-        sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+        sleep 2 ; bash qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
         ;;
 	2 ) 
-		sudo rm -rf Removal_EN.sh
 		tput setaf 5; echo "Preparing QGIS-REMOVAL..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/Removal_EN.sh
-		sleep 2 ; bash Removal_EN.sh
+		sleep 2 ; bash qgis/Removal_EN.sh
 		;;
 	3 ) 
-		sudo rm -rf "qgis/"
-		sudo rm -rf "QgisStartNL.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
-		sudo rm -rf "QgisStartEN.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
-		sudo rm -rf "QgisStart3.6EN.sh"
-		sudo rm -rf "QgisStart3.6NL.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
-		sudo rm -rf "QgisInstaller3.6EN.sh"
-		sudo rm -rf "QgisInstaller3.6NL.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
-		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
-		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
-		sudo rm -rf "qgiscopyfiles.sh"
-		sudo rm -rf "qgisremovefiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
@@ -81,104 +61,41 @@ case $selection in
 		exit
 		;;
 	4 ) 
-		sudo rm -rf "qgis/"
-		sudo rm -rf "QgisStartNL.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
-		sudo rm -rf "QgisStartEN.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
-		sudo rm -rf "QgisStart3.6EN.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
-		sudo rm -rf "QgisStart3.6NL.sh"
-		sudo rm -rf "QgisInstaller3.6EN.sh"
-		sudo rm -rf "QgisInstaller3.6NL.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
-		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
-		sudo rm -rf "qgiscopyfiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		tput reset
 		exit
 		;;
     5 ) 
-        	sudo rm -rf "qgis/"
-		sudo rm -rf "QgisStartNL.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
-		sudo rm -rf "QgisStartEN.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
-		sudo rm -rf "QgisStart3.6EN.sh"
-		sudo rm -rf "QgisStart3.6NL.sh"
-		sudo rm -rf "QgisInstaller3.6EN.sh"
-		sudo rm -rf "QgisInstaller3.6NL.sh"
 		tput reset
 		exit
 		;;
     6 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo cp -f qgis/MUFU/Modified/.bashrc /home/$USER/.bashrc
 		tput setaf 2; echo "Terminal protection script has been installed!"
 		sleep 2
 		tput reset
 		;;
 	a ) 
-		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5; echo "Preparing your combination..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sudo rm -rf "qgis/"
-		sudo rm -rf "QgisStartNL.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
-		sudo rm -rf "QgisStartEN.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
-		sudo rm -rf "QgisStart3.6EN.sh"
-		sudo rm -rf "QgisStart3.6NL.sh"
-		sudo rm -rf "QgisInstaller3.6EN.sh"
-		sudo rm -rf "QgisInstaller3.6NL.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
+		sleep 2 ; bash qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
-		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
-		sudo rm -rf "qgiscopyfiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		tput reset
 		exit
 		;;
 	b ) 
-		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5; echo "Preparing your combination..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sudo rm -rf "qgis/"
-		sudo rm -rf "QgisStartNL.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
-		sudo rm -rf "QgisStartEN.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
-		sudo rm -rf "QgisStart3.6EN.sh"
-		sudo rm -rf "QgisStart3.6NL.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
-		sudo rm -rf "QgisInstaller3.6EN.sh"
-		sudo rm -rf "QgisInstaller3.6NL.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
-		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
-		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
+		sleep 2 ; bash qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		sudo cp -f qgis/MUFU/Modified/qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
-		sudo rm -rf "qgiscopyfiles.sh"
-		sudo rm -rf "qgisremovefiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
@@ -186,34 +103,15 @@ case $selection in
 		exit
 		;;
 	c ) 
-		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5; echo "Preparing your combination..."
-		sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sleep 2 ; bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sleep 2 ; bash qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		sudo cp -f qgis/MUFU/Modified/.bashrc /home/$USER/.bashrc
 		tput setaf 2; echo "Terminal protection script has been installed!"
 		sleep 2
-		sudo rm -rf "qgis/"
-		sudo rm -rf "QgisStartNL.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_NL.sh"
-		sudo rm -rf "QgisStartEN.sh"
-		sudo rm -rf "OnTheLink_QGIS-MENU_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_EN.sh"
-		sudo rm -rf "OnTheLink_QGIS-VERSIONSELECTOR_NL.sh"
-		sudo rm -rf "QgisStart3.6EN.sh"
-		sudo rm -rf "QgisStart3.6NL.sh"
-		sudo rm -rf "Removal_EN.sh"
-		sudo rm -rf "Removal_NL.sh"
-		sudo rm -rf "QgisInstaller3.6EN.sh"
-		sudo rm -rf "QgisInstaller3.6NL.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
-		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
-		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
-		sudo rm -rf "qgiscopyfiles.sh"
-		sudo rm -rf "qgisremovefiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
@@ -221,41 +119,31 @@ case $selection in
 		exit
 		;;
 	d ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
-		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
-		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
-		sudo rm -rf "qgiscopyfiles.sh"
-		sudo rm -rf "qgisremovefiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		tput reset
 		;;
 	e ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
-		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
-		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
-		sudo rm -rf "qgiscopyfiles.sh"
-		sudo rm -rf "qgisremovefiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo cp -f qgis/MUFU/Modified/.bashrc /home/$USER/.bashrc
 		tput setaf 2; echo "Terminal protection script has been reïnstalled!"
 		sleep 2
 		tput reset
 		;;
 	f ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
-		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo cp -f qgis/MUFU/Modified/qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
-		sudo rm -rf "qgiscopyfiles.sh"
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		tput reset

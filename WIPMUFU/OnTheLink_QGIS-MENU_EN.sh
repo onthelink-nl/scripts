@@ -50,7 +50,6 @@ case $selection in
 		;;
 	3 ) 
 		sudo cp -f qgis/MUFU/Modified/qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgisremovefiles.sh
 		sudo cp -f qgis/MUFU/Modified/qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
@@ -81,7 +80,6 @@ case $selection in
 	a ) 
 		tput setaf 5; echo "Preparing your combination..."
 		sleep 2 ; bash qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Modified/qgiscopyfiles.sh
 		sudo cp -f qgis/MUFU/Modified/qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		crontab -r

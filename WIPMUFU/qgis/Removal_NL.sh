@@ -63,6 +63,7 @@ case $selection in
 		sudo mv "/run/user/1000/app" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis" /tmp
+		sudo cp -f qgis/MUFU/.bashrc /home/$USER/.bashrc
 		tput setaf 1; echo "QGIS + FLATPAK VERWIJDERD, herstart uw chromebook om de overgebleven resten te verwijderen..."
     sleep 1
     tput setaf 2; echo "3"
@@ -99,6 +100,7 @@ case $selection in
 		chattr -i /home/$USER/org.qgis.qgis/
 		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis" /tmp
+		sudo cp -f qgis/MUFU/.bashrc /home/$USER/.bashrc
     tput setaf 1; echo "QGIS VERWIJDERD, herstart uw chromebook om de overgebleven resten te verwijderen..."
     sleep 1
     tput setaf 2; echo "3"

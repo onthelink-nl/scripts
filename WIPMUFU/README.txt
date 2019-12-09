@@ -1,7 +1,7 @@
 ###################################
-	       INSTALLATION				
-	     PROBABLY OUTDATED			
-			   -----				
+           INSTALLATION
+         PROBABLY OUTDATED
+               -----
    STUFF MIGHT NOT WORK PROPERLY   	
        YOU HAVE BEEN WARNED
 ###################################

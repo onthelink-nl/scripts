@@ -75,7 +75,7 @@ WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGI
 ## QGIS
 ==========
 
-### **MUFU** - *This is the first working main-version (This version has no checks for files but it should try to get rid of any files when reïnstalling or updating QGIS (so it'll just try to remove things (if those things even exist on your chromebook ofcourse... (Don't forget that this version is for the most part stable but there could be bugs hiding in the darkness, if you find any, please report them to us!!!)))*
+### **MUFU** - *This is the first working main-version (This version has no checks for files but it should try to get rid of any unnecessary files when reïnstalling or updating QGIS (so it'll just try to remove unnecessary things (if those things even exist on your chromebook ofcourse... (Don't forget that this version is for the most part stable but there could be bugs hiding in the dark, if you find any, please report them to us as soon as possible!!!)))*
 
 
 # Credits

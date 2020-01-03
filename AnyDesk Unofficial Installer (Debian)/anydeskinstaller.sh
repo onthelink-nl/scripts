@@ -38,8 +38,9 @@ SPIN_PID=$!
 # Kill the spinner on any signal, including our own exit.
 trap "kill -9 $SPIN_PID" `seq 0 15`
 
-#Remove older repo-files
+#Remove older files
 sudo rm -rf "/etc/apt/sources.list.d/anydesk-stable.list"
+sudo rm -rf "/home/$USER/anydeskinstaller"
 sudo apt-key del CDFFDE29
 sudo apt-get --yes --assume-yes update
 

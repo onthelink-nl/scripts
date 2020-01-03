@@ -3,7 +3,11 @@
 if [ "$EUID" -ne 0 ]
   then echo Running as $USER [This is a good thing]
   else
+  tput reset
+  tput setaf 1
   echo "This can only be used without root enabled, try to not do 'sudo' before the command"
+  sleep 3
+  tput clear
   exit
 fi
 

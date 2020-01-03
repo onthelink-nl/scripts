@@ -108,9 +108,9 @@ else
 	sleep 2
 	tput reset
 fi
+fi
 else
     echo "Okay, we won't create a backup"
-fi
 fi
 
 # Start the Spinner:

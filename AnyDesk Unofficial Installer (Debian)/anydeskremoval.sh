@@ -74,10 +74,12 @@ read answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ;then
     # Creating local backup directories
+tput setaf 4
 mkdir /home/$USER/.anydeskbackup
 cd /home/$USER/.anydeskbackup
 mkdir local
 mkdir system
+tput setaf 1
 
 # Checking local file
 ls /home/$USER/.anydesk/ | grep service.conf > /dev/null
@@ -97,7 +99,7 @@ then
 else
     tput setaf 5
     echo -e "Configuration file wasn't local or doesn't exist, checking if this was a system install..."
-    tput sgr0
+    tput setaf 1
 	sleep 2
 	# Checking systemwide file
 ls /etc/anydesk/ | grep service.conf > /dev/null

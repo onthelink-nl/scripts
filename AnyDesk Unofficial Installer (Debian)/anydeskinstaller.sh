@@ -1,5 +1,17 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]
+  then echo Running as $USER [This is a good thing]
+  else
+  tput reset
+  tput setaf 1
+  echo "This can only be used without root enabled, try to not do 'sudo' before the command"
+  sleep 3
+  tput sgr0
+  tput clear
+  exit
+fi
+
 spin()
 {
   spinner="-\\|/-\\|/"
@@ -55,11 +67,13 @@ tput bold && tput setaf 1; echo "===================================="
 tput bold && tput setaf 5; echo ">>>>>>>>INSTALLATION STARTED<<<<<<<<"
 tput bold && tput setaf 1; echo "===================================="
 tput sgr0 && tput setaf 4; echo "WARNING: We are not responsible for any damage to your device (that includes throwing it of a building, spilling coffee, water damage and ofcourse other things that might happen while installing AnyDesk" && tput sgr0
+tput setaf 3
 
 #Waiting for user input
 read -n 1 -s -r -p "Press any key to continue..."
 
 #sending positive reaction
+tput setaf 6
 echo ";)"
 
 #Restore previous backup?
@@ -70,7 +84,8 @@ echo -n "Do you want to restore a backup? (only works if backup was created by t
 read answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-    # Check for the file local
+    # Checking local file
+tput setaf 1
 ls /home/$USER/.anydeskbackup/local/ | grep service.conf > /dev/null
 
 # check output of the previous command
@@ -81,15 +96,15 @@ then
 	echo -e "We found the backup for 'local'!, restoring backup...." > /dev/tty
 	tput sgr0
     sudo mv /home/$USER/.anydeskbackup/local/service.conf /home/$USER/.anydesk/ > /dev/null
-	tput reset
 	tput setaf 2
 	echo -e "Backup was restored, if you wan't to restore a backup again, please recreate one (this one has been removed from the backup dir and cannot be used as a re-recovery..)" > /dev/tty
 	tput sgr0
 	sleep 4
 else
+    tput setaf 5
     echo -e "Backup wasn't local or doesn't exist, checking if this was a system install..."
+    tput setaf 1
 	sleep 2
-	tput reset
 	# Check for the file systemwide
 ls /home/$USER/.anydeskbackup/system/ | grep service.conf > /dev/null
 
@@ -101,21 +116,35 @@ then
 	echo -e "We found the backup for 'systemwide'!, restoring backup...." > /dev/tty
 	tput sgr0
     sudo mv /home/$USER/.anydeskbackup/system/service.conf /etc/anydesk/ > /dev/null
-	
-	tput reset
 	tput setaf 2
 	echo -e "Backup was restored, if you wan't to restore a backup again, please recreate one (this one has been removed from the backup dir and cannot be used as a re-recovery..)" > /dev/tty
 	tput sgr0
 	sleep 4
 else
+    tput setaf 5
     echo -e "Backup doesn't exist or couldn't be found, if you lost the /home/$USER/.anydeskbackup/ folder then your backup is removed and cannot be recovered..."
+    tput sgr0
 	sleep 2
-	tput reset
+fi
 fi
 else
+    tput setaf 6
     echo "Okay, we won't restore your backup"
+    tput sgr0
 fi
-fi
+
+tput setaf 3
+
+#Waiting for user input
+read -n 1 -s -r -p "Proceed with installing AnyDesk..."
+
+tput sgr0
+tput setaf 6
+
+#sending positive reaction
+echo ";)"
+sleep 4
+tput reset
 
 # Start the Spinner:
 spin &

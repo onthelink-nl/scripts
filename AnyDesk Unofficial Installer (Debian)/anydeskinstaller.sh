@@ -180,7 +180,7 @@ tput sgr0
 #Creating removal dir
 mkdir removal
 sudo curl -Lo /home/$USER/anydeskinstaller/removal/anydeskremoval.sh "https://raw.githubusercontent.com/onthelink-nl/scripts/master/AnyDesk%20Unofficial%20Installer%20(Debian)/anydeskremoval.sh"
-sudo cp -f anydeskremoval.sh /etc/apt/scripts/anydeskremoval.sh
+sudo cp -f /home/$USER/anydeskinstaller/removal/anydeskremoval.sh /etc/apt/scripts/anydeskremoval.sh
 sudo chmod +x /etc/apt/scripts/anydeskremoval.sh
 echo "alias remove-anydesk=/etc/apt/scripts/anydeskremoval.sh" >> /home/$USER/.bashrc
 tput setaf 2
@@ -196,6 +196,7 @@ kill -9 $SPIN_PID
 #Removing local script files
 cd -
 sudo rm -rf "anydeskinstaller.sh"
+sudo rm -rf "/home/$USER/anydeskinstaller/"
 
 #Waiting for user input
 read -n 1 -s -r -p "Please read before you exit (press any key to continue)..."

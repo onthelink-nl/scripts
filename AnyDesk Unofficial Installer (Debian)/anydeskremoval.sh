@@ -78,7 +78,6 @@ then
 	echo -e "We found the configuration file for 'local'!, creating backup...." > /dev/tty
 	tput sgr0
     sudo cp /home/$USER/.anydesk/service.conf /home/$USER/.anydeskbackup/local/ > /dev/null
-	tput reset
 	tput setaf 2
 	echo -e "Backup has been created! if you wan't to restore your backup please use our AnyDesk installer script" > /dev/tty
 	tput sgr0
@@ -86,7 +85,6 @@ then
 else
     echo -e "Configuration file wasn't local or doesn't exist, checking if this was a system install..."
 	sleep 2
-	tput reset
 	# Checking systemwide file
 ls /etc/anydesk/ | grep service.conf > /dev/null
 
@@ -98,7 +96,6 @@ then
 	echo -e "We found the configuration file for 'systemwide'!, creating backup...." > /dev/tty
 	tput sgr0
     sudo cp /etc/anydesk/service.conf /home/$USER/.anydeskbackup/system/ > /dev/null
-	tput reset
 	tput setaf 2
 	echo -e "Backup has been created! if you wan't to restore your backup please use our AnyDesk installer script" > /dev/tty
 	tput sgr0
@@ -106,7 +103,6 @@ then
 else
     echo -e "Configuration file doesn't exist or couldn't be found, this could happen because the file of configuration has another name in a newer update or it was removed from the device.. Backup creation is not possible until the configuration file (service.conf) is back in place..."
 	sleep 2
-	tput reset
 fi
 fi
 else
@@ -118,6 +114,7 @@ read -n 1 -s -r -p "Proceed with uninstalling AnyDesk..."
 
 #sending positive reaction
 echo ";)"
+tput reset
 
 # Start the Spinner:
 spin &

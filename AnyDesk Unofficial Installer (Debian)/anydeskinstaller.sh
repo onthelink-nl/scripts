@@ -149,7 +149,7 @@ tput sgr0
 
 #Creating removal dir
 mkdir removal
-sudo curl -LO /home/$USER/anydeskinstaller/removal/anydeskremoval.sh https://Placeholder.com/anydeskremoval.sh
+sudo curl -Lo /home/$USER/anydeskinstaller/removal/anydeskremoval.sh "https://raw.githubusercontent.com/onthelink-nl/scripts/master/AnyDesk%20Unofficial%20Installer%20(Debian)/anydeskremoval.sh"
 sudo cp -f anydeskremoval.sh /etc/apt/scripts/anydeskremoval.sh
 sudo chmod +x /etc/apt/scripts/anydeskremoval.sh
 echo "alias remove-anydesk=/etc/apt/scripts/anydeskremoval.sh" >> /home/$USER/.bashrc

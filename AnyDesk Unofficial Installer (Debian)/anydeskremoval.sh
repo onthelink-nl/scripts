@@ -7,6 +7,7 @@ if [ "$EUID" -ne 0 ]
   tput setaf 1
   echo "This can only be used without root enabled, try to not do 'sudo' before the command"
   sleep 3
+  tput sgr0
   tput clear
   exit
 fi

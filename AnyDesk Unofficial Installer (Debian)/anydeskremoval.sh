@@ -113,6 +113,12 @@ else
     echo "Okay, we won't create a backup"
 fi
 
+#Waiting for user input
+read -n 1 -s -r -p "Proceed with uninstalling AnyDesk..."
+
+#sending positive reaction
+echo ";)"
+
 # Start the Spinner:
 spin &
 

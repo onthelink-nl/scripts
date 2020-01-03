@@ -137,6 +137,7 @@ kill -9 $SPIN_PID
 cd -
 sudo rm -rf "/etc/apt/scripts/anydeskremoval.sh"
 sudo head -n -1 /home/$USER/.bashrc > /home/$USER/bashrc.new ; sudo mv /home/$USER/bashrc.new /home/$USER/.bashrc
+tput reset
 
 #Waiting for user input
 read -n 1 -s -r -p "press any key to exit..."

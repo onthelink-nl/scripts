@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]
+  then echo Running as $USER [This is a good thing]
+  else
+  exit
+fi
+
 spin()
 {
   spinner="-\\|/-\\|/"

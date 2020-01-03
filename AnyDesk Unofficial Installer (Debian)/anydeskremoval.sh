@@ -141,6 +141,7 @@ tput setaf 6
 
 #sending positive reaction
 echo ";)"
+sleep 4
 tput reset
 
 # Start the Spinner:

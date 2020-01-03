@@ -3,6 +3,7 @@
 if [ "$EUID" -ne 0 ]
   then echo Running as $USER [This is a good thing]
   else
+  echo "This can only be used without root enabled, try to not do 'sudo' before the command"
   exit
 fi
 

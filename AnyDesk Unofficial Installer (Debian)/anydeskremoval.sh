@@ -14,7 +14,7 @@ spin()
   done
 }
 
-echo "About to start the installer..."
+echo "About to start the uninstaller+..."
 sleep 2
 echo "Here we go!!!"
 sleep 1
@@ -46,6 +46,7 @@ tput bold && tput setaf 1; echo "===================================="
 tput bold && tput setaf 5; echo ">>>>>>>>UNINSTALLER+ STARTED<<<<<<<<"
 tput bold && tput setaf 1; echo "===================================="
 tput sgr0 && tput setaf 4; echo "WARNING: We are not responsible for any damage to your device (that includes throwing it of a building, spilling coffee, water damage and ofcourse other things that might happen while installing AnyDesk" && tput sgr0
+tput setaf 3
 
 #Waiting for user input
 read -n 1 -s -r -p "Press any key to continue..."
@@ -83,7 +84,9 @@ then
 	tput sgr0
 	sleep 4
 else
+    tput setaf 5
     echo -e "Configuration file wasn't local or doesn't exist, checking if this was a system install..."
+    tput sgr0
 	sleep 2
 	# Checking systemwide file
 ls /etc/anydesk/ | grep service.conf > /dev/null
@@ -101,16 +104,25 @@ then
 	tput sgr0
 	sleep 4
 else
+    tput setaf 5
     echo -e "Configuration file doesn't exist or couldn't be found, this could happen because the file of configuration has another name in a newer update or it was removed from the device.. Backup creation is not possible until the configuration file (service.conf) is back in place..."
+    tput sgr0
 	sleep 2
 fi
 fi
 else
+    tput setaf 6
     echo "Okay, we won't create a backup"
+    tput sgr0
 fi
+
+tput setaf 3
 
 #Waiting for user input
 read -n 1 -s -r -p "Proceed with uninstalling AnyDesk..."
+
+tput sgr0
+tput setaf 6
 
 #sending positive reaction
 echo ";)"
@@ -141,6 +153,8 @@ cd -
 sudo rm -rf "/etc/apt/scripts/anydeskremoval.sh"
 sudo head -n -1 /home/$USER/.bashrc > /home/$USER/bashrc.new ; sudo mv /home/$USER/bashrc.new /home/$USER/.bashrc
 tput reset
+
+tput setaf 3
 
 #Waiting for user input
 read -n 1 -s -r -p "press any key to exit..."

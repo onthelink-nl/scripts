@@ -64,6 +64,7 @@ tput setaf 3
 read -n 1 -s -r -p "Press any key to continue..."
 
 #sending positive reaction
+tput setaf 6
 echo ";)"
 
 #Create backup?

@@ -122,7 +122,7 @@ SPIN_PID=$!
 #Removing AnyDesk
 sudo rm -rf "/etc/apt/sources.list.d/anydesk-stable.list"
 sudo apt-key del CDFFDE29
-sudo apt-get --yes --assume-yes --purge remove anydesk* > /dev/null
+sudo apt-get --yes --assume-yes --purge remove anydesk > /dev/null
 sudo apt-get --yes --assume-yes update > /dev/null
 tput setaf 2
 echo "AnyDesk has been removed from your system" > /dev/tty

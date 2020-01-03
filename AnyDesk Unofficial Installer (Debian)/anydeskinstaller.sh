@@ -59,8 +59,8 @@ cd /home/$USER/anydeskinstaller
 tput setaf 2; echo "This script is originally created by Misha Opstal"
 echo "This script will install AnyDesk version LATEST on your Linux device (Debian based)."
 tput bold; echo "We are not the creators of AnyDesk and this is an unofficial script, we do NOT claim AnyDesk as our content and all copyright goes to AnyDesk Software GmbH"
-tput setaf 5; echo -n "Our Discord: "
-echo -e '\e]8;;https://discordapp.com/invite/UfbNmJb\aOnTheLink official Discord server\e]8;;\a'
+tput setaf 5; echo -n "Our Discord Server: "
+echo -e '\e]8;;https://discordapp.com/invite/UfbNmJb\aOTL Discord server\e]8;;\a'
 echo -n "The AnyDesk website: "
 echo -e '\e]8;;https://anydesk.com/\aAnyDesk\e]8;;\a'
 tput setaf 69; echo "Thank you for using our script!"

@@ -164,7 +164,13 @@ sleep 1
 tput setaf 1
 echo "Adding repository to anydesk-stable.list (located under /etc/apt/sources.list.d/)"
 tput setaf 6
-echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+
+SUDO=''
+if (( $EUID != 0 )); then
+    SUDO='sudo'
+fi
+$SUDO echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+
 tput setaf 2
 echo "Repository added to anydesk-stable.list"
 sleep 2

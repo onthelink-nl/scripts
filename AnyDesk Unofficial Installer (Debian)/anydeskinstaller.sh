@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Clearing terminal before starting
+tput reset
+tput clear
+
 if [ "$EUID" -ne 0 ]
   then echo Running as $USER [This is a good thing]
   else
@@ -137,7 +141,7 @@ fi
 tput setaf 3
 
 #Waiting for user input
-read -n 1 -s -r -p "Proceed with installing AnyDesk..."
+read -n 1 -s -r -p "Proceed with installing AnyDesk?"
 
 tput sgr0
 tput setaf 6

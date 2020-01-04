@@ -78,7 +78,7 @@ tput setaf 3
 echo -n "Do you want to create a backup? (can only be restored using our installer script..) (y/n)? "
 read answer
 
-if [ "$answer" != "${answer#[Yy]}" ] ;then
+if [ "$answer" != "${answer#[*Yy*]}" ] ;then
     # Creating local backup directories
 
 #Removing older backup folders

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Clearing terminal before starting
+tput reset
+tput clear
+
 if [ "$EUID" -ne 0 ]
   then echo Running as $USER [This is a good thing]
   else
@@ -64,6 +68,7 @@ tput setaf 3
 read -n 1 -s -r -p "Press any key to continue..."
 
 #sending positive reaction
+tput setaf 6
 echo ";)"
 
 #Create backup?
@@ -75,6 +80,10 @@ read answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ;then
     # Creating local backup directories
+
+#Removing older backup folders
+sudo rm -rf /home/$USER/.anydeskbackup
+
 tput setaf 4
 mkdir /home/$USER/.anydeskbackup
 cd /home/$USER/.anydeskbackup
@@ -133,13 +142,14 @@ fi
 tput setaf 3
 
 #Waiting for user input
-read -n 1 -s -r -p "Proceed with uninstalling AnyDesk..."
+read -n 1 -s -r -p "Proceed with uninstalling AnyDesk?"
 
 tput sgr0
 tput setaf 6
 
 #sending positive reaction
 echo ";)"
+sleep 4
 tput reset
 
 # Start the Spinner:

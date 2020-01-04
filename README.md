@@ -4,9 +4,52 @@ Here you can find all of our scripts we create to make installations easier, we 
 # Before you begin
 THESE SCRIPTS ARE MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THINGS SHOULD STILL WORK BUT THEY MIGHT NOT WORK PROPERLY...
 
-# SCRIPTS ONLY COMPATIBLE WITH CHROMEBOOKS
-## - The QGIS script
+# SCRIPTS COMPATIBLE ON ALL DEBIAN BASED DEVICES
+<details>
+  <summary>Click to show installers!</summary>
+  
+  ## - The AnyDesk Installer
+  <details>
+  <summary>Click to show installer</summary>
+<b><h1 align="center">=======================================</h1></b>
 
+<H3 align="center">
+We are not responsible for any damage done to your device by using our scripts!!
+</H3>
+
+<b><h1 align="center">=======================================</h1></b>
+
+
+# HOW TO USE:
+
+1. Open a terminal
+2. Choose the script you want to install and paste the command in the terminal
+3. Press "Return" (ENTER)
+4. Follow the instructions on your screen
+
+<b><h2 align="center">==================================================</h2></b>
+
+<H2 align="center">
+ANYDESK INSTALLER
+</H2>
+
+<b><h2 align="center">==================================================</h2></b>
+
+Copy and paste this command into the terminal and hit "Return" (ENTER):
+sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/AnyDesk%20Unofficial%20Installer%20(Debian)/anydeskinstaller.sh" && bash anydeskinstaller.sh
+
+<b><h3 align="center">========================================================================</h3></b>
+
+  </details>
+</details>
+
+# SCRIPTS ONLY COMPATIBLE WITH CHROMEBOOKS (ONLY CHROMEBOOKTESTED INCLUDED)
+<details>
+  <summary>Click to show installers!</summary>
+  
+## - The QGIS Installer
+<details>
+  <summary>Click to show installer</summary>
 <b><h1 align="center">=======================================</h1></b>
 
 <H3 align="center">
@@ -66,17 +109,29 @@ sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU
 
 <b><h3 align="center">========================================================================</h3></b>
 
-
 WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGIS INSTALLATION ####
 [OPEN INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
 
-# Version History
+</details>
+</details>
 
+# Version History
+<details>
+  <summary>QGIS</summary>
+  
 ## QGIS
 ==========
 
 ### **MUFU** - *This is the first working main-version (This version has no checks for files but it should try to get rid of any unnecessary files when reïnstalling or updating QGIS (so it'll just try to remove unnecessary things (if those things even exist on your chromebook ofcourse... (Don't forget that this version is for the most part stable but there could be bugs hiding in the dark, if you find any, please report them to us as soon as possible!!!)))*
+</details>
+<details>
+  <summary>AnyDesk</summary>
 
+## AnyDesk
+==========
+
+### **DEBIAN** - *STABLE INSTALLER OF ANYDESK, If you find out that something is wrong about the installer please report it in an issue...*
+</details>
 
 # Credits
 Creating: Misha Opstal & Leopold Siccama Hiemstra
@@ -85,6 +140,4 @@ Creating: Misha Opstal & Leopold Siccama Hiemstra
 Tools used: [Flatpak](https://flatpak.org/ "The Future Of Apps On Linux")
 
 
-Software: [QGIS](https://qgis.org/en/site/ "A Free and Open Source Geographic Information System")
-
-[Team OnTheLink](https://onthelink.nl/ "Official Website")
+Software: [QGIS](https://qgis.org/en/site/ "A Free and Open Source Geographic Information System") [AnyDesk](https://anydesk.com/ "Remote Desktop Software - AnyWhere. AnyTime. AnyDesk")

@@ -151,13 +151,11 @@ echo ";)"
 #Restore previous backup?
 tput reset
 tput clear
-sudo mkdir /etc/anydesk/
-sudo mkdir /home/$USER/.anydesk/
 tput setaf 3
 echo -n "Do you want to restore a backup? (only works if backup was created by the uninstaller script..) (y/n)? "
 read answer
 
-if [ "$answer" != "${answer#[*Yy]}" ] ;then
+if [ "$answer" != "${answer#[*Yy*]}" ] ;then
     # Checking local file
 tput setaf 1
 ls /home/$USER/.anydeskbackup/local/ | grep service.conf > /dev/null
@@ -210,7 +208,7 @@ fi
 tput setaf 3
 
 #Waiting for user input
-read -n 1 -s -r -p "Proceed with installing AnyDesk?"
+read -n 1 -s -r -p "Proceed?"
 
 tput sgr0
 tput setaf 6
@@ -220,7 +218,7 @@ echo ";)"
 sleep 4
 
 #Waiting for user input
-read -n 1 -s -r -p "Please read before you continue (press any key to continue)..."
+read -n 1 -s -r -p "Press any key to continue..."
 
 #Quit
 tput reset

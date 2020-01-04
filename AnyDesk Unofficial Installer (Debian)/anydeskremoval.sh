@@ -80,6 +80,10 @@ read answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ;then
     # Creating local backup directories
+
+#Removing older backup folders
+sudo rm -rf /home/$USER/.anydeskbackup
+
 tput setaf 4
 mkdir /home/$USER/.anydeskbackup
 cd /home/$USER/.anydeskbackup

@@ -159,6 +159,12 @@ SPIN_PID=$!
 
 #Installing/updating
 tput setaf 1
+echo "Installing dependencies"
+tput setaf 6
+sudo apt-get --yes --assume-yes install wget curl 2> /dev/null | exec 1> /dev/tty
+tput setaf 2
+echo "Dependencies have been installed"
+tput setaf 1
 echo "Adding GPG-KEY..."
 tput setaf 6
 sudo wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -

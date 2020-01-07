@@ -36,7 +36,7 @@ ANYDESK INSTALLER
 <b><h2 align="center">==================================================</h2></b>
 
 Copy and paste this command into the terminal and hit "Return" (ENTER):
-sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/AnyDesk%20Unofficial%20Installer%20(Debian)/anydeskinstaller.sh" && bash anydeskinstaller.sh
+`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/AnyDesk%20Unofficial%20Installer%20(Debian)/anydeskinstaller.sh" && bash anydeskinstaller.sh`
 
 <b><h3 align="center">========================================================================</h3></b>
 
@@ -102,10 +102,10 @@ QGIS INSTALLER
 <b><h2 align="center">==================================================</h2></b>
 
 Copy and paste this command for the EN version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"
+`sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"`
 
 Copy and paste this command for the NL version:
-sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"
+`sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"`
 
 <b><h3 align="center">========================================================================</h3></b>
 
@@ -140,4 +140,4 @@ WARNING: WE DO NOT OWN THE SOFTWARE THAT WE CREATE THE INSTALLERS FOR, ALL COPYR
 Tools used: [Flatpak](https://flatpak.org/ "The Future Of Apps On Linux")
 
 
-Software: [QGIS](https://qgis.org/en/site/ "A Free and Open Source Geographic Information System") [AnyDesk](https://anydesk.com/ "Remote Desktop Software - AnyWhere. AnyTime. AnyDesk")
+Software: [QGIS](https://qgis.org/en/site/ "A Free and Open Source Geographic Information System") | [AnyDesk](https://anydesk.com/ "Remote Desktop Software - AnyWhere. AnyTime. AnyDesk")

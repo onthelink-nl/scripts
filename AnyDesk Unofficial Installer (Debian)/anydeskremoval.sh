@@ -61,7 +61,7 @@ tput setaf 69; echo "Thank you for using our uninstaller!"
 tput bold && tput setaf 1; echo "===================================="
 tput bold && tput setaf 5; echo ">>>>>>>>UNINSTALLER+ STARTED<<<<<<<<"
 tput bold && tput setaf 1; echo "===================================="
-tput sgr0 && tput setaf 4; echo "WARNING: We are not responsible for any damage to your device (that includes throwing it of a building, spilling coffee, water damage and ofcourse other things that might happen while installing AnyDesk" && tput sgr0
+tput sgr0 && tput setaf 4; echo "WARNING: We are not responsible for any damage to your device (that includes throwing it of a building, spilling coffee, water damage and ofcourse other things that might happen while uninstalling AnyDesk" && tput sgr0
 tput setaf 3
 
 #Waiting for user input

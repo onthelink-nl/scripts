@@ -45,12 +45,12 @@ tput reset
 tput clear
 
 #Creating temp folder for installation files
-mkdir /home/$USER/javainstaller8u231
-cd /home/$USER/javainstaller8u231
+mkdir /home/$USER/javainstaller7u80
+cd /home/$USER/javainstaller7u80
 
 #Information about the creator(s) and the script itself
 tput setaf 2; echo "This script is originally created by Misha Opstal"
-echo "This script will install the Java JDK version 8u231 on your Linux device (Debian based)."
+echo "This script will install the Java JDK version 7u80 on your Linux device (Debian based)."
 tput bold; echo "We are not the creators of Java and this is an unofficial script, we do NOT claim Java as our content and all copyrights, trademarks and other intellectual property belong to the Oracle Corporation!"
 tput setaf 5; echo -n "Our Discord Server: "
 echo -e '\e]8;;https://discordapp.com/invite/UfbNmJb\aOTL Discord server\e]8;;\a'
@@ -99,9 +99,9 @@ sudo apt-get --yes --assume-yes install wget curl tar 2> /dev/null | exec 1> /de
 tput setaf 2
 echo "Dependencies have been installed"
 tput setaf 1
-echo "Downloading version 8u231..."
+echo "Downloading version 7u80..."
 tput setaf 6
-sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u231/jdk-8u231-linux-x64.tar.gz"
+sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Java%20Unofficial%20Installer%20(Debian)/Java%207u80/jdk-7u80-linux-x64.tar.gz"
 tput setaf 2
 echo "Files have been downloaded"
 sleep 1
@@ -114,19 +114,19 @@ echo "Installation directories created"
 tput setaf 1
 echo "Extracting installation files..."
 tput setaf 6
-sudo tar -zxf jdk-8u231-linux-x64.tar.gz -C /opt/jdk
+sudo tar -zxf jdk-7u80-linux-x64.tar.gz -C /opt/jdk
 tput setaf 2
 echo "Installation files extracted"
 tput setaf 1
 echo "Copying files..."
-sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_231/bin/java 100
-sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_231/bin/javac 100
+sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.7.0_80/bin/java 100
+sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.7.0_80/bin/javac 100
 sleep 2
 tput sgr0
 tput reset
 tput setaf 2
 tput bold
-echo "Java JDK Version 8u231 is now installed on your system!"
+echo "Java JDK Version 7u80 is now installed on your system!"
 tput sgr0
 
 #stop spinner
@@ -134,7 +134,7 @@ kill -9 $SPIN_PID
 
 #Removing local script files
 cd -
-sudo rm -rf "javainstaller8.sh"
+sudo rm -rf "javainstaller7.sh"
 sudo rm -rf "/home/$USER/javainstaller*"
 
 #Waiting for user input

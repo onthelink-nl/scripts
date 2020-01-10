@@ -67,7 +67,7 @@ SPIN_PID=$!
 # Kill the spinner on any signal, including our own exit.
 trap "kill -9 $SPIN_PID" `seq 0 15`
 
-#Remove older files
+#Remove files
 sudo update-alternatives --remove java /opt/jdk/*
 sudo update-alternatives --remove javac /opt/jdk/*
 sudo rm -rf /opt/jdk/*
@@ -90,7 +90,8 @@ tput setaf 3
 read -n 1 -s -r -p "press any key to exit..."
 
 #Clear terminal before exiting the script
-sudo rm -rf "javainstaller8.sh"
+sudo rm -rf "javainstaller*"
+sudo rm -rf "javauninstaller.sh"
 tput reset
 tput sgr0
 tput clear

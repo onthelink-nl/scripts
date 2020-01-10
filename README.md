@@ -21,6 +21,7 @@ We are not responsible for any damage done to your device by using our scripts!!
 
 <b><h1 align="center">=======================================</h1></b>
 
+!copyrights, trademarks and other intellectual property belongs to the Oracle Corporation!
 
 # HOW TO USE:
 

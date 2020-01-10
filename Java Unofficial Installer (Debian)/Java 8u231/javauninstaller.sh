@@ -26,7 +26,7 @@ sleep 1
 #Information about the creator(s) and the script itself
 tput setaf 2; echo "This script is originally created by Misha Opstal"
 echo "This script will remove Java on your Linux device (Debian based)."
-tput bold; echo "We are not the creators of Java and this is an unofficial script, we do NOT claim Java as our content and all copyright goes to Oracle Corporation"
+tput bold; echo "We are not the creators of Java and this is an unofficial script, we do NOT claim Java as our content and all copyrights, trademarks and other intellectual property belong to the Oracle Corporation!"
 tput setaf 5; echo -n "Our Discord: "
 echo -e '\e]8;;https://discordapp.com/invite/UfbNmJb\aOnTheLink official Discord server\e]8;;\a'
 echo -n "The Java website: "

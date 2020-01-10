@@ -125,12 +125,8 @@ sudo mkdir /etc/apt/scripts
 sudo curl -Lo /home/$USER/anydeskinstaller/removal/anydeskremoval.sh "https://raw.githubusercontent.com/onthelink-nl/scripts/master/AnyDesk%20Unofficial%20Installer%20(Debian)/anydeskremoval.sh"
 sudo cp -f /home/$USER/anydeskinstaller/removal/anydeskremoval.sh /etc/apt/scripts/anydeskremoval.sh
 sudo chmod +x /etc/apt/scripts/anydeskremoval.sh
-echo "alias remove-anydesk=/etc/apt/scripts/anydeskremoval.sh" >> /home/$USER/.bashrc
 tput setaf 2
-echo "Removal script has been installed, please reopen the terminal and use the 'remove-anydesk' command (Without '')"
-tput setaf 1
-echo "If the .bashrc file is replaced or restored to the original the command will not work, if this is the case please run it using 'sudo bash /etc/apt/scripts/anydeskremoval.sh' (Without '')"
-tput sgr0
+echo "Removal script has been installed, you can uninstall using 'bash /etc/apt/scripts/anydeskremoval.sh' command (Without '' and no sudo!)"
 sleep 5
 
 #stop spinner

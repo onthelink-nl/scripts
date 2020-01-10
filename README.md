@@ -10,7 +10,51 @@ THESE SCRIPTS ARE MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THI
 <details>
   <summary>Click to show installers!</summary>
   
-  ## - The AnyDesk Installer
+  ## - The Java Installer
+  <details>
+  <summary>Click to show installer</summary>
+<b><h1 align="center">=======================================</h1></b>
+
+<H3 align="center">
+We are not responsible for any damage done to your device by using our scripts!!
+</H3>
+
+<b><h1 align="center">=======================================</h1></b>
+
+
+# HOW TO USE:
+
+1. Open a terminal
+2. Choose the script you want to install and paste the command in the terminal
+3. Press "Return" (ENTER)
+4. Follow the instructions on your screen
+
+<b><h2 align="center">==================================================</h2></b>
+
+<H2 align="center">
+Java INSTALLER
+</H2>
+
+<b><h2 align="center">==================================================</h2></b>
+
+Copy and paste one of these commands (Choose the version you want) into the terminal and hit "Return" (ENTER):
+
+# Versions:
+<details>
+  <summary>Click to show version 8u231</summary>
+  
+# Uninstaller:
+Copy and paste this command into the terminal and hit "Return" (ENTER):
+`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u231/javauninstaller.sh" && bash javauninstaller.sh`
+## 8u231
+`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u231/javainstaller8.sh" && bash javainstaller8.sh`
+</details>
+
+<b><h3 align="center">========================================================================</h3></b>
+
+  </details>
+  
+  ## - The AnyDesk Installer (Doesn't seem to work on chromebooks)
   <details>
   <summary>Click to show installer</summary>
 <b><h1 align="center">=======================================</h1></b>
@@ -118,6 +162,14 @@ WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGI
 </details>
 
 # Version History
+<details>
+  <summary>Java</summary>
+
+## Java
+==========
+
+### **8u231** - *STABLE INSTALLER OF JAVA 8u231, If you find out that something is wrong about the installer please report it in an issue...*
+</details>
 <details>
   <summary>QGIS</summary>
   

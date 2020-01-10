@@ -174,8 +174,7 @@ kill -9 $SPIN_PID
 
 #Removing local script files
 cd -
-sudo rm -rf "/etc/apt/scripts/anydeskremoval.sh"
-sudo head -n -1 /home/$USER/.bashrc > /home/$USER/bashrc.new ; sudo mv /home/$USER/bashrc.new /home/$USER/.bashrc
+sudo rm -rf anydeskremoval.sh
 tput reset
 
 tput setaf 3

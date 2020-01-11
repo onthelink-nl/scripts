@@ -44,6 +44,8 @@ read -n 1 -s -r -p "Do you want to continue? (Close terminal to cancel)..."
 #sending positive reaction
 tput setaf 6
 echo ";)"
+
+#There we go
 sleep 1
 tput setaf 1
 echo "3"

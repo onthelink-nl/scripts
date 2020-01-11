@@ -34,7 +34,6 @@ case $selection in
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear
-		exit
         ;;
 	2 ) 
 		sudo rm -rf javainstaller9.sh
@@ -45,7 +44,6 @@ case $selection in
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear
-		exit
         ;;
 	3 ) 
 		sudo rm -rf javainstaller8.sh
@@ -56,7 +54,6 @@ case $selection in
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear
-		exit
         ;;
 	4 ) 
 		sudo rm -rf javainstaller7.sh
@@ -67,7 +64,6 @@ case $selection in
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear
-		exit
         ;;
     5 ) 
         sudo rm -rf "/home/$USER/javainstaller*"
@@ -85,7 +81,6 @@ case $selection in
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear
-		exit
 		;;
 	* ) 
         tput setaf 202; echo "Please enter choice 1, 2, 3, 4, 5, 6..."

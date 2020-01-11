@@ -97,6 +97,7 @@ tput reset
 tput clear
 
 #Creating temp folder for installation files
+sudo rm -rf /home/$USER/javainstaller*
 mkdir /home/$USER/javainstaller7u80
 cd /home/$USER/javainstaller7u80
 
@@ -220,7 +221,7 @@ kill -9 $SPIN_PID
 #Removing local script files
 cd -
 sudo rm -rf "javainstaller7.sh"
-sudo rm -rf "/home/$USER/javainstaller*"
+sudo rm -rf /home/$USER/javainstaller*
 
 #Waiting for user input
 read -n 1 -s -r -p "Press any key to continue..."

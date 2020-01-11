@@ -38,18 +38,45 @@ Java INSTALLER
 
 <b><h2 align="center">==================================================</h2></b>
 
-Copy and paste one of these commands (Choose the version you want) into the terminal and hit "Return" (ENTER):
+# Java Installation Menu:
+<details>
+  <summary>Click to show installer</summary>
+
+## JAVA INSTALLER WITH VERSION MENU
+`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/OnTheLink_JAVA-MENU.sh" && bash OnTheLink_JAVA-MENU.sh`
+</details>
+
+Or copy and paste one of these commands (Only required when the normal script (above) doesn't work) into the terminal and hit "Return" (ENTER):
 
 # Versions:
 <details>
+  <summary>Click to show version 10.0.2</summary>
+
+## 10.0.2
+`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%2010.0.2/javainstaller10.sh" && bash javainstaller10.sh`
+</details>
+<details>
+  <summary>Click to show version 9.0.4</summary>
+
+## 9.0.4
+`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%209.0.4/javainstaller9.sh" && bash javainstaller9.sh`
+</details>
+<details>
   <summary>Click to show version 8u231</summary>
   
-# Uninstaller:
-Copy and paste this command into the terminal and hit "Return" (ENTER):
-`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u231/javauninstaller.sh" && bash javauninstaller.sh`
 ## 8u231
 `sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u231/javainstaller8.sh" && bash javainstaller8.sh`
 </details>
+<details>
+  <summary>Click to show version 7u80</summary>
+
+## 7u80
+`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%207u80/javainstaller7.sh" && bash javainstaller7.sh`
+</details>
+
+# Uninstaller:
+Copy and paste this command into the terminal and hit "Return" (ENTER):
+`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u231/javauninstaller.sh" && bash javauninstaller.sh`
 
 <b><h3 align="center">========================================================================</h3></b>
 

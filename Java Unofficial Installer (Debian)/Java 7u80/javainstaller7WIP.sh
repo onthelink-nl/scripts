@@ -191,16 +191,17 @@ echo "Copying files..."
     fi
 
 # Create system preferences directory
+sudo rm -rf /etc/.java*
 java_system_prefs_dir="/etc/.java/.systemPrefs"
 if [[ ! -d $java_system_prefs_dir ]]; then
         echo "Creating $java_system_prefs_dir"
-        mkdir -p $java_system_prefs_dir
-        chown -R $SUDO_USER:$SUDO_USER $java_system_prefs_dir
+        sudo mkdir -p $java_system_prefs_dir
+        sudo chown -R $SUDO_USER:$SUDO_USER $java_system_prefs_dir
     fi
 fi
 
     if grep -q "export JAVA_HOME=.*" home/$USER/.bashrc; then
-        sed -i "s|export JAVA_HOME=.*|export JAVA_HOME=/opt/jdk/jdk1.7.0_80/|" home/$USER/.bashrc
+        sudo sed -i "s|export JAVA_HOME=.*|export JAVA_HOME=/opt/jdk/jdk1.7.0_80/|" home/$USER/.bashrc
     else
         echo "export JAVA_HOME=/opt/jdk/jdk1.7.0_80/" >>home/$USER/.bashrc
     fi

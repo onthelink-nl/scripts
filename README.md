@@ -10,7 +10,7 @@ THESE SCRIPTS ARE MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THI
 <details>
   <summary>Click to show installers!</summary>
   
-  ## - The Java Installer
+  ## - The Java Installer (x86_64 only for now (type uname -m for information about this))
   <details>
   <summary>Click to show installer</summary>
 <b><h1 align="center">=======================================</h1></b>

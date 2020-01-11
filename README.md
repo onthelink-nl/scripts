@@ -199,7 +199,10 @@ WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGI
 ## Java
 ==========
 
+### **10.0.2** - *STABLE INSTALLER OF JAVA 10.0.2, If you find out that something is wrong about the installer please report it in an issue...*
+### **9.0.4** - *STABLE INSTALLER OF JAVA 9.0.4, If you find out that something is wrong about the installer please report it in an issue...*
 ### **8u231** - *STABLE INSTALLER OF JAVA 8u231, If you find out that something is wrong about the installer please report it in an issue...*
+### **7u80** - *STABLE INSTALLER OF JAVA 7u80, If you find out that something is wrong about the installer please report it in an issue...*
 </details>
 <details>
   <summary>QGIS</summary>

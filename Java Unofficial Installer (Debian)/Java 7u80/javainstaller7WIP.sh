@@ -195,8 +195,8 @@ sudo rm -rf /etc/.java*
 java_system_prefs_dir="/etc/.java/.systemPrefs"
 if [[ ! -d $java_system_prefs_dir ]]; then
         echo "Creating $java_system_prefs_dir"
-        sudo mkdir -p $java_system_prefs_dir
-        sudo chown -R $SUDO_USER:$SUDO_USER $java_system_prefs_dir
+        sudo mkdir -p $java_system_prefs_dir 2> /dev/null | exec 1> /dev/tty
+        sudo chown -R $SUDO_USER:$SUDO_USER $java_system_prefs_dir 2> /dev/null | exec 1> /dev/tty
     fi
 fi
 

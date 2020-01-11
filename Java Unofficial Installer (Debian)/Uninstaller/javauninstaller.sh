@@ -22,6 +22,8 @@ echo "About to start the uninstaller..."
 sleep 2
 echo "Here we go!!!"
 sleep 1
+tput reset
+tput clear
 
 #Information about the creator(s) and the script itself
 tput setaf 2; echo "This script is originally created by Misha Opstal"

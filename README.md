@@ -76,7 +76,7 @@ Or copy and paste one of these commands (Only required when the normal script (a
 
 # Uninstaller:
 Copy and paste this command into the terminal and hit "Return" (ENTER):
-`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u231/javauninstaller.sh" && bash javauninstaller.sh`
+`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Uninstaller/javauninstaller.sh" && bash javauninstaller.sh`
 
 <b><h3 align="center">========================================================================</h3></b>
 

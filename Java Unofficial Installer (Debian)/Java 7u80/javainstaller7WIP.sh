@@ -173,7 +173,6 @@ tput setaf 1
 echo "Copying files..."
 
 # Run sudo update-alternatives commands
-if (confirm "Run sudo update-alternatives commands?"); then
     echo "Running sudo update-alternatives..."
     declare -a commands=($(ls -1 /opt/jdk/jdk1.7.0_80/bin))
     for command in "${commands[@]}"; do
@@ -189,19 +188,16 @@ if (confirm "Run sudo update-alternatives commands?"); then
         sudo update-alternatives --install "/usr/lib/mozilla/plugins/libjavaplugin.so" "mozilla-javaplugin.so" "$lib_path" 101
         sudo update-alternatives --set "mozilla-javaplugin.so" "$lib_path"
     fi
-fi
 
 # Create system preferences directory
 java_system_prefs_dir="/etc/.java/.systemPrefs"
 if [[ ! -d $java_system_prefs_dir ]]; then
-    if (confirm "Create Java System Prefs Directory ($java_system_prefs_dir) and change ownership to $SUDO_USER:$SUDO_USER?"); then
         echo "Creating $java_system_prefs_dir"
         mkdir -p $java_system_prefs_dir
         chown -R $SUDO_USER:$SUDO_USER $java_system_prefs_dir
     fi
 fi
 
-if (confirm "Do you want to set JAVA_HOME environment variable in home/$USER/.bashrc?"); then
     if grep -q "export JAVA_HOME=.*" home/$USER/.bashrc; then
         sed -i "s|export JAVA_HOME=.*|export JAVA_HOME=/opt/jdk/jdk1.7.0_80/|" home/$USER/.bashrc
     else

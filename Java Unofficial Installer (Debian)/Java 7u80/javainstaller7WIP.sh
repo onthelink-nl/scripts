@@ -198,7 +198,6 @@ if [[ ! -d $java_system_prefs_dir ]]; then
         sudo mkdir -p $java_system_prefs_dir 2> /dev/null | exec 1> /dev/tty
         sudo chown -R $SUDO_USER:$SUDO_USER $java_system_prefs_dir 2> /dev/null | exec 1> /dev/tty
     fi
-fi
 
     if grep -q "export JAVA_HOME=.*" home/$USER/.bashrc; then
         sudo sed -i "s|export JAVA_HOME=.*|export JAVA_HOME=/opt/jdk/jdk1.7.0_80/|" home/$USER/.bashrc
@@ -206,7 +205,6 @@ fi
         echo "export JAVA_HOME=/opt/jdk/jdk1.7.0_80/" >>home/$USER/.bashrc
     fi
     source home/$USER/.bashrc
-fi
 
 sleep 2
 tput sgr0

@@ -141,6 +141,19 @@ declare -a commands=($(ls -1 /opt/jdk/jdk1.7.0_80/bin))
 			sudo update-alternatives --remove "wsgen" "$command_path/wsgen"
 			sudo update-alternatives --remove "wsimport" "$command_path/wsimport"
 			sudo update-alternatives --remove "xjc" "$command_path/xjc"
+			sudo update-alternatives --remove "javap" "$command_path/javap"
+			sudo update-alternatives --remove "javapackager" "$command_path/javapackager"
+			sudo update-alternatives --remove "jcmd" "$command_path/jcmd"
+			sudo update-alternatives --remove "jdeprscan" "$command_path/jdeprscan"
+			sudo update-alternatives --remove "jdeps" "$command_path/jdeps"
+			sudo update-alternatives --remove "jhsdb" "$command_path/jhsdb"
+			sudo update-alternatives --remove "jimage" "$command_path/jimage"
+			sudo update-alternatives --remove "jjs" "$command_path/jjs"
+			sudo update-alternatives --remove "jlink" "$command_path/jlink"
+			sudo update-alternatives --remove "jmod" "$command_path/jmod"
+			sudo update-alternatives --remove "jps" "$command_path/jps"
+			sudo update-alternatives --remove "jshell" "$command_path/jshell"
+			sudo update-alternatives --remove "jweblauncher" "$command_path/jweblauncher"
 			sudo update-alternatives --remove "jsadebugd" "$command_path/jsadebugd"
         fi
     done
@@ -160,13 +173,12 @@ tput reset
 tput clear
 
 #Creating temp folder for installation files
-sudo rm -rf /home/$USER/javainstaller*
-mkdir /home/$USER/javainstaller7u80
-cd /home/$USER/javainstaller7u80
+mkdir /home/$USER/javainstaller10_0_2
+cd /home/$USER/javainstaller10_0_2
 
 #Information about the creator(s) and the script itself
 tput setaf 2; echo "This script is originally created by Misha Opstal"
-echo "This script will install the Java JDK version 7u80 on your Linux device (Debian based)."
+echo "This script will install the Java JDK version 10.0.2 on your Linux device (Debian based)."
 tput bold; echo "We are not the creators of Java and this is an unofficial script, we do NOT claim Java as our content and all copyrights, trademarks and other intellectual property belong to the Oracle Corporation!"
 tput setaf 5; echo -n "Our Discord Server: "
 echo -e '\e]8;;https://discordapp.com/invite/UfbNmJb\aOTL Discord server\e]8;;\a'
@@ -215,9 +227,9 @@ sudo apt-get --yes --assume-yes install wget curl tar 2> /dev/null | exec 1> /de
 tput setaf 2
 echo "Dependencies have been installed"
 tput setaf 1
-echo "Downloading version 7u80..."
+echo "Downloading version 10.0.2..."
 tput setaf 6
-sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Java%20Unofficial%20Installer%20(Debian)/Java%207u80/jdk-7u80-linux-x64.tar.gz"
+sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Java%20Unofficial%20Installer%20(Debian)/Java%2010.0.2/jdk-10.0.2_linux-x64_bin.tar.gz"
 tput setaf 2
 echo "Files have been downloaded"
 sleep 1
@@ -230,7 +242,7 @@ echo "Installation directories created"
 tput setaf 1
 echo "Extracting installation files..."
 tput setaf 6
-sudo tar -zxf jdk-7u80-linux-x64.tar.gz -C /opt/jdk
+sudo tar -zxf jdk-10.0.2_linux-x64_bin.tar.gz -C /opt/jdk
 tput setaf 2
 echo "Installation files extracted"
 tput setaf 1
@@ -238,16 +250,16 @@ echo "Copying files..."
 
 # Run sudo update-alternatives commands
     echo "Running sudo update-alternatives..."
-    declare -a commands=($(ls -1 /opt/jdk/jdk1.7.0_80/bin))
+    declare -a commands=($(ls -1 /opt/jdk/jdk-10.0.2/bin))
     for command in "${commands[@]}"; do
-        command_path=/opt/jdk/jdk1.7.0_80/bin/$command
+        command_path=/opt/jdk/jdk-10.0.2/bin/$command
         if [[ -x $command_path ]]; then
             sudo update-alternatives --install "/usr/bin/$command" "$command" "$command_path" 101 2> /dev/null | exec 1> /dev/tty
             sudo update-alternatives --set "$command" "$command_path" 2> /dev/null | exec 1> /dev/tty
         fi
     done
 
-    lib_path=/opt/jdk/jdk1.7.0_80/bin/jre/lib/amd64/libnpjp2.so
+    lib_path=/opt/jdk/jdk-10.0.2/bin/jre/lib/amd64/libnpjp2.so
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
         sudo update-alternatives --install "/usr/lib/mozilla/plugins/libjavaplugin.so" "mozilla-javaplugin.so" "$lib_path" 101
         sudo update-alternatives --set "mozilla-javaplugin.so" "$lib_path"
@@ -263,9 +275,9 @@ if [[ ! -d $java_system_prefs_dir ]]; then
     fi
 
     if grep -q "export JAVA_HOME=.*" home/$USER/.bashrc; then
-        sudo sed -i "s|export JAVA_HOME=.*|export JAVA_HOME=/opt/jdk/jdk1.7.0_80/|" home/$USER/.bashrc
+        sudo sed -i "s|export JAVA_HOME=.*|export JAVA_HOME=/opt/jdk/jdk-10.0.2/|" home/$USER/.bashrc
     else
-        echo "export JAVA_HOME=/opt/jdk/jdk1.7.0_80/" >> home/$USER/.bashrc
+        echo "export JAVA_HOME=/opt/jdk/jdk-10.0.2/" >> home/$USER/.bashrc
     fi
     source home/$USER/.bashrc
 
@@ -274,7 +286,7 @@ tput sgr0
 tput reset
 tput setaf 2
 tput bold
-echo "Java JDK Version 7u80 is now installed on your system!"
+echo "Java JDK Version 10.0.2 is now installed on your system!"
 tput sgr0
 
 #stop spinner
@@ -282,7 +294,7 @@ kill -9 $SPIN_PID
 
 #Removing local script files
 cd -
-sudo rm -rf "javainstaller7.sh"
+sudo rm -rf "javainstaller10.sh"
 sudo rm -rf /home/$USER/javainstaller*
 
 #Waiting for user input

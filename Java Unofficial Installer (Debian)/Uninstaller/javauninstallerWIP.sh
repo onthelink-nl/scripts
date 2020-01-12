@@ -18,10 +18,51 @@ spin()
   done
 }
 
-echo "About to start the installer..."
+echo "About to start the uninstaller..."
 sleep 2
 echo "Here we go!!!"
 sleep 1
+tput reset
+tput clear
+
+#Information about the creator(s) and the script itself
+tput setaf 2; echo "This script is originally created by Misha Opstal"
+echo "This script will remove Java on your Linux device (Debian based)."
+tput bold; echo "We are not the creators of Java and this is an unofficial script, we do NOT claim Java as our content and all copyrights, trademarks and other intellectual property belong to the Oracle Corporation!"
+tput setaf 5; echo -n "Our Discord: "
+echo -e '\e]8;;https://discordapp.com/invite/UfbNmJb\aOnTheLink official Discord server\e]8;;\a'
+echo -n "The Java website: "
+echo -e '\e]8;;https://www.oracle.com/java/\aJava\e]8;;\a'
+tput setaf 69; echo "Thank you for using our uninstaller!"
+tput bold && tput setaf 1; echo "===================================="
+tput bold && tput setaf 5; echo ">>>>>>>>UNINSTALLER STARTED<<<<<<<<"
+tput bold && tput setaf 1; echo "===================================="
+tput sgr0 && tput setaf 4; echo "WARNING: We are not responsible for any damage to your device (that includes throwing it of a building, spilling coffee, water damage and ofcourse other things that might happen while uninstalling Java" && tput sgr0
+tput setaf 3
+
+#Waiting for user input
+read -n 1 -s -r -p "Do you want to continue? (Close terminal to cancel)..."
+
+#sending positive reaction
+tput setaf 6
+echo ";)"
+
+#There we go
+sleep 1
+tput setaf 1
+echo "3"
+sleep 1
+tput setaf 1
+echo "2"
+sleep 1
+tput setaf 1
+echo "1"
+sleep 1
+tput setaf 2
+echo "Here we go!"
+sleep 1
+tput reset
+tput clear
 
 # Start the Spinner:
 spin &
@@ -263,149 +304,26 @@ lib_path=/opt/jdk/jdk1.7.0_80/bin/jre/lib/amd64/libnpjp2.so
     fi
 sudo rm -rf /opt/jdk/*
 sudo rm -rf /opt/jdk
+sudo rm -rf /home/$USER/javainstaller*
 sudo apt-get --yes --assume-yes update
 
 #stop spinner
 kill -9 $SPIN_PID
 
-#Clear terminal before execution of the script
+#Done
 tput reset
 tput clear
+tput setaf 2
+echo "Java has been uninstalled!"
 
-#Creating temp folder for installation files
-sudo rm -rf /home/$USER/javainstaller*
-mkdir /home/$USER/javainstaller10_0_2
-cd /home/$USER/javainstaller10_0_2
-
-#Information about the creator(s) and the script itself
-tput setaf 2; echo "This script is originally created by Misha Opstal"
-echo "This script will install the Java JDK version 10.0.2 on your Linux device (Debian based)."
-tput bold; echo "We are not the creators of Java and this is an unofficial script, we do NOT claim Java as our content and all copyrights, trademarks and other intellectual property belong to the Oracle Corporation!"
-tput setaf 5; echo -n "Our Discord Server: "
-echo -e '\e]8;;https://discordapp.com/invite/UfbNmJb\aOTL Discord server\e]8;;\a'
-echo -n "The Java website: "
-echo -e '\e]8;;https://www.oracle.com/java/\aJava\e]8;;\a'
-tput setaf 69; echo "Thank you for using our script!"
-tput bold && tput setaf 1; echo "===================================="
-tput bold && tput setaf 5; echo ">>>>>>>>INSTALLATION STARTED<<<<<<<<"
-tput bold && tput setaf 1; echo "===================================="
-tput sgr0 && tput setaf 4; echo "WARNING: We are not responsible for any damage to your device (that includes throwing it of a building, spilling coffee, water damage and ofcourse other things that might happen while installing Java" && tput sgr0
 tput setaf 3
 
 #Waiting for user input
-read -n 1 -s -r -p "Press any key to continue..."
+read -n 1 -s -r -p "press any key to exit..."
 
-#sending positive reaction
-tput setaf 6
-echo ";)"
-sleep 1
-tput setaf 1
-echo "3"
-sleep 1
-tput setaf 1
-echo "2"
-sleep 1
-tput setaf 1
-echo "1"
-sleep 1
-tput setaf 2
-echo "Here we go!"
-sleep 1
-tput reset
-tput clear
-
-# Start the Spinner:
-spin &
-
-# Make a note of its Process ID (PID):
-SPIN_PID=$!
-
-#Installing/updating
-tput setaf 1
-echo "Installing dependencies"
-tput setaf 6
-sudo apt-get --yes --assume-yes install wget curl tar 2> /dev/null | exec 1> /dev/tty
-tput setaf 2
-echo "Dependencies have been installed"
-tput setaf 1
-echo "Downloading version 10.0.2..."
-tput setaf 6
-sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Java%20Unofficial%20Installer%20(Debian)/Java%2010.0.2/jdk-10.0.2_linux-x64_bin.tar.gz"
-tput setaf 2
-echo "Files have been downloaded"
-sleep 1
-tput setaf 1
-echo "Creating installation directories..."
-tput setaf 6
-sudo mkdir /opt/jdk
-tput setaf 2
-echo "Installation directories created"
-tput setaf 1
-echo "Extracting installation files..."
-tput setaf 6
-sudo tar -zxf jdk-10.0.2_linux-x64_bin.tar.gz -C /opt/jdk
-tput setaf 2
-echo "Installation files extracted"
-tput setaf 1
-echo "Copying files..."
-
-# Run sudo update-alternatives commands
-    echo "Running sudo update-alternatives..."
-    declare -a commands=($(ls -1 /opt/jdk/jdk-10.0.2/bin))
-    for command in "${commands[@]}"; do
-        command_path=/opt/jdk/jdk-10.0.2/bin/$command
-        if [[ -x $command_path ]]; then
-            sudo update-alternatives --install "/usr/bin/$command" "$command" "$command_path" 101 2> /dev/null | exec 1> /dev/tty
-            sudo update-alternatives --set "$command" "$command_path" 2> /dev/null | exec 1> /dev/tty
-        fi
-    done
-
-    lib_path=/opt/jdk/jdk-10.0.2/bin/jre/lib/amd64/libnpjp2.so
-    if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
-        sudo update-alternatives --install "/usr/lib/mozilla/plugins/libjavaplugin.so" "mozilla-javaplugin.so" "$lib_path" 101
-        sudo update-alternatives --set "mozilla-javaplugin.so" "$lib_path"
-    fi
-
-# Create system preferences directory
-sudo rm -rf /etc/.java*
-java_system_prefs_dir="/etc/.java/.systemPrefs"
-if [[ ! -d $java_system_prefs_dir ]]; then
-        echo "Creating $java_system_prefs_dir"
-        sudo mkdir -p $java_system_prefs_dir 2> /dev/null | exec 1> /dev/tty
-        sudo chown -R $SUDO_USER:$SUDO_USER $java_system_prefs_dir 2> /dev/null | exec 1> /dev/tty
-    fi
-
-    if grep -q "export JAVA_HOME=.*" home/$USER/.bashrc; then
-        sudo sed -i "s|export JAVA_HOME=.*|export JAVA_HOME=/opt/jdk/jdk-10.0.2/|" home/$USER/.bashrc
-    else
-        echo "export JAVA_HOME=/opt/jdk/jdk-10.0.2/" >> home/$USER/.bashrc
-    fi
-    source home/$USER/.bashrc
-
-sleep 2
-tput sgr0
-tput reset
-tput setaf 2
-tput bold
-echo "Java JDK Version 10.0.2 is now installed on your system!"
-tput sgr0
-
-#stop spinner
-kill -9 $SPIN_PID
-
-#Removing local script files
-cd -
-sudo rm -rf "javainstaller10.sh"
+#Clear terminal before exiting the script
 sudo rm -rf /home/$USER/javainstaller*
-
-#Waiting for user input
-read -n 1 -s -r -p "Press any key to continue..."
-
-#sending positive reaction
-tput setaf 6
-echo ";)"
-
-#quit
+sudo rm -rf javauninstaller.sh
 tput reset
 tput sgr0
 tput clear

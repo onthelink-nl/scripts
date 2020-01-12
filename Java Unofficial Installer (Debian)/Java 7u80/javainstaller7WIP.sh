@@ -36,7 +36,7 @@ declare -a commands=($(ls -1 /opt/jdk/jdk1.7.0_80/bin))
         command_path=/opt/jdk/jdk1.7.0_80/bin/
         if [[ -x $command_path ]]; then
 			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
-			sudo update-alternatives --remove "apt" "$command_path/apt"
+			sudo update-alternatives --remove "apt" "$command_path/apt" 2> /dev/null | exec 1> /dev/tty
 			sudo update-alternatives --remove "extcheck" "$command_path/extcheck"
 			sudo update-alternatives --remove "idlj" "$command_path/idlj"
 			sudo update-alternatives --remove "jar" "$command_path/jar"
@@ -179,8 +179,8 @@ echo "Copying files..."
     for command in "${commands[@]}"; do
         command_path=/opt/jdk/jdk1.7.0_80/bin/$command
         if [[ -x $command_path ]]; then
-            sudo update-alternatives --install "/usr/bin/$command" "$command" "$command_path" 101
-            sudo update-alternatives --set "$command" "$command_path"
+            sudo update-alternatives --install "/usr/bin/$command" "$command" "$command_path" 101 2> /dev/null | exec 1> /dev/tty
+            sudo update-alternatives --set "$command" "$command_path" 2> /dev/null | exec 1> /dev/tty
         fi
     done
 

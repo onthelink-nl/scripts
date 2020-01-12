@@ -332,14 +332,9 @@ echo "Copying files..."
 
 # Run sudo update-alternatives commands
     echo "Running sudo update-alternatives..."
-    declare -a commands=($(ls -1 /opt/jdk/jdk-10.0.2/bin))
-    for command in "${commands[@]}"; do
         command_path=/opt/jdk/jdk-10.0.2/bin/$command
-        if [[ -x $command_path ]]; then
             sudo update-alternatives --install "/usr/bin/$command" "$command" "$command_path" 101 2> /dev/null | exec 1> /dev/tty
             sudo update-alternatives --set "$command" "$command_path" 2> /dev/null | exec 1> /dev/tty
-        fi
-    done
 
     lib_path=/opt/jdk/jdk-10.0.2/bin/jre/lib/amd64/libnpjp2.so
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then

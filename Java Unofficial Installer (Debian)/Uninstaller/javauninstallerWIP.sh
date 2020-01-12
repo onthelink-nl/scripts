@@ -72,10 +72,7 @@ SPIN_PID=$!
 trap "kill -9 $SPIN_PID" `seq 0 15`
 
 #Remove older files
-declare -a commands=($(ls -1 /opt/jdk/jdk-10.0.2/bin))
-    for command in "${commands[@]}"; do
         command_path=/opt/jdk/jdk-10.0.2/bin/
-        if [[ -x $command_path ]]; then
 			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
 			sudo update-alternatives --remove "idlj" "$command_path/idlj"
 			sudo update-alternatives --remove "jar" "$command_path/jar"
@@ -122,12 +119,7 @@ declare -a commands=($(ls -1 /opt/jdk/jdk-10.0.2/bin))
 			sudo update-alternatives --remove "jshell" "$command_path/jshell"
 			sudo update-alternatives --remove "jweblauncher" "$command_path/jweblauncher"
 			sudo update-alternatives --remove "jaotc" "$command_path/jaotc"
-        fi
-    done
-declare -a commands=($(ls -1 /opt/jdk/jdk-9.0.4/bin))
-    for command in "${commands[@]}"; do
         command_path=/opt/jdk/jdk-9.0.4/bin/
-        if [[ -x $command_path ]]; then
 			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
 			sudo update-alternatives --remove "idlj" "$command_path/idlj"
 			sudo update-alternatives --remove "jar" "$command_path/jar"
@@ -176,12 +168,7 @@ declare -a commands=($(ls -1 /opt/jdk/jdk-9.0.4/bin))
 			sudo update-alternatives --remove "jshell" "$command_path/jshell"
 			sudo update-alternatives --remove "jweblauncher" "$command_path/jweblauncher"
 			sudo update-alternatives --remove "jaotc" "$command_path/jaotc"
-        fi
-    done
-declare -a commands=($(ls -1 /opt/jdk/jdk1.8.0_231/bin))
-    for command in "${commands[@]}"; do
         command_path=/opt/jdk/jdk1.8.0_231/bin/
-        if [[ -x $command_path ]]; then
 			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
 			sudo update-alternatives --remove "extcheck" "$command_path/extcheck"
 			sudo update-alternatives --remove "idlj" "$command_path/idlj"
@@ -231,12 +218,7 @@ declare -a commands=($(ls -1 /opt/jdk/jdk1.8.0_231/bin))
 			sudo update-alternatives --remove "jps" "$command_path/jps"
 			sudo update-alternatives --remove "jsadebugd" "$command_path/jsadebugd"
 			sudo update-alternatives --remove "ControlPanel" "$command_path/ControlPanel"
-        fi
-    done
-declare -a commands=($(ls -1 /opt/jdk/jdk1.7.0_80/bin))
-    for command in "${commands[@]}"; do
         command_path=/opt/jdk/jdk1.7.0_80/bin/
-        if [[ -x $command_path ]]; then
 			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
 			sudo update-alternatives --remove "apt" "$command_path/apt" 2> /dev/null | exec 1> /dev/tty
 			sudo update-alternatives --remove "extcheck" "$command_path/extcheck"

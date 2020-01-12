@@ -31,7 +31,7 @@ case $selection in
 		tput setaf 5; echo "Preparing the Java 10.0.2 installation..."
         sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%2010.0.2/javainstaller10WIP.sh"
         sleep 2 ; bash javainstaller10.sh
-		sudo rm -rf "/home/$USER/javainstaller*"
+		sudo rm -rf /home/$USER/javainstaller*
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear
@@ -42,7 +42,7 @@ case $selection in
 		tput setaf 5; echo "Preparing the Java 9.0.4 installation..."
         sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%209.0.4/javainstaller9WIP.sh"
         sleep 2 ; bash javainstaller9.sh
-		sudo rm -rf "/home/$USER/javainstaller*"
+		sudo rm -rf /home/$USER/javainstaller*
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear
@@ -53,7 +53,7 @@ case $selection in
 		tput setaf 5; echo "Preparing the Java 8u231 installation..."
         sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u231/javainstaller8WIP.sh"
         sleep 2 ; bash javainstaller8.sh
-		sudo rm -rf "/home/$USER/javainstaller*"
+		sudo rm -rf /home/$USER/javainstaller*
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear
@@ -64,14 +64,14 @@ case $selection in
 		tput setaf 5; echo "Preparing the Java 7u80 installation..."
         sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%207u80/javainstaller7WIP.sh"
         sleep 2 ; bash javainstaller7.sh
-		sudo rm -rf "/home/$USER/javainstaller*"
+		sudo rm -rf /home/$USER/javainstaller*
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear
 		exit
         ;;
     5 ) 
-        sudo rm -rf "/home/$USER/javainstaller*"
+        sudo rm -rf /home/$USER/javainstaller*
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear
@@ -81,8 +81,8 @@ case $selection in
 		sudo rm -rf javauninstaller.sh
 		tput setaf 5; echo "Preparing Java Removal..."
 		sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Uninstaller/javauninstallerWIP.sh"
-		sleep 2 ; bash javauninstaller.sh
-		sudo rm -rf "/home/$USER/javainstaller*"
+		sleep 2 ; bash javauninstallerWIP.sh
+		sudo rm -rf /home/$USER/javainstaller*
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"
 		tput reset
 		tput clear

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+tput reset
 tput clear
 selection=
 until [ "$selection" = "5" ]; do

@@ -31,10 +31,219 @@ SPIN_PID=$!
 trap "kill -9 $SPIN_PID" `seq 0 15`
 
 #Remove older files
-sudo update-alternatives --remove java /opt/jdk/*
-sudo update-alternatives --remove javac /opt/jdk/*
+        command_path=/opt/jdk/jdk-10.0.2/bin/
+			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
+			sudo update-alternatives --remove "idlj" "$command_path/idlj"
+			sudo update-alternatives --remove "jar" "$command_path/jar"
+			sudo update-alternatives --remove "jarsigner" "$command_path/jarsigner"
+			sudo update-alternatives --remove "java" "$command_path/java"
+			sudo update-alternatives --remove "javac" "$command_path/javac"
+			sudo update-alternatives --remove "javadoc" "$command_path/javadoc"
+			sudo update-alternatives --remove "javap" "$command_path/javap"
+			sudo update-alternatives --remove "javaws" "$command_path/javaws"
+			sudo update-alternatives --remove "jconsole" "$command_path/jconsole"
+			sudo update-alternatives --remove "jcontrol" "$command_path/jcontrol"
+			sudo update-alternatives --remove "jdb" "$command_path/jdb"
+			sudo update-alternatives --remove "jinfo" "$command_path/jinfo"
+			sudo update-alternatives --remove "jmap" "$command_path/jmap"
+			sudo update-alternatives --remove "jmc" "$command_path/jmc"
+			sudo update-alternatives --remove "jrunscript" "$command_path/jrunscript"
+			sudo update-alternatives --remove "jstack" "$command_path/jstack"
+			sudo update-alternatives --remove "jstat" "$command_path/jstat"
+			sudo update-alternatives --remove "jstatd" "$command_path/jstatd"
+			sudo update-alternatives --remove "keytool" "$command_path/keytool"
+			sudo update-alternatives --remove "orbd" "$command_path/orbd"
+			sudo update-alternatives --remove "pack200" "$command_path/pack200"
+			sudo update-alternatives --remove "rmic" "$command_path/rmic"
+			sudo update-alternatives --remove "rmid" "$command_path/rmid"
+			sudo update-alternatives --remove "rmiregistry" "$command_path/rmiregistry"
+			sudo update-alternatives --remove "schemagen" "$command_path/schemagen"
+			sudo update-alternatives --remove "serialver" "$command_path/serialver"
+			sudo update-alternatives --remove "servertool" "$command_path/servertool"
+			sudo update-alternatives --remove "tnameserv" "$command_path/tnameserv"
+			sudo update-alternatives --remove "unpack200" "$command_path/unpack200"
+			sudo update-alternatives --remove "wsgen" "$command_path/wsgen"
+			sudo update-alternatives --remove "wsimport" "$command_path/wsimport"
+			sudo update-alternatives --remove "xjc" "$command_path/xjc"
+			sudo update-alternatives --remove "javapackager" "$command_path/javapackager"
+			sudo update-alternatives --remove "jcmd" "$command_path/jcmd"
+			sudo update-alternatives --remove "jdeprscan" "$command_path/jdeprscan"
+			sudo update-alternatives --remove "jdeps" "$command_path/jdeps"
+			sudo update-alternatives --remove "jhsdb" "$command_path/jhsdb"
+			sudo update-alternatives --remove "jimage" "$command_path/jimage"
+			sudo update-alternatives --remove "jjs" "$command_path/jjs"
+			sudo update-alternatives --remove "jlink" "$command_path/jlink"
+			sudo update-alternatives --remove "jmod" "$command_path/jmod"
+			sudo update-alternatives --remove "jps" "$command_path/jps"
+			sudo update-alternatives --remove "jshell" "$command_path/jshell"
+			sudo update-alternatives --remove "jweblauncher" "$command_path/jweblauncher"
+			sudo update-alternatives --remove "jaotc" "$command_path/jaotc"
+        command_path=/opt/jdk/jdk-9.0.4/bin/
+			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
+			sudo update-alternatives --remove "idlj" "$command_path/idlj"
+			sudo update-alternatives --remove "jar" "$command_path/jar"
+			sudo update-alternatives --remove "jarsigner" "$command_path/jarsigner"
+			sudo update-alternatives --remove "java" "$command_path/java"
+			sudo update-alternatives --remove "javac" "$command_path/javac"
+			sudo update-alternatives --remove "javadoc" "$command_path/javadoc"
+			sudo update-alternatives --remove "javah" "$command_path/javah"
+			sudo update-alternatives --remove "javap" "$command_path/javap"
+			sudo update-alternatives --remove "javaws" "$command_path/javaws"
+			sudo update-alternatives --remove "jconsole" "$command_path/jconsole"
+			sudo update-alternatives --remove "jcontrol" "$command_path/jcontrol"
+			sudo update-alternatives --remove "jdb" "$command_path/jdb"
+			sudo update-alternatives --remove "jinfo" "$command_path/jinfo"
+			sudo update-alternatives --remove "jmap" "$command_path/jmap"
+			sudo update-alternatives --remove "jmc" "$command_path/jmc"
+			sudo update-alternatives --remove "jrunscript" "$command_path/jrunscript"
+			sudo update-alternatives --remove "jstack" "$command_path/jstack"
+			sudo update-alternatives --remove "jstat" "$command_path/jstat"
+			sudo update-alternatives --remove "jstatd" "$command_path/jstatd"
+			sudo update-alternatives --remove "keytool" "$command_path/keytool"
+			sudo update-alternatives --remove "orbd" "$command_path/orbd"
+			sudo update-alternatives --remove "pack200" "$command_path/pack200"
+			sudo update-alternatives --remove "policytool" "$command_path/policytool"
+			sudo update-alternatives --remove "rmic" "$command_path/rmic"
+			sudo update-alternatives --remove "rmid" "$command_path/rmid"
+			sudo update-alternatives --remove "rmiregistry" "$command_path/rmiregistry"
+			sudo update-alternatives --remove "schemagen" "$command_path/schemagen"
+			sudo update-alternatives --remove "serialver" "$command_path/serialver"
+			sudo update-alternatives --remove "servertool" "$command_path/servertool"
+			sudo update-alternatives --remove "tnameserv" "$command_path/tnameserv"
+			sudo update-alternatives --remove "unpack200" "$command_path/unpack200"
+			sudo update-alternatives --remove "wsgen" "$command_path/wsgen"
+			sudo update-alternatives --remove "wsimport" "$command_path/wsimport"
+			sudo update-alternatives --remove "xjc" "$command_path/xjc"
+			sudo update-alternatives --remove "javapackager" "$command_path/javapackager"
+			sudo update-alternatives --remove "jcmd" "$command_path/jcmd"
+			sudo update-alternatives --remove "jdeprscan" "$command_path/jdeprscan"
+			sudo update-alternatives --remove "jdeps" "$command_path/jdeps"
+			sudo update-alternatives --remove "jhsdb" "$command_path/jhsdb"
+			sudo update-alternatives --remove "jimage" "$command_path/jimage"
+			sudo update-alternatives --remove "jjs" "$command_path/jjs"
+			sudo update-alternatives --remove "jlink" "$command_path/jlink"
+			sudo update-alternatives --remove "jmod" "$command_path/jmod"
+			sudo update-alternatives --remove "jps" "$command_path/jps"
+			sudo update-alternatives --remove "jshell" "$command_path/jshell"
+			sudo update-alternatives --remove "jweblauncher" "$command_path/jweblauncher"
+			sudo update-alternatives --remove "jaotc" "$command_path/jaotc"
+        command_path=/opt/jdk/jdk1.8.0_231/bin/
+			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
+			sudo update-alternatives --remove "extcheck" "$command_path/extcheck"
+			sudo update-alternatives --remove "idlj" "$command_path/idlj"
+			sudo update-alternatives --remove "jar" "$command_path/jar"
+			sudo update-alternatives --remove "jarsigner" "$command_path/jarsigner"
+			sudo update-alternatives --remove "java" "$command_path/java"
+			sudo update-alternatives --remove "javac" "$command_path/javac"
+			sudo update-alternatives --remove "javadoc" "$command_path/javadoc"
+			sudo update-alternatives --remove "javafxpackager" "$command_path/javafxpackager"
+			sudo update-alternatives --remove "javah" "$command_path/javah"
+			sudo update-alternatives --remove "javap" "$command_path/javap"
+			sudo update-alternatives --remove "java-rmi.cgi" "$command_path/java-rmi.cgi"
+			sudo update-alternatives --remove "javaws" "$command_path/javaws"
+			sudo update-alternatives --remove "jconsole" "$command_path/jconsole"
+			sudo update-alternatives --remove "jcontrol" "$command_path/jcontrol"
+			sudo update-alternatives --remove "jdb" "$command_path/jdb"
+			sudo update-alternatives --remove "jhat" "$command_path/jhat"
+			sudo update-alternatives --remove "jinfo" "$command_path/jinfo"
+			sudo update-alternatives --remove "jmap" "$command_path/jmap"
+			sudo update-alternatives --remove "jmc" "$command_path/jmc"
+			sudo update-alternatives --remove "jmc.ini" "$command_path/jmc.ini"
+			sudo update-alternatives --remove "jrunscript" "$command_path/jrunscript"
+			sudo update-alternatives --remove "jstack" "$command_path/jstack"
+			sudo update-alternatives --remove "jstat" "$command_path/jstat"
+			sudo update-alternatives --remove "jstatd" "$command_path/jstatd"
+			sudo update-alternatives --remove "jvisualvm" "$command_path/jvisualvm"
+			sudo update-alternatives --remove "keytool" "$command_path/keytool"
+			sudo update-alternatives --remove "native2ascii" "$command_path/native2ascii"
+			sudo update-alternatives --remove "orbd" "$command_path/orbd"
+			sudo update-alternatives --remove "pack200" "$command_path/pack200"
+			sudo update-alternatives --remove "policytool" "$command_path/policytool"
+			sudo update-alternatives --remove "rmic" "$command_path/rmic"
+			sudo update-alternatives --remove "rmid" "$command_path/rmid"
+			sudo update-alternatives --remove "rmiregistry" "$command_path/rmiregistry"
+			sudo update-alternatives --remove "schemagen" "$command_path/schemagen"
+			sudo update-alternatives --remove "serialver" "$command_path/serialver"
+			sudo update-alternatives --remove "servertool" "$command_path/servertool"
+			sudo update-alternatives --remove "tnameserv" "$command_path/tnameserv"
+			sudo update-alternatives --remove "unpack200" "$command_path/unpack200"
+			sudo update-alternatives --remove "wsgen" "$command_path/wsgen"
+			sudo update-alternatives --remove "wsimport" "$command_path/wsimport"
+			sudo update-alternatives --remove "xjc" "$command_path/xjc"
+			sudo update-alternatives --remove "javapackager" "$command_path/javapackager"
+			sudo update-alternatives --remove "jcmd" "$command_path/jcmd"
+			sudo update-alternatives --remove "jdeps" "$command_path/jdeps"
+			sudo update-alternatives --remove "jjs" "$command_path/jjs"
+			sudo update-alternatives --remove "jps" "$command_path/jps"
+			sudo update-alternatives --remove "jsadebugd" "$command_path/jsadebugd"
+			sudo update-alternatives --remove "ControlPanel" "$command_path/ControlPanel"
+        command_path=/opt/jdk/jdk1.7.0_80/bin/
+			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
+			sudo update-alternatives --remove "apt" "$command_path/apt" 2> /dev/null | exec 1> /dev/tty
+			sudo update-alternatives --remove "extcheck" "$command_path/extcheck"
+			sudo update-alternatives --remove "idlj" "$command_path/idlj"
+			sudo update-alternatives --remove "jar" "$command_path/jar"
+			sudo update-alternatives --remove "jarsigner" "$command_path/jarsigner"
+			sudo update-alternatives --remove "java" "$command_path/java"
+			sudo update-alternatives --remove "javac" "$command_path/javac"
+			sudo update-alternatives --remove "javadoc" "$command_path/javadoc"
+			sudo update-alternatives --remove "javafxpackager" "$command_path/javafxpackager"
+			sudo update-alternatives --remove "javah" "$command_path/javah"
+			sudo update-alternatives --remove "javap" "$command_path/javap"
+			sudo update-alternatives --remove "java-rmi.cgi" "$command_path/java-rmi.cgi"
+			sudo update-alternatives --remove "javaws" "$command_path/javaws"
+			sudo update-alternatives --remove "jconsole" "$command_path/jconsole"
+			sudo update-alternatives --remove "jcontrol" "$command_path/jcontrol"
+			sudo update-alternatives --remove "jdb" "$command_path/jdb"
+			sudo update-alternatives --remove "jhat" "$command_path/jhat"
+			sudo update-alternatives --remove "jinfo" "$command_path/jinfo"
+			sudo update-alternatives --remove "jmap" "$command_path/jmap"
+			sudo update-alternatives --remove "jmc" "$command_path/jmc"
+			sudo update-alternatives --remove "jmc.ini" "$command_path/jmc.ini"
+			sudo update-alternatives --remove "jrunscript" "$command_path/jrunscript"
+			sudo update-alternatives --remove "jstack" "$command_path/jstack"
+			sudo update-alternatives --remove "jstat" "$command_path/jstat"
+			sudo update-alternatives --remove "jstatd" "$command_path/jstatd"
+			sudo update-alternatives --remove "jvisualvm" "$command_path/jvisualvm"
+			sudo update-alternatives --remove "keytool" "$command_path/keytool"
+			sudo update-alternatives --remove "native2ascii" "$command_path/native2ascii"
+			sudo update-alternatives --remove "orbd" "$command_path/orbd"
+			sudo update-alternatives --remove "pack200" "$command_path/pack200"
+			sudo update-alternatives --remove "policytool" "$command_path/policytool"
+			sudo update-alternatives --remove "rmic" "$command_path/rmic"
+			sudo update-alternatives --remove "rmid" "$command_path/rmid"
+			sudo update-alternatives --remove "rmiregistry" "$command_path/rmiregistry"
+			sudo update-alternatives --remove "schemagen" "$command_path/schemagen"
+			sudo update-alternatives --remove "serialver" "$command_path/serialver"
+			sudo update-alternatives --remove "servertool" "$command_path/servertool"
+			sudo update-alternatives --remove "tnameserv" "$command_path/tnameserv"
+			sudo update-alternatives --remove "unpack200" "$command_path/unpack200"
+			sudo update-alternatives --remove "wsgen" "$command_path/wsgen"
+			sudo update-alternatives --remove "wsimport" "$command_path/wsimport"
+			sudo update-alternatives --remove "xjc" "$command_path/xjc"
+			sudo update-alternatives --remove "jsadebugd" "$command_path/jsadebugd"
+			sudo update-alternatives --remove "ControlPanel" "$command_path/ControlPanel"
+			sudo update-alternatives --remove "jcmd" "$command_path/jcmd"
+			sudo update-alternatives --remove "jps" "$command_path/jps"
+lib_path=/opt/jdk/jdk-10.0.2/bin/jre/lib/amd64/libnpjp2.so
+    if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
+        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path"
+    fi
+lib_path=/opt/jdk/jdk-9.0.4/bin/jre/lib/amd64/libnpjp2.so
+    if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
+        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path"
+    fi
+lib_path=/opt/jdk/jdk1.8.0_231/bin/jre/lib/amd64/libnpjp2.so
+    if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
+        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path"
+    fi
+lib_path=/opt/jdk/jdk1.7.0_80/bin/jre/lib/amd64/libnpjp2.so
+    if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
+        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path"
+    fi
 sudo rm -rf /opt/jdk/*
 sudo rm -rf /opt/jdk
+sudo rm -rf /home/$USER/javainstaller*
 sudo apt-get --yes --assume-yes update
 
 #stop spinner
@@ -45,6 +254,7 @@ tput reset
 tput clear
 
 #Creating temp folder for installation files
+sudo rm -rf /home/$USER/javainstaller*
 mkdir /home/$USER/javainstaller8u231
 cd /home/$USER/javainstaller8u231
 
@@ -119,8 +329,131 @@ tput setaf 2
 echo "Installation files extracted"
 tput setaf 1
 echo "Copying files..."
-sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_231/bin/java 100
-sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_231/bin/javac 100
+# Run sudo update-alternatives commands
+    echo "Running sudo update-alternatives..."
+        command_path=/opt/jdk/jdk1.8.0_231/bin/
+			sudo update-alternatives --install "/usr/bin/appletviewer" "appletviewer" "$command_path/appletviewer" 101
+			sudo update-alternatives --install "/usr/bin/extcheck" "extcheck" "$command_path/extcheck" 101
+			sudo update-alternatives --install "/usr/bin/idlj" "idlj" "$command_path/idlj" 101
+			sudo update-alternatives --install "/usr/bin/jar" "jar" "$command_path/jar" 101
+			sudo update-alternatives --install "/usr/bin/jarsigner" "jarsigner" "$command_path/jarsigner" 101
+			sudo update-alternatives --install "/usr/bin/java" "java" "$command_path/java" 101
+			sudo update-alternatives --install "/usr/bin/javac" "javac" "$command_path/javac" 101
+			sudo update-alternatives --install "/usr/bin/javadoc" "javadoc" "$command_path/javadoc" 101
+			sudo update-alternatives --install "/usr/bin/javafxpackager" "javafxpackager" "$command_path/javafxpackager" 101
+			sudo update-alternatives --install "/usr/bin/javah" "javah" "$command_path/javah" 101
+			sudo update-alternatives --install "/usr/bin/javap" "javap" "$command_path/javap" 101
+			sudo update-alternatives --install "/usr/bin/java-rmi.cgi" "java-rmi.cgi" "$command_path/java-rmi.cgi" 101
+			sudo update-alternatives --install "/usr/bin/javaws" "javaws" "$command_path/javaws" 101
+			sudo update-alternatives --install "/usr/bin/jconsole" "jconsole" "$command_path/jconsole" 101
+			sudo update-alternatives --install "/usr/bin/jcontrol" "jcontrol" "$command_path/jcontrol" 101
+			sudo update-alternatives --install "/usr/bin/jdb" "jdb" "$command_path/jdb" 101
+			sudo update-alternatives --install "/usr/bin/jhat" "jhat" "$command_path/jhat" 101
+			sudo update-alternatives --install "/usr/bin/jinfo" "jmap" "$command_path/jinfo" 101
+			sudo update-alternatives --install "/usr/bin/jmap" "jmap" "$command_path/jmap" 101
+			sudo update-alternatives --install "/usr/bin/jmc" "jmc" "$command_path/jmc" 101
+			sudo update-alternatives --install "/usr/bin/jmc.ini" "jmc.ini" "$command_path/jmc.ini" 101
+			sudo update-alternatives --install "/usr/bin/jrunscript" "jrunscript" "$command_path/jrunscript" 101
+			sudo update-alternatives --install "/usr/bin/jstack" "jstack" "$command_path/jstack" 101
+			sudo update-alternatives --install "/usr/bin/jstat" "jstat" "$command_path/jstat" 101
+			sudo update-alternatives --install "/usr/bin/jstatd" "jstatd" "$command_path/jstatd" 101
+			sudo update-alternatives --install "/usr/bin/jvisualvm" "jvisualvm" "$command_path/jvisualvm" 101
+			sudo update-alternatives --install "/usr/bin/keytool" "keytool" "$command_path/keytool" 101
+			sudo update-alternatives --install "/usr/bin/native2ascii" "native2ascii" "$command_path/native2ascii" 101
+			sudo update-alternatives --install "/usr/bin/orbd" "orbd" "$command_path/orbd" 101
+			sudo update-alternatives --install "/usr/bin/pack200" "pack200" "$command_path/pack200" 101
+			sudo update-alternatives --install "/usr/bin/policytool" "policytool" "$command_path/policytool" 101
+			sudo update-alternatives --install "/usr/bin/rmic" "rmic" "$command_path/rmic" 101
+			sudo update-alternatives --install "/usr/bin/rmid" "rmid" "$command_path/rmid" 101
+			sudo update-alternatives --install "/usr/bin/rmiregistry" "rmiregistry" "$command_path/rmiregistry" 101
+			sudo update-alternatives --install "/usr/bin/schemagen" "schemagen" "$command_path/schemagen" 101
+			sudo update-alternatives --install "/usr/bin/serialver" "serialver" "$command_path/serialver" 101
+			sudo update-alternatives --install "/usr/bin/servertool" "servertool" "$command_path/servertool" 101
+			sudo update-alternatives --install "/usr/bin/tnameserv" "tnameserv" "$command_path/tnameserv" 101
+			sudo update-alternatives --install "/usr/bin/unpack200" "unpack200" "$command_path/unpack200" 101
+			sudo update-alternatives --install "/usr/bin/wsgen" "wsgen" "$command_path/wsgen" 101
+			sudo update-alternatives --install "/usr/bin/wsimport" "wsimport" "$command_path/wsimport" 101
+			sudo update-alternatives --install "/usr/bin/xjc" "xjc" "$command_path/xjc" 101
+			sudo update-alternatives --install "/usr/bin/javapackager" "javapackager" "$command_path/javapackager" 101
+			sudo update-alternatives --install "/usr/bin/jcmd" "jcmd" "$command_path/jcmd" 101
+			sudo update-alternatives --install "/usr/bin/jdeps" "jdeps" "$command_path/jdeps" 101
+			sudo update-alternatives --install "/usr/bin/jjs" "jjs" "$command_path/jjs" 101
+			sudo update-alternatives --install "/usr/bin/jps" "jps" "$command_path/jps" 101
+			sudo update-alternatives --install "/usr/bin/jsadebugd" "jsadebugd" "$command_path/jsadebugd" 101
+			sudo update-alternatives --install "/usr/bin/ControlPanel" "ControlPanel" "$command_path/ControlPanel" 101
+		command_path=/opt/jdk/jdk1.8.0_231/bin/
+			sudo update-alternatives --set "appletviewer" "$command_path/appletviewer"
+			sudo update-alternatives --set "extcheck" "$command_path/extcheck"
+			sudo update-alternatives --set "idlj" "$command_path/idlj"
+			sudo update-alternatives --set "jar" "$command_path/jar"
+			sudo update-alternatives --set "jarsigner" "$command_path/jarsigner"
+			sudo update-alternatives --set "java" "$command_path/java"
+			sudo update-alternatives --set "javac" "$command_path/javac"
+			sudo update-alternatives --set "javadoc" "$command_path/javadoc"
+			sudo update-alternatives --set "javafxpackager" "$command_path/javafxpackager"
+			sudo update-alternatives --set "javah" "$command_path/javah"
+			sudo update-alternatives --set "javap" "$command_path/javap"
+			sudo update-alternatives --set "java-rmi.cgi" "$command_path/java-rmi.cgi"
+			sudo update-alternatives --set "javaws" "$command_path/javaws"
+			sudo update-alternatives --set "jconsole" "$command_path/jconsole"
+			sudo update-alternatives --set "jcontrol" "$command_path/jcontrol"
+			sudo update-alternatives --set "jdb" "$command_path/jdb"
+			sudo update-alternatives --set "jhat" "$command_path/jhat"
+			sudo update-alternatives --set "jmap" "$command_path/jinfo"
+			sudo update-alternatives --set "jmap" "$command_path/jmap"
+			sudo update-alternatives --set "jmc" "$command_path/jmc"
+			sudo update-alternatives --set "jmc.ini" "$command_path/jmc.ini"
+			sudo update-alternatives --set "jrunscript" "$command_path/jrunscript"
+			sudo update-alternatives --set "jstack" "$command_path/jstack"
+			sudo update-alternatives --set "jstat" "$command_path/jstat"
+			sudo update-alternatives --set "jstatd" "$command_path/jstatd"
+			sudo update-alternatives --set "jvisualvm" "$command_path/jvisualvm"
+			sudo update-alternatives --set "keytool" "$command_path/keytool"
+			sudo update-alternatives --set "native2ascii" "$command_path/native2ascii"
+			sudo update-alternatives --set "orbd" "$command_path/orbd"
+			sudo update-alternatives --set "pack200" "$command_path/pack200"
+			sudo update-alternatives --set "policytool" "$command_path/policytool"
+			sudo update-alternatives --set "rmic" "$command_path/rmic"
+			sudo update-alternatives --set "rmid" "$command_path/rmid"
+			sudo update-alternatives --set "rmiregistry" "$command_path/rmiregistry"
+			sudo update-alternatives --set "schemagen" "$command_path/schemagen"
+			sudo update-alternatives --set "serialver" "$command_path/serialver"
+			sudo update-alternatives --set "servertool" "$command_path/servertool"
+			sudo update-alternatives --set "tnameserv" "$command_path/tnameserv"
+			sudo update-alternatives --set "unpack200" "$command_path/unpack200"
+			sudo update-alternatives --set "wsgen" "$command_path/wsgen"
+			sudo update-alternatives --set "wsimport" "$command_path/wsimport"
+			sudo update-alternatives --set "xjc" "$command_path/xjc"
+			sudo update-alternatives --set "javapackager" "$command_path/javapackager"
+			sudo update-alternatives --set "jcmd" "$command_path/jcmd"
+			sudo update-alternatives --set "jdeps" "$command_path/jdeps"
+			sudo update-alternatives --set "jjs" "$command_path/jjs"
+			sudo update-alternatives --set "jps" "$command_path/jps"
+			sudo update-alternatives --set "jsadebugd" "$command_path/jsadebugd"
+			sudo update-alternatives --set "ControlPanel" "$command_path/ControlPanel"
+
+    lib_path=/opt/jdk/jdk1.8.0_231/bin/jre/lib/amd64/
+    if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
+        sudo update-alternatives --install "/usr/lib/mozilla/plugins/libjavaplugin.so" "mozilla-javaplugin.so" "$lib_path/libnpjp2.so" 101
+        sudo update-alternatives --set "mozilla-javaplugin.so" "$lib_path/libnpjp2.so"
+    fi
+
+# Create system preferences directory
+sudo rm -rf /etc/.java*
+java_system_prefs_dir="/etc/.java/.systemPrefs"
+if [[ ! -d $java_system_prefs_dir ]]; then
+        echo "Creating $java_system_prefs_dir"
+        sudo mkdir -p $java_system_prefs_dir 2> /dev/null | exec 1> /dev/tty
+        sudo chown -R $SUDO_USER:$SUDO_USER $java_system_prefs_dir 2> /dev/null | exec 1> /dev/tty
+    fi
+
+    if grep -q "export JAVA_HOME=.*" home/$USER/.bashrc; then
+        sudo sed -i "s|export JAVA_HOME=.*|export JAVA_HOME=/opt/jdk/jdk1.8.0_231/|" home/$USER/.bashrc
+    else
+        echo "export JAVA_HOME=/opt/jdk/jdk1.8.0_231/" >> home/$USER/.bashrc
+    fi
+    source home/$USER/.bashrc
+
 sleep 2
 tput sgr0
 tput reset
@@ -135,7 +468,7 @@ kill -9 $SPIN_PID
 #Removing local script files
 cd -
 sudo rm -rf "javainstaller8.sh"
-sudo rm -rf "/home/$USER/javainstaller*"
+sudo rm -rf /home/$USER/javainstaller*
 
 #Waiting for user input
 read -n 1 -s -r -p "Press any key to continue..."

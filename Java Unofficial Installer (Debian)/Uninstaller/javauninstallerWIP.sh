@@ -266,21 +266,21 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 			sudo update-alternatives --remove "ControlPanel" "$command_path/ControlPanel"
 			sudo update-alternatives --remove "jcmd" "$command_path/jcmd"
 			sudo update-alternatives --remove "jps" "$command_path/jps"
-lib_path=/opt/jdk/jdk-10.0.2/bin/jre/lib/amd64/libnpjp2.so
+lib_path=/opt/jdk/jdk-10.0.2/bin/jre/lib/amd64/
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
-        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path"
+        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path/libnpjp2.so"
     fi
-lib_path=/opt/jdk/jdk-9.0.4/bin/jre/lib/amd64/libnpjp2.so
+lib_path=/opt/jdk/jdk-9.0.4/bin/jre/lib/amd64/
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
-        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path"
+        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path/libnpjp2.so"
     fi
-lib_path=/opt/jdk/jdk1.8.0_231/bin/jre/lib/amd64/libnpjp2.so
+lib_path=/opt/jdk/jdk1.8.0_231/bin/jre/lib/amd64/
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
-        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path"
+        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path/libnpjp2.so"
     fi
-lib_path=/opt/jdk/jdk1.7.0_80/bin/jre/lib/amd64/libnpjp2.so
+lib_path=/opt/jdk/jdk1.7.0_80/bin/jre/lib/amd64/
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
-        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path"
+        sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path/libnpjp2.so"
     fi
 sudo rm -rf /opt/jdk/*
 sudo rm -rf /opt/jdk

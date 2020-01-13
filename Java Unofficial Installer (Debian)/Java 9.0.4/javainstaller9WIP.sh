@@ -332,14 +332,109 @@ echo "Copying files..."
 
 # Run sudo update-alternatives commands
     echo "Running sudo update-alternatives..."
-        command_path=/opt/jdk/jdk-9.0.4/bin/$command
-            sudo update-alternatives --install "/usr/bin/$command" "$command" "$command_path" 101 2> /dev/null | exec 1> /dev/tty
-            sudo update-alternatives --set "$command" "$command_path" 2> /dev/null | exec 1> /dev/tty
+        command_path=/opt/jdk/jdk-9.0.4/bin/
+			sudo update-alternatives --install "/usr/bin/appletviewer" "appletviewer" "$command_path/appletviewer" 101
+			sudo update-alternatives --install "/usr/bin/idlj" "idlj" "$command_path/idlj" 101
+			sudo update-alternatives --install "/usr/bin/jar" "jar" "$command_path/jar" 101
+			sudo update-alternatives --install "/usr/bin/jarsigner" "jarsigner" "$command_path/jarsigner" 101
+			sudo update-alternatives --install "/usr/bin/java" "java" "$command_path/java" 101
+			sudo update-alternatives --install "/usr/bin/javac" "javac" "$command_path/javac" 101
+			sudo update-alternatives --install "/usr/bin/javadoc" "javadoc" "$command_path/javadoc" 101
+			sudo update-alternatives --install "/usr/bin/javah" "javah" "$command_path/javah" 101
+			sudo update-alternatives --install "/usr/bin/javap" "javap" "$command_path/javap" 101
+			sudo update-alternatives --install "/usr/bin/javaws" "javaws" "$command_path/javaws" 101
+			sudo update-alternatives --install "/usr/bin/jconsole" "jconsole" "$command_path/jconsole" 101
+			sudo update-alternatives --install "/usr/bin/jcontrol" "jcontrol" "$command_path/jcontrol" 101
+			sudo update-alternatives --install "/usr/bin/jdb" "jdb" "$command_path/jdb" 101
+			sudo update-alternatives --install "/usr/bin/jinfo" "jinfo" "$command_path/jinfo" 101
+			sudo update-alternatives --install "/usr/bin/jmap" "jmap" "$command_path/jmap" 101
+			sudo update-alternatives --install "/usr/bin/jmc" "jmc" "$command_path/jmc" 101
+			sudo update-alternatives --install "/usr/bin/jrunscript" "jrunscript" "$command_path/jrunscript" 101
+			sudo update-alternatives --install "/usr/bin/jstack" "jstack" "$command_path/jstack" 101
+			sudo update-alternatives --install "/usr/bin/jstat" "jstat" "$command_path/jstat" 101
+			sudo update-alternatives --install "/usr/bin/jstatd" "jstatd" "$command_path/jstatd" 101
+			sudo update-alternatives --install "/usr/bin/keytool" "keytool" "$command_path/keytool" 101
+			sudo update-alternatives --install "/usr/bin/orbd" "orbd" "$command_path/orbd" 101
+			sudo update-alternatives --install "/usr/bin/pack200" "pack200" "$command_path/pack200" 101
+			sudo update-alternatives --install "/usr/bin/policytool" "policytool" "$command_path/policytool" 101
+			sudo update-alternatives --install "/usr/bin/rmic" "rmic" "$command_path/rmic" 101
+			sudo update-alternatives --install "/usr/bin/rmid" "rmid" "$command_path/rmid" 101
+			sudo update-alternatives --install "/usr/bin/rmiregistry" "rmiregistry" "$command_path/rmiregistry" 101
+			sudo update-alternatives --install "/usr/bin/schemagen" "schemagen" "$command_path/schemagen" 101
+			sudo update-alternatives --install "/usr/bin/serialver" "serialver" "$command_path/serialver" 101
+			sudo update-alternatives --install "/usr/bin/servertool" "servertool" "$command_path/servertool" 101
+			sudo update-alternatives --install "/usr/bin/tnameserv" "tnameserv" "$command_path/tnameserv" 101
+			sudo update-alternatives --install "/usr/bin/unpack200" "unpack200" "$command_path/unpack200" 101
+			sudo update-alternatives --install "/usr/bin/wsgen" "wsgen" "$command_path/wsgen" 101
+			sudo update-alternatives --install "/usr/bin/wsimport" "wsimport" "$command_path/wsimport" 101
+			sudo update-alternatives --install "/usr/bin/xjc" "xjc" "$command_path/xjc" 101
+			sudo update-alternatives --install "/usr/bin/javapackager" "javapackager" "$command_path/javapackager" 101
+			sudo update-alternatives --install "/usr/bin/jcmd" "jcmd" "$command_path/jcmd" 101
+			sudo update-alternatives --install "/usr/bin/jdeprscan" "jdeprscan" "$command_path/jdeprscan" 101
+			sudo update-alternatives --install "/usr/bin/jdeps" "jdeps" "$command_path/jdeps" 101
+			sudo update-alternatives --install "/usr/bin/jhsdb" "jhsdb" "$command_path/jhsdb" 101
+			sudo update-alternatives --install "/usr/bin/jimage" "jimage" "$command_path/jimage" 101
+			sudo update-alternatives --install "/usr/bin/jjs" "jjs" "$command_path/jjs" 101
+			sudo update-alternatives --install "/usr/bin/jlink" "jlink" "$command_path/jlink" 101
+			sudo update-alternatives --install "/usr/bin/jmod" "jmod" "$command_path/jmod" 101
+			sudo update-alternatives --install "/usr/bin/jps" "jps" "$command_path/jps" 101
+			sudo update-alternatives --install "/usr/bin/jshell" "jshell" "$command_path/jshell" 101
+			sudo update-alternatives --install "/usr/bin/jweblauncher" "jweblauncher" "$command_path/jweblauncher" 101
+			sudo update-alternatives --install "/usr/bin/jaotc" "jaotc" "$command_path/jaotc" 101
+		command_path=/opt/jdk/jdk-9.0.4/bin/
+			sudo update-alternatives --set "appletviewer" "$command_path/appletviewer"
+			sudo update-alternatives --set "idlj" "$command_path/idlj"
+			sudo update-alternatives --set "jar" "$command_path/jar"
+			sudo update-alternatives --set "jarsigner" "$command_path/jarsigner"
+			sudo update-alternatives --set "java" "$command_path/java"
+			sudo update-alternatives --set "javac" "$command_path/javac"
+			sudo update-alternatives --set "javadoc" "$command_path/javadoc"
+			sudo update-alternatives --set "javah" "$command_path/javah"
+			sudo update-alternatives --set "javap" "$command_path/javap"
+			sudo update-alternatives --set "javaws" "$command_path/javaws"
+			sudo update-alternatives --set "jconsole" "$command_path/jconsole"
+			sudo update-alternatives --set "jcontrol" "$command_path/jcontrol"
+			sudo update-alternatives --set "jdb" "$command_path/jdb"
+			sudo update-alternatives --set "jinfo" "$command_path/jinfo"
+			sudo update-alternatives --set "jmap" "$command_path/jmap"
+			sudo update-alternatives --set "jmc" "$command_path/jmc"
+			sudo update-alternatives --set "jrunscript" "$command_path/jrunscript"
+			sudo update-alternatives --set "jstack" "$command_path/jstack"
+			sudo update-alternatives --set "jstat" "$command_path/jstat"
+			sudo update-alternatives --set "jstatd" "$command_path/jstatd"
+			sudo update-alternatives --set "keytool" "$command_path/keytool"
+			sudo update-alternatives --set "orbd" "$command_path/orbd"
+			sudo update-alternatives --set "pack200" "$command_path/pack200"
+			sudo update-alternatives --set "policytool" "$command_path/policytool"
+			sudo update-alternatives --set "rmic" "$command_path/rmic"
+			sudo update-alternatives --set "rmid" "$command_path/rmid"
+			sudo update-alternatives --set "rmiregistry" "$command_path/rmiregistry"
+			sudo update-alternatives --set "schemagen" "$command_path/schemagen"
+			sudo update-alternatives --set "serialver" "$command_path/serialver"
+			sudo update-alternatives --set "servertool" "$command_path/servertool"
+			sudo update-alternatives --set "tnameserv" "$command_path/tnameserv"
+			sudo update-alternatives --set "unpack200" "$command_path/unpack200"
+			sudo update-alternatives --set "wsgen" "$command_path/wsgen"
+			sudo update-alternatives --set "wsimport" "$command_path/wsimport"
+			sudo update-alternatives --set "xjc" "$command_path/xjc"
+			sudo update-alternatives --set "javapackager" "$command_path/javapackager"
+			sudo update-alternatives --set "jcmd" "$command_path/jcmd"
+			sudo update-alternatives --set "jdeprscan" "$command_path/jdeprscan"
+			sudo update-alternatives --set "jdeps" "$command_path/jdeps"
+			sudo update-alternatives --set "jhsdb" "$command_path/jhsdb"
+			sudo update-alternatives --set "jimage" "$command_path/jimage"
+			sudo update-alternatives --set "jjs" "$command_path/jjs"
+			sudo update-alternatives --set "jlink" "$command_path/jlink"
+			sudo update-alternatives --set "jmod" "$command_path/jmod"
+			sudo update-alternatives --set "jps" "$command_path/jps"
+			sudo update-alternatives --set "jshell" "$command_path/jshell"
+			sudo update-alternatives --set "jweblauncher" "$command_path/jweblauncher"
+			sudo update-alternatives --set "jaotc" "$command_path/jaotc"
 
-    lib_path=/opt/jdk/jdk-9.0.4/bin/jre/lib/amd64/libnpjp2.so
+    lib_path=/opt/jdk/jdk-9.0.4/bin/jre/lib/amd64/
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
-        sudo update-alternatives --install "/usr/lib/mozilla/plugins/libjavaplugin.so" "mozilla-javaplugin.so" "$lib_path" 101
-        sudo update-alternatives --set "mozilla-javaplugin.so" "$lib_path"
+        sudo update-alternatives --install "/usr/lib/mozilla/plugins/libjavaplugin.so" "mozilla-javaplugin.so" "$lib_path/libnpjp2.so" 101
+        sudo update-alternatives --set "mozilla-javaplugin.so" "$lib_path/libnpjp2.so"
     fi
 
 # Create system preferences directory

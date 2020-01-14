@@ -2,12 +2,13 @@
 Here you can find all of our scripts we create to make installations easier, we don't create every single thing ourself, we only want to make the installation process super easy and that's why we use other programs in our scripts to achieve this goal
 
 # Before you begin
-THESE SCRIPTS ARE MEANT FOR THE CHROMEBOOKS, IF YOU USE IT ON ANOTHER DEVICE THINGS SHOULD STILL WORK BUT THEY MIGHT NOT WORK PROPERLY...
 
 BEFORE YOU CAN USE THE SCRIPTS AT ALL YOU MUST INSTALL CURL:
 `sudo apt-get install curl`
 
 !THE SCRIPTS ARE ALSO STILL IN DEVELOPMENT AND MAY SOMETIMES NOT WORK!
+
+!JAVA BELONGS TO ORACLE AND NOT TO US, AND IF THEY WANT OUR SCRIPT TO VANISH FROM THE INTERNET IT **WILL**... ALL COPYRIGHTS, TRADEMARKS AND OTHER INTELLECTUAL PROPERTIES OF JAVA BELONG TO ORACLE!
 
 # SCRIPTS COMPATIBLE ON ALL DEBIAN BASED DEVICES
 <details>

@@ -502,6 +502,6 @@ sleep 1
 tput sgr0
 tput reset
 tput clear
-sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/OnTheLink_JAVA-MENUWIP.sh" && bash OnTheLink_JAVA-MENUWIP.sh
+sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/OnTheLink_JAVA-MENU.sh" && bash OnTheLink_JAVA-MENU.sh
 exit
 fi

@@ -127,7 +127,7 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 			sudo update-alternatives --remove "jshell" "$command_path/jshell"
 			sudo update-alternatives --remove "jweblauncher" "$command_path/jweblauncher"
 			sudo update-alternatives --remove "jaotc" "$command_path/jaotc"
-        command_path=/opt/jdk/jdk1.8.0_231/bin/
+        command_path=/opt/jdk/jdk1.8.0_241/bin/
 			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
 			sudo update-alternatives --remove "extcheck" "$command_path/extcheck"
 			sudo update-alternatives --remove "idlj" "$command_path/idlj"
@@ -233,7 +233,7 @@ lib_path=/opt/jdk/jdk-9.0.4/bin/jre/lib/amd64/libnpjp2.so
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
         sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path"
     fi
-lib_path=/opt/jdk/jdk1.8.0_231/bin/jre/lib/amd64/libnpjp2.so
+lib_path=/opt/jdk/jdk1.8.0_241/bin/jre/lib/amd64/libnpjp2.so
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
         sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path"
     fi
@@ -253,6 +253,9 @@ kill -9 $SPIN_PID
 tput reset
 tput clear
 
+MACHINE_TYPE=`uname -m`
+if [ ${MACHINE_TYPE} == 'x86_64' ]; then
+  # 64-bit stuff here
 #Creating temp folder for installation files
 sudo rm -rf /home/$USER/javainstaller*
 mkdir /home/$USER/javainstaller9_0_4
@@ -481,3 +484,24 @@ tput reset
 tput sgr0
 tput clear
 exit
+
+else
+  # 32-bit stuff here
+tput setaf 6
+echo "This version is not available for 32-bit systems, please use one of the 32-bit compatible versions from the JAVA-MENU"
+sleep 1
+tput setaf 3
+echo "returning to JAVA-MENU in 3 seconds"
+tput setaf 2
+echo "3"
+sleep 1
+echo "2"
+sleep 1
+echo "1"
+sleep 1
+tput sgr0
+tput reset
+tput clear
+sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/OnTheLink_JAVA-MENU.sh" && bash OnTheLink_JAVA-MENU.sh
+exit
+fi

@@ -5,7 +5,7 @@ tput clear
 selection=
 until [ "$selection" = "5" ]; do
 tput bold && tput setaf 46; echo "
-OnTheLink JAVA-MENU | Version(s): 10.0.2/9.0.4/8u231/7u80
+OnTheLink JAVA-MENU | Version(s): 10.0.2 (64) / 9.0.4 (64) / 8u241 (64-32) / 7u80 (64-32) | This MENU and it's SCRIPTS are still in  and WILL IN MOST CASES cause issues, please use our stable java menu...
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
@@ -15,10 +15,10 @@ tput setaf 45; echo "<<<<<<<<
 ==================================
 "
 tput sgr0 && tput setaf 202; echo "
-1 - Install Java 10.0.2
-2 - Install Java 9.0.4
-3 - Install Java 8u231
-4 - Install Java 7u80
+1 - Install Java 10.0.2 (64)
+2 - Install Java 9.0.4 (64)
+3 - Install Java 8u241 (64-32)
+4 - Install Java 7u80 (64-32)
 5 - Exit Script normally (RUN THIS ONE IF YOU DON'T WANT TO INSTALL STUFF)
 6 - Remove Java from your system (DO NOT ATTEMPT TO DO THIS WHEN A HIGHER VERSION THAN JAVA 11.x.x IS INSTALLED ON YOUR SYSTEM)
 "
@@ -50,8 +50,8 @@ case $selection in
         ;;
 	3 ) 
 		sudo rm -rf javainstaller8.sh
-		tput setaf 5; echo "Preparing the Java 8u231 installation..."
-        sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u231/javainstaller8.sh"
+		tput setaf 5; echo "Preparing the Java 8u241 installation..."
+        sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u241/javainstaller8.sh"
         sleep 2 ; bash javainstaller8.sh
 		sudo rm -rf /home/$USER/javainstaller*
 		sudo rm -rf "OnTheLink_JAVA-MENU.sh"

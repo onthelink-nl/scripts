@@ -168,7 +168,7 @@ trap "kill -9 $SPIN_PID" `seq 0 15`
 			sudo update-alternatives --remove "jshell" "$command_path/jshell"
 			sudo update-alternatives --remove "jweblauncher" "$command_path/jweblauncher"
 			sudo update-alternatives --remove "jaotc" "$command_path/jaotc"
-        command_path=/opt/jdk/jdk1.8.0_231/bin/
+        command_path=/opt/jdk/jdk1.8.0_241/bin/
 			sudo update-alternatives --remove "appletviewer" "$command_path/appletviewer"
 			sudo update-alternatives --remove "extcheck" "$command_path/extcheck"
 			sudo update-alternatives --remove "idlj" "$command_path/idlj"
@@ -274,7 +274,7 @@ lib_path=/opt/jdk/jdk-9.0.4/bin/jre/lib/amd64/
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
         sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path/libnpjp2.so"
     fi
-lib_path=/opt/jdk/jdk1.8.0_231/bin/jre/lib/amd64/
+lib_path=/opt/jdk/jdk1.8.0_241/bin/jre/lib/amd64/
     if [[ -d "/usr/lib/mozilla/plugins/" ]] && [[ -f $lib_path ]]; then
         sudo update-alternatives --remove "mozilla-javaplugin.so" "$lib_path/libnpjp2.so"
     fi

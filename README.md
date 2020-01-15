@@ -66,10 +66,10 @@ Or copy and paste one of these commands (Only required when the normal script (a
 `sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%209.0.4/javainstaller9.sh" && bash javainstaller9.sh`
 </details>
 <details>
-  <summary>Click to show version 8u231</summary>
+  <summary>Click to show version 8u241</summary>
   
-## 8u231
-`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u231/javainstaller8.sh" && bash javainstaller8.sh`
+## 8u241
+`sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%208u241/javainstaller8.sh" && bash javainstaller8.sh`
 </details>
 <details>
   <summary>Click to show version 7u80</summary>
@@ -202,7 +202,7 @@ WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGI
 
 ### **10.0.2** - *STABLE INSTALLER OF JAVA 10.0.2, If you find out that something is wrong about the installer please report it in an issue...*
 ### **9.0.4** - *STABLE INSTALLER OF JAVA 9.0.4, If you find out that something is wrong about the installer please report it in an issue...*
-### **8u231** - *STABLE INSTALLER OF JAVA 8u231, If you find out that something is wrong about the installer please report it in an issue...*
+### **8u241** - *STABLE INSTALLER OF JAVA 8u241, If you find out that something is wrong about the installer please report it in an issue...*
 ### **7u80** - *STABLE INSTALLER OF JAVA 7u80, If you find out that something is wrong about the installer please report it in an issue...*
 </details>
 <details>

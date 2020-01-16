@@ -229,4 +229,4 @@ WARNING: WE DO NOT OWN THE SOFTWARE THAT WE CREATE THE INSTALLERS FOR, ALL COPYR
 Tools used: [Flatpak](https://flatpak.org/ "The Future Of Apps On Linux")
 
 
-Software: [QGIS](https://qgis.org/en/site/ "A Free and Open Source Geographic Information System") | [AnyDesk](https://anydesk.com/ "Remote Desktop Software - AnyWhere. AnyTime. AnyDesk") | [Java](https://www.oracle.com/java/ "Java Software | Oracle")
+Software: [QGIS](https://qgis.org/en/site/ "A Free and Open Source Geographic Information System") | [AnyDesk](https://anydesk.com/ "Remote Desktop Software - AnyWhere. AnyTime. AnyDesk") | [Java](https://www.oracle.com/java/ "Java Software - Oracle")

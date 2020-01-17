@@ -223,7 +223,7 @@ WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGI
 </details>
 
 # Credits
-Creating: Misha Opstal & Leopold Siccama Hiemstra
+Creating: Misha Opstal, Eva Looijestein & Leopold Siccama Hiemstra
 WARNING: WE DO NOT OWN THE SOFTWARE THAT WE CREATE THE INSTALLERS FOR, ALL COPYRIGHTS GO TO THE CREATORS OF THE SOFTWARE AND WE DO *NOT* CLAIM IT AS OURS!
 
 Tools used: [Flatpak](https://flatpak.org/ "The Future Of Apps On Linux")

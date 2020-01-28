@@ -5,7 +5,7 @@ tput clear
 selection=
 until [ "$selection" = "5" ]; do
 tput bold && tput setaf 46; echo "
-OnTheLink JAVA-MENU | Version(s): 10.0.2 (64) / 9.0.4 (64) / 8u241 (64-32) / 7u80 (64-32) | This MENU and it's SCRIPTS are still in  and WILL IN MOST CASES cause issues, please use our stable java menu...
+OnTheLink JAVA-MENU | Version(s): 10.0.2 (64) / 9.0.4 (64) / 8u241 (64-32) / 7u80 (64-32)
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================

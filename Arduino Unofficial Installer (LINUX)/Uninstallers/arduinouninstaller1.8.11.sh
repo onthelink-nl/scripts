@@ -103,11 +103,17 @@ sudo ./uninstall.sh
 sleep 2
 tput sgr0
 
-#Remove leftover folder
+#Remove leftover folders
 cd $STARTDIR
 sudo rm -rf /opt/arduino-1.8.11/
 sudo rm -rf /opt/arduino-1.8.11*
 sudo rm -rf /opt/arduino-1.8.11
+sudo rm -rf /home/$USER/Arduino/
+sudo rm -rf /home/$USER/Arduino*
+sudo rm -rf /home/$USER/Arduino
+sudo rm -rf /home/$USER/.arduino15/
+sudo rm -rf /home/$USER/.arduino15*
+sudo rm -rf /home/$USER/.arduino15
 
 #stop spinner
 kill -9 $SPIN_PID

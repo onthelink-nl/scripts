@@ -14,7 +14,7 @@ BEFORE YOU CAN USE THE SCRIPTS AT ALL YOU MUST INSTALL CURL:
 <details>
   <summary>Click to show installers!</summary>
   
-  ## - The ARDUINO Installer (WIP - NOT TESTED YET)
+  ## - The ARDUINO Installer
   <details>
   <summary>Click to show installer</summary>
 <b><h1 align="center">=======================================</h1></b>

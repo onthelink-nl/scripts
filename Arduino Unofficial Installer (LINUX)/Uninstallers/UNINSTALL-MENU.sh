@@ -16,7 +16,7 @@ tput setaf 45; echo "<<<<<<<<
 "
 tput sgr0 && tput setaf 202; echo "
 1 - Remove Arduino 1.8.11 from your system
-2 - Exit Script normally (RUN THIS ONE IF YOU DON'T WANT TO INSTALL STUFF)
+2 - Go back to the ARDUINO-MENU
 "
     tput setaf 6; echo -n "Enter selection: "
     read -r selection
@@ -40,7 +40,6 @@ case $selection in
 		tput sgr0
 		tput reset
 		tput clear
-		exit
 		;;
 	* ) 
         tput setaf 202; echo "Please enter choice 1, 2, 3..."

@@ -124,7 +124,7 @@ echo "Dependencies have been installed"
 tput setaf 1
 echo "Downloading version 1.8.11 64-Bit..."
 tput setaf 6
-sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/arduino%20Unofficial%20Installer%20(Debian)/arduino%2010.0.2/jdk-10.0.2_linux-x64_bin.tar.gz"
+sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Arduino%20Unofficial%20Installer%20(LINUX)/arduino-1.8.11%20(64-32)/arduino-1.8.11-linux64.tar.xz"
 tput setaf 2
 echo "Files have been downloaded"
 sleep 1
@@ -235,7 +235,7 @@ echo "Dependencies have been installed"
 tput setaf 1
 echo "Downloading version 1.8.11 32-Bit..."
 tput setaf 6
-sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/arduino%20Unofficial%20Installer%20(Debian)/arduino%2010.0.2/jdk-10.0.2_linux-x64_bin.tar.gz"
+sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Arduino%20Unofficial%20Installer%20(LINUX)/arduino-1.8.11%20(64-32)/arduino-1.8.11-linux32.tar.xz"
 tput setaf 2
 echo "Files have been downloaded"
 sleep 1

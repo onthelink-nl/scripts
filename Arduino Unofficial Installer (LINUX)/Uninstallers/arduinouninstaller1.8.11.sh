@@ -48,7 +48,7 @@ tput clear
 #Information about the creator(s) and the script itself
 tput setaf 2; echo "This script is originally created by Misha Opstal"
 echo "This script will remove arduino 1.8.11 from your Linux device."
-tput bold; echo "We are not the creators of arduino and this is an unofficial script, we do NOT claim arduino as our content and all copyrights, trademarks and other intellectual property belong to the Arduino AG!"
+tput bold; echo "We are not the creators of arduino and this is an unofficial script, we do NOT claim arduino as our content and all copyrights, trademarks and other intellectual property belong to Arduino AG!"
 tput setaf 5; echo -n "Our Discord: "
 echo -e '\e]8;;https://discordapp.com/invite/UfbNmJb\aOnTheLink official Discord server\e]8;;\a'
 echo -n "The arduino website: "
@@ -107,6 +107,7 @@ tput sgr0
 cd $STARTDIR
 sudo rm -rf /opt/arduino-1.8.11/
 sudo rm -rf /opt/arduino-1.8.11*
+sudo rm -rf /opt/arduino-1.8.11
 
 #stop spinner
 kill -9 $SPIN_PID

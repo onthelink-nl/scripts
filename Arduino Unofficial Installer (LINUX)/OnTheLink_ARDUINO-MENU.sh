@@ -5,7 +5,7 @@ tput clear
 selection=
 until [ "$selection" = "5" ]; do
 tput bold && tput setaf 46; echo "
-OnTheLink ARDUINO-MENU | Version(s): 1.8.11 (64-32)
+OnTheLink ARDUINO-MENU | Version(s): 1.8.11 (64-32) | WARNING: DO NOT ATTEMPT TO INSTALL MULTIPLE ARDUINO INSTALLATIONS
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
@@ -26,7 +26,7 @@ case $selection in
     1 ) 
 		sudo rm -rf arduinoinstaller1.8.11.sh
 		tput setaf 5; echo "Preparing the Arduino 1.8.11 installation..."
-        sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%2010.0.2/javainstaller10.sh"
+        sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Arduino%20Unofficial%20Installer%20(LINUX)/arduino-1.8.11%20(64-32)/arduinoinstaller1.8.11.sh"
         sleep 2 ; bash arduinoinstaller1.8.11.sh
 		sudo rm -rf /home/$USER/arduinoinstaller*
 		sudo rm -rf "OnTheLink_ARDUINO-MENU.sh"
@@ -46,7 +46,7 @@ case $selection in
 	3 ) 
 		sudo rm -rf UNINSTALL-MENU.sh
 		tput setaf 5; echo "Preparing Arduino Removal Menu..."
-		sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Uninstaller/javauninstaller.sh"
+		sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Arduino%20Unofficial%20Installer%20(LINUX)/Uninstallers/UNINSTALL-MENU.sh"
 		sleep 2 ; bash UNINSTALL-MENU.sh
 		sudo rm -rf /home/$USER/UNINSTALL-MENU.sh
 		sudo rm -rf "UNINSTALL-MENU.sh"

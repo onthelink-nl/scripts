@@ -25,7 +25,7 @@ case $selection in
     1 ) 
 		sudo rm -rf arduinouninstaller1.8.11.sh
 		tput setaf 5; echo "Preparing the Arduino 1.8.11 uninstallation..."
-        sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Java%20Unofficial%20Installer%20(Debian)/Java%2010.0.2/javainstaller10.sh"
+        sudo curl -LO "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Arduino%20Unofficial%20Installer%20(LINUX)/Uninstallers/arduinouninstaller1.8.11.sh"
         sleep 2 ; bash arduinouninstaller1.8.11.sh
 		sudo rm -rf /home/$USER/arduinouninstaller1.8.11.sh
 		sudo rm -rf "arduinouninstaller1.8.11.sh"

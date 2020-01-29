@@ -289,6 +289,13 @@ WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGI
 ### **DEBIAN** - *STABLE INSTALLER OF ANYDESK, If you find out that something is wrong about the installer please report it in an issue...*
 </details>
 
+# Troubleshooting
+<details>
+  <summary>Q: Crosh/Terminal can't be found</summary>
+
+A: [Install this chrome extension](https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo/related/ "Secure Shell App")
+</details>
+
 # Credits
 Creating: Misha Opstal, Eva Looijestein & Leopold Siccama Hiemstra
 

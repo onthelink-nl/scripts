@@ -1,1 +1,1 @@
-deb http://deb.debian.org/debian stretch-backports stretchdev
+deb http://deb.debian.org/debian buster-backports busterdev

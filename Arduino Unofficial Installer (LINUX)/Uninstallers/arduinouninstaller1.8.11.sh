@@ -24,20 +24,6 @@ tput sgr0
 tput reset
 tput clear
 
-spin()
-{
-  spinner="-\\|/-\\|/"
-  while :
-  do
-    for i in `seq 0 7`
-    do
-      echo -n "${spinner:$i:1}"
-      echo -en "\010"
-      sleep 1
-    done
-  done
-}
-
 echo "About to start the uninstaller..."
 sleep 2
 echo "Here we go!!!"
@@ -84,18 +70,8 @@ sleep 1
 tput reset
 tput clear
 
-# Start the Spinner:
-spin &
-# Make a note of its Process ID (PID):
-SPIN_PID=$!
-# Kill the spinner on any signal, including our own exit.
-trap "kill -9 $SPIN_PID" `seq 6 30`
-
 #Naar Arduino1.8.11 installatie
 cd /opt/arduino-1.8.11/
-
-#stop spinner
-kill -9 $SPIN_PID
 
 #Arduino verwijderen
 tput setaf 6
@@ -114,9 +90,6 @@ sudo rm -rf /home/$USER/Arduino
 sudo rm -rf /home/$USER/.arduino15/
 sudo rm -rf /home/$USER/.arduino15*
 sudo rm -rf /home/$USER/.arduino15
-
-#stop spinner
-kill -9 $SPIN_PID
 
 #Done
 tput reset

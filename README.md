@@ -10,6 +10,65 @@ BEFORE YOU CAN USE THE SCRIPTS AT ALL YOU MUST INSTALL CURL:
 
 !JAVA BELONGS TO ORACLE AND NOT TO US, AND IF THEY WANT OUR SCRIPT TO VANISH FROM THE INTERNET IT **WILL**... ALL COPYRIGHTS, TRADEMARKS AND OTHER INTELLECTUAL PROPERTIES OF JAVA BELONG TO ORACLE!
 
+# SCRIPTS COMPATIBLE ON ALL LINUX BASED DEVICES
+<details>
+  <summary>Click to show installers!</summary>
+  
+  ## - The ARDUINO Installer (WIP - NOT TESTED YET)
+  <details>
+  <summary>Click to show installer</summary>
+<b><h1 align="center">=======================================</h1></b>
+
+<H3 align="center">
+We are not responsible for any damage done to your device by using our scripts!!
+</H3>
+
+<b><h1 align="center">=======================================</h1></b>
+
+!copyrights, trademarks and other intellectual property belong to Arduino AG!
+
+# HOW TO USE:
+
+1. Open a terminal
+2. Choose the script you want to install and paste the command in the terminal
+3. Press "Return" (ENTER)
+4. Follow the instructions on your screen
+
+<b><h2 align="center">==================================================</h2></b>
+
+<H2 align="center">
+ARDUINO INSTALLER
+</H2>
+
+<b><h2 align="center">==================================================</h2></b>
+
+# ARDUINO Installation Menu:
+<details>
+  <summary>Click to show installer</summary>
+
+## ARDUINO INSTALLER WITH VERSION MENU
+`sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Arduino%20Unofficial%20Installer%20(LINUX)/OnTheLink_ARDUINO-MENU.sh" && bash OnTheLink_ARDUINO-MENU.sh`
+</details>
+
+Or copy and paste one of these commands (Only required when the normal script (above) doesn't work) into the terminal and hit "Return" (ENTER):
+
+# Versions:
+<details>
+  <summary>Click to show version 1.8.11</summary>
+
+## 1.8.11
+`https://github.com/onthelink-nl/scripts/raw/master/Arduino%20Unofficial%20Installer%20(LINUX)/arduino-1.8.11%20(64-32)/arduinoinstaller1.8.11.sh" && bash arduinoinstaller1.8.11.sh`
+</details>
+
+# Uninstaller:
+Copy and paste this command into the terminal and hit "Return" (ENTER):
+`https://github.com/onthelink-nl/scripts/raw/master/Arduino%20Unofficial%20Installer%20(LINUX)/Uninstallers/UNINSTALL-MENU.sh" && bash UNINSTALL-MENU.sh`
+
+<b><h3 align="center">========================================================================</h3></b>
+
+  </details>
+</details>
+
 # SCRIPTS COMPATIBLE ON ALL DEBIAN BASED DEVICES
 <details>
   <summary>Click to show installers!</summary>
@@ -195,6 +254,14 @@ WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGI
 
 # Version History
 <details>
+  <summary>Arduino</summary>
+
+## Arduino
+==========
+
+### **1.8.11** - *WIP INSTALLER OF ARDUINO 1.8.11, If you find out that something is wrong about the installer please report it in an issue...*
+</details>
+<details>
   <summary>Java</summary>
 
 ## Java
@@ -230,4 +297,4 @@ WARNING: WE DO NOT OWN THE SOFTWARE THAT WE CREATE THE INSTALLERS FOR, ALL COPYR
 Tools used: [Flatpak](https://flatpak.org/ "The Future Of Apps On Linux")
 
 
-Software: [QGIS](https://qgis.org/en/site/ "A Free and Open Source Geographic Information System") | [AnyDesk](https://anydesk.com/ "Remote Desktop Software - AnyWhere. AnyTime. AnyDesk") | [Java](https://www.oracle.com/java/ "Java Software - Oracle")
+Software: [QGIS](https://qgis.org/en/site/ "A Free and Open Source Geographic Information System") | [AnyDesk](https://anydesk.com/ "Remote Desktop Software - AnyWhere. AnyTime. AnyDesk") | [Java](https://www.oracle.com/java/ "Java Software - Oracle") | [Arduino](https://www.arduino.cc/ "Arduino - Home")

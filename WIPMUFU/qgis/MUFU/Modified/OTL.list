@@ -1,1 +1,1 @@
-deb http://deb.debian.org/debian buster-backports busterdev
+deb http://deb.debian.org/debian buster-backports main

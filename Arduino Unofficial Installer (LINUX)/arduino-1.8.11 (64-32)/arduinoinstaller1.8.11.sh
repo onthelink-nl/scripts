@@ -24,40 +24,16 @@ tput sgr0
 tput reset
 tput clear
 
-spin()
-{
-  spinner="-\\|/-\\|/"
-  while :
-  do
-    for i in `seq 0 7`
-    do
-      echo -n "${spinner:$i:1}"
-      echo -en "\010"
-      sleep 1
-    done
-  done
-}
-
 echo "About to start the installer..."
 sleep 2
 echo "Here we go!!!"
 sleep 1
-
-# Start the Spinner:
-spin &
-# Make a note of its Process ID (PID):
-SPIN_PID=$!
-# Kill the spinner on any signal, including our own exit.
-trap "kill -9 $SPIN_PID" `seq 6 30`
 
 #Remove older files
 sudo rm -rf /opt/arduino-1.8.11/*
 sudo rm -rf /opt/arduino-1.8.11*
 sudo rm -rf /home/$USER/arduinoinstaller*
 sudo apt-get --yes --assume-yes update
-
-#stop spinner
-kill -9 $SPIN_PID
 
 #Clear terminal before execution of the script
 tput reset
@@ -108,12 +84,6 @@ sleep 1
 tput reset
 tput clear
 
-# Start the Spinner:
-spin &
-
-# Make a note of its Process ID (PID):
-SPIN_PID=$!
-
 #Installing/updating
 tput setaf 1
 echo "Installing dependencies"
@@ -143,10 +113,6 @@ tput setaf 2
 echo "Files have been moved!"
 tput setaf 1
 echo "Installing Arduino..."
-
-#stop spinner
-kill -9 $SPIN_PID
-
 tput setaf 6
 sudo ./install.sh
 sleep 2
@@ -219,12 +185,6 @@ sleep 1
 tput reset
 tput clear
 
-# Start the Spinner:
-spin &
-
-# Make a note of its Process ID (PID):
-SPIN_PID=$!
-
 #Installing/updating
 tput setaf 1
 echo "Installing dependencies"
@@ -255,10 +215,6 @@ tput setaf 2
 echo "Files have been moved!"
 tput setaf 1
 echo "Installing Arduino..."
-
-#stop spinner
-kill -9 $SPIN_PID
-
 tput setaf 6
 sudo ./install.sh
 sleep 2

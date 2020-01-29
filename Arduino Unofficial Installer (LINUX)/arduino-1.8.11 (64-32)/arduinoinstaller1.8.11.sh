@@ -117,7 +117,7 @@ SPIN_PID=$!
 tput setaf 1
 echo "Installing dependencies"
 tput setaf 6
-sudo apt-get --yes --assume-yes install wget apt-utils nautilus inotify-tools cron curl tar 2> /dev/null | exec 1> /dev/tty
+sudo apt-get --yes --assume-yes install wget xz-utils apt-utils nautilus inotify-tools cron curl tar 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
 echo "Dependencies have been installed"
 tput setaf 1
@@ -227,7 +227,7 @@ SPIN_PID=$!
 tput setaf 1
 echo "Installing dependencies"
 tput setaf 6
-sudo apt-get --yes --assume-yes install wget curl tar 2> /dev/null | exec 1> /dev/tty
+sudo apt-get --yes --assume-yes install wget xz-utils apt-utils nautilus inotify-tools cron curl tar 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
 echo "Dependencies have been installed"
 tput setaf 1

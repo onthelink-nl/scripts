@@ -48,7 +48,7 @@ spin &
 # Make a note of its Process ID (PID):
 SPIN_PID=$!
 # Kill the spinner on any signal, including our own exit.
-trap "kill -9 $SPIN_PID" `seq 10 17`
+trap "kill -9 $SPIN_PID" `seq 0 15`
 
 #Remove older files
 sudo rm -rf /opt/arduino-1.8.11/*

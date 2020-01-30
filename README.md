@@ -73,7 +73,61 @@ Copy and paste this command into the terminal and hit "Return" (ENTER):
 <details>
   <summary>Click to show installers!</summary>
   
-  ## - The Java Installer (x86_64 only for now (type uname -m for information about this))
+  ## - The Wine Installer (WIP - NOT TESTED YET!)
+  <details>
+  <summary>Click to show installer</summary>
+<b><h1 align="center">=======================================</h1></b>
+
+<H3 align="center">
+We are not responsible for any damage done to your device by using our scripts!!
+</H3>
+
+<b><h1 align="center">=======================================</h1></b>
+
+!copyrights, trademarks and other intellectual property belong to WineHQ!
+
+# HOW TO USE:
+
+1. Open a terminal
+2. Choose the script you want to install and paste the command in the terminal
+3. Press "Return" (ENTER)
+4. Follow the instructions on your screen
+
+<b><h2 align="center">==================================================</h2></b>
+
+<H2 align="center">
+WINE INSTALLER
+</H2>
+
+<b><h2 align="center">==================================================</h2></b>
+
+# WINE Installation Menu:
+<details>
+  <summary>Click to show installer</summary>
+
+## WINE INSTALLER WITH MENU
+`sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/OnTheLink_WINE-MENU.sh" && bash OnTheLink_WINE-MENU.sh`
+</details>
+
+Or copy and paste the following command(s) (Only required when the normal script (above) doesn't work) into the terminal and hit "Return" (ENTER):
+
+# Versions:
+<details>
+  <summary>Click to show version WINE</summary>
+
+## WINE
+`sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/Wine/wineinstaller.sh" && bash javainstaller10.sh`
+</details>
+
+# Uninstaller:
+Copy and paste this command into the terminal and hit "Return" (ENTER):
+`https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/UNINSTALLER/wineuninstaller.sh" && bash UNINSTALL-MENU.sh`
+
+<b><h3 align="center">========================================================================</h3></b>
+
+  </details>
+  
+  ## - The Java Installer
   <details>
   <summary>Click to show installer</summary>
 <b><h1 align="center">=======================================</h1></b>
@@ -178,6 +232,7 @@ Copy and paste this command into the terminal and hit "Return" (ENTER):
 <b><h3 align="center">========================================================================</h3></b>
 
   </details>
+</details>
 </details>
 
 # SCRIPTS ONLY COMPATIBLE WITH CHROMEBOOKS (ONLY CHROMEBOOKTESTED INCLUDED)

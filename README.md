@@ -102,6 +102,7 @@ WINE INSTALLER
 <b><h2 align="center">==================================================</h2></b>
 
 ## READ BEFORE USING!!! (VERY IMPORTANT)
+_*IF THERE ARE NO FILES IN THERE OR YOU ARE NOT RUNNING CHROME OS THEN THIS ISN'T NECESSARY*_
 BEFORE RUNNING THIS WINE INSTALLER DO THE FOLLOWING THINGS:  
 Do: `cd /etc/apt/sources.list.d/`  
 Do: `sudo vim cros.list` (or whatever it is called on your chromebook)  

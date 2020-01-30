@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Get current path (Required for completion removal of install files)
+STARTDIR="$(pwd)"
+
 tput reset
 tput clear
 selection=
@@ -30,6 +33,7 @@ case $selection in
         sleep 2 ; bash wineinstaller.sh
 		sudo rm -rf /home/$USER/wineinstaller*
 		sudo rm -rf "OnTheLink_WINE-MENU.sh"
+		cd $STARTDIR
 		tput sgr0
 		tput reset
 		tput clear
@@ -38,6 +42,7 @@ case $selection in
 	2 ) 
 		sudo rm -rf /home/$USER/wineinstaller*
 		sudo rm -rf "OnTheLink_WINE-MENU.sh"
+		cd $STARTDIR
 		tput sgr0
 		tput reset
 		tput clear
@@ -48,8 +53,9 @@ case $selection in
 		tput setaf 5; echo "Preparing Wine Removal..."
 		sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/UNINSTALLER/wineuninstaller.sh"
 		sleep 2 ; bash wineuninstaller.sh
-    sudo rm -rf "wineuninstaller.sh"
-    sudo rm -rf "OnTheLink_WINE-MENU.sh"
+		sudo rm -rf "wineuninstaller.sh"
+		sudo rm -rf "OnTheLink_WINE-MENU.sh"
+		cd $STARTDIR
 		tput sgr0
 		tput reset
 		tput clear

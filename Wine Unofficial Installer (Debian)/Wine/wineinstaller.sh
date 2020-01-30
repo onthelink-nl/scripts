@@ -10,7 +10,7 @@ function ctrl_c() {
         tput reset && tput clear && tput sgr0 && exit
 }
 
-for i in `seq 1 5`; do
+for i in $(seq 1 5); do
     sleep 1
     echo -n "."
 done
@@ -21,7 +21,7 @@ spin()
   spinner="/|\\-/|\\-"
   while :
   do
-    for i in `seq 0 7`
+    for i in $(seq 0 7)
     do
       echo -n "${spinner:$i:1}"
       echo -en "\010"
@@ -44,7 +44,7 @@ spin &
 # Make a note of its Process ID (PID):
 SPIN_PID=$!
 # Kill the spinner on any signal, including our own exit.
-trap "kill -9 $SPIN_PID" `seq 0 15`
+trap 'Kill -9 $SPIN_PID' $(seq 0 15)
 
 #Resetting Terminal
 tput reset
@@ -54,9 +54,9 @@ tput sgr0
 #Create temp folder
 tput setaf 3
 echo "Creating temp folder..."
-sudo rm -rf /home/$USER/wineinstallertemp
-sudo mkdir /home/$USER/wineinstallertemp
-cd /home/$USER/wineinstallertemp
+sudo rm -rf /home/"$USER"/wineinstallertemp
+sudo mkdir /home/"$USER"/wineinstallertemp
+cd /home/"$USER"/wineinstallertemp
 tput setaf 2
 echo "temp folder created!"
 
@@ -68,8 +68,8 @@ tput reset
 tput clear
 tput sgr0
 
-MACHINE_TYPE=`uname -m`
-if [ ${MACHINE_TYPE} == 'x86_64' ]; then
+MACHINE_TYPE=$(uname -m)
+if [ "${MACHINE_TYPE}" == 'x86_64' ]; then
   # 64-bit stuff here
 
 #Information about the creator(s) and the script itself
@@ -137,8 +137,7 @@ echo "Installing Wine and Winetricks..."
 tput setaf 6
 sudo apt-get --yes --assume-yes install wine 2> /dev/null | exec 1> /dev/tty
 sudo curl -LOs "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/winetricks.deb"
-yes | sudo dpkg -i winetricks.deb 2> /dev/null | exec 1> /dev/tty
-sudo apt --yes --assume-yes install -f 2> /dev/null | exec 1> /dev/tty
+sudo apt-get --yes --assume-yes install ./winetricks.deb
 tput setaf 2
 echo "Wine and Winetricks are installed!"
 
@@ -190,7 +189,7 @@ SPIN_PID=$!
 
 #Setting up wine extra packages
 tput setaf 6
-WINEPREFIX="/home/$USER/.wine32" WINEARCH=win32 winetricks binkw32 d3dcompiler_47 d3drm d3dx9_36 d3dx9 dinput8 dotnet48 dxdiag dxvk python27 vcrun2017 vb6run vcrun6sp6 vcrun6 vulkanrt xinput allfonts
+WINEPREFIX="/home/$USER/.wine32" WINEARCH=win32 winetricks binkw32 d3dcompiler_47 d3drm d3dx9_36 d3dx9 dinput8 dxdiag dxvk vcrun2017 vb6run vcrun6sp6 vcrun6 xinput dotnet472
 sleep 3
 tput setaf 2
 echo "Extra packages for Wine32 are installed!"
@@ -203,13 +202,21 @@ tput setaf 3
 echo "Exiting in 5 seconds..."
 sleep 5
 
+#Removing leftovers
+cd "$STARTDIR"
+sudo rm -rf /home/"$USER"/wineinstallertemp/
+sudo rm -rf /home/"$USER"/wineinstallertemp*
+sudo rm -rf /home/"$USER"/wineinstallertemp
+sudo rm -rf /home/"$USER"/wineinstaller.sh
+sudo rm -rf wineinstaller.sh
+
 #Reset Terminal Again
 tput reset
 tput clear
 tput sgr0
 
 #Exit
-cd $STARTDIR
+cd "$STARTDIR"
 exit
 
 else
@@ -220,11 +227,19 @@ tput setaf 3
 echo "32-Bit is not supported yet, please come back when we're done..."
 sleep 3
 
+#Removing leftovers
+cd "$STARTDIR"
+sudo rm -rf /home/"$USER"/wineinstallertemp/
+sudo rm -rf /home/"$USER"/wineinstallertemp*
+sudo rm -rf /home/"$USER"/wineinstallertemp
+sudo rm -rf /home/"$USER"/wineinstaller.sh
+sudo rm -rf wineinstaller.sh
+
 #Reset Terminal Again
 tput reset
 tput clear
 tput sgr0
 
 #Exit
-cd $STARTDIR
 exit
+fi

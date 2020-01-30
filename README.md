@@ -101,10 +101,6 @@ WINE INSTALLER
 
 <b><h2 align="center">==================================================</h2></b>
 
-# WINE Installation Menu:
-<details>
-  <summary>Click to show installer</summary>
-
 ## READ BEFORE USING!!! (VERY IMPORTANT)
 BEFORE RUNNING THIS WINE INSTALLER DO THE FOLLOWING THINGS:
 Do: `cd /etc/apt/sources.list.d/`
@@ -116,6 +112,10 @@ Press *esc* button
 Type: *:w* and press enter (yes you need to do the : before the w)
 Type: *:q* and press enter (yes you need to do the : before the q)
 Do: `cd -` (to return to the directory you was before doing this)
+
+# WINE Installation Menu:
+<details>
+  <summary>Click to show installer</summary>
 
 ## WINE INSTALLER WITH MENU
 `sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/OnTheLink_WINE-MENU.sh" && bash OnTheLink_WINE-MENU.sh`

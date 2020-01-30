@@ -116,12 +116,12 @@ Or copy and paste the following command(s) (Only required when the normal script
   <summary>Click to show version WINE</summary>
 
 ## WINE
-`sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/Wine/wineinstaller.sh" && bash javainstaller10.sh`
+`sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/Wine/wineinstaller.sh" && bash wineinstaller.sh`
 </details>
 
 # Uninstaller:
 Copy and paste this command into the terminal and hit "Return" (ENTER):
-`https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/UNINSTALLER/wineuninstaller.sh" && bash UNINSTALL-MENU.sh`
+`https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/UNINSTALLER/wineuninstaller.sh" && bash wineuninstaller.sh`
 
 <b><h3 align="center">========================================================================</h3></b>
 

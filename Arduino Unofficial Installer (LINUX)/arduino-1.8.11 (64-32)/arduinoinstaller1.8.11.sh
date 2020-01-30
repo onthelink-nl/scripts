@@ -20,6 +20,7 @@ for i in `seq 1 5`; do
     echo -n "."
 done
 
+# Spinner Code
 spin()
 {
   spinner="/|\\-/|\\-"

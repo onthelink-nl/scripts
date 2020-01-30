@@ -102,15 +102,15 @@ WINE INSTALLER
 <b><h2 align="center">==================================================</h2></b>
 
 ## READ BEFORE USING!!! (VERY IMPORTANT)
-BEFORE RUNNING THIS WINE INSTALLER DO THE FOLLOWING THINGS:
-Do: `cd /etc/apt/sources.list.d/`
-Do: `sudo vim cros.list` (or whatever it is called on your chromebook)
-Press *i* to enter editor mode
-Change this: `deb https://storage.googleapis.com/cros-packages/80 buster main` (this might be different but it doesn’t really matter)
-To this: `deb [trusted=yes] https://storage.googleapis.com/cros-packages/80 buster main`
-Press *esc* button
-Type: *:w* and press enter (yes you need to do the : before the w)
-Type: *:q* and press enter (yes you need to do the : before the q)
+BEFORE RUNNING THIS WINE INSTALLER DO THE FOLLOWING THINGS:  
+Do: `cd /etc/apt/sources.list.d/`  
+Do: `sudo vim cros.list` (or whatever it is called on your chromebook)  
+Press *i* to enter editor mode  
+Change this: `deb https://storage.googleapis.com/cros-packages/80 buster main` (this might be different but it doesn’t really matter)  
+To this: `deb [trusted=yes] https://storage.googleapis.com/cros-packages/80 buster main`  
+Press *esc* button  
+Type: *:w* and press enter (yes you need to do the : before the w)  
+Type: *:q* and press enter (yes you need to do the : before the q)  
 Do: `cd -` (to return to the directory you was before doing this)
 
 # WINE Installation Menu:

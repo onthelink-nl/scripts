@@ -105,7 +105,8 @@ WINE INSTALLER
 _*IF THERE ARE NO FILES IN THERE OR YOU ARE NOT RUNNING CHROME OS THEN THIS ISN'T NECESSARY*_
 BEFORE RUNNING THIS WINE INSTALLER DO THE FOLLOWING THINGS:  
 Do: `cd /etc/apt/sources.list.d/`  
-Do: `sudo vim cros.list` (or whatever it is called on your chromebook)  
+Do: `ls` (For checking if any files are in there (There might be multiple files, please apply the following steps to all of them to be absolutely sure you got the right one))  
+Do: `sudo vim cros.list` (or whatever it is called on your chromebook or linux device
 Press *i* to enter editor mode  
 Change this: `deb https://storage.googleapis.com/cros-packages/80 buster main` (this might be different but it doesn’t really matter)  
 To this: `deb [trusted=yes] https://storage.googleapis.com/cros-packages/80 buster main`  

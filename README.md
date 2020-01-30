@@ -105,6 +105,18 @@ WINE INSTALLER
 <details>
   <summary>Click to show installer</summary>
 
+## READ BEFORE USING!!! (VERY IMPORTANT)
+BEFORE RUNNING THIS WINE INSTALLER DO THE FOLLOWING THINGS:
+Do: `cd /etc/apt/sources.list.d/`
+Do: `sudo vim cros.list` (or whatever it is called on your chromebook)
+Press *i* to enter editor mode
+Change this: `deb https://storage.googleapis.com/cros-packages/80 buster main` (this might be different but it doesn’t really matter)
+To this: `deb [trusted=yes] https://storage.googleapis.com/cros-packages/80 buster main`
+Press *esc* button
+Type: *:w* and press enter (yes you need to do the : before the w)
+Type: *:q* and press enter (yes you need to do the : before the q)
+Do: `cd -` (to return to the directory you was before doing this)
+
 ## WINE INSTALLER WITH MENU
 `sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/OnTheLink_WINE-MENU.sh" && bash OnTheLink_WINE-MENU.sh`
 </details>
@@ -118,6 +130,21 @@ Or copy and paste the following command(s) (Only required when the normal script
 ## WINE
 `sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/Wine/wineinstaller.sh" && bash wineinstaller.sh`
 </details>
+
+# How to run programs after installation:
+AFTER INSTALLING WINE USING THIS SCRIPT RUN THIS TO EXECUTE IN 32BIT:
+`WINEPREFIX="/home/$USER/.wine32" WINEARCH=win32 wine some_program` (e.g. explorer.exe)
+FOR WINETRICKS:
+`WINEPREFIX="/home/$USER/.wine32" WINEARCH=win32 winetricks` (so for winetricks no wine before *winetricks*)
+
+AND THIS FOR 64BIT:
+`wine some_program` (e.g. explorer.exe)
+FOR WINETRICKS:
+`winetricks` (so for winetricks no wine before *winetricks*)
+
+*Your wine64 prefix (so also the files of it’s drive) are located in /home/$USER/.wine*
+*Your wine32 prefix (so also the files of it’s drive) are located in /home/$USER/.wine32*
+_YOU MUST ENABLE HIDDEN FOLDERS TO LOCATE THE DRIVE IN YOUR FILE MANAGER..._
 
 # Uninstaller:
 Copy and paste this command into the terminal and hit "Return" (ENTER):

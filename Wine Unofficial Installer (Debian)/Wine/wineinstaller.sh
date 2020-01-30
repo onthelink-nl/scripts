@@ -74,8 +74,8 @@ if [ ${MACHINE_TYPE} == 'x86_64' ]; then
 
 #Information about the creator(s) and the script itself
 tput setaf 2; echo "This script is originally created by Misha Opstal"
-echo "This script will install Wine version 1.8.11 (64-Bit) on your Linux device."
-tput bold; echo "We are not the creators of Wine and this is an unofficial script, we do NOT claim arduino as our content and all copyrights, trademarks and other intellectual property belong to WineHQ!"
+echo "This script will install Wine on your Linux device (DEBIAN BASED)"
+tput bold; echo "We are not the creators of Wine and this is an unofficial script, we do NOT claim wine as our content and all copyrights, trademarks and other intellectual property belong to WineHQ!"
 tput setaf 5; echo -n "Our Discord Server: "
 echo -e '\e]8;;https://discordapp.com/invite/UfbNmJb\aOTL Discord server\e]8;;\a'
 echo -n "The arduino website: "

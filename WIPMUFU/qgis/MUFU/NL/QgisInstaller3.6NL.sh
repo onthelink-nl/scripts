@@ -5,7 +5,7 @@ spin()
   spinner="/|\\-/|\\-"
   while :
   do
-    for i in `seq 0 7`
+    for i in $(seq 0 7)
     do
       echo -n "${spinner:$i:1}"
       echo -en "\010"
@@ -24,7 +24,7 @@ spin &
 # Make a note of its Process ID (PID):
 SPIN_PID=$!
 # Kill the spinner on any signal, including our own exit.
-trap "kill -9 $SPIN_PID" `seq 0 15`
+trap 'kill -9 $SPIN_PID' $(seq 0 15)
 
 #Terminal leegmaken voordat het script uitvoert
 tput reset
@@ -60,7 +60,7 @@ sudo flatpak uninstall --unused
 sudo apt-get --yes --assume-yes remove --purge flatpak
 sudo apt-get --yes --assume-yes clean
 chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
-chattr -i /home/$USER/org.qgis.qgis/
+chattr -i /home/"$USER"/org.qgis.qgis/
 sudo mv "/run/user/1000/doc/*" /tmp
 sudo mv "/run/user/1000/doc" /tmp
 sudo mv "/run/user/1000/flatpak-monitor/*" /tmp
@@ -79,8 +79,8 @@ sudo mv "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs"
 #stop spinner
 kill -9 $SPIN_PID
 
-MACHINE_VERSION=`cat /etc/debian_version`
-if [ ${MACHINE_VERSION} == '9*' ]; then
+MACHINE_VERSION=$(cat /etc/debian_version)
+if [ "${MACHINE_VERSION}" == '9*' ]; then
   # Stretch stuff here
 
 #STRETCH CHECK VOLTOOID
@@ -93,7 +93,7 @@ tput reset
 
 #Informatie over de makers van het script en over het script zelf
 tput setaf 2; echo Dit script is gemaakt door Misha Opstal en Leopold Siccama Hiemstra.
-echo Het script zal QGIS 3.6 (STRETCH) installeren op uw chromebook.
+echo "Het script zal QGIS 3.6 (STRETCH) installeren op uw chromebook."
 echo Flatpak wordt gebruikt voor het belangrijkste deel van de installatie!
 tput bold; echo Wij zijn niet de makers van QGIS of flatpak en dit is een onofficieel script.
 tput setaf 5; echo -n "Onze website: "
@@ -141,8 +141,8 @@ else
   echo "1"
 fi
 
-MACHINE_VERSION=`cat /etc/debian_version`
-if [ ${MACHINE_VERSION} == '10*' ]; then
+MACHINE_VERSION=$(cat /etc/debian_version)
+if [ "${MACHINE_VERSION}" == '10*' ]; then
   # Buster stuff here
 
 #BUSTER CHECK VOLTOOID
@@ -155,7 +155,7 @@ tput reset
 
 #Informatie over de makers van het script en over het script zelf
 tput setaf 2; echo Dit script is gemaakt door Misha Opstal en Leopold Siccama Hiemstra.
-echo Het script zal QGIS 3.6 (BUSTER) installeren op uw chromebook.
+echo "Het script zal QGIS 3.6 (BUSTER) installeren op uw chromebook."
 echo Flatpak wordt gebruikt voor het belangrijkste deel van de installatie!
 tput bold; echo Wij zijn niet de makers van QGIS of flatpak en dit is een onofficieel script.
 tput setaf 5; echo -n "Onze website: "

@@ -81,12 +81,21 @@ sudo mv "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs"
 #stop spinner
 kill -9 $SPIN_PID
 
+MACHINE_VERSION=`cat /etc/debian_version`
+if [ ${MACHINE_VERSION} == '9*' ]; then
+  # Stretch stuff here
+
+#STRETCH CHECK VOLTOOID
+tput setaf 2
+echo "STRETCH GEVONDEN!"
+sleep 2
+
 #Script daadwerkelijke starten
 tput reset
 
 #Informatie over de makers van het script en over het script zelf
 tput setaf 2; echo Dit script is gemaakt door Misha Opstal en Leopold Siccama Hiemstra.
-echo Het script zal QGIS 3.6 installeren op uw chromebook.
+echo Het script zal QGIS 3.6 (STRETCH) installeren op uw chromebook.
 echo Flatpak wordt gebruikt voor het belangrijkste deel van de installatie!
 tput bold; echo Wij zijn niet de makers van QGIS of flatpak en dit is een onofficieel script.
 tput setaf 5; echo -n "Onze website: "
@@ -113,6 +122,89 @@ spin &
 # Make a note of its Process ID (PID):
 SPIN_PID=$!
 
+#Commando's nadat de gebruiker heeft gedrukt op de willekeurige toets
+tput sgr0 && exec 1> log.txt sudo apt-get --yes update | exec 1> /dev/tty && tput setaf 5; echo "Installatie van QGIS gestart:" && tput setaf 9; echo "Tijdelijke map aanmaken" && mkdir qgisbestanden && cd qgisbestanden && tput sgr0 && tput setaf 2; echo "De tijdelijke map is aangemaakt!" && tput sgr0 && tput setaf 9; echo "Benodigdheden installeren..." && tput sgr0 && sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/OTL.list && sudo cp -f OTL.list /etc/apt/sources.list.d/OTL.list && sudo chmod +x /etc/apt/sources.list.d/OTL.list && sudo rm -rf "OTL.list" && exec 1> log.txt 2> /dev/null | sudo apt-get --yes --assume-yes install wget apt-utils nautilus inotify-tools cron 2> /dev/null | exec 1> /dev/tty && tput setaf 2; echo "Benodigdheden geïnstalleerd!" && tput sgr0 && tput setaf 9; echo "Flatpak installeren..." && tput sgr0 && exec 1> log.txt 2> /dev/null | sudo apt-get -t stretch-backports --yes --assume-yes install flatpak 2> /dev/null | exec 1> /dev/tty && tput setaf 2; echo "Flatpak is geïnstalleerd!" && tput setaf 9; echo "apt vernieuwen:" && tput sgr0 && exec 1> log.txt 2> /dev/null | sudo apt-get --yes --assume-yes update | exec 1> /dev/tty && tput setaf 2; echo "apt vernieuwd!" && tput sgr0 && tput setaf 9; echo "QGIS installeren..." && tput sgr0 && sudo apt-get --yes --assume-yes install gnome-software-plugin-flatpak 2> /dev/null | exec 1> /dev/tty && sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/qgis.flatpakref 2> /dev/null && kill -9 $SPIN_PID && flatpak -y install qgis.flatpakref && tput reset && flatpak update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis && tput bold && tput setaf 5; echo "QGIS 3.6 is geïnstalleerd!!!" 2> /dev/tty && sleep 1 && tput sgr0 && tput setaf 1; echo "Beeindigen van script in 10 seconden..." && sleep 5 && tput setaf 1; echo "5" && sleep 1 && tput setaf 1; echo "4" && sleep 1 && tput setaf 1; echo "3" && sleep 1 && tput setaf 1; echo "2" && sleep 1 && tput setaf 1; echo "1" && sleep 1 && tput setaf 2; echo "Vaarwel!" && sleep 1 && tput reset && tput clear && tput sgr0 && exit
+
+else
+  # GOING FORWARD TO BUSTER
+  tput setaf 3
+  echo "Stretch niet gevonden, Buster check wordt uitgevoerd..."
+  sleep 1
+  tput setaf 1
+  echo "4"
+  sleep 1
+  tput setaf 1
+  echo "3"
+  sleep 1
+  tput setaf 1
+  echo "2"
+  sleep 1
+  tput setaf 1
+  echo "1"
+fi
+
+MACHINE_VERSION=`cat /etc/debian_version`
+if [ ${MACHINE_VERSION} == '10*' ]; then
+  # Buster stuff here
+
+#BUSTER CHECK VOLTOOID
+tput setaf 2
+echo "BUSTER GEVONDEN!"
+sleep 2
+
+#Script daadwerkelijke starten
+tput reset
+
+#Informatie over de makers van het script en over het script zelf
+tput setaf 2; echo Dit script is gemaakt door Misha Opstal en Leopold Siccama Hiemstra.
+echo Het script zal QGIS 3.6 (BUSTER) installeren op uw chromebook.
+echo Flatpak wordt gebruikt voor het belangrijkste deel van de installatie!
+tput bold; echo Wij zijn niet de makers van QGIS of flatpak en dit is een onofficieel script.
+tput setaf 5; echo -n "Onze website: "
+echo -e '\e]8;;https://onthelink.nl\aOnTheLink\e]8;;\a'
+echo -n "De Flatpak website: "
+echo -e '\e]8;;https://flatpak.org\aFlatpak\e]8;;\a'
+echo -n "De QGIS website: "
+echo -e '\e]8;;https://qgis.org\aQGIS\e]8;;\a'
+tput setaf 69; echo Alvast bedankt voor het gebruiken van ons script!
+tput bold && tput setaf 1; echo "===================================="
+tput bold && tput setaf 5; echo ">>>>>>>INSTALLATIE IS GESTART<<<<<<<"
+tput bold && tput setaf 1; echo "===================================="
+tput sgr0 && tput setaf 4; echo "WAARSCHUWING: Het wordt aangeraden om altijd een stabiele internetverbinding te hebben en niet op ctrl+c te drukken (Wanneer u dit doet zult u de chromebook moeten resetten met een herstel-usb of via powerwash)" && tput sgr0
+
+#Wachten op reactie van de gebruiker
+read -n 1 -s -r -p "Druk op een willekeurige toets om verder te gaan..."
+
+#sending positive reaction
+echo ";)"
+
+# Start the Spinner:
+spin &
+
+# Make a note of its Process ID (PID):
+SPIN_PID=$!
 
 #Commando's nadat de gebruiker heeft gedrukt op de willekeurige toets
-tput sgr0 && exec 1> log.txt sudo apt-get --yes update | exec 1> /dev/tty && tput setaf 5; echo "Installatie van QGIS gestart:" && tput setaf 9; echo "Tijdelijke map aanmaken" && mkdir qgisbestanden && cd qgisbestanden && tput sgr0 && tput setaf 2; echo "De tijdelijke map is aangemaakt!" && tput sgr0 && tput setaf 9; echo "Benodigdheden installeren..." && tput sgr0 && sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/OTL.list && sudo cp -f OTL.list /etc/apt/sources.list.d/OTL.list && sudo chmod +x /etc/apt/sources.list.d/OTL.list && sudo rm -rf "OTL.list" && exec 1> log.txt 2> /dev/null | sudo apt-get --yes --assume-yes install wget apt-utils nautilus inotify-tools cron 2> /dev/null | exec 1> /dev/tty && tput setaf 2; echo "Benodigdheden geïnstalleerd!" && tput sgr0 && tput setaf 9; echo "Flatpak installeren..." && tput sgr0 && exec 1> log.txt 2> /dev/null | sudo apt-get -t stretch-backports --yes --assume-yes install flatpak 2> /dev/null | exec 1> /dev/tty && tput setaf 2; echo "Flatpak is geïnstalleerd!" && tput setaf 9; echo "apt vernieuwen:" && tput sgr0 && exec 1> log.txt 2> /dev/null | sudo apt-get --yes --assume-yes update | exec 1> /dev/tty && tput setaf 2; echo "apt vernieuwd!" && tput sgr0 && tput setaf 9; echo "QGIS installeren..." && tput sgr0 && sudo apt-get --yes --assume-yes install gnome-software-plugin-flatpak 2> /dev/null | exec 1> /dev/tty && sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/qgis.flatpakref 2> /dev/null && kill -9 $SPIN_PID && flatpak -y install qgis.flatpakref && tput reset && flatpak update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis && tput bold && tput setaf 5; echo "QGIS 3.6 is geïnstalleerd!!!" 2> /dev/tty && sleep 1 && tput sgr0 && tput setaf 1; echo "Beeindigen van script in 10 seconden..." && sleep 5 && tput setaf 1; echo "5" && sleep 1 && tput setaf 1; echo "4" && sleep 1 && tput setaf 1; echo "3" && sleep 1 && tput setaf 1; echo "2" && sleep 1 && tput setaf 1; echo "1" && sleep 1 && tput setaf 2; echo "Vaarwel!" && sleep 1 && tput reset && exit
+tput sgr0 && exec 1> log.txt sudo apt-get --yes update | exec 1> /dev/tty && tput setaf 5; echo "Installatie van QGIS gestart:" && tput setaf 9; echo "Tijdelijke map aanmaken" && mkdir qgisbestanden && cd qgisbestanden && tput sgr0 && tput setaf 2; echo "De tijdelijke map is aangemaakt!" && tput sgr0 && tput setaf 9; echo "Benodigdheden installeren..." && tput sgr0 && sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/OTL_BUSTER.list && sudo cp -f OTL_BUSTER.list /etc/apt/sources.list.d/OTL_BUSTER.list && sudo chmod +x /etc/apt/sources.list.d/OTL_BUSTER.list && sudo rm -rf "OTL_BUSTER.list" && exec 1> log.txt 2> /dev/null | sudo apt-get --yes --assume-yes install wget apt-utils nautilus inotify-tools cron 2> /dev/null | exec 1> /dev/tty && tput setaf 2; echo "Benodigdheden geïnstalleerd!" && tput sgr0 && tput setaf 9; echo "Flatpak installeren..." && tput sgr0 && exec 1> log.txt 2> /dev/null | sudo apt-get -t buster-backports --yes --assume-yes install flatpak 2> /dev/null | exec 1> /dev/tty && tput setaf 2; echo "Flatpak is geïnstalleerd!" && tput setaf 9; echo "apt vernieuwen:" && tput sgr0 && exec 1> log.txt 2> /dev/null | sudo apt-get --yes --assume-yes update | exec 1> /dev/tty && tput setaf 2; echo "apt vernieuwd!" && tput sgr0 && tput setaf 9; echo "QGIS installeren..." && tput sgr0 && sudo apt-get --yes --assume-yes install gnome-software-plugin-flatpak 2> /dev/null | exec 1> /dev/tty && sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/qgis.flatpakref 2> /dev/null && kill -9 $SPIN_PID && flatpak -y install qgis.flatpakref && tput reset && flatpak update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis && tput bold && tput setaf 5; echo "QGIS 3.6 is geïnstalleerd!!!" 2> /dev/tty && sleep 1 && tput sgr0 && tput setaf 1; echo "Beeindigen van script in 10 seconden..." && sleep 5 && tput setaf 1; echo "5" && sleep 1 && tput setaf 1; echo "4" && sleep 1 && tput setaf 1; echo "3" && sleep 1 && tput setaf 1; echo "2" && sleep 1 && tput setaf 1; echo "1" && sleep 1 && tput setaf 2; echo "Vaarwel!" && sleep 1 && tput reset && tput clear && tput sgr0 && exit
+
+else
+  # FAILSAFE
+  tput setaf 3
+  echo "Stretch en Buster niet gevonden, uw debian versie wordt nog niet ondersteunt..."
+  sleep 1
+  tput setaf 1
+  echo "4"
+  sleep 1
+  tput setaf 1
+  echo "3"
+  sleep 1
+  tput setaf 1
+  echo "2"
+  sleep 1
+  tput setaf 1
+  echo "1"
+  tput reset
+  tput clear
+  tput sgr0
+  exit
+fi

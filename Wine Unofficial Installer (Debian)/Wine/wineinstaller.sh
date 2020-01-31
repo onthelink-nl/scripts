@@ -147,6 +147,18 @@ echo "Configuring Wine64..."
 sleep 2
 tput setaf 6
 wine wineboot
+tput setaf 1
+echo "Downloading and moving mscoree.dll 64-Bit..."
+tput setaf 3
+sudo mkdir DLL64
+cd DLL64
+tput setaf 6
+sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/DLL/64/mscoree.dll"
+sudo cp -f mscoree.dll /home/$USER/.wine/drive_c/windows/system32/
+tput setaf 2
+echo "mscoree.dll is downloaded and moved!"
+sleep 1
+cd /home/$USER/wineinstallertemp
 tput setaf 2
 echo "Wine64 is configured!"
 tput setaf 1
@@ -154,6 +166,18 @@ echo "Configuring Wine32..."
 sleep 2
 tput setaf 6
 WINEPREFIX="/home/$USER/.wine32" WINEARCH=win32 wine wineboot
+tput setaf 1
+echo "Downloading mscoree.dll 32-Bit..."
+tput setaf 3
+sudo mkdir DLL32
+cd DLL32
+tput setaf 6
+sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/DLL/32/mscoree.dll"
+sudo cp -f mscoree.dll /home/$USER/.wine32/drive_c/windows/system32/
+tput setaf 2
+echo "mscoree.dll is downloaded and moved!"
+sleep 1
+cd /home/$USER/wineinstallertemp
 tput setaf 2
 echo "Wine32 is configured!"
 sleep 3

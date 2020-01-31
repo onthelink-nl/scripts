@@ -1,1 +1,1 @@
-deb http://deb.debian.org/debian stretch-backports stretchdev
+deb [trusted=yes] http://deb.debian.org/debian stretch-backports stretchdev

@@ -31,6 +31,7 @@ tput reset
 
 #Verwijderen van oudere versie van het script
 tput bold && tput setaf 5; echo "Oudere versies verwijderen..."
+tput setaf 6
 sudo flatpak uninstall --force-remove org.qgis.qgis
 sudo flatpak remote-delete --force org.qgis.qgis-origin
 sudo flatpak remote-delete --force org.qgis.qgis-1-origin

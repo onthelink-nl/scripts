@@ -59,8 +59,6 @@ sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs
 sudo flatpak uninstall --unused
 sudo apt-get --yes --assume-yes remove --purge flatpak
 sudo apt-get --yes --assume-yes clean
-sudo apt-get --yes --assume-yes autoremove --purge
-sudo apt-get --yes --assume-yes clean
 chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
 chattr -i /home/$USER/org.qgis.qgis/
 sudo mv "/run/user/1000/doc/*" /tmp

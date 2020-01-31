@@ -7,7 +7,7 @@ tput bold && tput setaf 46; echo "
 OnTheLink QGIS-VERWIJDERING
 "
 tput sgr0 && tput setaf 45; echo "
-1 - Verwijder QGIS + Flatpak (Dit zal andere Flatpak apps onfunctioneel maken (niet langer te gebruiken...))
+1 - Verwijder QGIS + Flatpak (Dit zal andere Flatpak apps onfunctioneel maken)
 2 - Verwijder QGIS
 3 - Ga terug naar het QGIS-MENU
 "
@@ -90,9 +90,9 @@ case $selection in
 		sudo flatpak remote-delete --force org.qgis.qgis-10-origin
 		sudo flatpak uninstall --unused
 		sudo rm -rf /home/$USER/.var/app/org.qgis.qgis
-		sudo apt-get --yes --assume-yes clean
 		crontab -r
 		sudo rm -rf /etc/apt/sources.list.d/OTL.list
+		sudo rm -rf /etc/apt/sources.list.d/OTL_BUSTER.list
 		sudo rm -rf /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf /etc/init.d/qgisremovefiles.sh
 		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/

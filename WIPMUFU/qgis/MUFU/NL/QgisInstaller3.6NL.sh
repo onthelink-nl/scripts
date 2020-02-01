@@ -2,6 +2,10 @@
 if [[ $EUID -ne 0 ]]; then
    tput setaf 1
    echo "Dit script moet uitgevoerd worden met root toegang (met sudo werkt het best)"
+   sleep 3
+   tput reset
+   tput clear
+   tput sgr0
    exit 1
 fi
 
@@ -95,8 +99,8 @@ case $MACHINE_VERSION in
 tput setaf 2
 echo "STRETCH GEVONDEN!"
 sleep 2
-sudo rm -rf /etc/apt/sources.list.d/OTL_BUSTER.list
-sudo rm -rf /etc/apt/sources.list.d/OTL.list
+sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
+sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 
 ##Script daadwerkelijke starten
 tput reset
@@ -142,8 +146,9 @@ tput setaf 5
 echo "Installatie van QGIS gestart:"
 tput setaf 9
 echo "Tijdelijke map aanmaken"
-mkdir qgisbestanden 2> /dev/null | exec 1> /dev/tty
-cd qgisbestanden
+sudo rm -rf /home/"$USER"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
+mkdir /home/"$USER"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
+cd /home/"$USER"/qgisbestanden
 tput sgr0
 tput setaf 2
 echo "De tijdelijke map is aangemaakt!"
@@ -151,10 +156,10 @@ tput sgr0
 tput setaf 9
 echo "Benodigdheden installeren..."
 tput sgr0
-sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/OTL.list
-sudo cp -f OTL.list /etc/apt/sources.list.d/OTL.list
-sudo chmod +x /etc/apt/sources.list.d/OTL.list
-sudo rm -rf "OTL.list"
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/OTL_QGIS_STRETCH.list
+sudo cp -f OTL_QGIS_STRETCH.list /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
+sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
+sudo rm -rf "OTL_QGIS_STRETCH.list"
 sudo apt-get --yes --assume-yes install wget apt-utils nautilus inotify-tools cron 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
 echo "Benodigdheden geïnstalleerd!"
@@ -166,7 +171,7 @@ sudo apt-get -t stretch-backports --yes --assume-yes install flatpak 2> /dev/nul
 tput setaf 2
 echo "Flatpak is geïnstalleerd!"
 tput setaf 9
-echo "apt vernieuwen:"
+echo "apt vernieuwen..."
 tput sgr0
 sudo apt-get --yes --assume-yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
@@ -208,6 +213,8 @@ sleep 1
 tput setaf 2
 echo "Vaarwel!"
 sleep 1
+cd $STARTDIR
+sudo rm -rf /home/"$USER"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
 tput reset
 tput clear
 tput sgr0
@@ -220,8 +227,8 @@ exit
 tput setaf 2
 echo "BUSTER GEVONDEN!"
 sleep 2
-sudo rm -rf /etc/apt/sources.list.d/OTL_BUSTER.list
-sudo rm -rf /etc/apt/sources.list.d/OTL.list
+sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
+sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 
 ##Script daadwerkelijke starten
 tput reset
@@ -265,8 +272,9 @@ tput setaf 5
 echo "Installatie van QGIS gestart:"
 tput setaf 9
 echo "Tijdelijke map aanmaken"
-mkdir qgisbestanden
-cd qgisbestanden
+sudo rm -rf /home/"$USER"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
+mkdir /home/"$USER"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
+cd /home/"$USER"/qgisbestanden
 tput sgr0
 tput setaf 2
 echo "De tijdelijke map is aangemaakt!"
@@ -274,10 +282,10 @@ tput sgr0
 tput setaf 9
 echo "Benodigdheden installeren..."
 tput sgr0
-sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/OTL_BUSTER.list
-sudo cp -f OTL_BUSTER.list /etc/apt/sources.list.d/OTL_BUSTER.list
-sudo chmod +x /etc/apt/sources.list.d/OTL_BUSTER.list
-sudo rm -rf "OTL_BUSTER.list"
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/OTL_QGIS_BUSTER.list
+sudo cp -f OTL_QGIS_BUSTER.list /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
+sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
+sudo rm -rf "OTL_QGIS_BUSTER.list"
 sudo apt-get --yes --assume-yes install wget apt-utils nautilus rsync grsync inotify-tools cron 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
 echo "Benodigdheden geïnstalleerd!"
@@ -289,7 +297,7 @@ sudo apt-get -t buster-backports --yes --assume-yes install flatpak 2> /dev/null
 tput setaf 2
 echo "Flatpak is geïnstalleerd!"
 tput setaf 9
-echo "apt vernieuwen:"
+echo "apt vernieuwen..."
 tput sgr0
 sudo apt-get --yes --assume-yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
@@ -331,6 +339,8 @@ sleep 1
 tput setaf 2
 echo "Vaarwel!"
 sleep 1
+cd $STARTDIR
+sudo rm -rf /home/"$USER"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
 tput reset
 tput clear
 tput sgr0
@@ -352,6 +362,8 @@ exit
   sleep 1
   tput setaf 1
   echo "1"
+  cd $STARTDIR
+  sudo rm -rf /home/"$USER"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
   tput reset
   tput clear
   tput sgr0

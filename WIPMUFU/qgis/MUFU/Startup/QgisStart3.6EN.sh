@@ -1,13 +1,34 @@
 #!/bin/bash
 
+#Get current path (Required for completion removal of install files)
+STARTDIR="$(pwd)"
+
 #Clear terminal before execution of the script
 tput reset
+tput clear
 
 #Removing older folders (if created)
-sudo rm -rf qgis
+sudo rm -rf /home/"$USER"/qgis 2> /dev/null | exec 1> /dev/tty
 
 #Download the script
-mkdir qgis && cd qgis && sudo curl -LO https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/EN/QgisInstaller3.6EN.sh && tput reset && tput bold && tput setaf 5; echo Installation files downloaded! && tput setaf 3; echo The script will start in 3 seconds && tput sgr 0 && sleep 3
+mkdir /home/"$USER"/qgis 2> /dev/null | exec 1> /dev/tty
+cd /home/"$USER"/qgis
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/EN/QgisInstaller3.6EN.sh
+tput reset
+tput bold
+tput setaf 5
+echo Installation files downloaded!
+tput setaf 3
+echo The script will start in 3 seconds
+tput sgr0
+sleep 3
 
 #Execute the script
 sudo bash QgisInstaller3.6EN.sh
+cd $STARTDIR
+sudo rm -rf /home/"$USER"/qgis 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf QgisStart3.6EN.sh 2> /dev/null | exec 1> /dev/tty
+tput reset
+tput clear
+tput sgr0
+exit

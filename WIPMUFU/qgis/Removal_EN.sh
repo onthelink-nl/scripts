@@ -1,6 +1,10 @@
 #!/bin/bash
 
+STARTDIR="$(pwd)"
+cd /home/$USER/
+
 tput reset
+tput clear
 selection=
 until [ "$selection" = "2" ]; do
 tput bold && tput setaf 46; echo "
@@ -17,104 +21,128 @@ tput sgr0 && tput setaf 45; echo "
 case $selection in
     1 ) 
 		tput reset
-		tput setaf 1; echo "Removing QGIS + Flatpak..."
-		sudo flatpak uninstall --force-remove org.qgis.qgis
-		sudo flatpak remote-delete --force org.qgis.qgis-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-1-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-2-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-3-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-4-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-5-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-6-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-7-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-8-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-9-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-10-origin
-		sudo flatpak remote-delete --force flathub
-		sudo flatpak remote-delete --force flathub-1
-		sudo flatpak remote-delete --force flathub-2
-		sudo flatpak remote-delete --force flathub-3
-		sudo flatpak remote-delete --force flathub-4
-		sudo flatpak remote-delete --force flathub-5
-		sudo flatpak remote-delete --force flathub-6
-		sudo flatpak remote-delete --force flathub-7
-		sudo flatpak remote-delete --force flathub-8
-		sudo flatpak remote-delete --force flathub-9
-		sudo flatpak remote-delete --force flathub-10
-		sudo flatpak uninstall --force-remove org.kde.Platform
-		sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs
-		sudo flatpak uninstall --unused
-		sudo rm -rf /home/$USER/.var/app/org.qgis.qgis
-		sudo rm -rf /home/$USER/.var/app/org.kde.Platform
-		sudo rm -rf /home/$USER/.var/app/org.freedesktop.Platform.html5-codecs
+		tput clear
+		tput setaf 1
+		echo "Removing QGIS + Flatpak..."
+		tput setaf 6
+		sudo flatpak uninstall --force-remove org.qgis.qgis 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-1-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-2-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-3-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-4-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-5-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-6-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-7-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-8-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-9-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-10-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub-1 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub-2 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub-3 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub-4 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub-5 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub-6 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub-7 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub-8 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub-9 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force flathub-10 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak uninstall --force-remove org.kde.Platform 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak uninstall --unused 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$USER/.var/app/org.qgis.qgis"
+		sudo rm -rf "/home/$USER/.var/app/org.kde.Platform"
+		sudo rm -rf "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs"
 		sudo apt-get --yes --assume-yes remove --purge flatpak
 		sudo apt-get --yes --assume-yes clean
 		crontab -r
-		sudo rm -rf /etc/apt/sources.list.d/OTL.list
-		sudo rm -rf /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
+		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
+		sudo rm -rf /etc/init.d/qgiscopyfiles.sh 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/init.d/qgisremovefiles.sh
-		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
-		chattr -i /home/$USER/org.qgis.qgis/
-		sudo mv "/run/user/1000/doc/*" /tmp
-		sudo mv "/run/user/1000/doc" /tmp
-		sudo mv "/run/user/1000/flatpak-monitor/*" /tmp
-		sudo mv "/run/user/1000/flatpak-monitor" /tmp
-		sudo mv "/run/user/1000/app/*" /tmp
-		sudo mv "/run/user/1000/app" /tmp
-		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
-		sudo mv "/home/$USER/org.qgis.qgis" /tmp
+		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
+		chattr -i /home/"$USER"/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/run/user/1000/doc/*" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/run/user/1000/doc" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/run/user/1000/flatpak-monitor/*" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/run/user/1000/flatpak-monitor" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/run/user/1000/app/*" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/run/user/1000/app" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$USER/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$USER/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$USER/.var/app/org.kde.Platform" 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs" 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$USER/.var/app/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$USER/.var/app/org.kde.Platform" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs" /tmp 2> /dev/null | exec 1> /dev/tty
 		tput setaf 1; echo "QGIS + FLATPAK REMOVED, restart your chromebook to clean the tmp directory"
-    sleep 1
-    tput setaf 2; echo "3"
-    sleep 1
-    tput setaf 2; echo "2"
-    sleep 1
-    tput setaf 2; echo "1"
-    sleep 1
+		sleep 1
+		tput setaf 2; echo "3"
+		sleep 1
+		tput setaf 2; echo "2"
+		sleep 1
+		tput setaf 2; echo "1"
+		sleep 1
 		tput reset
 		;;
 	2 ) 
-    tput reset
-		tput setaf 1; echo "Removing QGIS..."
-		sudo flatpak uninstall --force-remove org.qgis.qgis
-		sudo flatpak remote-delete --force org.qgis.qgis-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-1-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-2-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-3-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-4-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-5-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-6-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-7-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-8-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-9-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-10-origin
-		sudo flatpak uninstall --unused
-		sudo rm -rf /home/$USER/.var/app/org.qgis.qgis
-		crontab -r
-		sudo rm -rf /etc/apt/sources.list.d/OTL.list
-		sudo rm -rf /etc/apt/sources.list.d/OTL_BUSTER.list
-		sudo rm -rf /etc/init.d/qgiscopyfiles.sh
-		sudo rm -rf /etc/init.d/qgisremovefiles.sh
-		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/
-		chattr -i /home/$USER/org.qgis.qgis/
-		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
-		sudo mv "/home/$USER/org.qgis.qgis" /tmp
-    tput setaf 1; echo "QGIS REMOVED, restart your chromebook to clean the tmp directory"
-    sleep 1
-    tput setaf 2; echo "3"
-    sleep 1
-    tput setaf 2; echo "2"
-    sleep 1
-    tput setaf 2; echo "1"
-    sleep 1
 		tput reset
+		tput clear
+		tput setaf 1
+		echo "Removing QGIS..."
+		tput setaf 6
+		sudo flatpak uninstall --force-remove org.qgis.qgis 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-1-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-2-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-3-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-4-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-5-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-6-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-7-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-8-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-9-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak remote-delete --force org.qgis.qgis-10-origin 2> /dev/null | exec 1> /dev/tty
+		sudo flatpak uninstall --unused 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$USER/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
+		crontab -r
+		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/init.d/qgiscopyfiles.sh 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/init.d/qgisremovefiles.sh 2> /dev/null | exec 1> /dev/tty
+		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
+		chattr -i /home/$USER/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$USER/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$USER/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
+		tput setaf 1; echo "QGIS REMOVED, restart your chromebook to clean the tmp directory"
+		sleep 1
+		tput setaf 2; echo "3"
+		sleep 1
+		tput setaf 2; echo "2"
+		sleep 1
+		tput setaf 2; echo "1"
+		sleep 1
+		tput reset
+		tput clear
+		tput sgr0
 		;;
 	3 ) 
+		cd $STARTDIR
+		sudo rm -rf Removal_EN.sh
 		tput reset
+		tput clear
+		tput sgr0
 		exit
 		;;
     * ) 
-        tput setaf 202; echo "Please enter choice 1, 2 or 3..."
-		sleep 1 ; tput reset
+        tput setaf 202
+		echo "Please enter choice 1, 2 or 3..."
+		sleep 1
+		tput reset
+		tput clear
+		;;
 esac
 done

@@ -9,6 +9,9 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+#Get current path (Required for completion removal of install files)
+STARTDIR="$(pwd)"
+
 spin()
 {
   spinner="/|\\-/|\\-"
@@ -339,6 +342,7 @@ echo "Vaarwel!"
 sleep 1
 cd $STARTDIR
 sudo rm -rf /home/"$USER"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf QgisInstallerNL.sh 2> /dev/null | exec 1> /dev/tty
 tput reset
 tput clear
 tput sgr0
@@ -362,6 +366,7 @@ exit
   echo "1"
   cd $STARTDIR
   sudo rm -rf /home/"$USER"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
+  sudo rm -rf QgisInstallerNL.sh 2> /dev/null | exec 1> /dev/tty
   tput reset
   tput clear
   tput sgr0

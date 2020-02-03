@@ -1,12 +1,13 @@
-###################################  
-           INSTALLATION  
-         PROBABLY OUTDATED  
-               -----  
-   STUFF MIGHT NOT WORK PROPERLY  	
-       YOU HAVE BEEN WARNED  
-###################################  
-===================================  
-###################################  
+<h1 align="center">
+           <b>#####################################</b><br>
+           <b>INSTALLATION</b><br>
+           <b>PROBABLY OUTDATED</b><br>
+           <b>-----</b><br>
+           <b>STUFF MIGHT NOT WORK PROPERLY</b><br>
+           <b>YOU HAVE BEEN WARNED</b><br>
+           <b>#####################################</b><br>
+           <b>===================================</b><br>
+           <b>#####################################</b><br>
 VERSION: MUFU  
 UPDATE: 3.1  
 STATE: INSTABLE  

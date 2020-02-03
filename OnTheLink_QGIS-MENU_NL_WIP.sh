@@ -48,6 +48,7 @@ sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIP
 bash OnTheLink_QGIS-MENU_NL_STRETCH.sh
 cd $STARTDIR
 sudo rm -rf /home/"$name"/qgis
+sudo rm -rf OnTheLink_QGIS-MENU_NL_WIP.sh
 tput reset
 tput clear
 tput sgr0

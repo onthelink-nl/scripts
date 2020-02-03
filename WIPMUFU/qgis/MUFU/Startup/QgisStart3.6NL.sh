@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Get current user
+name="$(logname)"
+
 #Get current path (Required for completion removal of install files)
 STARTDIR="$(pwd)"
 
@@ -8,11 +11,11 @@ tput reset
 tput clear
 
 #Oudere mappen verwijderen (indien gecreëerd)
-sudo rm -rf /home/"$USER"/qgis 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
 
 #Download het script
-mkdir /home/"$USER"/qgis 2> /dev/null | exec 1> /dev/tty
-cd /home/"$USER"/qgis
+mkdir /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
+cd /home/"$name"/qgis
 sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/NL/QgisInstaller3.6NL.sh
 tput reset
 tput bold
@@ -26,7 +29,7 @@ sleep 3
 #DIT IS HET DOORVERWIJSSCRIPT VOOR QGIS
 sudo bash QgisInstaller3.6NL.sh
 cd $STARTDIR
-sudo rm -rf /home/"$USER"/qgis 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
 sudo rm -rf QgisStart3.6NL.sh 2> /dev/null | exec 1> /dev/tty
 tput reset
 tput clear

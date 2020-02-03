@@ -9,6 +9,9 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+#Get current user
+name="$(logname)"
+
 #Get current path (Required for completion removal of install files)
 STARTDIR="$(pwd)"
 
@@ -70,21 +73,21 @@ sudo flatpak uninstall --force-remove org.kde.Platform 2> /dev/null | exec 1> /d
 sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs 2> /dev/null | exec 1> /dev/tty
 sudo flatpak uninstall --unused 2> /dev/null | exec 1> /dev/tty
 chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
-chattr -i /home/"$USER"/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
+chattr -i /home/"$name"/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
 sudo mv "/run/user/1000/doc/*" /tmp 2> /dev/null | exec 1> /dev/tty
 sudo mv "/run/user/1000/doc" /tmp 2> /dev/null | exec 1> /dev/tty
 sudo mv "/run/user/1000/flatpak-monitor/*" /tmp 2> /dev/null | exec 1> /dev/tty
 sudo mv "/run/user/1000/flatpak-monitor" /tmp 2> /dev/null | exec 1> /dev/tty
 sudo mv "/run/user/1000/app/*" /tmp 2> /dev/null | exec 1> /dev/tty
 sudo mv "/run/user/1000/app" /tmp 2> /dev/null | exec 1> /dev/tty
-sudo mv "/home/$USER/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty
-sudo mv "/home/$USER/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
-sudo rm -rf "/home/$USER/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
-sudo rm -rf "/home/$USER/.var/app/org.kde.Platform" 2> /dev/null | exec 1> /dev/tty
-sudo rm -rf "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs" 2> /dev/null | exec 1> /dev/tty
-sudo mv "/home/$USER/.var/app/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
-sudo mv "/home/$USER/.var/app/org.kde.Platform" /tmp 2> /dev/null | exec 1> /dev/tty
-sudo mv "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs" /tmp 2> /dev/null | exec 1> /dev/tty
+sudo mv "/home/$name/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty
+sudo mv "/home/$name/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf "/home/$name/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf "/home/$name/.var/app/org.kde.Platform" 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" 2> /dev/null | exec 1> /dev/tty
+sudo mv "/home/$name/.var/app/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
+sudo mv "/home/$name/.var/app/org.kde.Platform" /tmp 2> /dev/null | exec 1> /dev/tty
+sudo mv "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" /tmp 2> /dev/null | exec 1> /dev/tty
 
 ##stop spinner
 kill -9 $SPIN_PID
@@ -149,9 +152,9 @@ tput setaf 5
 echo "Installation of QGIS started:"
 tput setaf 9
 echo "Creating temporary folder"
-sudo rm -rf /home/"$USER"/qgisfiles 2> /dev/null | exec 1> /dev/tty
-mkdir /home/"$USER"/qgisfiles 2> /dev/null | exec 1> /dev/tty
-cd /home/"$USER"/qgisfiles
+sudo rm -rf /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+mkdir /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+cd /home/"$name"/qgisfiles
 tput sgr0
 tput setaf 2
 echo "Temporary folder has been created!"
@@ -216,7 +219,7 @@ tput setaf 2
 echo "Goodbye!"
 sleep 1
 cd $STARTDIR
-sudo rm -rf /home/"$USER"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
 sudo rm -rf QgisInstallerEN.sh 2> /dev/null | exec 1> /dev/tty
 tput reset
 tput clear
@@ -275,9 +278,9 @@ tput setaf 5
 echo "Installation of QGIS has started:"
 tput setaf 9
 echo "Creating temporary folder"
-sudo rm -rf /home/"$USER"/qgisfiles 2> /dev/null | exec 1> /dev/tty
-mkdir /home/"$USER"/qgisfiles 2> /dev/null | exec 1> /dev/tty
-cd /home/"$USER"/qgisfiles
+sudo rm -rf /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+mkdir /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+cd /home/"$name"/qgisfiles
 tput sgr0
 tput setaf 2
 echo "Temporary folder has been created!"
@@ -342,7 +345,7 @@ tput setaf 2
 echo "Goodbye!"
 sleep 1
 cd $STARTDIR
-sudo rm -rf /home/"$USER"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
 sudo rm -rf QgisInstallerEN.sh 2> /dev/null | exec 1> /dev/tty
 tput reset
 tput clear
@@ -366,7 +369,7 @@ exit
   tput setaf 1
   echo "1"
   cd $STARTDIR
-  sudo rm -rf /home/"$USER"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+  sudo rm -rf /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
   sudo rm -rf QgisInstallerEN.sh 2> /dev/null | exec 1> /dev/tty
   tput reset
   tput clear

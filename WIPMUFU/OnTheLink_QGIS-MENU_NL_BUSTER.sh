@@ -36,7 +36,7 @@ tput setaf 45; echo "<<<<<<<
 tput sgr0 && tput setaf 202; echo "
 a - Installeer/herinstalleer/update QGIS + Verlaat het script (1+4)
 b - Installeer/herinstalleer/update QGIS + Verlaat het script en installeer het automatisch bestanden verwijderen script (1+3)
-c - Installeer/herinstalleer/update QGIS + De terminal beveiligings software + Verlaat het script en installeer het automatisch verwijderen van bestanden script (VOOR SCHOLEN) (VERWIJDERD ALLES IN DE THUIS MAP (/home/$USER/ALLES)) (1+5+3)
+c - Installeer/herinstalleer/update QGIS + De terminal beveiligings software + Verlaat het script en installeer het automatisch verwijderen van bestanden script (VOOR SCHOLEN) (VERWIJDERD ALLES IN DE THUIS MAP (/home/$name/ALLES)) (1+5+3)
 d - Herinstalleer het automatisch verwijderen van bestanden script + De terminal beveiligings software
 "
     tput setaf 6; echo -n "Voer uw keuze in: "
@@ -82,7 +82,7 @@ case $selection in
 		exit
 		;;
     5 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
 		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2
 		tput reset
@@ -131,7 +131,7 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
 		tput setaf 2
 		echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2
@@ -149,7 +149,8 @@ case $selection in
 		exit
 		;;
 	d ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name
+		/.bashrc
 		tput setaf 2
 		echo "De terminal beveiligings software is geherinstalleerd!"
 		sleep 2

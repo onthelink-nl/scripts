@@ -13,7 +13,7 @@ OnTheLink QGIS-VERWIJDERING
 tput sgr0 && tput setaf 45; echo "
 1 - Verwijder QGIS + Flatpak (Dit zal andere Flatpak apps onfunctioneel maken)
 2 - Verwijder QGIS
-3 - Ga terug naar het QGIS-MENU
+3 - Verlaat het script
 "
     tput setaf 6; echo -n "Voer uw keuze in: "
     read -r selection

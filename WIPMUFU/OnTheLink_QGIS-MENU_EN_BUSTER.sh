@@ -1,7 +1,10 @@
 #!/bin/bash
 
+#Get current user
+name="$(logname)"
+
 STARTDIR="$(pwd)"
-cd /home/$USER/
+cd /home/$name/
 
 tput clear
 selection=
@@ -33,7 +36,7 @@ tput setaf 45; echo "<<<<<<<
 tput sgr0 && tput setaf 202; echo "
 a - Install/reïnstall/update QGIS + Exit script (1+4)
 b - Install/reïnstall/update QGIS + Exit script and install the auto remove files script (1+3)
-c - Install/reïnstall/update QGIS + The terminal protection software + Exit script and install the auto remove files script (FOR SCHOOLS) (REMOVES EVERYTHING IN THE HOME DIR (/home/$USER/EVERYTHING)) (1+5+3)
+c - Install/reïnstall/update QGIS + The terminal protection software + Exit script and install the auto remove files script (FOR SCHOOLS) (REMOVES EVERYTHING IN THE HOME DIR (/home/"$name"/EVERYTHING)) (1+5+3)
 d - Reïnstall the auto remove files script + The terminal protection software (3+5)
 "
     tput setaf 6; echo -n "Enter selection: "
@@ -79,7 +82,7 @@ case $selection in
 		exit
 		;;
     5 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
 		tput setaf 2; echo "The terminal protection software has been installed!"
 		sleep 2
 		tput reset
@@ -128,7 +131,7 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
 		tput setaf 2
 		echo "The terminal protection software has been installed!"
 		sleep 2
@@ -146,7 +149,7 @@ case $selection in
 		exit
 		;;
 	d ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
 		tput setaf 2
 		echo "The terminal protection software has been (re)installed!"
 		sleep 2

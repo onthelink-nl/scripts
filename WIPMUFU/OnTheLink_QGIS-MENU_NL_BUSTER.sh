@@ -1,7 +1,10 @@
 #!/bin/bash
 
+#Get current user
+name="$(logname)"
+
 STARTDIR="$(pwd)"
-cd /home/$USER/
+cd /home/"$name"/
 
 tput clear
 selection=

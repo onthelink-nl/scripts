@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Get current user
+name="$(logname)"
+
 #Get current path (Required for completion removal of install files)
 STARTDIR="$(pwd)"
 
@@ -8,11 +11,11 @@ tput reset
 tput clear
 
 #Removing older folders (if created)
-sudo rm -rf /home/"$USER"/qgis 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
 
 #Download the script
-mkdir /home/"$USER"/qgis 2> /dev/null | exec 1> /dev/tty
-cd /home/"$USER"/qgis
+mkdir /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
+cd /home/"$name"/qgis
 sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/EN/QgisInstallerEN.sh
 tput reset
 tput bold
@@ -26,7 +29,7 @@ sleep 3
 #Execute the script
 sudo bash QgisInstallerEN.sh
 cd $STARTDIR
-sudo rm -rf /home/"$USER"/qgis 2> /dev/null | exec 1> /dev/tty
+sudo rm -rf /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
 sudo rm -rf QgisStartEN.sh 2> /dev/null | exec 1> /dev/tty
 tput reset
 tput clear

@@ -1,8 +1,10 @@
 #!/bin/bash
 
-#Get current path (Required for completion removal of install files)
+#Get current user
+name="$(logname)"
+
 STARTDIR="$(pwd)"
-cd /home/$USER/
+cd /home/"$name"/
 
 tput reset
 tput clear

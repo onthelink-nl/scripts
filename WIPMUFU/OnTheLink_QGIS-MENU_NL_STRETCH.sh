@@ -37,7 +37,7 @@ tput setaf 45; echo "<<<<<<<
 tput sgr0 && tput setaf 202; echo "
 a - Installeer/herinstalleer/update QGIS + Verlaat het script (1+4)
 b - Installeer/herinstalleer/update QGIS + Verlaat het script en installeer het automatisch bestanden verwijderen script (1+3)
-c - Installeer/herinstalleer/update QGIS + De terminal beveiligings software + Verlaat het script en installeer het automatisch verwijderen van bestanden script (VOOR SCHOLEN) (VERWIJDERD ALLES IN DE THUIS MAP (/home/$USER/EVERYTHING IN HERE)) (1+5+3)
+c - Installeer/herinstalleer/update QGIS + De terminal beveiligings software + Verlaat het script en installeer het automatisch verwijderen van bestanden script (VOOR SCHOLEN) (VERWIJDERD ALLES IN DE THUIS MAP (/home/$name/EVERYTHING IN HERE)) (1+5+3)
 d - Herinstalleer het automatisch verwijderen van bestanden script + Het kopiëren script (3+4)
 e - Herinstalleer het automatisch verwijderen van bestanden script + Het kopiëren script + De terminal beveiligings software (3+4+6)
 "
@@ -103,7 +103,7 @@ case $selection in
 		exit
 		;;
     6 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
 		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2
 		tput reset
@@ -162,7 +162,7 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
 		tput setaf 2
 		echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2
@@ -212,7 +212,7 @@ case $selection in
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$USER/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
 		tput setaf 2; echo "De terminal beveiligings software is opnieuw geïnstalleerd!"
 		sleep 2
 		tput reset

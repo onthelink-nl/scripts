@@ -16,5 +16,4 @@ DATE: 03 February 2020
 ===================================
 
 INSTRUCTIONS:
-
-https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf
+[QGIS INSTRUCTIONS](https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "PDF")

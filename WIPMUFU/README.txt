@@ -8,13 +8,13 @@
 ===================================
 ###################################
 VERSION: MUFU
-UPDATE: 2.8.7
-STATE: STABLE
+UPDATE: 3.1
+STATE: INSTABLE
 
-DATE: 04 October 2019
+DATE: 03 February 2020
 ###################################
 ===================================
 
 INSTRUCTIONS:
 
-https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions%20(For%20downloaded%20releases).pdf
+https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf

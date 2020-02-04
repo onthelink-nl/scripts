@@ -46,32 +46,32 @@ tput clear
 ##Verwijderen van oudere versie van het script
 tput bold && tput setaf 5; echo "Oudere versies verwijderen..."
 tput setaf 6
-sudo flatpak uninstall --force-remove org.qgis.qgis 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-1-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-2-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-3-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-4-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-5-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-6-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-7-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-8-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-9-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force org.qgis.qgis-10-origin 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub-1 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub-2 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub-3 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub-4 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub-5 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub-6 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub-7 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub-8 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub-9 2> /dev/null | exec 1> /dev/tty
-sudo flatpak remote-delete --force flathub-10 2> /dev/null | exec 1> /dev/tty
-sudo flatpak uninstall --force-remove org.kde.Platform 2> /dev/null | exec 1> /dev/tty
-sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs 2> /dev/null | exec 1> /dev/tty
-sudo flatpak uninstall --unused 2> /dev/null | exec 1> /dev/tty
+sudo flatpak uninstall --force-remove org.qgis.qgis
+sudo flatpak remote-delete --force org.qgis.qgis-origin
+sudo flatpak remote-delete --force org.qgis.qgis-1-origin
+sudo flatpak remote-delete --force org.qgis.qgis-2-origin
+sudo flatpak remote-delete --force org.qgis.qgis-3-origin
+sudo flatpak remote-delete --force org.qgis.qgis-4-origin
+sudo flatpak remote-delete --force org.qgis.qgis-5-origin
+sudo flatpak remote-delete --force org.qgis.qgis-6-origin
+sudo flatpak remote-delete --force org.qgis.qgis-7-origin
+sudo flatpak remote-delete --force org.qgis.qgis-8-origin
+sudo flatpak remote-delete --force org.qgis.qgis-9-origin
+sudo flatpak remote-delete --force org.qgis.qgis-10-origin
+sudo flatpak remote-delete --force flathub
+sudo flatpak remote-delete --force flathub-1
+sudo flatpak remote-delete --force flathub-2
+sudo flatpak remote-delete --force flathub-3
+sudo flatpak remote-delete --force flathub-4
+sudo flatpak remote-delete --force flathub-5
+sudo flatpak remote-delete --force flathub-6
+sudo flatpak remote-delete --force flathub-7
+sudo flatpak remote-delete --force flathub-8
+sudo flatpak remote-delete --force flathub-9
+sudo flatpak remote-delete --force flathub-10
+sudo flatpak uninstall --force-remove org.kde.Platform
+sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs
+sudo flatpak uninstall --unused
 chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
 chattr -i /home/"$name"/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
 sudo mv "/run/user/1000/doc/*" /tmp 2> /dev/null | exec 1> /dev/tty

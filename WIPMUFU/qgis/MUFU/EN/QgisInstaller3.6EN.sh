@@ -113,7 +113,7 @@ tput reset
 tput clear
 
 ##Information about the creators and the script itself
-tput setaf 2; echo The script is originally created by Misha Opstal and Leopold Siccama Hiemstra.
+tput setaf 2; echo The script is originally created by Misha Opstal, Eva Looijestein and Leopold Siccama Hiemstra.
 echo "This script will install QGIS 3.6 (STRETCH) on your chromebook."
 echo Flatpak is being used for the most important part of the installation!
 tput bold; echo We are not the creators of QGIS or Flatpak and this is an unofficial script.
@@ -242,7 +242,7 @@ tput reset
 tput clear
 
 ##Information about the creators and the script itself
-tput setaf 2; echo The script is originally created by Misha Opstal and Leopold Siccama Hiemstra.
+tput setaf 2; echo The script is originally created by Misha Opstal, Eva Looijestein and Leopold Siccama Hiemstra.
 echo "This script will install QGIS 3.6 (BUSTER) on your chromebook."
 echo Flatpak is being used for the most important part of the installation!
 tput bold; echo We are not the creators of QGIS or Flatpak and this is an unofficial script.

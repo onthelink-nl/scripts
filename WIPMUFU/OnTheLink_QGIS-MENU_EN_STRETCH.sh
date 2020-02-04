@@ -4,7 +4,7 @@
 name="$(logname)"
 
 STARTDIR="$(pwd)"
-cd /home/$name/
+cd /home/"$name"/
 
 tput clear
 selection=
@@ -103,7 +103,7 @@ case $selection in
 		exit
 		;;
     6 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/"$name"/.bashrc
 		tput setaf 2; echo "The terminal protection software has been installed!"
 		sleep 2
 		tput reset
@@ -162,7 +162,7 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/"$name"/.bashrc
 		tput setaf 2
 		echo "The terminal protection software has been installed!"
 		sleep 2
@@ -212,7 +212,7 @@ case $selection in
 		crontab -r
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/$name/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/"$name"/.bashrc
 		tput setaf 2; echo "The terminal protection software has been (re)installed!"
 		sleep 2
 		tput reset

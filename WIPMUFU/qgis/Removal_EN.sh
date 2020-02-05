@@ -13,7 +13,8 @@ OnTheLink QGIS-REMOVAL
 tput sgr0 && tput setaf 45; echo "
 1 - Remove QGIS + Flatpak (This will break other Flatpak apps!!!)
 2 - Remove QGIS
-3 - Exit to the QGIS-MENU
+3 - Restore settings
+4 - Exit to the QGIS-MENU
 "
     tput setaf 6; echo -n "Enter selection: "
     read -r selection
@@ -131,6 +132,28 @@ case $selection in
 		tput sgr0
 		;;
 	3 ) 
+		tput reset
+		tput clear
+		tput setaf 1
+		echo "Restoring settings..."
+		crontab -r
+		sudo rm -rf /etc/init.d/qgiscopyfiles.sh 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/init.d/qgisremovefiles.sh 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list 2> /dev/null | exec 1> /dev/tty
+		tput setaf 1; echo "SETTINGS RESTORED!"
+		sleep 1
+		tput setaf 2; echo "3"
+		sleep 1
+		tput setaf 2; echo "2"
+		sleep 1
+		tput setaf 2; echo "1"
+		sleep 1
+		tput reset
+		tput clear
+		tput sgr0
+		;;
+	4 ) 
 		cd $STARTDIR
 		sudo rm -rf Removal_EN.sh
 		tput reset

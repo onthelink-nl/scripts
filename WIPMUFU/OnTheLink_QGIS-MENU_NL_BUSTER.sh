@@ -21,7 +21,7 @@ tput setaf 45; echo "<<<<<<<
 "
 tput sgr0 && tput setaf 202; echo "
 1 - Installeer/herinstalleer/update QGIS
-2 - Verwijder QGIS en zet alles terug naar standaardwaardes
+2 - Verwijder QGIS en zet alles terug naar Standaardwaardes (Standaardwaardes om crontabs te verwijderen en ook onze sources.list)
 3 - Sluit dit menu en installeer het automatisch verwijderen van bestanden script
 4 - Sluit dit menu normaal
 5 - Installeer de terminal beveiligings software

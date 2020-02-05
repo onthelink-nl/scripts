@@ -21,7 +21,7 @@ tput setaf 45; echo "<<<<<<<
 "
 tput sgr0 && tput setaf 202; echo "
 1 - Install/reïnstall/update QGIS
-2 - Remove QGIS and Restore Settings (Restore settings for removing crontabs and our sources.list)
+2 - Remove QGIS and Restore settings (Restore settings for removing crontabs and our sources.list)
 3 - Close this menu and install the auto remove files script
 4 - Close this menu normally
 5 - Install the terminal protection software

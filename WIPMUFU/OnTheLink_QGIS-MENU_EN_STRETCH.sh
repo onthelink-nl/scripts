@@ -21,7 +21,7 @@ tput setaf 45; echo "<<<<<<<
 "
 tput sgr0 && tput setaf 202; echo "
 1 - Install/reïnstall/update QGIS
-2 - Remove QGIS and restore settings
+2 - Remove QGIS and Restore settings (Restore settings for removing crontabs and our sources.list)
 3 - Close this menu and install the auto remove files script
 4 - Close this menu and install the copy script (this will put all qgis projects in your home dir)
 5 - Close this menu normally (When nothing was installed)

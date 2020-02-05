@@ -319,7 +319,7 @@ kill -9 $SPIN_PID
 flatpak -y install qgis.flatpakref
 tput reset
 tput clear
-flatpak update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis
+flatpak -y update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis
 tput bold
 tput setaf 5
 echo "QGIS 3.6 is geïnstalleerd!!!"

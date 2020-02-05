@@ -13,7 +13,8 @@ OnTheLink QGIS-VERWIJDERING
 tput sgr0 && tput setaf 45; echo "
 1 - Verwijder QGIS + Flatpak (Dit zal andere Flatpak apps onfunctioneel maken)
 2 - Verwijder QGIS
-3 - Verlaat het script
+3 - Standaardwaardes terugzetten
+4 - Verlaat het script
 "
     tput setaf 6; echo -n "Voer uw keuze in: "
     read -r selection
@@ -132,6 +133,28 @@ case $selection in
 		tput sgr0
 		;;
 	3 ) 
+		tput reset
+		tput clear
+		tput setaf 1
+		echo "Standaardwaardes terugzetten..."
+		crontab -r
+		sudo rm -rf /etc/init.d/qgiscopyfiles.sh 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/init.d/qgisremovefiles.sh 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list 2> /dev/null | exec 1> /dev/tty
+		tput setaf 1; echo "STANDAARDWAARDES TERUGGEZET!"
+		sleep 1
+		tput setaf 2; echo "3"
+		sleep 1
+		tput setaf 2; echo "2"
+		sleep 1
+		tput setaf 2; echo "1"
+		sleep 1
+		tput reset
+		tput clear
+		tput sgr0
+		;;
+	4 ) 
 		cd $STARTDIR
 		sudo rm -rf Removal_NL.sh
 		tput reset

@@ -163,7 +163,7 @@ tput setaf 9
 echo "Benodigdheden installeren..."
 tput sgr0
 sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/OTL_QGIS_STRETCH.list
-sudo cp -f OTL_QGIS_BUSTER.list /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
+sudo cp -f OTL_QGIS_STRETCH.list /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 sudo rm -rf "OTL_QGIS_STRETCH.list"
 sudo apt-get --yes --assume-yes install wget apt-utils nautilus inotify-tools cron 2> /dev/null | exec 1> /dev/tty

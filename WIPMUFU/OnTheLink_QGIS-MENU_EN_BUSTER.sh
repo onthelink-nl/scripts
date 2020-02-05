@@ -64,7 +64,8 @@ case $selection in
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
-		crontab -r
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_BUSTER.sh
@@ -115,7 +116,8 @@ case $selection in
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
-		crontab -r
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_BUSTER.sh
@@ -139,7 +141,8 @@ case $selection in
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
-		crontab -r
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_BUSTER.sh
@@ -157,7 +160,8 @@ case $selection in
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
-		crontab -r
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		tput reset
 		tput clear

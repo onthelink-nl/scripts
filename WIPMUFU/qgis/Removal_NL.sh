@@ -57,7 +57,8 @@ case $selection in
 		sudo rm -rf "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs"
 		sudo apt-get --yes --assume-yes remove --purge flatpak
 		sudo apt-get --yes --assume-yes clean
-		crontab -r
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 		sudo rm -rf /etc/init.d/qgiscopyfiles.sh 2> /dev/null | exec 1> /dev/tty
@@ -110,7 +111,8 @@ case $selection in
 		sudo flatpak remote-delete --force org.qgis.qgis-10-origin
 		sudo flatpak uninstall --unused
 		sudo rm -rf "/home/$USER/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
-		crontab -r
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/init.d/qgiscopyfiles.sh 2> /dev/null | exec 1> /dev/tty
@@ -137,7 +139,8 @@ case $selection in
 		tput clear
 		tput setaf 1
 		echo "Standaardwaardes terugzetten..."
-		crontab -r
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		sudo rm -rf /etc/init.d/qgiscopyfiles.sh 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/init.d/qgisremovefiles.sh 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty

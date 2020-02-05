@@ -65,7 +65,7 @@ case $selection in
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_BUSTER.sh
@@ -98,7 +98,7 @@ case $selection in
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_BUSTER.sh
 		tput reset
@@ -118,7 +118,7 @@ case $selection in
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_BUSTER.sh
@@ -143,7 +143,7 @@ case $selection in
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_BUSTER.sh
@@ -162,7 +162,7 @@ case $selection in
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		tput reset
 		tput clear

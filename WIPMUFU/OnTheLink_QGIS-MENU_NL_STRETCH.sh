@@ -71,7 +71,7 @@ case $selection in
 		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
@@ -87,7 +87,7 @@ case $selection in
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_STRETCH.sh
@@ -124,7 +124,7 @@ case $selection in
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_STRETCH.sh
@@ -149,7 +149,7 @@ case $selection in
 		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
@@ -179,7 +179,7 @@ case $selection in
 		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
@@ -199,7 +199,7 @@ case $selection in
 		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		tput reset
@@ -216,7 +216,7 @@ case $selection in
 		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Modified/.bashrc > /home/"$name"/.bashrc

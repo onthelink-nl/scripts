@@ -114,12 +114,12 @@ case $selection in
 		tput sgr0
 		;;
 	7 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
-		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
-		sudo rm -rf "qgisconfigupdater.sh"
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
+		sudo chmod +x /etc/init.d/updaterqgis.sh
+		sudo rm -rf "updaterqgis.sh"
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		;;
 	a ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh

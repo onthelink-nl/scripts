@@ -27,7 +27,7 @@ case $selection in
 		sudo rm -rf /home/$USER/QgisStartEN.sh 2> /dev/null | exec 1> /dev/tty
 		tput setaf 5
 		echo "Preparing to install QGIS with update LATEST"
-        sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Startup/QgisStartEN.sh
+        sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Startup/QgisStartEN.sh
         sleep 2
 		sudo bash QgisStartEN.sh
 		sudo rm -rf /home/$USER/QgisStartEN.sh 2> /dev/null | exec 1> /dev/tty
@@ -39,7 +39,7 @@ case $selection in
 		sudo rm -rf /home/$USER/QgisStart3.6EN.sh 2> /dev/null | exec 1> /dev/tty
 		tput setaf 5
 		echo "Preparing to install QGIS with update 3.6"
-        sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/Startup/QgisStart3.6EN.sh
+        sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Startup/QgisStart3.6EN.sh
         sleep 2
 		sudo bash QgisStart3.6EN.sh
 		sudo rm -rf /home/$USER/QgisStart3.6EN.sh 2> /dev/null | exec 1> /dev/tty

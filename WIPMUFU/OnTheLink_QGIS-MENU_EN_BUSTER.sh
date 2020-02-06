@@ -25,6 +25,7 @@ tput sgr0 && tput setaf 202; echo "
 3 - Close this menu and install the auto remove files script
 4 - Close this menu normally
 5 - Install the terminal protection software
+6 - Install the auto-updater (for configuration files)
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
@@ -90,6 +91,13 @@ case $selection in
 		tput clear
 		tput sgr0
 		;;
+	6 )
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
+		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
+		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
+		sudo rm -rf "qgisconfigupdater.sh"
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 	a ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5

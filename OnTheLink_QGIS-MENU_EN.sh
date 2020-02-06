@@ -8,7 +8,7 @@ cd /home/"$name"/
 
 tput clear
 selection=
-until [ "$selection" = "4" ]; do
+until [ "$selection" = "3" ]; do
 tput bold && tput setaf 46; echo "
 OnTheLink QGIS-UPDATESELECTOR | Version: 3.1 STABLE
 "

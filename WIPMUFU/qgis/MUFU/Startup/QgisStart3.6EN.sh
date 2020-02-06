@@ -16,7 +16,7 @@ sudo rm -rf /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
 #Download the script
 mkdir /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
 cd /home/"$name"/qgis
-sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/EN/QgisInstaller3.6EN.sh
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/EN/QgisInstaller3.6EN.sh
 tput reset
 tput bold
 tput setaf 5

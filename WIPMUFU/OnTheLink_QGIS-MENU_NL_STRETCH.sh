@@ -132,8 +132,14 @@ case $selection in
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
+		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
+		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
+		sudo rm -rf "qgisconfigupdater.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_STRETCH.sh
@@ -149,17 +155,23 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgiscopyfiles.sh
-		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
-		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
-		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
+		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
+		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
+		sudo rm -rf "qgisconfigupdater.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_STRETCH.sh
@@ -179,17 +191,23 @@ case $selection in
 		tput setaf 2
 		echo "De terminal beveiligings software is geïnstalleerd!"
 		sleep 2
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgiscopyfiles.sh
-		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
-		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
-		sudo rm -rf "qgiscopyfiles.sh"
 		sudo rm -rf "qgisremovefiles.sh"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
+		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
+		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
+		sudo rm -rf "qgisconfigupdater.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_STRETCH.sh

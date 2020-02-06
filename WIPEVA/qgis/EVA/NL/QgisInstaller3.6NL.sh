@@ -166,7 +166,7 @@ sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIP
 sudo cp -f OTL_QGIS_STRETCH.list /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 sudo rm -rf "OTL_QGIS_STRETCH.list"
-sudo apt-get --yes --assume-yes install wget xterm apt-utils nautilus inotify-tools cron 2> /dev/null | exec 1> /dev/tty
+sudo apt-get --yes --assume-yes install wget apt-utils nautilus inotify-tools cron 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
 echo "Benodigdheden geïnstalleerd!"
 tput sgr0
@@ -293,7 +293,7 @@ sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIP
 sudo cp -f OTL_QGIS_BUSTER.list /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 sudo rm -rf "OTL_QGIS_BUSTER.list"
-sudo apt-get --yes --assume-yes install wget xterm apt-utils nautilus rsync grsync inotify-tools cron 2> /dev/null | exec 1> /dev/tty
+sudo apt-get --yes --assume-yes install wget apt-utils nautilus rsync grsync inotify-tools cron 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
 echo "Benodigdheden geïnstalleerd!"
 tput sgr0

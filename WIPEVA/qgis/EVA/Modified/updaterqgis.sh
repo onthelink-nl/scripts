@@ -11,5 +11,5 @@ else
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
 fi
-DISPLAY=:0 xterm +u8 -title UPDATER -fg yellow -bg black -e bash -c "while true; do bash /etc/init.d/qgisconfigupdater.sh; done"
+DISPLAY=:0 x-terminal-emulator -e bash /etc/init.d/qgisconfigupdater.sh
 exit

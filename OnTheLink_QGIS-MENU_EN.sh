@@ -14,11 +14,11 @@ tput bold && tput setaf 46; echo "
 OnTheLink QGIS-UPDATESELECTOR | Version: 3.1 STABLE
 "
 tput sgr0 && tput setaf 45; echo -n "
-====================
+=====================
 >>>>>>>"
 tput setaf 191; echo -n "OPTIONS"
 tput setaf 45; echo "<<<<<<<
-====================
+=====================
 "
 tput sgr0 && tput setaf 202; echo "
 1 - LATEST (EVA)

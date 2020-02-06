@@ -98,6 +98,7 @@ case $selection in
 		sudo rm -rf "qgisconfigupdater.sh"
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+		;;
 	a ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5

@@ -26,6 +26,7 @@ tput sgr0 && tput setaf 202; echo "
 4 - Sluit dit menu en installeer het kopiëren script (zorgt ervoor dat de bestanden van qgis in de hoofdmap worden gezet)
 5 - Sluit dit menu normaal (KIES DEZE ALLEEN ALS U NIETS HEEFT GEÏNSTALLEERD)
 6 - Installeer de terminal beveiligings software
+7 - Installeer de auto-updater (voor configuratie bestanden)
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
@@ -111,6 +112,14 @@ case $selection in
 		tput reset
 		tput clear
 		tput sgr0
+		;;
+	7 ) 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
+		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
+		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
+		sudo rm -rf "qgisconfigupdater.sh"
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 		;;
 	a ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh

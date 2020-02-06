@@ -16,7 +16,7 @@ sudo rm -rf /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
 #Download het script
 mkdir /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
 cd /home/"$name"/qgis
-sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPMUFU/qgis/MUFU/NL/QgisInstallerNL.sh
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/NL/QgisInstallerNL.sh
 tput reset
 tput bold
 tput setaf 5

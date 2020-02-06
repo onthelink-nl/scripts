@@ -363,7 +363,11 @@ WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGI
 ## QGIS
 ==========
 
-### **MUFU** - *This is the first working main-version (This version has no checks for files but it should try to get rid of any unnecessary files when reïnstalling or updating QGIS (so it'll just try to remove unnecessary things (if those things even exist on your chromebook ofcourse... (Don't forget that this version is for the most part stable but there could be bugs hiding in the dark, if you find any, please report them to us as soon as possible!!!)))*
+### **EVA** - *_The "Extended Validation Access" update contains many things that has improved literally everything in the script, the QGIS script will now have debian 9 and 10 support and the menu's have been optimized. It now has an updater which will keep your installation up to date with your debian version (if your debian was updated from 9 to 10 it would remove the old configuration and replace it with the new one for 10, this also works the other way around...) and it will only update if you are connected to the internet so it won't be writing an empty file as the updater Crontab's are now much more practical as we no longer remove the crontab on installing our version of the crontab, we now only add and/or remove the required line from the crontab._*
+
+<br>
+
+### **MUFU** - *_This is the first working main-version (This version has no checks for files but it should try to get rid of any unnecessary files when reïnstalling or updating QGIS (so it'll just try to remove unnecessary things (if those things even exist on your chromebook ofcourse... (Don't forget that this version is for the most part stable but there could be bugs hiding in the dark, if you find any, please report them to us as soon as possible!!!)))_*
 </details>
 <details>
   <summary>AnyDesk</summary>

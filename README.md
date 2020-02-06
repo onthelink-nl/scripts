@@ -323,16 +323,16 @@ QGIS INSTALLER
 
 <b><h2 align="center">==================================================</h2></b>
 
-Copy and paste this command for the EN version:
+Copy and paste this command for the EN version:<br>
 `sudo curl -LO https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_EN.sh && bash "OnTheLink_QGIS-MENU_EN.sh"`
 
-Copy and paste this command for the NL version:
+Copy and paste this command for the NL version:<br>
 `sudo curl -LO https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_NL.sh && bash "OnTheLink_QGIS-MENU_NL.sh"`
 
 <b><h3 align="center">========================================================================</h3></b>
 
 WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGIS INSTALLATION ####
-[OPEN INSTRUCTIONS EVA](https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/EVA/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
+[OPEN INSTRUCTIONS EVA](https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/EVA/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")<br>
 [OPEN INSTRUCTIONS MUFU](https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "INSTRUCTIONS PDF FILE")
 
 </details>

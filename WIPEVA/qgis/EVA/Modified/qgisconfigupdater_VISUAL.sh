@@ -93,8 +93,8 @@ if [ -f "$qgisu" ]; then
 	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
-	crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-	crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+	crontab -l | grep -v '*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+	crontab -l | { cat; echo "*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 	tput setaf 2
 	echo "qgisconfigupdater updated!"
 	sleep 2
@@ -114,8 +114,8 @@ else
 	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
-	crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-	crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+	crontab -l | grep -v '*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+	crontab -l | { cat; echo "*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 	tput setaf 2
 	echo "qgisconfigupdater updated!"
 	sleep 2
@@ -195,8 +195,8 @@ if [ -f "$qgisu" ]; then
 	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
-	crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-	crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+	crontab -l | grep -v '*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+	crontab -l | { cat; echo "*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 	echo "qgisconfigupdater updated!"
 	sleep 2
 	tput reset
@@ -214,8 +214,8 @@ else
 	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
-	crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-	crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+	crontab -l | grep -v '*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+	crontab -l | { cat; echo "*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 	tput setaf 2
 	echo "qgisconfigupdater updated!"
 	sleep 2

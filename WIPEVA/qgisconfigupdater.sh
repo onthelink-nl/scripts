@@ -43,14 +43,14 @@ fi
 
 if [ -f "$qgisu" ]; then
 	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-	sudo cp -f qgisremovefiles.sh /etc/init.d/qgisconfigupdater.sh
+	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
 	crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
 	crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 else
 	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-	sudo cp -f qgisremovefiles.sh /etc/init.d/qgisconfigupdater.sh
+	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
 	crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
@@ -87,14 +87,14 @@ fi
 
 if [ -f "$qgisu" ]; then
 	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-	sudo cp -f qgisremovefiles.sh /etc/init.d/qgisconfigupdater.sh
+	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
 	crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
 	crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 else
 	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-	sudo cp -f qgisremovefiles.sh /etc/init.d/qgisconfigupdater.sh
+	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
 	crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -

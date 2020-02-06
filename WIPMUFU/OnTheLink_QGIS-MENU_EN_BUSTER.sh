@@ -91,7 +91,7 @@ case $selection in
 		tput clear
 		tput sgr0
 		;;
-	6 )
+	6 ) 
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
 		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 		sudo chmod +x /etc/init.d/qgisconfigupdater.sh

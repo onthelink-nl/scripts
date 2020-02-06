@@ -13,7 +13,11 @@ case $MACHINE_VERSION in
 
 #Check if update available
 if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
+  tput setaf 3
   echo "Connected to the internet!"
+  tput reset
+  tput clear
+  tput sgr0
   qgisr="/etc/init.d/qgisremovefiles.sh"
   qgisc="/etc/init.d/qgiscopyfiles.sh" 
   qgisu="/etc/init.d/qgisconfigupdater.sh"

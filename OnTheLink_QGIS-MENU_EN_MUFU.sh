@@ -13,4 +13,4 @@ mkdir qgis && cd qgis && sudo curl -LO https://raw.githubusercontent.com/ontheli
 bash OnTheLink_QGIS-MENU_EN.sh
 
 #Remove files at end of execution
-cd .. && sudo rm -rf qgis && sudo rm -rf OnTheLink_QGIS-MENU_EN.sh
+cd .. && sudo rm -rf qgis && sudo rm -rf OnTheLink_QGIS-MENU_EN_MUFU.sh

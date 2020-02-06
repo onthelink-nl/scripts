@@ -92,12 +92,12 @@ case $selection in
 		tput sgr0
 		;;
 	6 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
-		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
-		sudo rm -rf "qgisconfigupdater.sh"
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
+		sudo chmod +x /etc/init.d/updaterqgis.sh
+		sudo rm -rf "updaterqgis.sh"
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		;;
 	a ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
@@ -108,12 +108,12 @@ case $selection in
 		bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
-		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
-		sudo rm -rf "qgisconfigupdater.sh"
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
+		sudo chmod +x /etc/init.d/updaterqgis.sh
+		sudo rm -rf "updaterqgis.sh"
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_BUSTER.sh
 		tput reset
@@ -132,14 +132,14 @@ case $selection in
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
-		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
-		sudo rm -rf "qgisconfigupdater.sh"
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
+		sudo chmod +x /etc/init.d/updaterqgis.sh
+		sudo rm -rf "updaterqgis.sh"
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_BUSTER.sh
@@ -163,14 +163,14 @@ case $selection in
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
-		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
-		sudo rm -rf "qgisconfigupdater.sh"
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
+		sudo chmod +x /etc/init.d/updaterqgis.sh
+		sudo rm -rf "updaterqgis.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_BUSTER.sh

@@ -132,15 +132,15 @@ case $selection in
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
-		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
-		sudo rm -rf "qgisconfigupdater.sh"
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
+		sudo chmod +x /etc/init.d/updaterqgis.sh
+		sudo rm -rf "updaterqgis.sh"
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_STRETCH.sh
 		tput reset
@@ -163,14 +163,14 @@ case $selection in
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
-		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
-		sudo rm -rf "qgisconfigupdater.sh"
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
+		sudo chmod +x /etc/init.d/updaterqgis.sh
+		sudo rm -rf "updaterqgis.sh"
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
@@ -199,14 +199,14 @@ case $selection in
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 		sudo rm -rf "qgiscopyfiles.sh"
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
-		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
-		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
-		sudo rm -rf "qgisconfigupdater.sh"
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
+		sudo chmod +x /etc/init.d/updaterqgis.sh
+		sudo rm -rf "updaterqgis.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR

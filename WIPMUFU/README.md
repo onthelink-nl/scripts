@@ -8,7 +8,7 @@
            <b>#####################################</b><br>
            <b>===================================</b><br>
            <b>#####################################</b><br>
-           <b>VERSION: MUFU</b><br> 
+           <b>VERSION: EVA</b><br> 
            <b>UPDATE: 3.1</b><br> 
            <b>STATE: INSTABLE</b><br><br>
            <b>DATE: 03 February 2020</b><br>

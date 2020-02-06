@@ -98,6 +98,9 @@ case $selection in
 		sudo rm -rf "updaterqgis.sh"
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
+		tput reset
+		tput clear
+		tput sgr0
 		;;
 	a ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh

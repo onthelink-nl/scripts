@@ -46,15 +46,15 @@ if [ -f "$qgisu" ]; then
 	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
-	crontab -l | grep -v '*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-	crontab -l | { cat; echo "*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+	crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 else
 	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
 	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
-	crontab -l | grep -v '*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-	crontab -l | { cat; echo "*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+	crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 fi
 
 exit
@@ -90,15 +90,15 @@ if [ -f "$qgisu" ]; then
 	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
-	crontab -l | grep -v '*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-	crontab -l | { cat; echo "*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+	crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 else
 	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
 	sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
 	sudo chmod +x /etc/init.d/qgisconfigupdater.sh
 	sudo rm -rf "qgisconfigupdater.sh"
-	crontab -l | grep -v '*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
-	crontab -l | { cat; echo "*/5 * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
+	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+	crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 fi
 
 else

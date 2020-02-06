@@ -15,6 +15,6 @@
            <b>#####################################</b><br>  
            <b>===================================</b><br><br><br><br><br><br>
 
-[QGIS INSTRUCTIONS MUFU](https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "PDF")<br><br>
+[QGIS INSTRUCTIONS EVA](https://github.com/onthelink-nl/scripts/blob/master/EVA/qgis/EVA/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "PDF")<br><br>
 
-[QGIS INSTRUCTIONS EVA](https://github.com/onthelink-nl/scripts/blob/master/EVA/qgis/EVA/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "PDF")
+[QGIS INSTRUCTIONS MUFU](https://github.com/onthelink-nl/scripts/blob/master/MUFU/qgis/MUFU/Tutorials/INSTRUCTIONS/QGIS%20Instructions.pdf "PDF")

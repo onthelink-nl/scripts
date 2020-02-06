@@ -26,6 +26,7 @@ tput sgr0 && tput setaf 202; echo "
 4 - Close this menu and install the copy script (this will put all qgis projects in your home dir)
 5 - Close this menu normally (When nothing was installed)
 6 - Install the terminal protection software
+7 - Install the auto-updater (for configuration files)
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
@@ -112,6 +113,13 @@ case $selection in
 		tput clear
 		tput sgr0
 		;;
+	7 ) 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
+		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
+		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
+		sudo rm -rf "qgisconfigupdater.sh"
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 	a ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5

@@ -54,7 +54,7 @@ case $selection in
         ;;
 	* ) 
         tput setaf 202
-		echo "Please only enter option 1 or 2..."
+		echo "Voer alstublieft alleen de optie 1, 2 of 3 in..."
 		sleep 1
 		tput reset
 		;;

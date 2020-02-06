@@ -118,8 +118,8 @@ case $selection in
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
+		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		;;
 	a ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
@@ -136,11 +136,11 @@ case $selection in
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab - 
+		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_STRETCH.sh
 		tput reset
@@ -167,10 +167,10 @@ case $selection in
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
+		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
@@ -205,8 +205,8 @@ case $selection in
 		sudo rm -rf "updaterqgis.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
-		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
+		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR

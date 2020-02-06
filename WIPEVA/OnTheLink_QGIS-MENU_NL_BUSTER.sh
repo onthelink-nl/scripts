@@ -10,7 +10,7 @@ tput clear
 selection=
 until [ "$selection" = "4" ]; do
 tput bold && tput setaf 46; echo "
-OnTheLink QGIS-MENU | Versie: 3.1 INSTABIEL | BUSTER
+OnTheLink QGIS-MENU | Versie: 3.4 INSTABIEL | BUSTER
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================

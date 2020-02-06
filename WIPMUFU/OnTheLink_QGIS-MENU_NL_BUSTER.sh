@@ -25,6 +25,7 @@ tput sgr0 && tput setaf 202; echo "
 3 - Sluit dit menu en installeer het automatisch verwijderen van bestanden script
 4 - Sluit dit menu normaal
 5 - Installeer de terminal beveiligings software
+6 - Installeer de auto-updater (voor configuratie bestanden)
 "
 tput sgr0 && tput setaf 45; echo -n "
 ==================================
@@ -89,6 +90,14 @@ case $selection in
 		tput reset
 		tput clear
 		tput sgr0
+		;;
+	6 ) 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisconfigupdater.sh
+		sudo cp -f qgisconfigupdater.sh /etc/init.d/qgisconfigupdater.sh
+		sudo chmod +x /etc/init.d/qgisconfigupdater.sh
+		sudo rm -rf "qgisconfigupdater.sh"
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh' | crontab -
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisconfigupdater.sh"; } | crontab -
 		;;
 	a ) 
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh

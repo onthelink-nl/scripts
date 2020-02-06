@@ -13,4 +13,4 @@ mkdir qgis && cd qgis && sudo curl -LO https://raw.githubusercontent.com/ontheli
 bash OnTheLink_QGIS-MENU_NL.sh
 
 #Verwijder bestanden na uitvoering script
-cd .. && sudo rm -rf qgis && sudo rm -rf OnTheLink_QGIS-MENU_NL.sh
+cd .. && sudo rm -rf qgis && sudo rm -rf OnTheLink_QGIS-MENU_NL_MUFU.sh

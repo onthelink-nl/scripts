@@ -6,6 +6,7 @@ name="$(logname)"
 STARTDIR="$(pwd)"
 cd /home/"$name"/
 
+tput reset
 tput clear
 selection=
 until [ "$selection" = "3" ]; do
@@ -13,11 +14,11 @@ tput bold && tput setaf 46; echo "
 OnTheLink QGIS-UPDATEKEUZEMENU | Versie: 3.1 STABIEL
 "
 tput sgr0 && tput setaf 45; echo -n "
-==================================
+====================
 >>>>>>>"
 tput setaf 191; echo -n "OPTIES"
 tput setaf 45; echo "<<<<<<<
-==================================
+====================
 "
 tput sgr0 && tput setaf 202; echo "
 1 - LAATSTE (EVA)
@@ -45,7 +46,10 @@ case $selection in
 		bash OnTheLink_QGIS-MENU_NL_MUFU.sh
 		;;
   3 ) 
-        sudo rm -rf OnTheLink_QGIS-MENU_NL.sh
+        tput reset
+	tput clear
+	tput sgr0
+	sudo rm -rf OnTheLink_QGIS-MENU_NL.sh
         exit
         ;;
 	* ) 

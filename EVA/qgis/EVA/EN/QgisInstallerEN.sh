@@ -162,7 +162,7 @@ tput sgr0
 tput setaf 9
 echo "Installing dependencies..."
 tput sgr0
-sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/OTL_QGIS_STRETCH.list
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/OTL_QGIS_STRETCH.list
 sudo cp -f OTL_QGIS_STRETCH.list /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 sudo rm -rf "OTL_QGIS_STRETCH.list"
@@ -187,7 +187,7 @@ tput setaf 9
 echo "Installing QGIS..."
 tput sgr0
 sudo apt-get --yes --assume-yes install gnome-software-plugin-flatpak 2> /dev/null | exec 1> /dev/tty
-sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/qgis.flatpakref 2> /dev/null | exec 1> /dev/tty
+sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/qgis.flatpakref 2> /dev/null | exec 1> /dev/tty
 kill -9 $SPIN_PID
 flatpak -y install qgis.flatpakref
 tput reset
@@ -288,7 +288,7 @@ tput sgr0
 tput setaf 9
 echo "Installing Dependencies..."
 tput sgr0
-sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/OTL_QGIS_BUSTER.list
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/OTL_QGIS_BUSTER.list
 sudo cp -f OTL_QGIS_BUSTER.list /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 sudo rm -rf "OTL_QGIS_BUSTER.list"
@@ -313,7 +313,7 @@ tput setaf 9
 echo "Installing QGIS..."
 tput sgr0
 sudo apt-get --yes --assume-yes install gnome-software-plugin-flatpak 2> /dev/null | exec 1> /dev/tty
-sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/qgis.flatpakref 2> /dev/null | exec 1> /dev/tty
+sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/qgis.flatpakref 2> /dev/null | exec 1> /dev/tty
 kill -9 $SPIN_PID
 flatpak -y install qgis.flatpakref
 tput reset

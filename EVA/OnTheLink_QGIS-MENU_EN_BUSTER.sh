@@ -48,7 +48,7 @@ case $selection in
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5
 		echo "Preparing the QGIS-VERSIONSELECTOR..."
-        sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+        sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
         sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
         ;;
@@ -56,12 +56,12 @@ case $selection in
 		sudo rm -rf Removal_EN.sh
 		tput setaf 5
 		echo "Preparing QGIS-REMOVAL..."
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/Removal_EN.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/Removal_EN.sh
 		sleep 2
 		bash Removal_EN.sh
 		;;
 	3 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisremovefiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
@@ -84,7 +84,7 @@ case $selection in
 		exit
 		;;
     5 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
 		tput setaf 2; echo "The terminal protection software has been installed!"
 		sleep 2
 		tput reset
@@ -92,7 +92,7 @@ case $selection in
 		tput sgr0
 		;;
 	6 ) 
-		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/updaterqgis.sh
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
@@ -103,12 +103,12 @@ case $selection in
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5
 		echo "Preparing combination..."
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
-		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/updaterqgis.sh
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
@@ -125,14 +125,14 @@ case $selection in
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5
 		echo "Preparing combination..."
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisremovefiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
-		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/updaterqgis.sh
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
@@ -152,18 +152,18 @@ case $selection in
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		tput setaf 5
 		echo "Preparing combination..."
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
 		tput setaf 2
 		echo "The terminal protection software has been installed!"
 		sleep 2
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisremovefiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
-		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/WIPEVA/qgis/EVA/Modified/updaterqgis.sh
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/updaterqgis.sh
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
@@ -180,11 +180,11 @@ case $selection in
 		exit
 		;;
 	d ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
 		tput setaf 2
 		echo "The terminal protection software has been (re)installed!"
 		sleep 2
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisremovefiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"

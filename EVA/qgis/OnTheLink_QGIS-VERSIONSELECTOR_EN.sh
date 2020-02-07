@@ -9,7 +9,7 @@ cd /home/"$name"/
 tput reset
 tput clear
 selection=
-until [ "$selection" = "2" ]; do
+until [ "$selection" = "4" ]; do
 tput bold && tput setaf 46; echo "
 OnTheLink QGIS-VERSIONSELECTOR
 "

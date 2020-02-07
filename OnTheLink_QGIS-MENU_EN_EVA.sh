@@ -44,7 +44,7 @@ tput sgr0
 tput setaf 9
 echo "Downloading stretch version..."
 tput sgr0
-sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/OnTheLink_QGIS-MENU_EN_STRETCH.sh
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_STRETCH.sh
 bash OnTheLink_QGIS-MENU_EN_STRETCH.sh
 cd $STARTDIR
 sudo rm -rf /home/"$name"/qgis
@@ -67,7 +67,7 @@ tput sgr0
 tput setaf 9
 echo "Downloading buster version..."
 tput sgr0
-sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
 bash OnTheLink_QGIS-MENU_EN_BUSTER.sh
 cd $STARTDIR
 sudo rm -rf /home/"$name"/qgis

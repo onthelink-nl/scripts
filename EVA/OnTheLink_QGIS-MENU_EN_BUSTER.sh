@@ -13,11 +13,11 @@ tput bold && tput setaf 46; echo "
 OnTheLink QGIS-MENU | Version: 3.4 INSTABLE | BUSTER
 "
 tput sgr0 && tput setaf 45; echo -n "
-==================================
+================================
 >>>>>>>"
 tput setaf 191; echo -n "STANDALONE OPTIONS"
 tput setaf 45; echo "<<<<<<<
-==================================
+================================
 "
 tput sgr0 && tput setaf 202; echo "
 1 - Install/reïnstall/update QGIS
@@ -28,11 +28,11 @@ tput sgr0 && tput setaf 202; echo "
 6 - Install the auto-updater (for configuration files)
 "
 tput sgr0 && tput setaf 45; echo -n "
-==================================
+==============================
 >>>>>>>"
 tput setaf 191; echo -n "COMBINED OPTIONS"
 tput setaf 45; echo "<<<<<<<
-==================================
+==============================
 "
 tput sgr0 && tput setaf 202; echo "
 a - Install/reïnstall/update QGIS + Exit script (1+4)

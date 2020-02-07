@@ -16,7 +16,7 @@ if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
   qgisr="/etc/init.d/qgisremovefiles.sh"
   qgisc="/etc/init.d/qgiscopyfiles.sh" 
 if [ -f "$qgisr" ]; then
-	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisremovefiles.sh
+	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 	sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 	sudo chmod +x /etc/init.d/qgisremovefiles.sh
 	sudo rm -rf "qgisremovefiles.sh"
@@ -25,14 +25,14 @@ if [ -f "$qgisr" ]; then
 fi
 
 if [ -f "$qgisc" ]; then
-	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgiscopyfiles.sh
+	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
 	sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 	sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 	sudo rm -rf "qgiscopyfiles.sh"
 	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 	crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -
 else
-	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgiscopyfiles.sh
+	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
 	sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 	sudo chmod +x /etc/init.d/qgiscopyfiles.sh
 	sudo rm -rf "qgiscopyfiles.sh"
@@ -54,7 +54,7 @@ if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
   qgisr="/etc/init.d/qgisremovefiles.sh"
   qgisc="/etc/init.d/qgiscopyfiles.sh" 
 if [ -f "$qgisr" ]; then
-	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/WIPEVA/qgis/EVA/Modified/qgisremovefiles.sh
+	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 	sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 	sudo chmod +x /etc/init.d/qgisremovefiles.sh
 	sudo rm -rf "qgisremovefiles.sh"

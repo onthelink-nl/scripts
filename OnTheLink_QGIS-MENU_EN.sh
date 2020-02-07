@@ -36,6 +36,7 @@ case $selection in
         sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_EN_EVA.sh
         sleep 2
 		bash OnTheLink_QGIS-MENU_EN_EVA.sh
+		exit
         ;;
 	2 ) 
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_MUFU.sh
@@ -44,6 +45,7 @@ case $selection in
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_EN_MUFU.sh
 		sleep 2
 		bash OnTheLink_QGIS-MENU_EN_MUFU.sh
+		exit
 		;;
   3 ) 
         tput reset

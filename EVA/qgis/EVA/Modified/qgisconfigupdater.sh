@@ -39,9 +39,13 @@ else
 	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 	crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -
 fi
-
+sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
+sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/OTL_QGIS_STRETCH.list
+sudo cp -f OTL_QGIS_STRETCH.list /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
+sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
+sudo rm -rf "OTL_QGIS_STRETCH.list"
 exit
-
 else
   exit
 fi
@@ -66,7 +70,13 @@ if [ -f "$qgisc" ]; then
 	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 	sudo rm -rf "/etc/init.d/qgiscopyfiles.sh"
 fi
-
+sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
+sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/OTL_QGIS_BUSTER.list
+sudo cp -f OTL_QGIS_BUSTER.list /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
+sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
+sudo rm -rf "OTL_QGIS_BUSTER.list"
+exit
 else
   exit
 fi

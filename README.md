@@ -73,7 +73,7 @@ Copy and paste this command into the terminal and hit "Return" (ENTER):
 <details>
   <summary>Click to show installers!</summary>
   
-  ## - The Wine Installer (WIP - NOT TESTED YET!)
+  ## - The Wine Installer
   <details>
   <summary>Click to show installer</summary>
 <b><h1 align="center">=======================================</h1></b>
@@ -121,37 +121,37 @@ Do: `cd -` (to return to the directory you was before doing this)
   <summary>Click to show installer</summary>
 
 ## WINE INSTALLER WITH MENU
-`sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/OnTheLink_WINE-MENU.sh" && bash OnTheLink_WINE-MENU.sh`
+`sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/OnTheLink_WINE-MENU.sh" && bash OnTheLink_WINE-MENU.sh`<br>
 </details>
 
-Or copy and paste the following command(s) (Only required when the normal script (above) doesn't work) into the terminal and hit "Return" (ENTER):
+Or copy and paste the following command(s) (Only required when the normal script (above) doesn't work) into the terminal and hit "Return" (ENTER):<br>
 
 # Versions:
 <details>
   <summary>Click to show version WINE</summary>
 
 ## WINE
-`sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/Wine/wineinstaller.sh" && bash wineinstaller.sh`
+`sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/Wine/wineinstaller.sh" && bash wineinstaller.sh`<br>
 </details>
 
 # How to run programs after installation:
-AFTER INSTALLING WINE USING THIS SCRIPT RUN THIS TO EXECUTE IN 32BIT:
-`WINEPREFIX="/home/$USER/.wine32" WINEARCH=win32 wine some_program` (e.g. explorer.exe)
-FOR WINETRICKS:
-`WINEPREFIX="/home/$USER/.wine32" WINEARCH=win32 winetricks` (so for winetricks no wine before *winetricks*)
+AFTER INSTALLING WINE USING THIS SCRIPT RUN THIS TO EXECUTE IN 32BIT:<br>
+`WINEPREFIX="/home/$USER/.wine32" WINEARCH=win32 wine some_program` (e.g. explorer.exe)<br>
+FOR WINETRICKS:<br>
+`WINEPREFIX="/home/$USER/.wine32" WINEARCH=win32 winetricks` (so for winetricks no wine before *winetricks*)<br>
 
-AND THIS FOR 64BIT:
-`wine some_program` (e.g. explorer.exe)
-FOR WINETRICKS:
-`winetricks` (so for winetricks no wine before *winetricks*)
-
-*Your wine64 prefix (so also the files of it’s drive) are located in /home/$USER/.wine*
-*Your wine32 prefix (so also the files of it’s drive) are located in /home/$USER/.wine32*
-_YOU MUST ENABLE HIDDEN FOLDERS TO LOCATE THE DRIVE IN YOUR FILE MANAGER..._
-
+AND THIS FOR 64BIT:<br>
+`wine some_program` (e.g. explorer.exe)<br>
+FOR WINETRICKS:<br>
+`winetricks` (so for winetricks no wine before *winetricks*)<br>
+<br>
+*Your wine64 prefix (so also the files of it’s drive) are located in /home/$USER/.wine*<br>
+*Your wine32 prefix (so also the files of it’s drive) are located in /home/$USER/.wine32*<br>
+_YOU MUST ENABLE HIDDEN FOLDERS TO LOCATE THE DRIVE IN YOUR FILE MANAGER..._<br>
+<br>
 # Uninstaller:
-Copy and paste this command into the terminal and hit "Return" (ENTER):
-`https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/UNINSTALLER/wineuninstaller.sh" && bash wineuninstaller.sh`
+Copy and paste this command into the terminal and hit "Return" (ENTER):<br>
+`https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/UNINSTALLER/wineuninstaller.sh" && bash wineuninstaller.sh`<br>
 
 <b><h3 align="center">========================================================================</h3></b>
 

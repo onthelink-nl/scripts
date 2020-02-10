@@ -67,8 +67,19 @@ if [ -f "$qgisr" ]; then
 fi
 
 if [ -f "$qgisc" ]; then
+	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
+	sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+	sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+	sudo rm -rf "qgiscopyfiles.sh"
 	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-	sudo rm -rf "/etc/init.d/qgiscopyfiles.sh"
+	crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -
+else
+	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
+	sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+	sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+	sudo rm -rf "qgiscopyfiles.sh"
+	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+	crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -
 fi
 sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list

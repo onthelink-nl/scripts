@@ -39,7 +39,8 @@ tput sgr0 && tput setaf 202; echo "
 a - Install/reïnstall/update QGIS + Exit script (1+4)
 b - Install/reïnstall/update QGIS + Exit script and install the auto remove files script (1+3)
 c - Install/reïnstall/update QGIS + The terminal protection software + Exit script and install the auto remove files script (FOR SCHOOLS) (REMOVES EVERYTHING IN THE HOME DIR (/home/"$name"/EVERYTHING)) (1+5+3)
-d - Reïnstall the auto remove files script + The terminal protection software (3+5)
+d - Reïnstall the auto remove files script + The copy script (3+4)
+e - Reïnstall the auto remove files script + The copy script + The terminal protection software (3+4+6)
 "
     tput setaf 6; echo -n "Enter selection: "
     read -r selection
@@ -127,13 +128,18 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/updaterqgis.sh
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_BUSTER.sh
@@ -153,6 +159,10 @@ case $selection in
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/updaterqgis.sh
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
@@ -161,6 +171,7 @@ case $selection in
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_BUSTER.sh
@@ -184,6 +195,10 @@ case $selection in
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/updaterqgis.sh
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
@@ -192,6 +207,7 @@ case $selection in
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_BUSTER.sh
@@ -201,24 +217,45 @@ case $selection in
 		exit
 		;;
 	d ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
-		tput setaf 2
-		echo "The terminal protection software has been (re)installed!"
-		sleep 2
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
 		sudo rm -rf "qgisremovefiles.sh"
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
+		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab -
+		tput reset
+		tput clear
+		tput sgr0
+		;;
+	e ) 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
+		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
+		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
+		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
+		sudo chmod +x /etc/init.d/qgisremovefiles.sh
+		sudo rm -rf "qgiscopyfiles.sh"
+		sudo rm -rf "qgisremovefiles.sh"
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
+		tput setaf 2; echo "The terminal protection software has been (re)installed!"
+		sleep 2
 		tput reset
 		tput clear
 		tput sgr0
 		;;
 	* ) 
         tput setaf 202
-		echo "Please only enter standalone options 1, 2, 3, 4, 5, 6, 7 or combined options a, b, c or d..."
+		echo "Please only enter standalone options 1, 2, 3, 4, 5, 6, 7 or combined options a, b, c, d or e..."
 		sleep 1
 		tput reset
 		;;

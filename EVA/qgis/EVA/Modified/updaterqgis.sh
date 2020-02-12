@@ -25,6 +25,7 @@ else
 fi
 DISPLAY=:0 x-terminal-emulator -e bash . /etc/init.d/qgisconfigupdater.sh
 else
+bash /etc/init.d/updaterqgis.sh
 exit
 fi
 

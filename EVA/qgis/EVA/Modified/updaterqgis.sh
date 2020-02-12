@@ -23,8 +23,7 @@ else
 	cd $STARTDIR
 	sudo rm -rf updaterfiles/
 fi
-DISPLAY=:0 x-terminal-emulator -e bash /etc/init.d/qgisconfigupdater.sh
-
+DISPLAY=:0 x-terminal-emulator -e bash . /etc/init.d/qgisconfigupdater.sh
 else
 exit
 fi

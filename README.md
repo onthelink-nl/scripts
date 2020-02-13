@@ -57,7 +57,7 @@ Or copy and paste one of these commands (Only required when the normal script (a
   <summary>Click to show version 1.8.11</summary>
 
 ## 1.8.11
-`https://github.com/onthelink-nl/scripts/raw/master/Arduino%20Unofficial%20Installer%20(LINUX)/arduino-1.8.11%20(64-32)/arduinoinstaller1.8.11.sh" && bash arduinoinstaller1.8.11.sh`
+`sudo curl -LO "https://github.com/onthelink-nl/scripts/raw/master/Arduino%20Unofficial%20Installer%20(LINUX)/arduino-1.8.11%20(64-32)/arduinoinstaller1.8.11.sh" && bash arduinoinstaller1.8.11.sh`
 </details>
 
 # Uninstaller:

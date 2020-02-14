@@ -130,8 +130,9 @@ tput setaf 2; echo "OnTheLink - TERMINAL PROTECTION SOFTWARE"
 sleep 1
 tput setaf 6; echo "Checking for updates..."
 sleep 2
-tput setaf 5; echo "No updates found!"
-tput setaf 3; echo "Checking terminal protection config file...."
+bash /etc/init.d/updaterqgis.sh
+sleep 2
+tput setaf 2; echo UPDATED!
 sleep 1
 tput setaf 1; echo "You do NOT have the permission to use the terminal! Closing in 4 seconds..."
 sleep 1

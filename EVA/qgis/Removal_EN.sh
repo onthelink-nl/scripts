@@ -58,7 +58,7 @@ case $selection in
 		sudo apt-get --yes --assume-yes remove --purge flatpak
 		sudo apt-get --yes --assume-yes clean
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
@@ -113,7 +113,7 @@ case $selection in
 		sudo flatpak uninstall --unused
 		sudo rm -rf "/home/$USER/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list 2> /dev/null | exec 1> /dev/tty
@@ -143,7 +143,7 @@ case $selection in
 		tput setaf 1
 		echo "Restoring settings..."
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		sudo rm -rf /etc/init.d/qgiscopyfiles.sh 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/init.d/qgisconfigupdater.sh 2> /dev/null | exec 1> /dev/tty

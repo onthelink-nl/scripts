@@ -45,7 +45,6 @@ sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA
 sudo cp -f OTL_QGIS_STRETCH.list /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 sudo rm -rf "OTL_QGIS_STRETCH.list"
-osascript -e 'tell application "Terminal" to close first window' & exit
 else
   exit
 fi
@@ -87,7 +86,6 @@ sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA
 sudo cp -f OTL_QGIS_BUSTER.list /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 sudo rm -rf "OTL_QGIS_BUSTER.list"
-osascript -e 'tell application "Terminal" to close first window' & exit
 else
   exit
 fi

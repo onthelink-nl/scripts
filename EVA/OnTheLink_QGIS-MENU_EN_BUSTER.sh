@@ -116,11 +116,11 @@ case $selection in
         tput reset
         tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
-		sudo chmod 222 /etc/profile
+		sudo chmod 444 /etc/profile
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
-		sudo chmod 222 /home/"$name"/.bashrc
+		sudo chmod 444 /home/"$name"/.bashrc
 		tput setaf 2; echo "The terminal protection software has been installed!"
 		sleep 2
         tput reset

@@ -106,17 +106,16 @@ case $selection in
 		exit
 		;;
     6 ) 
-		## install shc
-		sudo apt --yes --assume-yes install shc gcc
-		## removing and creating protected folder
-		sudo rm -rf /etc/init.d/protected
-		sudo mkdir /etc/init.d/protected
+		## downloading original profile
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile > /etc/profile
 		## ask for password and set it in password.sh
 		tput setaf 3; echo "Please enter a password to protect the terminal with..."
 		read -s -p "Password: " userpass
         tput reset
         tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
+		sudo chmod 222 /etc/profile
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc

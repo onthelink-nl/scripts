@@ -112,8 +112,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-.  /etc/init.d/protected/password.sh.x
-bash /etc/init.d/OTL_Secure_Login.sh.x
+STARTDIR="$(pwd)"
+cd /etc/init.d/protected
+./password.sh.x
+./OTL_Secure_Login.sh.x
 
 EXITSTATUS=$(echo $?)
 [ "1" != "$EXITSTATUS" ] && exit

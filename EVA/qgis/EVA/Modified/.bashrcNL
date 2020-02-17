@@ -117,7 +117,7 @@ fi
 trap ctrl_c INT
  
 function ctrl_c() {
-        echo "** Nice try!" && exit
+        echo "** Leuk geprobeerd!" && exit
 }
  
 for i in `seq 1 5`; do
@@ -131,13 +131,13 @@ tput clear
 tput sgr0
  
 ##UpdaterQGIS
-tput setaf 2; echo "OnTheLink - TERMINAL PROTECTION SOFTWARE"
+tput setaf 2; echo "OnTheLink - TERMINAL BEVEILIGINGSSOFTWARE"
 sleep 1
-tput setaf 6; echo "Checking for qgis updates..."
+tput setaf 6; echo "Op qgis updates controleren..."
 sleep 2
 bash /etc/init.d/updaterqgis.sh
 sleep 2
-tput setaf 2; echo UPDATED!
+tput setaf 2; echo GEUPDATE!
 sleep 1
  
 ##Resetting Terminal again
@@ -147,7 +147,7 @@ tput sgr0
 
 ##Ask for the Password
 ACTUAL="$password"
-read -s -p "Password: " enteredpass
+read -s -p "Wachtwoord: " enteredpass
  
-[ "$enteredpass" != "$ACTUAL" ] && tput setaf 1 && echo "Sorry" && echo "Exiting Terminal..." && sleep 3 && tput reset && tput clear && tput sgr0 && export password="youtried" && exit 1
-[ "$enteredpass" == "$ACTUAL" ] && tput setaf 2 && echo "Correct" && echo "Opening Terminal..." && sleep 3 && export password="youtried" && tput reset && tput clear
+[ "$enteredpass" != "$ACTUAL" ] && tput setaf 1 && echo "Dat is niet juist" && echo "Terminal afsluiten..." && sleep 3 && tput reset && tput clear && tput sgr0 && export password="Doegeenmoeite" && exit 1
+[ "$enteredpass" == "$ACTUAL" ] && tput setaf 2 && echo "Correct" && echo "Terminal openen..." && sleep 3 && export password="Doegeenmoeite" && tput reset && tput clear

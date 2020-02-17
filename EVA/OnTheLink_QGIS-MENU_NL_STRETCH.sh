@@ -106,8 +106,22 @@ case $selection in
 		exit
 		;;
     6 ) 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
-		tput setaf 2; echo "De terminal beveiligings software is geïnstalleerd!"
+		## downloading original profile
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
+		## ask for password and set it in password.sh
+		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
+		read -s -p "Wachtwoord: " userpass
+        tput reset
+        tput clear
+		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
+		sudo chmod 444 /etc/profile
+		## download modified .bashrc file
+		sudo chmod 777 /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrcNL > /home/"$name"/.bashrc
+		sudo chmod 444 /home/"$name"/.bashrc
+		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2
 		tput reset
 		tput clear
@@ -190,9 +204,22 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
-		tput setaf 2
-		echo "De terminal beveiligings software is geïnstalleerd!"
+		## downloading original profile
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
+		## ask for password and set it in password.sh
+		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
+		read -s -p "Wachtwoord: " userpass
+        tput reset
+        tput clear
+		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
+		sudo chmod 444 /etc/profile
+		## download modified .bashrc file
+		sudo chmod 777 /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrcNL > /home/"$name"/.bashrc
+		sudo chmod 444 /home/"$name"/.bashrc
+		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
@@ -249,8 +276,22 @@ case $selection in
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
-		tput setaf 2; echo "De terminal beveiligings software is opnieuw geïnstalleerd!"
+		## downloading original profile
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
+		## ask for password and set it in password.sh
+		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
+		read -s -p "Wachtwoord: " userpass
+        tput reset
+        tput clear
+		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
+		sudo chmod 444 /etc/profile
+		## download modified .bashrc file
+		sudo chmod 777 /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrcNL > /home/"$name"/.bashrc
+		sudo chmod 444 /home/"$name"/.bashrc
+		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2
 		tput reset
 		tput clear

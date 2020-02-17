@@ -201,9 +201,22 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_EN.sh
+		## downloading original profile
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
+		## ask for password and set it in password.sh
+		tput setaf 3; echo "Please enter a password to protect the terminal with..."
+		read -s -p "Password: " userpass
+        tput reset
+        tput clear
+		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
+		sudo chmod 444 /etc/profile
+		## download modified .bashrc file
+		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
-		tput setaf 2
-		echo "The terminal protection software has been installed!"
+		sudo chmod 444 /home/"$name"/.bashrc
+		tput setaf 2; echo "The terminal protection software has been installed!"
 		sleep 2
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
@@ -260,8 +273,22 @@ case $selection in
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
+		## downloading original profile
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
+		## ask for password and set it in password.sh
+		tput setaf 3; echo "Please enter a password to protect the terminal with..."
+		read -s -p "Password: " userpass
+        tput reset
+        tput clear
+		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
+		sudo chmod 444 /etc/profile
+		## download modified .bashrc file
+		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
-		tput setaf 2; echo "The terminal protection software has been (re)installed!"
+		sudo chmod 444 /home/"$name"/.bashrc
+		tput setaf 2; echo "The terminal protection software has been installed!"
 		sleep 2
 		tput reset
 		tput clear

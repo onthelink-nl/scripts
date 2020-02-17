@@ -82,6 +82,13 @@ case $selection in
 		sudo mv "/home/$USER/.var/app/org.kde.Platform" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo mv "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/profile.d/flatpak.sh 2> /dev/null | exec 1> /dev/tty
+		## downloading original profile
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
+		## download modified .bashrc file
+		sudo chmod 777 /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$USER"/.bashrc
 		tput setaf 1; echo "QGIS + FLATPAK REMOVED, restart your chromebook to clean the tmp directory"
 		sleep 1
 		tput setaf 2; echo "3"
@@ -125,6 +132,13 @@ case $selection in
 		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo mv "/home/$USER/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf "/home/$USER/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
+		## downloading original profile
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
+		## download modified .bashrc file
+		sudo chmod 777 /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$USER"/.bashrc
 		tput setaf 1; echo "QGIS REMOVED, restart your chromebook to clean the tmp directory"
 		sleep 1
 		tput setaf 2; echo "3"
@@ -150,6 +164,13 @@ case $selection in
 		sudo rm -rf /etc/init.d/qgisremovefiles.sh 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list 2> /dev/null | exec 1> /dev/tty
+		## downloading original profile
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
+		## download modified .bashrc file
+		sudo chmod 777 /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$USER"/.bashrc
 		tput setaf 1; echo "SETTINGS RESTORED!"
 		sleep 1
 		tput setaf 2; echo "3"
@@ -172,7 +193,7 @@ case $selection in
 		;;
     * ) 
         tput setaf 202
-		echo "Please enter choice 1, 2 or 3..."
+		echo "Please enter choice 1, 2, 3 or 4..."
 		sleep 1
 		tput reset
 		tput clear

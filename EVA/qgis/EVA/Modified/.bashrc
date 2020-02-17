@@ -135,7 +135,14 @@ tput setaf 2; echo "OnTheLink - TERMINAL PROTECTION SOFTWARE"
 sleep 1
 tput setaf 6; echo "Checking for qgis updates..."
 sleep 2
-bash /etc/init.d/updaterqgis.sh
+uqgis="/etc/init.d/updaterqgis.sh"
+if [ -f "$uqgis" ]; then
+	bash /etc/init.d/updaterqgis.sh
+else
+	tput setaf 3
+	echo "qgis is not installed.."
+	sleep 3
+fi
 sleep 2
 tput setaf 2; echo UPDATED!
 sleep 1

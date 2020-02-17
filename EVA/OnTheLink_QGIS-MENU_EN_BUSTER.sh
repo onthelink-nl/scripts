@@ -114,20 +114,17 @@ case $selection in
 		## ask for password and set it in password.sh
 		tput setaf 3; echo "Please enter a password to protect the terminal with..."
 		read -s -p "Password: " userpass
-		echo "#!/bin/bash" >> /etc/init.d/protected/password.sh
-		echo ""
-		echo "export password=$userpass" >> /etc/init.d/protected/password.sh
-		## encrypting password.sh and removing unencrypted version(s)
-		shc -f /etc/init.d/protected/password.sh
-		sudo chmod +x /etc/init.d/protected/password.sh.x
-		sudo rm -rf /etc/init.d/protected/password.sh
-		sudo rm -rf /etc/init.d/protected/password.sh.x.c
+        tput reset
+        tput clear
+		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
 		## download modified .bashrc file
+		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
+		sudo chmod 222 /home/"$name"/.bashrc
 		tput setaf 2; echo "The terminal protection software has been installed!"
 		sleep 2
-		tput reset
-		tput clear
+        tput reset
+        tput clear
 		tput sgr0
 		;;
 	7 ) 

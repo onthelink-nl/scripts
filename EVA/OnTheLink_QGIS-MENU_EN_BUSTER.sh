@@ -108,7 +108,8 @@ case $selection in
     6 ) 
 		## downloading original profile
 		sudo chmod 777 /etc/profile
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile > /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
 		## ask for password and set it in password.sh
 		tput setaf 3; echo "Please enter a password to protect the terminal with..."
 		read -s -p "Password: " userpass

@@ -107,7 +107,7 @@ case $selection in
 		;;
     6 ) 
 		## install shc
-		sudo apt --yes --assume-yes install shc
+		sudo apt --yes --assume-yes install shc gcc
 		## removing and creating protected folder
 		sudo rm -rf /etc/init.d/protected
 		sudo mkdir /etc/init.d/protected

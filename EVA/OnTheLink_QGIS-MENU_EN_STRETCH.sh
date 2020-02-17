@@ -299,7 +299,7 @@ case $selection in
 		;;
 	* ) 
         tput setaf 202
-		echo "Please only enter standalone options 1, 2, 3, 4, 5, 6 or combined options a, b, c, d or e..."
+		echo "Please only enter standalone options 1, 2, 3, 4, 5, 6, 7 or combined options a, b, c, d or e..."
 		sleep 1
 		tput reset
 		tput clear

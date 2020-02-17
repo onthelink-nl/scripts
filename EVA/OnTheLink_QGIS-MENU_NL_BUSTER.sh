@@ -119,7 +119,7 @@ case $selection in
 		sudo chmod 444 /etc/profile
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrcNL > /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/NL/.bashrc > /home/"$name"/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
 		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2
@@ -217,7 +217,7 @@ case $selection in
 		sudo chmod 444 /etc/profile
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrcNL > /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/NL/.bashrc > /home/"$name"/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
 		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2
@@ -289,7 +289,7 @@ case $selection in
 		sudo chmod 444 /etc/profile
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrcNL > /home/"$name"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/NL/.bashrc > /home/"$name"/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
 		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2

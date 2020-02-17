@@ -129,21 +129,6 @@ done
 tput reset
 tput clear
 tput sgr0
- 
-##UpdaterQGIS
-tput setaf 2; echo "OnTheLink - TERMINAL PROTECTION SOFTWARE"
-sleep 1
-tput setaf 6; echo "Checking for qgis updates..."
-sleep 2
-bash /etc/init.d/updaterqgis.sh
-sleep 2
-tput setaf 2; echo UPDATED!
-sleep 1
- 
-##Resetting Terminal again
-tput reset
-tput clear
-tput sgr0
 
 ##Ask for the Password
 tput setaf 3

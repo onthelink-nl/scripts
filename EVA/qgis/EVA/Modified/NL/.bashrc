@@ -129,25 +129,11 @@ done
 tput reset
 tput clear
 tput sgr0
- 
-##UpdaterQGIS
-tput setaf 2; echo "OnTheLink - TERMINAL BEVEILIGINGSSOFTWARE"
-sleep 1
-tput setaf 6; echo "Op qgis updates controleren..."
-sleep 2
-bash /etc/init.d/updaterqgis.sh
-sleep 2
-tput setaf 2; echo GEUPDATE!
-sleep 1
- 
-##Resetting Terminal again
-tput reset
-tput clear
-tput sgr0
 
 ##Ask for the Password
+tput setaf 3
 ACTUAL="$password"
 read -s -p "Wachtwoord: " enteredpass
  
 [ "$enteredpass" != "$ACTUAL" ] && tput setaf 1 && echo "Dat is niet juist" && echo "Terminal afsluiten..." && sleep 3 && tput reset && tput clear && tput sgr0 && export password="Doegeenmoeite" && exit 1
-[ "$enteredpass" == "$ACTUAL" ] && tput setaf 2 && echo "Correct" && echo "Terminal openen..." && sleep 3 && export password="Doegeenmoeite" && tput reset && tput clear
+[ "$enteredpass" == "$ACTUAL" ] && tput setaf 2 && echo "Correct" && echo "Terminal openen..." && sleep 3 && export password="Doegeenmoeite" && tput reset && tput clear && tput sgr0

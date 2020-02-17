@@ -130,6 +130,8 @@ tput reset
 tput clear
 tput sgr0
 
+tput setaf 2; echo "OnTheLink - TERMINAL BEVEILIGINGSSOFTWARE"
+
 ##Ask for the Password
 tput setaf 3
 ACTUAL="$password"

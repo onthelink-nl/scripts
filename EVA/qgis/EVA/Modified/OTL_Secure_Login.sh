@@ -38,5 +38,5 @@ ACTUAL="$password"
 read -s -p "Password: " enteredpass
 echo ""
 
-[ "$enteredpass" != "$ACTUAL" ] && echo "Sorry" && echo "Exiting" && exit 1
-[ "$enteredpass" == "$ACTUAL" ] && echo "Correct" && echo "Opening Terminal..." && tput reset && tput clear && tput sgr0 && exit 0
+[ "$enteredpass" != "$ACTUAL" ] && tput setaf 1 && echo "Sorry" && echo "Exiting Terminal..." && tput reset && tput clear && tput sgr0 && exit 1
+[ "$enteredpass" == "$ACTUAL" ] && tput setaf 2 && echo "Correct" && echo "Opening Terminal..." && tput reset && tput clear && tput sgr0 && exit 0

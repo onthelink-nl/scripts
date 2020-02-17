@@ -106,6 +106,23 @@ case $selection in
 		exit
 		;;
     6 ) 
+		## install shc
+		sudo apt --yes --assume-yes install shc
+		## removing and creating protected folder
+		sudo rm -rf /etc/init.d/protected
+		sudo mkdir /etc/init.d/protected
+		## ask for password and set it in password.sh
+		tput setaf 3; echo "Please enter a password to protect the terminal with..."
+		read -s -p "Password: " userpass
+		echo "#!/bin/bash" >> /etc/init.d/protected/password.sh
+		echo ""
+		echo "export password=$userpass" >> /etc/init.d/protected/password.sh
+		## encrypting password.sh and removing unencrypted version(s)
+		shc -f /etc/init.d/protected/password.sh
+		sudo chmod +x /etc/init.d/protected/password.sh.x
+		sudo rm -rf /etc/init.d/protected/password.sh
+		sudo rm -rf /etc/init.d/protected/password.sh.x.c
+		## download modified .bashrc file
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/.bashrc > /home/"$name"/.bashrc
 		tput setaf 2; echo "The terminal protection software has been installed!"
 		sleep 2

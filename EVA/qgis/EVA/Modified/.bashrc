@@ -112,36 +112,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#Kill Switch, will be activated when ctrl+c is pressed (Sometimes the chromebooks need to be powerwashed or reset by a recovery to make QGIS work after this)
-# trap ctrl-c and call ctrl_c()
-trap ctrl_c INT
+.  /etc/init.d/protected/password.sh.x
+bash /etc/init.d/OTL_Secure_Login.sh.x
 
-function ctrl_c() {
-        echo "** Nice try!" && exit
-}
-
-for i in `seq 1 5`; do
-    sleep 1
-    echo -n "."
-done
-
-tput reset
-tput setaf 2; echo "OnTheLink - TERMINAL PROTECTION SOFTWARE"
-sleep 1
-tput setaf 6; echo "Checking for updates..."
-sleep 2
-bash /etc/init.d/updaterqgis.sh
-sleep 2
-tput setaf 2; echo UPDATED!
-sleep 1
-tput setaf 1; echo "You do NOT have the permission to use the terminal! Closing in 4 seconds..."
-sleep 1
-tput setaf 1; echo "3"
-sleep 1
-tput setaf 1; echo "2"
-sleep 1
-tput setaf 1; echo "1"
-sleep 1
-tput setaf 2; echo "Goodbye!"
-sleep 1
-exit
+EXITSTATUS=$(echo $?)
+[ "1" != "$EXITSTATUS" ] && exit
+[ "0" != "$EXITSTATUS" ] && tput reset && tput clear && tput sgr0

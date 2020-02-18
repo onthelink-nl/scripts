@@ -117,7 +117,7 @@ fi
 trap ctrl_c INT
  
 function ctrl_c() {
-        echo "** Nice try!" && exit
+        echo "** Nice try!" && export password="youtried" && exit
 }
  
 for i in `seq 1 5`; do
@@ -130,7 +130,7 @@ tput reset
 tput clear
 tput sgr0
 
-tput setaf 2; echo "OnTheLink - TERMINAL PROTECTION SOFTWARE"
+tput setaf 6; echo "OnTheLink - TERMINAL PROTECTION SOFTWARE"
 
 ##Ask for the Password
 tput setaf 3

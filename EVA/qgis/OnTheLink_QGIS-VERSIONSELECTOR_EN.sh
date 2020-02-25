@@ -1,5 +1,19 @@
 #!/bin/bash
 
+#MESSAGES
+COLUMNS=$(tput cols)
+echoa="OnTheLink QGIS-VERSIONSELECTOR"
+echob="1 - Install update "LATEST"
+2 - Install update "3.6"
+3 - REGULAR FLATPAK UPDATER (SHOULD AUTOMATICALLY UPDATE ALL APPLICATIONS THAT ARE INSTALLED USING THIS SCRIPT)
+4 - Exit to the QGIS-MENU"
+echoc="echo -n "Enter selection: ""
+echod="Preparing to install QGIS with update LATEST"
+echoe="Preparing to install QGIS with update 3.6"
+echof="Updated Flatpak and it's apps"
+echog="Please enter choice 1, 2 or 3..."
+echoz=""
+
 #Get current user
 name="$(logname)"
 
@@ -10,23 +24,26 @@ tput reset
 tput clear
 selection=
 until [ "$selection" = "4" ]; do
-tput bold && tput setaf 46; echo "
-OnTheLink QGIS-VERSIONSELECTOR
-"
-tput sgr0 && tput setaf 45; echo "
-1 - Install update "LATEST"
-2 - Install update "3.6"
-3 - REGULAR FLATPAK UPDATER (SHOULD AUTOMATICALLY UPDATE ALL APPLICATIONS THAT ARE INSTALLED USING THIS SCRIPT)
-4 - Exit to the QGIS-MENU
-"
-    tput setaf 6; echo -n "Enter selection: "
-    read -r selection
-    echo ""
+tput bold
+tput setaf 46
+#echoa
+printf "%*s\n" $(((${#echoa}+$COLUMNS)/2)) "$echoa"
+tput sgr0
+tput setaf 45
+#echob
+printf "%*s\n" $(((${#echob}+$COLUMNS)/2)) "$echob"
+tput setaf 6
+#echoc
+printf "%*s\n" $(((${#echoc}+$COLUMNS)/2)) "$echoc"
+read -r selection
+#echoz
+printf "%*s\n" $(((${#echoz}+$COLUMNS)/2)) "$echoz"
 case $selection in
     1 ) 
 		sudo rm -rf /home/$USER/QgisStartEN.sh 2> /dev/null | exec 1> /dev/tty
 		tput setaf 5
-		echo "Preparing to install QGIS with update LATEST"
+		#echod
+		printf "%*s\n" $(((${#echod}+$COLUMNS)/2)) "$echod"
         sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Startup/QgisStartEN.sh
         sleep 2
 		sudo bash QgisStartEN.sh
@@ -38,7 +55,8 @@ case $selection in
 	2 ) 
 		sudo rm -rf /home/$USER/QgisStart3.6EN.sh 2> /dev/null | exec 1> /dev/tty
 		tput setaf 5
-		echo "Preparing to install QGIS with update 3.6"
+		#echoe
+		printf "%*s\n" $(((${#echoe}+$COLUMNS)/2)) "$echoe"
         sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Startup/QgisStart3.6EN.sh
         sleep 2
 		sudo bash QgisStart3.6EN.sh
@@ -53,7 +71,8 @@ case $selection in
 		tput sgr0
 		sudo flatpak update
 		tput setaf 2
-		echo "Updated Flatpak and it's apps"
+		#echof
+		printf "%*s\n" $(((${#echof}+$COLUMNS)/2)) "$echof"
 		sleep 3
 		tput reset
 		tput clear
@@ -69,7 +88,8 @@ case $selection in
 		;;
     * ) 
         tput setaf 202
-		echo "Please enter choice 1, 2 or 3..."
+		#echog
+		printf "%*s\n" $(((${#echog}+$COLUMNS)/2)) "$echog"
 		sleep 1
 		tput reset
 		tput clear

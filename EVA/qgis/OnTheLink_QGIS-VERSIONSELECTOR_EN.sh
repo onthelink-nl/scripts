@@ -4,8 +4,8 @@
 COLUMNS=$(tput cols)
 echoa="OnTheLink QGIS-VERSIONSELECTOR"
 echob="1 - Install update "LATEST""
-echoba="2 - Install update "3.6""
-echobb="3 - REGULAR FLATPAK UPDATER (SHOULD AUTOMATICALLY UPDATE ALL APPLICATIONS THAT ARE INSTALLED USING THIS SCRIPT)"
+echoba="2 - Install update "3.6"  "
+echobb="3 - REGULAR FLATPAK UPDATER"
 echobc="4 - Exit to the QGIS-MENU"
 echoc="echo -n "Enter selection: ""
 echod="Preparing to install QGIS with update LATEST"

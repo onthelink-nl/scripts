@@ -4,7 +4,7 @@
 COLUMNS=$(tput cols)
 echoa="OnTheLink QGIS-VERSIONSELECTOR"
 echob="1 - Install update "LATEST""
-echoba="2 - Install update "3.6"  "
+echoba="2 - Install update "3.6""
 echobb="3 - REGULAR FLATPAK UPDATER"
 echobc="4 - Exit to the QGIS-MENU"
 echoc="echo -n "Enter selection: ""
@@ -31,10 +31,10 @@ printf "%*s\n" $(((${#echoa}+$COLUMNS)/2)) "$echoa"
 tput sgr0
 tput setaf 45
 #echob
-printf "%*s\n" $(((${#echoba}+$COLUMNS)/2)) "$echob"
-printf "%*s\n" $(((${#echoba}+$COLUMNS)/2)) "$echoba"
-printf "%*s\n" $(((${#echoba}+$COLUMNS)/2)) "$echobb"
-printf "%*s\n" $(((${#echoba}+$COLUMNS)/2)) "$echobc"
+printf "%*s\n" $(((${#echobb}+$COLUMNS)/2)) "$echob"
+printf "%*s\n" $(((${#echobb}+$COLUMNS)/2)) "$echoba"
+printf "%*s\n" $(((${#echobb}+$COLUMNS)/2)) "$echobb"
+printf "%*s\n" $(((${#echobb}+$COLUMNS)/2)) "$echobc"
 tput setaf 6
 #echoc
 printf "%*s\n" $(((${#echoc}+$COLUMNS)/2)) "$echoc"

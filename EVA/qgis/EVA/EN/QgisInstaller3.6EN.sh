@@ -159,7 +159,7 @@ echoea="apt refreshed!"
 echof="Installing QGIS"
 echoz=""
 
-##Commands after any-key
+##Commands after any-keyz
 tput sgr0
 sudo apt-get --yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 5
@@ -281,6 +281,8 @@ read -n 1 -s -r -p "Press any key to continue..."
 
 ##sending positive reaction
 echo ";)"
+tput reset
+tput clear
 
 ## Start the Spinner:
 spin &

@@ -145,22 +145,36 @@ spin &
 ## Make a note of its Process ID (PID):
 SPIN_PID=$!
 
+#MESSAGES
+COLUMNS=$(tput cols)
+echoa="Installation of QGIS has started:"
+echob="Creating temporary folder"
+echoba="Temporary folder has been created!"
+echoc="Installing dependencies"
+echoca="Dependencies have been installed!"
+echod="Installing Flatpak"
+echoda="Flatpak has been installed!"
+echoe="Refreshing apt"
+echoea="apt refreshed!"
+echof="Installing QGIS"
+echoz=""
+
 ##Commands after any-key
 tput sgr0
 sudo apt-get --yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 5
-echo "Installation of QGIS started:"
+printf "%*s\n" $(((${#echoa}+$COLUMNS)/2)) "$echoa"
 tput setaf 9
-echo "Creating temporary folder"
+printf "%*s\n" $(((${#echob}+$COLUMNS)/2)) "$echob"
 sudo rm -rf /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
 mkdir /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
 cd /home/"$name"/qgisfiles
 tput sgr0
 tput setaf 2
-echo "Temporary folder has been created!"
+printf "%*s\n" $(((${#echoba}+$COLUMNS)/2)) "$echoba"
 tput sgr0
 tput setaf 9
-echo "Installing dependencies..."
+printf "%*s\n" $(((${#echoc}+$COLUMNS)/2)) "$echoc"
 tput sgr0
 sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/OTL_QGIS_STRETCH.list
 sudo cp -f OTL_QGIS_STRETCH.list /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
@@ -168,27 +182,29 @@ sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 sudo rm -rf "OTL_QGIS_STRETCH.list"
 sudo apt-get --yes --assume-yes install wget apt-utils nautilus inotify-tools cron 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "Dependencies have been installed!"
+printf "%*s\n" $(((${#echoca}+$COLUMNS)/2)) "$echoca"
 tput sgr0
 tput setaf 9
-echo "Installing Flatpak..."
+printf "%*s\n" $(((${#echod}+$COLUMNS)/2)) "$echod"
 tput sgr0
 sudo apt-get -t stretch-backports --yes --assume-yes install flatpak 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "Flatpak has been installed!"
+printf "%*s\n" $(((${#echoda}+$COLUMNS)/2)) "$echoda"
 tput setaf 9
-echo "Refreshing apt..."
+printf "%*s\n" $(((${#echoe}+$COLUMNS)/2)) "$echoe"
 tput sgr0
 sudo apt-get --yes --assume-yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "apt refreshed!"
+printf "%*s\n" $(((${#echoea}+$COLUMNS)/2)) "$echoea"
 tput sgr0
 tput setaf 9
-echo "Installing QGIS..."
+printf "%*s\n" $(((${#echof}+$COLUMNS)/2)) "$echof"
 tput sgr0
 sudo apt-get --yes --assume-yes install gnome-software-plugin-flatpak 2> /dev/null | exec 1> /dev/tty
 sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/qgis.flatpakref 2> /dev/null | exec 1> /dev/tty
 kill -9 $SPIN_PID
+tput reset
+tput clear
 flatpak -y install qgis.flatpakref
 tput reset
 tput clear
@@ -272,22 +288,36 @@ spin &
 ## Make a note of its Process ID (PID):
 SPIN_PID=$!
 
+#MESSAGES
+COLUMNS=$(tput cols)
+echoa="Installation of QGIS has started:"
+echob="Creating temporary folder"
+echoba="Temporary folder has been created!"
+echoc="Installing dependencies"
+echoca="Dependencies have been installed!"
+echod="Installing Flatpak"
+echoda="Flatpak has been installed!"
+echoe="Refreshing apt"
+echoea="apt refreshed!"
+echof="Installing QGIS"
+echoz=""
+
 ##Command's after any-key
 tput sgr0
 sudo apt-get --yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 5
-echo "Installation of QGIS has started:"
+printf "%*s\n" $(((${#echoa}+$COLUMNS)/2)) "$echoa"
 tput setaf 9
-echo "Creating temporary folder"
+printf "%*s\n" $(((${#echob}+$COLUMNS)/2)) "$echob"
 sudo rm -rf /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
 mkdir /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
 cd /home/"$name"/qgisfiles
 tput sgr0
 tput setaf 2
-echo "Temporary folder has been created!"
+printf "%*s\n" $(((${#echoba}+$COLUMNS)/2)) "$echoba"
 tput sgr0
 tput setaf 9
-echo "Installing Dependencies..."
+printf "%*s\n" $(((${#echoc}+$COLUMNS)/2)) "$echoc"
 tput sgr0
 sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/OTL_QGIS_BUSTER.list
 sudo cp -f OTL_QGIS_BUSTER.list /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
@@ -295,27 +325,29 @@ sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 sudo rm -rf "OTL_QGIS_BUSTER.list"
 sudo apt-get --yes --assume-yes install wget apt-utils nautilus rsync grsync inotify-tools cron 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "Dependencies have been installed!"
+printf "%*s\n" $(((${#echoca}+$COLUMNS)/2)) "$echoca"
 tput sgr0
 tput setaf 9
-echo "Installing Flatpak..."
+printf "%*s\n" $(((${#echod}+$COLUMNS)/2)) "$echod"
 tput sgr0
 sudo apt-get -t buster-backports --yes --assume-yes install flatpak 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "Flatpak has been installed!"
+printf "%*s\n" $(((${#echoda}+$COLUMNS)/2)) "$echoda"
 tput setaf 9
-echo "Refreshing apt..."
+printf "%*s\n" $(((${#echoe}+$COLUMNS)/2)) "$echoe"
 tput sgr0
 sudo apt-get --yes --assume-yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "apt refreshed!"
+printf "%*s\n" $(((${#echoea}+$COLUMNS)/2)) "$echoea"
 tput sgr0
 tput setaf 9
-echo "Installing QGIS..."
+printf "%*s\n" $(((${#echof}+$COLUMNS)/2)) "$echof"
 tput sgr0
 sudo apt-get --yes --assume-yes install gnome-software-plugin-flatpak 2> /dev/null | exec 1> /dev/tty
 sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/qgis.flatpakref 2> /dev/null | exec 1> /dev/tty
 kill -9 $SPIN_PID
+tput reset
+tput clear
 flatpak -y install qgis.flatpakref
 tput reset
 tput clear

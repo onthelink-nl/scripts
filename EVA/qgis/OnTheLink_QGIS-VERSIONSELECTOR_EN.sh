@@ -11,7 +11,7 @@ echoc="echo -n "Enter selection: ""
 echod="Preparing to install QGIS with update LATEST"
 echoe="Preparing to install QGIS with update 3.6"
 echof="Updated Flatpak and it's apps"
-echog="Please enter choice 1, 2 or 3..."
+echog="Please enter choice 1, 2, 3 or 4..."
 echoz=""
 
 #Get current user

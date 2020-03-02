@@ -145,22 +145,36 @@ spin &
 ## Make a note of its Process ID (PID):
 SPIN_PID=$!
 
-##Commando's nadat de gebruiker heeft gedrukt op de willekeurige toets
+#MESSAGES
+COLUMNS=$(tput cols)
+echoa="Installatie van QGIS is gestart:"
+echob="Tijdelijke map aanmaken"
+echoba="Tijdelijke map is aangemaakt!"
+echoc="Benodigdheden installeren"
+echoca="Benodigdheden zijn geïnstalleerd!"
+echod="Flatpak installeren"
+echoda="Flatpak is geïnstalleerd!"
+echoe="apt hernieuwen"
+echoea="apt hernieuwd!"
+echof="QGIS installeren"
+echoz=""
+
+##Commands after any-keyz
 tput sgr0
 sudo apt-get --yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 5
-echo "Installatie van QGIS gestart:"
+printf "%*s\n" $(((${#echoa}+$COLUMNS)/2)) "$echoa"
 tput setaf 9
-echo "Tijdelijke map aanmaken"
-sudo rm -rf /home/"$name"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
-mkdir /home/"$name"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
-cd /home/"$name"/qgisbestanden
+printf "%*s\n" $(((${#echob}+$COLUMNS)/2)) "$echob"
+sudo rm -rf /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+mkdir /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+cd /home/"$name"/qgisfiles
 tput sgr0
 tput setaf 2
-echo "De tijdelijke map is aangemaakt!"
+printf "%*s\n" $(((${#echoba}+$COLUMNS)/2)) "$echoba"
 tput sgr0
 tput setaf 9
-echo "Benodigdheden installeren..."
+printf "%*s\n" $(((${#echoc}+$COLUMNS)/2)) "$echoc"
 tput sgr0
 sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/OTL_QGIS_STRETCH.list
 sudo cp -f OTL_QGIS_STRETCH.list /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
@@ -168,27 +182,29 @@ sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list
 sudo rm -rf "OTL_QGIS_STRETCH.list"
 sudo apt-get --yes --assume-yes install wget apt-utils nautilus inotify-tools cron 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "Benodigdheden geïnstalleerd!"
+printf "%*s\n" $(((${#echoca}+$COLUMNS)/2)) "$echoca"
 tput sgr0
 tput setaf 9
-echo "Flatpak installeren..."
+printf "%*s\n" $(((${#echod}+$COLUMNS)/2)) "$echod"
 tput sgr0
 sudo apt-get -t stretch-backports --yes --assume-yes install flatpak 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "Flatpak is geïnstalleerd!"
+printf "%*s\n" $(((${#echoda}+$COLUMNS)/2)) "$echoda"
 tput setaf 9
-echo "apt vernieuwen..."
+printf "%*s\n" $(((${#echoe}+$COLUMNS)/2)) "$echoe"
 tput sgr0
 sudo apt-get --yes --assume-yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "apt vernieuwd!"
+printf "%*s\n" $(((${#echoea}+$COLUMNS)/2)) "$echoea"
 tput sgr0
 tput setaf 9
-echo "QGIS installeren..."
+printf "%*s\n" $(((${#echof}+$COLUMNS)/2)) "$echof"
 tput sgr0
 sudo apt-get --yes --assume-yes install gnome-software-plugin-flatpak 2> /dev/null | exec 1> /dev/tty
 sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/qgis.flatpakref 2> /dev/null | exec 1> /dev/tty
 kill -9 $SPIN_PID
+tput reset
+tput clear
 flatpak -y install qgis.flatpakref
 tput reset
 tput clear
@@ -199,7 +215,7 @@ echo "QGIS 3.6 is geïnstalleerd!!!"
 sleep 1
 tput sgr0
 tput setaf 1
-echo "Beeindigen van script in 10 seconden..."
+echo "Script verlaten in 10 seconden..."
 sleep 5
 tput setaf 1
 echo "5"
@@ -272,50 +288,66 @@ spin &
 ## Make a note of its Process ID (PID):
 SPIN_PID=$!
 
-##Commando's nadat de gebruiker heeft gedrukt op de willekeurige toets
+#MESSAGES
+COLUMNS=$(tput cols)
+echoa="Installatie van QGIS is gestart:"
+echob="Tijdelijke map aanmaken"
+echoba="Tijdelijke map is aangemaakt!"
+echoc="Benodigdheden installeren"
+echoca="Benodigdheden zijn geïnstalleerd!"
+echod="Flatpak installeren"
+echoda="Flatpak is geïnstalleerd!"
+echoe="apt hernieuwen"
+echoea="apt hernieuwd!"
+echof="QGIS installeren"
+echoz=""
+
+##Commands after any-keyz
 tput sgr0
 sudo apt-get --yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 5
-echo "Installatie van QGIS gestart:"
+printf "%*s\n" $(((${#echoa}+$COLUMNS)/2)) "$echoa"
 tput setaf 9
-echo "Tijdelijke map aanmaken"
-sudo rm -rf /home/"$name"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
-mkdir /home/"$name"/qgisbestanden 2> /dev/null | exec 1> /dev/tty
-cd /home/"$name"/qgisbestanden
+printf "%*s\n" $(((${#echob}+$COLUMNS)/2)) "$echob"
+sudo rm -rf /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+mkdir /home/"$name"/qgisfiles 2> /dev/null | exec 1> /dev/tty
+cd /home/"$name"/qgisfiles
 tput sgr0
 tput setaf 2
-echo "De tijdelijke map is aangemaakt!"
+printf "%*s\n" $(((${#echoba}+$COLUMNS)/2)) "$echoba"
 tput sgr0
 tput setaf 9
-echo "Benodigdheden installeren..."
+printf "%*s\n" $(((${#echoc}+$COLUMNS)/2)) "$echoc"
 tput sgr0
 sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/OTL_QGIS_BUSTER.list
 sudo cp -f OTL_QGIS_BUSTER.list /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 sudo chmod +x /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list
 sudo rm -rf "OTL_QGIS_BUSTER.list"
-sudo apt-get --yes --assume-yes install wget apt-utils nautilus rsync grsync inotify-tools cron 2> /dev/null | exec 1> /dev/tty
+sudo apt-get --yes --assume-yes install wget apt-utils nautilus inotify-tools cron 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "Benodigdheden geïnstalleerd!"
+printf "%*s\n" $(((${#echoca}+$COLUMNS)/2)) "$echoca"
 tput sgr0
 tput setaf 9
-echo "Flatpak installeren..."
+printf "%*s\n" $(((${#echod}+$COLUMNS)/2)) "$echod"
 tput sgr0
-sudo apt-get -t buster-backports --yes --assume-yes install flatpak 2> /dev/null | exec 1> /dev/tty
+sudo apt-get -t stretch-backports --yes --assume-yes install flatpak 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "Flatpak is geïnstalleerd!"
+printf "%*s\n" $(((${#echoda}+$COLUMNS)/2)) "$echoda"
 tput setaf 9
-echo "apt vernieuwen..."
+printf "%*s\n" $(((${#echoe}+$COLUMNS)/2)) "$echoe"
 tput sgr0
 sudo apt-get --yes --assume-yes update 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
-echo "apt vernieuwd!"
+printf "%*s\n" $(((${#echoea}+$COLUMNS)/2)) "$echoea"
 tput sgr0
 tput setaf 9
-echo "QGIS installeren..."
+printf "%*s\n" $(((${#echof}+$COLUMNS)/2)) "$echof"
 tput sgr0
 sudo apt-get --yes --assume-yes install gnome-software-plugin-flatpak 2> /dev/null | exec 1> /dev/tty
 sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/qgis.flatpakref 2> /dev/null | exec 1> /dev/tty
 kill -9 $SPIN_PID
+tput reset
+tput clear
 flatpak -y install qgis.flatpakref
 tput reset
 tput clear
@@ -326,7 +358,7 @@ echo "QGIS 3.6 is geïnstalleerd!!!"
 sleep 1
 tput sgr0
 tput setaf 1
-echo "Beeindigen van script in 10 seconden..."
+echo "Script verlaten in 10 seconden..."
 sleep 5
 tput setaf 1
 echo "5"

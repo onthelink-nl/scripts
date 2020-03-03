@@ -280,6 +280,8 @@ read -n 1 -s -r -p "Press any key to continue..."
 
 ##sending positive reaction
 echo ";)"
+tput reset
+tput clear
 
 ## Start the Spinner:
 spin &

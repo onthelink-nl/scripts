@@ -279,6 +279,8 @@ read -n 1 -s -r -p "Druk op een willekeurige toets om verder te gaan..."
 
 ##sending positive reaction
 echo ";)"
+tput reset
+tput clear
 
 ## Start the Spinner:
 spin &

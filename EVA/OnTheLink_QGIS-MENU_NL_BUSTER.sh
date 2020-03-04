@@ -76,7 +76,7 @@ case $selection in
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
-		sudo rm -rf OnTheLink_QGIS-MENU_NL_STRETCH.sh
+		sudo rm -rf OnTheLink_QGIS-MENU_NL_BUSTER.sh
 		tput reset
 		tput clear
 		tput sgr0
@@ -91,7 +91,7 @@ case $selection in
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		cd $STARTDIR
-		sudo rm -rf OnTheLink_QGIS-MENU_NL_STRETCH.sh
+		sudo rm -rf OnTheLink_QGIS-MENU_NL_BUSTER.sh
 		tput reset
 		tput clear
 		tput sgr0

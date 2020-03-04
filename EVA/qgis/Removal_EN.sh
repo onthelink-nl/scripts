@@ -1,7 +1,10 @@
 #!/bin/bash
 
+#Get current user
+name="$(logname)"
+
 STARTDIR="$(pwd)"
-cd /home/$USER/
+cd /home/"$name"/
 
 phases=( 
     'REMOVING QGIS (org.qgis.qgis)...'
@@ -71,9 +74,9 @@ done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		sudo flatpak uninstall --force-remove org.kde.Platform
 		sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs
 		sudo flatpak uninstall --unused
-		sudo rm -rf "/home/$USER/.var/app/org.qgis.qgis"
-		sudo rm -rf "/home/$USER/.var/app/org.kde.Platform"
-		sudo rm -rf "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs"
+		sudo rm -rf "/home/$name/.var/app/org.qgis.qgis"
+		sudo rm -rf "/home/$name/.var/app/org.kde.Platform"
+		sudo rm -rf "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs"
 		sudo apt-get --yes --assume-yes remove --purge flatpak
 		sudo apt-get --yes --assume-yes clean
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
@@ -85,21 +88,21 @@ done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		sudo rm -rf /etc/init.d/qgisconfigupdater.sh 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/init.d/qgisremovefiles.sh 2> /dev/null | exec 1> /dev/tty
 		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
-		chattr -i /home/"$USER"/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
+		chattr -i /home/"$name"/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
 		sudo mv "/run/user/1000/doc/*" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo mv "/run/user/1000/doc" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo mv "/run/user/1000/flatpak-monitor/*" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo mv "/run/user/1000/flatpak-monitor" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo mv "/run/user/1000/app/*" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo mv "/run/user/1000/app" /tmp 2> /dev/null | exec 1> /dev/tty
-		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty
-		sudo mv "/home/$USER/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
-		sudo rm -rf "/home/$USER/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
-		sudo rm -rf "/home/$USER/.var/app/org.kde.Platform" 2> /dev/null | exec 1> /dev/tty
-		sudo rm -rf "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs" 2> /dev/null | exec 1> /dev/tty
-		sudo mv "/home/$USER/.var/app/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
-		sudo mv "/home/$USER/.var/app/org.kde.Platform" /tmp 2> /dev/null | exec 1> /dev/tty
-		sudo mv "/home/$USER/.var/app/org.freedesktop.Platform.html5-codecs" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$name/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$name/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$name/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$name/.var/app/org.kde.Platform" 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$name/.var/app/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$name/.var/app/org.kde.Platform" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/profile.d/flatpak.sh 2> /dev/null | exec 1> /dev/tty
 		## downloading original profile
 		sudo chmod 777 /etc/profile
@@ -107,7 +110,7 @@ done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		sudo mv profile /etc/profile
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$USER"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		tput setaf 1; echo "QGIS + FLATPAK REMOVED, restart your chromebook to clean the tmp directory"
 		sleep 1
 		tput setaf 2; echo "3"
@@ -137,7 +140,7 @@ done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		sudo flatpak remote-delete --force org.qgis.qgis-9-origin
 		sudo flatpak remote-delete --force org.qgis.qgis-10-origin
 		sudo flatpak uninstall --unused
-		sudo rm -rf "/home/$USER/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$name/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
@@ -147,17 +150,17 @@ done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		sudo rm -rf /etc/init.d/qgisconfigupdater.sh 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/init.d/qgisremovefiles.sh 2> /dev/null | exec 1> /dev/tty
 		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
-		chattr -i /home/$USER/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
-		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty
-		sudo mv "/home/$USER/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
-		sudo rm -rf "/home/$USER/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
+		chattr -i /home/$name/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$name/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo mv "/home/$name/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf "/home/$name/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
 		## downloading original profile
 		sudo chmod 777 /etc/profile
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
 		sudo mv profile /etc/profile
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$USER"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		tput setaf 1; echo "QGIS REMOVED, restart your chromebook to clean the tmp directory"
 		sleep 1
 		tput setaf 2; echo "3"
@@ -189,7 +192,7 @@ done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		sudo mv profile /etc/profile
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$USER"/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		tput setaf 1; echo "SETTINGS RESTORED!"
 		sleep 1
 		tput setaf 2; echo "3"

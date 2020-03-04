@@ -35,12 +35,12 @@ selection=$(dialog \
 
 case $selection in
     1 )
-      sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+      sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		tput setaf 5
 		echo "Het QGIS-VERSIE_KEUZEMENU voorbereiden..."
-        sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+        sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
         sleep 2
-		bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		bash OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		cd $STARTDIR
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_NL_BUSTER.sh
 		bash OnTheLink_QGIS-MENU_NL_BUSTER.sh
@@ -133,12 +133,12 @@ case $selection in
 		bash OnTheLink_QGIS-MENU_NL_BUSTER.sh
       ;;
     a )
-      sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+      sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		tput setaf 5
 		echo "Combinatie voorbereiden..."
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		sleep 2
-		bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		bash OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo chmod +x /etc/init.d/qgiscopyfiles.sh
@@ -160,12 +160,12 @@ case $selection in
 		exit
       ;;
     b )
-      sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+      sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		tput setaf 5
 		echo "Combinatie voorbereiden..."
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		sleep 2
-		bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		bash OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
 		sudo chmod +x /etc/init.d/qgisremovefiles.sh
@@ -192,12 +192,12 @@ case $selection in
 		exit
       ;;
     c )
-      		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+      		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		tput setaf 5
 		echo "Combinatie voorbereiden..."
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		sleep 2
-		bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		bash OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_NL.sh
 		## downloading original profile
 		sudo chmod 777 /etc/profile
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile

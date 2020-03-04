@@ -16,7 +16,8 @@ selection=$(dialog \
     --backtitle "QGIS Installatie - Created by OnTheLink" \
     --title "Menu" \
     --clear \
-    --cancel-label "Exit" \
+    --ok-label "Ga verder" \
+    --cancel-label "Annuleren" \
     --menu "OnTheLink_QGIS-MENU | EVA-BUSTER | Alle Opties" $HEIGHT $WIDTH 0 \
     "1" "Installeer/herinstalleer/update QGIS" \
     "2" "Verwijder QGIS en zet alles terug naar Standaardwaardes (Standaardwaardes om crontabs te verwijderen en ook onze sources.list)" \

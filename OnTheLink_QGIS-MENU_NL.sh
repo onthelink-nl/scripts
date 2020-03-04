@@ -32,7 +32,7 @@ case $response in
       exit
       ;;
    1) 
-      tput setaf 1
+      tput setaf 2
       echo "Update MUFU zal worden gebruikt!"
       sudo rm -rf OnTheLink_QGIS-MENU_NL_MUFU.sh
       tput setaf 5

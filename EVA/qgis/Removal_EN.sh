@@ -41,8 +41,9 @@ case $selection in
         echo -e "XXX\n$i\n${phases[phase]}\nXXX"
     else
         echo $i
-    fi 
-    sudo flatpak uninstall --force-remove org.qgis.qgis
+    fi
+done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
+		 sudo flatpak uninstall --force-remove org.qgis.qgis
 		sudo flatpak remote-delete --force org.qgis.qgis-origin
 		sudo flatpak remote-delete --force org.qgis.qgis-1-origin
 		sudo flatpak remote-delete --force org.qgis.qgis-2-origin
@@ -105,7 +106,6 @@ case $selection in
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
-done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		tput reset
 		tput clear
 		;;

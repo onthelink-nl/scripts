@@ -87,6 +87,8 @@ case $selection in
 		tput sgr0
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh 2> /dev/null | exec 1> /dev/tty
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_NL_BUSTER.sh
+		bash OnTheLink_QGIS-MENU_NL_BUSTER.sh
 		exit
 		;;
     * ) 

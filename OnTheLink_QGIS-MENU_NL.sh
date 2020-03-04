@@ -1,64 +1,52 @@
 #!/bin/bash
 
-#Get current user
-name="$(logname)"
+if [[ $EUID -ne 1000 ]]; then
+   tput setaf 1
+   echo "Dit script kan niet starten met de "sudo" optie"
+   sleep 3
+   tput reset
+   tput clear
+   tput sgr0
+   exit 1
+fi
 
-STARTDIR="$(pwd)"
-cd /home/"$name"/
+sudo apt-get --yes --assume-yes install dialog 2> /dev/null | exec 1> /dev/tty
 
-tput reset
-tput clear
-selection=
-until [ "$selection" = "3" ]; do
-tput bold && tput setaf 46; echo "
-OnTheLink QGIS-UPDATEKEUZEMENU | Versie: 3.1 STABIEL
-"
-tput sgr0 && tput setaf 45; echo -n "
-====================
->>>>>>>"
-tput setaf 191; echo -n "OPTIES"
-tput setaf 45; echo "<<<<<<<
-====================
-"
-tput sgr0 && tput setaf 202; echo "
-1 - LAATSTE (EVA)
-2 - MUFU (WERKT ALLEEN OP STRETCH (HEEFT GEEN STRETCH CHECKS!!))
-3 - Verlaat het script
-"
-    tput setaf 6; echo -n "Enter selection: "
-    read -r selection
-    echo ""
-case $selection in
-    1 ) 
-		sudo rm -rf OnTheLink_QGIS-MENU_NL_EVA.sh
-		tput setaf 5
-		echo "Bezig met het QGIS-MENU (EVA) voorbereiden..."
-        sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_NL_EVA.sh
-        sleep 2
-		bash OnTheLink_QGIS-MENU_NL_EVA.sh
-		exit
-        ;;
-	2 ) 
-		sudo rm -rf OnTheLink_QGIS-MENU_NL_MUFU.sh
-		tput setaf 5
-		echo "Bezig met het QGIS-MENU (MUFU) voorbereiden..."
-		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_NL_MUFU.sh
-		sleep 2
-		bash OnTheLink_QGIS-MENU_NL_MUFU.sh
-		exit
-		;;
-  3 ) 
-        tput reset
-	tput clear
-	tput sgr0
-	sudo rm -rf OnTheLink_QGIS-MENU_NL.sh
-        exit
-        ;;
-	* ) 
-        tput setaf 202
-		echo "Voer alstublieft alleen de optie 1, 2 of 3 in..."
-		sleep 1
-		tput reset
-		;;
+export NCURSES_NO_UTF8_ACS=1
+dialog --title "Update " \
+--backtitle "QGIS Installatie - Created by OnTheLink" \
+--yesno "Nieuwste update gebruiken? \nDruk op nee voor update MUFU" 0 0
+
+# Get exit status
+# 0 means user hit [yes] button.
+# 1 means user hit [no] button.
+# 255 means user hit [Esc] key.
+response=$?
+case $response in
+   0) 
+      tput setaf 2
+      echo "Update EVA zal worden gebruikt!"
+      sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_NL_EVA.sh
+      sleep 2
+      bash OnTheLink_QGIS-MENU_NL_EVA.sh
+      exit
+      ;;
+   1) 
+      tput setaf 1
+      echo "Update MUFU zal worden gebruikt!"
+      sudo rm -rf OnTheLink_QGIS-MENU_NL_MUFU.sh
+      tput setaf 5
+      echo "Bezig met het QGIS-MENU (MUFU) voorbereiden..."
+      sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_NL_MUFU.sh
+      sleep 2
+      bash OnTheLink_QGIS-MENU_NL_MUFU.sh
+      exit
+      ;;
+   255) 
+      tput setaf 1
+      echo "[ESC] Knop is ingedrukt, Installatie wordt afgebroken"
+      tput sgr0
+      tput reset
+      tput clear
+      exit 255;;
 esac
-done

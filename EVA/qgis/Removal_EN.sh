@@ -42,13 +42,7 @@ case $selection in
     else
         echo $i
     fi 
-done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
-		tput reset
-		tput clear
-		tput setaf 1
-		echo "Removing QGIS + Flatpak..."
-		tput setaf 6
-		sudo flatpak uninstall --force-remove org.qgis.qgis
+    sudo flatpak uninstall --force-remove org.qgis.qgis
 		sudo flatpak remote-delete --force org.qgis.qgis-origin
 		sudo flatpak remote-delete --force org.qgis.qgis-1-origin
 		sudo flatpak remote-delete --force org.qgis.qgis-2-origin
@@ -111,15 +105,9 @@ done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
-		tput setaf 1; echo "QGIS + FLATPAK REMOVED, restart your chromebook to clean the tmp directory"
-		sleep 1
-		tput setaf 2; echo "3"
-		sleep 1
-		tput setaf 2; echo "2"
-		sleep 1
-		tput setaf 2; echo "1"
-		sleep 1
+done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		tput reset
+		tput clear
 		;;
 	2 ) 
 		tput reset

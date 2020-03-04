@@ -1,4 +1,3 @@
- 
 #!/bin/bash
 
 #Get current user
@@ -17,7 +16,7 @@ selection=$(dialog \
     --backtitle "QGIS Installation - Created by OnTheLink" \
     --title "Menu" \
     --clear \
-    --nocancel
+    --nocancel \
     --ok-label "Continue" \
     --cancel-label "Cancel" \
     --menu "OnTheLink_QGIS-MENU | EVA-STRETCH | All Options" $HEIGHT $WIDTH 0 \
@@ -50,7 +49,7 @@ case $selection in
     2 )
       sudo rm -rf Removal_EN.sh
 		tput setaf 5
-		echo "QGIS-VERWIJDERING voorbereiden..."
+		echo "Preparing the QGIS-REMOVAL..."
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/Removal_EN.sh
 		sleep 2
 		bash Removal_EN.sh
@@ -107,8 +106,8 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
 		sudo mv profile /etc/profile
 		## ask for password and set it in password.sh
-		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
-		read -s -p "Wachtwoord: " userpass
+		tput setaf 3; echo "Please enter the password you would like to use to protect the terminal..."
+		read -s -p "Password: " userpass
         tput reset
         tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
@@ -117,7 +116,7 @@ case $selection in
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
-		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
+		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
 		cd $STARTDIR
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_STRETCH.sh
@@ -137,7 +136,7 @@ case $selection in
     a )
       sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_STRETCH_EN.sh
 		tput setaf 5
-		echo "Combinatie voorbereiden..."
+		echo "Preparing combination..."
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_STRETCH_EN.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_STRETCH_EN.sh
@@ -164,7 +163,7 @@ case $selection in
     b )
       sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_STRETCH_EN.sh
 		tput setaf 5
-		echo "Combinatie voorbereiden..."
+		echo "Preparing combination..."
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_STRETCH_EN.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_STRETCH_EN.sh
@@ -196,7 +195,7 @@ case $selection in
     c )
       		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_STRETCH_EN.sh
 		tput setaf 5
-		echo "Combinatie voorbereiden..."
+		echo "Preparing combination..."
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_STRETCH_EN.sh
 		sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_STRETCH_EN.sh
@@ -205,8 +204,8 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
 		sudo mv profile /etc/profile
 		## ask for password and set it in password.sh
-		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
-		read -s -p "Wachtwoord: " userpass
+		tput setaf 3; echo "Please enter the password you would like to use to protect the terminal..."
+		read -s -p "Password: " userpass
       		tput reset
        		tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
@@ -215,7 +214,7 @@ case $selection in
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
-		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
+		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
@@ -283,8 +282,8 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
 		sudo mv profile /etc/profile
 		## ask for password and set it in password.sh
-		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
-		read -s -p "Wachtwoord: " userpass
+		tput setaf 3; echo "Please enter the password you would like to use to protect the terminal..."
+		read -s -p "Password: " userpass
         	tput reset
         	tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
@@ -293,7 +292,7 @@ case $selection in
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
-		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
+		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
 		cd $STARTDIR
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_STRETCH.sh
@@ -315,7 +314,7 @@ case $response in
       tput setaf 1
       cd $STARTDIR
       sudo rm -rf OnTheLink_QGIS-MENU_EN_STRETCH.sh
-      echo "[ESC] Knop is ingedrukt, Installatie wordt afgebroken"
+      echo "[ESC] Button has been pressed, Installation will be aborted"
       tput sgr0
       tput reset
       tput clear

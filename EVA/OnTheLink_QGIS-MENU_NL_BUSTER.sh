@@ -41,6 +41,9 @@ case $selection in
         sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
         sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+		cd $STARTDIR
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_NL_BUSTER.sh
+		bash OnTheLink_QGIS-MENU_NL_BUSTER.sh
       ;;
     2 )
       sudo rm -rf Removal_NL.sh
@@ -49,6 +52,9 @@ case $selection in
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/Removal_NL.sh
 		sleep 2
 		bash Removal_NL.sh
+		cd $STARTDIR
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_NL_BUSTER.sh
+		bash OnTheLink_QGIS-MENU_NL_BUSTER.sh
       ;;
     3 )
       sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
@@ -111,9 +117,9 @@ case $selection in
 		sudo chmod 444 /home/"$name"/.bashrc
 		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2
-		tput reset
-		tput clear
-		tput sgr0
+		cd $STARTDIR
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_NL_BUSTER.sh
+		bash OnTheLink_QGIS-MENU_NL_BUSTER.sh
       ;;
     7 )
       sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/updaterqgis.sh
@@ -122,9 +128,9 @@ case $selection in
 		sudo rm -rf "updaterqgis.sh"
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
-		tput reset
-		tput clear
-		tput sgr0
+		cd $STARTDIR
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_NL_BUSTER.sh
+		bash OnTheLink_QGIS-MENU_NL_BUSTER.sh
       ;;
     a )
       sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
@@ -186,7 +192,7 @@ case $selection in
 		exit
       ;;
     c )
-      sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
+      		sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
 		tput setaf 5
 		echo "Combinatie voorbereiden..."
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/OnTheLink_QGIS-VERSIONSELECTOR_NL.sh
@@ -199,8 +205,8 @@ case $selection in
 		## ask for password and set it in password.sh
 		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
 		read -s -p "Wachtwoord: " userpass
-        tput reset
-        tput clear
+      		tput reset
+       		tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
 		sudo chmod 444 /etc/profile
 		## download modified .bashrc file
@@ -235,7 +241,10 @@ case $selection in
 		exit
       ;;
     d )
-      sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
+      		tput reset
+		tput clear
+		tput sgr0
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
@@ -247,12 +256,15 @@ case $selection in
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
-		tput reset
-		tput clear
-		tput sgr0
+		cd $STARTDIR
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_NL_BUSTER.sh
+		bash OnTheLink_QGIS-MENU_NL_BUSTER.sh
       ;;
     e )
-      sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
+      		tput reset
+		tput clear
+		tput sgr0
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
 		sudo cp -f qgiscopyfiles.sh /etc/init.d/qgiscopyfiles.sh
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 		sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
@@ -271,8 +283,8 @@ case $selection in
 		## ask for password and set it in password.sh
 		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
 		read -s -p "Wachtwoord: " userpass
-        tput reset
-        tput clear
+        	tput reset
+        	tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
 		sudo chmod 444 /etc/profile
 		## download modified .bashrc file
@@ -281,9 +293,9 @@ case $selection in
 		sudo chmod 444 /home/"$name"/.bashrc
 		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2
-		tput reset
-		tput clear
-		tput sgr0
+		cd $STARTDIR
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_NL_BUSTER.sh
+		bash OnTheLink_QGIS-MENU_NL_BUSTER.sh
       ;;
   esac
   

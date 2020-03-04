@@ -287,3 +287,23 @@ case $selection in
       ;;
   esac
   
+  response=$?
+case $response in
+   1) 
+      cd $STARTDIR
+      sudo rm -rf OnTheLink_QGIS-MENU_NL_BUSTER.sh
+      tput reset
+      tput clear
+      tput sgr0
+      exit
+      ;;
+   255) 
+      tput setaf 1
+      cd $STARTDIR
+      sudo rm -rf OnTheLink_QGIS-MENU_NL_BUSTER.sh
+      echo "[ESC] Knop is ingedrukt, Installatie wordt afgebroken"
+      tput sgr0
+      tput reset
+      tput clear
+      exit 255;;
+esac

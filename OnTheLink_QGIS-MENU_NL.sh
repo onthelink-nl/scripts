@@ -26,6 +26,7 @@ case $response in
    0) 
       tput setaf 2
       echo "Update EVA zal worden gebruikt!"
+      sudo rm -rf OnTheLink_QGIS-MENU_NL_EVA.sh
       sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_NL_EVA.sh
       sleep 2
       bash OnTheLink_QGIS-MENU_NL_EVA.sh

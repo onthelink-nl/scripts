@@ -3,6 +3,9 @@
 #Get current user
 name="$(logname)"
 
+#Install Dialog
+sudo apt-get --yes --assume-yes install dialog
+
 #Get current path (Required for completion removal of install files)
 STARTDIR="$(pwd)"
 

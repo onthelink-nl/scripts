@@ -17,6 +17,7 @@ selection=$(dialog \
     --backtitle "QGIS Installatie - Created by OnTheLink" \
     --title "Menu" \
     --clear \
+    --nocancel
     --ok-label "Ga verder" \
     --cancel-label "Annuleren" \
     --menu "OnTheLink_QGIS-MENU | EVA-STRETCH | Alle Opties" $HEIGHT $WIDTH 0 \

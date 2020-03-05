@@ -8,12 +8,29 @@ name="$(logname)"
 STARTDIR="$(pwd)"
 cd /home/"$name"/
 
-phases=( 
+removeall()
+{
+  phases=( 
     'REMOVING QGIS (org.qgis.qgis)...'
     'REMOVING FLATPAK REMOTES...'
     'REMOVING UNUSED FLATPAK APPS...'
     'RESTORING DEFAULT SETTINGS...'
 )
+  while :
+  for i in $(seq 1 100); do  
+    sleep 0.1
+
+    if [ $i -eq 100 ]; then
+        echo -e "XXX\n100\nDone!\nXXX"
+    elif [ $(($i % 25)) -eq 0 ]; then
+        let "phase = $i / 25"
+        echo -e "XXX\n$i\n${phases[phase]}\nXXX"
+    else
+        echo $i
+    fi
+done | 
+		dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
+}
 
 tput reset
 tput clear
@@ -44,8 +61,9 @@ case $selection in
     else
         echo $i
     fi
-done |
-sudo flatpak uninstall --force-remove org.qgis.qgis 
+done | 
+		dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
+		sudo flatpak uninstall --force-remove org.qgis.qgis 
 		sudo flatpak remote-delete --force org.qgis.qgis-origin 
 		sudo flatpak remote-delete --force org.qgis.qgis-1-origin 
 		sudo flatpak remote-delete --force org.qgis.qgis-2-origin 
@@ -107,8 +125,7 @@ sudo flatpak uninstall --force-remove org.qgis.qgis
 		sudo mv profile /etc/profile 
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc 
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc 
-		| dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		tput reset
 		tput clear
 		tput sgr0

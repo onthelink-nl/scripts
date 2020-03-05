@@ -70,7 +70,7 @@ restoresettings()
     else
         echo $i
     fi
-done | dialog --title 'REMOVING QGIS' --gauge "${phases3[0]}" 6 60 0
+done | dialog --title 'RESTORING SETTINGS' --gauge "${phases3[0]}" 6 60 0
 }
 
 tput reset

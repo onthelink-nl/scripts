@@ -8,14 +8,15 @@ name="$(logname)"
 STARTDIR="$(pwd)"
 cd /home/"$name"/
 
-removeall()
-{
   phases=( 
     'REMOVING QGIS (org.qgis.qgis)...'
     'REMOVING FLATPAK REMOTES...'
     'REMOVING UNUSED FLATPAK APPS...'
     'RESTORING DEFAULT SETTINGS...'
 )
+
+removeall()
+{
   while :
   for i in $(seq 1 100); do  
     sleep 0.1
@@ -28,8 +29,7 @@ removeall()
     else
         echo $i
     fi
-done | 
-		dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
+done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 }
 
 tput reset

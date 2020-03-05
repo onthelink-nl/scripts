@@ -31,7 +31,7 @@ removeall()
     sleep 0.1
 
     if [ $i -eq 100 ]; then
-        echo -e "XXX\n100\nDone!\nXXX"
+        echo -e "XXX\n100\nFinishing up...\nXXX"
     elif [ $(($i % 25)) -eq 0 ]; then
         let "phase = $i / 25"
         echo -e "XXX\n$i\n${phases[phase]}\nXXX"
@@ -47,7 +47,7 @@ removeqgis()
     sleep 0.1
 
     if [ $i -eq 100 ]; then
-        echo -e "XXX\n100\nDone!\nXXX"
+        echo -e "XXX\n100\nFinishing up...\nXXX"
     elif [ $(($i % 50)) -eq 0 ]; then
         let "phase = $i / 50"
         echo -e "XXX\n$i\n${phases2[phase]}\nXXX"
@@ -63,7 +63,7 @@ restoresettings()
     sleep 0.1
 
     if [ $i -eq 100 ]; then
-        echo -e "XXX\n100\nDone!\nXXX"
+        echo -e "XXX\n100\nFinishing up...\nXXX"
     elif [ $(($i % 50)) -eq 0 ]; then
         let "phase = $i / 50"
         echo -e "XXX\n$i\n${phases3[phase]}\nXXX"
@@ -166,29 +166,31 @@ case $selection in
 		sudo chmod 777 /home/"$name"/.bashrc > /dev/null 2>&1
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		kill -9 $PROGRESS_PID
-		sleep 3
+		sleep 10
 		dialog --msgbox "QGIS and Flatpak have been removed!" 5 39 
+		sudo rm -rf Removal_EN_STRETCH.sh 2> /dev/null | exec 1> /dev/tty
 		tput reset
 		tput clear
+		exit
 		;;
     2 )
       ## Start the Spinner:
 		removeqgis &
 		## Make a note of its Process ID (PID):
 		PROGRESS_PID=$!
-		sudo flatpak uninstall --force-remove org.qgis.qgis
-		sudo flatpak remote-delete --force org.qgis.qgis-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-1-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-2-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-3-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-4-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-5-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-6-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-7-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-8-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-9-origin
-		sudo flatpak remote-delete --force org.qgis.qgis-10-origin
-		sudo flatpak uninstall --unused
+		sudo flatpak uninstall --force-remove org.qgis.qgis > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-origin > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-1-origin > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-2-origin > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-3-origin > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-4-origin > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-5-origin > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-6-origin > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-7-origin > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-8-origin > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-9-origin > /dev/null 2>&1
+		sudo flatpak remote-delete --force org.qgis.qgis-10-origin > /dev/null 2>&1
+		sudo flatpak uninstall --unused > /dev/null 2>&1
 		sudo rm -rf "/home/$name/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
@@ -204,17 +206,19 @@ case $selection in
 		sudo mv "/home/$name/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf "/home/$name/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
 		## downloading original profile
-		sudo chmod 777 /etc/profile
+		sudo chmod 777 /etc/profile > /dev/null 2>&1
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
-		sudo mv profile /etc/profile
+		sudo mv profile /etc/profile > /dev/null 2>&1
 		## download modified .bashrc file
-		sudo chmod 777 /home/"$name"/.bashrc
+		sudo chmod 777 /home/"$name"/.bashrc > /dev/null 2>&1
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		kill -9 $PROGRESS_PID
-		sleep 3
+		sleep 10
 		dialog --msgbox "QGIS has been removed!" 5 39 
+		sudo rm -rf Removal_EN_STRETCH.sh 2> /dev/null | exec 1> /dev/tty
 		tput reset
 		tput clear
+		exit
 		;;
     3 )
       ## Start the Spinner:
@@ -230,17 +234,19 @@ case $selection in
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list 2> /dev/null | exec 1> /dev/tty
 		## downloading original profile
-		sudo chmod 777 /etc/profile
+		sudo chmod 777 /etc/profile > /dev/null 2>&1
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
-		sudo mv profile /etc/profile
+		sudo mv profile /etc/profile > /dev/null 2>&1
 		## download modified .bashrc file
-		sudo chmod 777 /home/"$name"/.bashrc
+		sudo chmod 777 /home/"$name"/.bashrc > /dev/null 2>&1
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		kill -9 $PROGRESS_PID
-		sleep 3
+		sleep 10
 		dialog --msgbox "Settings have been restored!" 5 39 
+		sudo rm -rf Removal_EN_STRETCH.sh 2> /dev/null | exec 1> /dev/tty
 		tput reset
 		tput clear
+		exit
 		;;
     4 )
                 tput reset

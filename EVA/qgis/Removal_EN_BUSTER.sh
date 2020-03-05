@@ -166,7 +166,7 @@ case $selection in
 		sudo chmod 777 /home/"$name"/.bashrc > /dev/null 2>&1
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		kill -9 $PROGRESS_PID
-		sleep 3
+		sleep 10
 		dialog --msgbox "QGIS and Flatpak have been removed!" 5 39 
 		tput reset
 		tput clear
@@ -211,7 +211,7 @@ case $selection in
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		kill -9 $PROGRESS_PID
-		sleep 3
+		sleep 10
 		dialog --msgbox "QGIS has been removed!" 5 39 
 		tput reset
 		tput clear
@@ -237,7 +237,7 @@ case $selection in
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		kill -9 $PROGRESS_PID
-		sleep 3
+		sleep 10
 		dialog --msgbox "Settings have been restored!" 5 39 
 		tput reset
 		tput clear

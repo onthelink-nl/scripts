@@ -119,6 +119,8 @@ case $selection in
 		kill -9 $PROGRESS_PID
 		sleep 3
 		dialog --msgbox "QGIS and Flatpak have been removed!" 5 39 
+		tput reset
+		tput clear
 		;;
 	2 ) 
 		tput reset

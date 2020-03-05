@@ -11,8 +11,18 @@ cd /home/"$name"/
   phases=( 
     'REMOVING QGIS (org.qgis.qgis)...'
     'REMOVING FLATPAK REMOTES...'
-    'REMOVING UNUSED FLATPAK APPS...'
+    'REMOVING FLATPAK...'
     'RESTORING DEFAULT SETTINGS...'
+)
+
+  phases2=( 
+    'REMOVING QGIS (org.qgis.qgis)...'
+    'RESTORING DEFAULT SETTINGS...'
+)
+
+phases3=( 
+    'RESTORING DEFAULT SETTINGS...'
+    'ALMOST DONE RESTORING DEFAULT SETTINGS...'
 )
 
 removeall()
@@ -29,6 +39,38 @@ removeall()
         echo $i
     fi
 done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
+}
+
+removeqgis()
+{
+  for i in $(seq 1 100); do  
+    sleep 0.1
+
+    if [ $i -eq 100 ]; then
+        echo -e "XXX\n100\nDone!\nXXX"
+    elif [ $(($i % 50)) -eq 0 ]; then
+        let "phase = $i / 50"
+        echo -e "XXX\n$i\n${phases2[phase]}\nXXX"
+    else
+        echo $i
+    fi
+done | dialog --title 'REMOVING QGIS' --gauge "${phases2[0]}" 6 60 0
+}
+
+restoresettings()
+{
+  for i in $(seq 1 100); do  
+    sleep 0.1
+
+    if [ $i -eq 100 ]; then
+        echo -e "XXX\n100\nDone!\nXXX"
+    elif [ $(($i % 50)) -eq 0 ]; then
+        let "phase = $i / 50"
+        echo -e "XXX\n$i\n${phases3[phase]}\nXXX"
+    else
+        echo $i
+    fi
+done | dialog --title 'REMOVING QGIS' --gauge "${phases3[0]}" 6 60 0
 }
 
 tput reset
@@ -130,11 +172,10 @@ case $selection in
 		tput clear
 		;;
     2 )
-      tput reset
-		tput clear
-		tput setaf 1
-		echo "Removing QGIS..."
-		tput setaf 6
+      ## Start the Spinner:
+		removeqgis &
+		## Make a note of its Process ID (PID):
+		PROGRESS_PID=$!
 		sudo flatpak uninstall --force-remove org.qgis.qgis
 		sudo flatpak remote-delete --force org.qgis.qgis-origin
 		sudo flatpak remote-delete --force org.qgis.qgis-1-origin
@@ -169,23 +210,17 @@ case $selection in
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
-		tput setaf 1; echo "QGIS REMOVED, restart your chromebook to clean the tmp directory"
-		sleep 1
-		tput setaf 2; echo "3"
-		sleep 1
-		tput setaf 2; echo "2"
-		sleep 1
-		tput setaf 2; echo "1"
-		sleep 1
+		kill -9 $PROGRESS_PID
+		sleep 3
+		dialog --msgbox "QGIS has been removed!" 5 39 
 		tput reset
 		tput clear
-		tput sgr0
 		;;
     3 )
-      tput reset
-		tput clear
-		tput setaf 1
-		echo "Restoring settings..."
+      ## Start the Spinner:
+		restoresettings &
+		## Make a note of its Process ID (PID):
+		PROGRESS_PID=$!
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
@@ -201,24 +236,20 @@ case $selection in
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
-		tput setaf 1; echo "SETTINGS RESTORED!"
-		sleep 1
-		tput setaf 2; echo "3"
-		sleep 1
-		tput setaf 2; echo "2"
-		sleep 1
-		tput setaf 2; echo "1"
-		sleep 1
+		kill -9 $PROGRESS_PID
+		sleep 3
+		dialog --msgbox "Settings have been restored!" 5 39 
 		tput reset
 		tput clear
-		tput sgr0
 		;;
     4 )
-      cd $STARTDIR
-		sudo rm -rf Removal_EN.sh
-		tput reset
+                tput reset
 		tput clear
 		tput sgr0
+		cd $STARTDIR
+		sudo rm -rf Removal_EN.sh 2> /dev/null | exec 1> /dev/tty
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
+		bash OnTheLink_QGIS-MENU_EN_BUSTER.sh
 		exit
 		;;
   esac
@@ -237,7 +268,7 @@ case $response in
       tput setaf 1
       cd $STARTDIR
       sudo rm -rf Removal_EN.sh
-      echo "[ESC] Button has been pressed, Installation will be aborted"
+      echo "[ESC] Button has been pressed, Removal will be aborted"
       tput sgr0
       tput reset
       tput clear

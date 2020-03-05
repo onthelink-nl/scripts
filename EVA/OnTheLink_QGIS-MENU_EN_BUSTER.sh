@@ -47,12 +47,12 @@ case $selection in
 		bash OnTheLink_QGIS-MENU_EN_BUSTER.sh
       ;;
     2 )
-      sudo rm -rf Removal_EN_BUSTER.sh.sh
+      sudo rm -rf Removal_EN_BUSTER.sh
 		tput setaf 5
 		echo "Preparing the QGIS-REMOVAL..."
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/Removal_EN_BUSTER.sh.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/Removal_EN_BUSTER.sh
 		sleep 2
-		bash Removal_EN_BUSTER.sh.sh
+		bash Removal_EN_BUSTER.sh
 		cd $STARTDIR
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
 		bash OnTheLink_QGIS-MENU_EN_BUSTER.sh

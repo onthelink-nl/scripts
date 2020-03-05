@@ -168,8 +168,10 @@ case $selection in
 		kill -9 $PROGRESS_PID
 		sleep 10
 		dialog --msgbox "QGIS and Flatpak have been removed!" 5 39 
+		sudo rm -rf Removal_EN_BUSTER.sh 2> /dev/null | exec 1> /dev/tty
 		tput reset
 		tput clear
+		exit
 		;;
     2 )
       ## Start the Spinner:
@@ -213,8 +215,10 @@ case $selection in
 		kill -9 $PROGRESS_PID
 		sleep 10
 		dialog --msgbox "QGIS has been removed!" 5 39 
+		sudo rm -rf Removal_EN_BUSTER.sh 2> /dev/null | exec 1> /dev/tty
 		tput reset
 		tput clear
+		exit
 		;;
     3 )
       ## Start the Spinner:
@@ -239,8 +243,10 @@ case $selection in
 		kill -9 $PROGRESS_PID
 		sleep 10
 		dialog --msgbox "Settings have been restored!" 5 39 
+		sudo rm -rf Removal_EN_BUSTER.sh 2> /dev/null | exec 1> /dev/tty
 		tput reset
 		tput clear
+		exit
 		;;
     4 )
                 tput reset

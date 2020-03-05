@@ -29,8 +29,7 @@ removeall()
         echo $i
     fi
 done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
-tput reset
-tput clear
+dialog --msgbox "QGIS and Flatpak have been removed!" 5 39 
 }
 
 tput reset
@@ -118,9 +117,6 @@ case $selection in
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc > /dev/null 2>&1
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
-		tput sgr0
-		kill -9 $PROGRESS_PID
-		dialog --msgbox "QGIS and Flatpak have been removed!" 5 39 
 		;;
 	2 ) 
 		tput reset

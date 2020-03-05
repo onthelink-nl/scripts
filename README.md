@@ -296,8 +296,11 @@ It does say some stuff before it closes but that's just for fun, ofcourse it isn
 
 The reason why this protection is so minimal is because QGIS is a free to use program and we just simply cannot give stuff to "granted" users because that would be changing their project and we just simply do not have the rights to do that, so we won't!
 
+How to restore the .bashrc file? -BUSTER-
+Run the main script and select the option that says it will remove stuff (2), now press restore settings.
+It will now be restored to the default file, if you still want to use qgis you need to go to the main menu in the script and select the auto updater option (7) and the copy option (4). Now everything is ready to go!
 
-How to restore the .bashrc file?
+How to restore the .bashrc file? -STRETCH-
 Please follow this tutorial to restore the .bashrc file manually:
 
 [Restore .bashrc file](https://raw.githubusercontent.com/onthelink-nl/scripts/master/MUFU/qgis/MUFU/Tutorials/HowToRestoreBashrcFile.txt "Tutorial to restore .bashrc file")

@@ -44,71 +44,71 @@ case $selection in
     else
         echo $i
     fi
-done \
-sudo flatpak uninstall --force-remove org.qgis.qgis \
-		sudo flatpak remote-delete --force org.qgis.qgis-origin \
-		sudo flatpak remote-delete --force org.qgis.qgis-1-origin \
-		sudo flatpak remote-delete --force org.qgis.qgis-2-origin \
-		sudo flatpak remote-delete --force org.qgis.qgis-3-origin \
-		sudo flatpak remote-delete --force org.qgis.qgis-4-origin \
-		sudo flatpak remote-delete --force org.qgis.qgis-5-origin \
-		sudo flatpak remote-delete --force org.qgis.qgis-6-origin \
-		sudo flatpak remote-delete --force org.qgis.qgis-7-origin \
-		sudo flatpak remote-delete --force org.qgis.qgis-8-origin \
-		sudo flatpak remote-delete --force org.qgis.qgis-9-origin \
-		sudo flatpak remote-delete --force org.qgis.qgis-10-origin \
-		sudo flatpak remote-delete --force flathub \
-		sudo flatpak remote-delete --force flathub-1 \
-		sudo flatpak remote-delete --force flathub-2 \
-		sudo flatpak remote-delete --force flathub-3 \
-		sudo flatpak remote-delete --force flathub-4 \
-		sudo flatpak remote-delete --force flathub-5 \
-		sudo flatpak remote-delete --force flathub-6 \
-		sudo flatpak remote-delete --force flathub-7 \
-		sudo flatpak remote-delete --force flathub-8 \
-		sudo flatpak remote-delete --force flathub-9 \
-		sudo flatpak remote-delete --force flathub-10 \
-		sudo flatpak uninstall --force-remove org.kde.Platform \
-		sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs \
-		sudo flatpak uninstall --unused \
-		sudo rm -rf "/home/$name/.var/app/org.qgis.qgis" \
-		sudo rm -rf "/home/$name/.var/app/org.kde.Platform" \
-		sudo rm -rf "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" \
-		sudo apt-get --yes --assume-yes remove --purge flatpak 2> /dev/null | exec 1> /dev/tty \
-		sudo apt-get --yes --assume-yes clean 2> /dev/null | exec 1> /dev/tty \
-		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab - \
-		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab - \
-		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab - \
-		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty \
-		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list 2> /dev/null | exec 1> /dev/tty \
-		sudo rm -rf /etc/init.d/qgiscopyfiles.sh 2> /dev/null | exec 1> /dev/tty \
-		sudo rm -rf /etc/init.d/qgisconfigupdater.sh 2> /dev/null | exec 1> /dev/tty \
-		sudo rm -rf /etc/init.d/qgisremovefiles.sh 2> /dev/null | exec 1> /dev/tty \
-		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty \
-		chattr -i /home/"$name"/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/run/user/1000/doc/*" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/run/user/1000/doc" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/run/user/1000/flatpak-monitor/*" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/run/user/1000/flatpak-monitor" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/run/user/1000/app/*" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/run/user/1000/app" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/home/$name/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/home/$name/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo rm -rf "/home/$name/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty \
-		sudo rm -rf "/home/$name/.var/app/org.kde.Platform" 2> /dev/null | exec 1> /dev/tty \
-		sudo rm -rf "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/home/$name/.var/app/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/home/$name/.var/app/org.kde.Platform" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo mv "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" /tmp 2> /dev/null | exec 1> /dev/tty \
-		sudo rm -rf /etc/profile.d/flatpak.sh 2> /dev/null | exec 1> /dev/tty \
+done |
+sudo flatpak uninstall --force-remove org.qgis.qgis 
+		sudo flatpak remote-delete --force org.qgis.qgis-origin 
+		sudo flatpak remote-delete --force org.qgis.qgis-1-origin 
+		sudo flatpak remote-delete --force org.qgis.qgis-2-origin 
+		sudo flatpak remote-delete --force org.qgis.qgis-3-origin 
+		sudo flatpak remote-delete --force org.qgis.qgis-4-origin 
+		sudo flatpak remote-delete --force org.qgis.qgis-5-origin 
+		sudo flatpak remote-delete --force org.qgis.qgis-6-origin 
+		sudo flatpak remote-delete --force org.qgis.qgis-7-origin 
+		sudo flatpak remote-delete --force org.qgis.qgis-8-origin 
+		sudo flatpak remote-delete --force org.qgis.qgis-9-origin 
+		sudo flatpak remote-delete --force org.qgis.qgis-10-origin 
+		sudo flatpak remote-delete --force flathub 
+		sudo flatpak remote-delete --force flathub-1 
+		sudo flatpak remote-delete --force flathub-2 
+		sudo flatpak remote-delete --force flathub-3 
+		sudo flatpak remote-delete --force flathub-4 
+		sudo flatpak remote-delete --force flathub-5 
+		sudo flatpak remote-delete --force flathub-6 
+		sudo flatpak remote-delete --force flathub-7 
+		sudo flatpak remote-delete --force flathub-8 
+		sudo flatpak remote-delete --force flathub-9 
+		sudo flatpak remote-delete --force flathub-10
+		sudo flatpak uninstall --force-remove org.kde.Platform 
+		sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs 
+		sudo flatpak uninstall --unused 
+		sudo rm -rf "/home/$name/.var/app/org.qgis.qgis" 
+		sudo rm -rf "/home/$name/.var/app/org.kde.Platform" 
+		sudo rm -rf "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" 
+		sudo apt-get --yes --assume-yes remove --purge flatpak 2> /dev/null | exec 1> /dev/tty 
+		sudo apt-get --yes --assume-yes clean 2> /dev/null | exec 1> /dev/tty 
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab - 
+		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab - 
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab - 
+		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty 
+		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list 2> /dev/null | exec 1> /dev/tty 
+		sudo rm -rf /etc/init.d/qgiscopyfiles.sh 2> /dev/null | exec 1> /dev/tty 
+		sudo rm -rf /etc/init.d/qgisconfigupdater.sh 2> /dev/null | exec 1> /dev/tty 
+		sudo rm -rf /etc/init.d/qgisremovefiles.sh 2> /dev/null | exec 1> /dev/tty 
+		chattr -i /run/user/1000/doc/by-app/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty 
+		chattr -i /home/"$name"/org.qgis.qgis/ 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/run/user/1000/doc/*" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/run/user/1000/doc" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/run/user/1000/flatpak-monitor/*" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/run/user/1000/flatpak-monitor" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/run/user/1000/app/*" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/run/user/1000/app" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/home/$name/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/home/$name/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo rm -rf "/home/$name/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty 
+		sudo rm -rf "/home/$name/.var/app/org.kde.Platform" 2> /dev/null | exec 1> /dev/tty 
+		sudo rm -rf "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/home/$name/.var/app/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/home/$name/.var/app/org.kde.Platform" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo mv "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" /tmp 2> /dev/null | exec 1> /dev/tty 
+		sudo rm -rf /etc/profile.d/flatpak.sh 2> /dev/null | exec 1> /dev/tty 
 		## downloading original profile
-		sudo chmod 777 /etc/profile \
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile \
-		sudo mv profile /etc/profile \
+		sudo chmod 777 /etc/profile 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile 
+		sudo mv profile /etc/profile 
 		## download modified .bashrc file
-		sudo chmod 777 /home/"$name"/.bashrc \
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc \
-| dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
+		sudo chmod 777 /home/"$name"/.bashrc 
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc 
+		| dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		tput reset
 		tput clear
 		tput sgr0

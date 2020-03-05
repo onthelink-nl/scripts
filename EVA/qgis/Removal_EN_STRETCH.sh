@@ -247,7 +247,7 @@ case $selection in
 		tput clear
 		tput sgr0
 		cd $STARTDIR
-		sudo rm -rf Removal_EN.sh 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf Removal_EN_STRETCH.sh 2> /dev/null | exec 1> /dev/tty
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_STRETCH.sh
 		bash OnTheLink_QGIS-MENU_EN_STRETCH.sh
 		exit
@@ -258,7 +258,7 @@ response=$?
 case $response in
    1) 
       cd $STARTDIR
-      sudo rm -rf Removal_EN.sh
+      sudo rm -rf Removal_EN_STRETCH.sh
       tput reset
       tput clear
       tput sgr0
@@ -267,7 +267,7 @@ case $response in
    255) 
       tput setaf 1
       cd $STARTDIR
-      sudo rm -rf Removal_EN.sh
+      sudo rm -rf Removal_EN_STRETCH.sh
       echo "[ESC] Button has been pressed, Removal will be aborted"
       tput sgr0
       tput reset

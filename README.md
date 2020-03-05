@@ -3,8 +3,8 @@ Here you can find all of our scripts we create to make installations easier, we 
 
 # Before you begin
 
-BEFORE YOU CAN USE THE SCRIPTS AT ALL YOU MUST INSTALL CURL:
-`sudo apt-get install curl`
+BEFORE YOU CAN USE THE SCRIPTS AT ALL YOU MUST INSTALL CURL AND DIALOG:
+`sudo apt-get install curl dialog`
 
 !THE SCRIPTS ARE ALSO STILL IN DEVELOPMENT AND MAY SOMETIMES NOT WORK!
 

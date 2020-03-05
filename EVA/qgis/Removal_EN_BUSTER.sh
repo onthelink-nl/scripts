@@ -31,7 +31,7 @@ removeall()
     sleep 0.1
 
     if [ $i -eq 100 ]; then
-        echo -e "XXX\n100\nDone!\nXXX"
+        echo -e "XXX\n100\nFinishing up...\nXXX"
     elif [ $(($i % 25)) -eq 0 ]; then
         let "phase = $i / 25"
         echo -e "XXX\n$i\n${phases[phase]}\nXXX"
@@ -47,7 +47,7 @@ removeqgis()
     sleep 0.1
 
     if [ $i -eq 100 ]; then
-        echo -e "XXX\n100\nDone!\nXXX"
+        echo -e "XXX\n100\nFinishing up...\nXXX"
     elif [ $(($i % 50)) -eq 0 ]; then
         let "phase = $i / 50"
         echo -e "XXX\n$i\n${phases2[phase]}\nXXX"
@@ -63,7 +63,7 @@ restoresettings()
     sleep 0.1
 
     if [ $i -eq 100 ]; then
-        echo -e "XXX\n100\nDone!\nXXX"
+        echo -e "XXX\n100\nFinishing up...\nXXX"
     elif [ $(($i % 50)) -eq 0 ]; then
         let "phase = $i / 50"
         echo -e "XXX\n$i\n${phases3[phase]}\nXXX"

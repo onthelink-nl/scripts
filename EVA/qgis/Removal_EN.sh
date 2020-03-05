@@ -33,23 +33,30 @@ done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 
 tput reset
 tput clear
-selection=
-until [ "$selection" = "2" ]; do
-tput bold && tput setaf 46; echo "
-OnTheLink QGIS-REMOVAL
-"
-tput sgr0 && tput setaf 45; echo "
-1 - Remove QGIS + Flatpak (This will break other Flatpak apps!!!)
-2 - Remove QGIS
-3 - Restore settings
-4 - Exit to the QGIS-MENU
-"
-    tput setaf 6; echo -n "Enter selection: "
-    read -r selection
-    echo ""
+
+
+DIALOG_CANCEL=1
+DIALOG_ESC=255
+HEIGHT=0
+WIDTH=0
+exec 3>&1
+selection=$(dialog \
+    --backtitle "QGIS Removal - Created by OnTheLink" \
+    --title "Menu" \
+    --clear \
+    --nocancel \
+    --ok-label "Continue" \
+    --cancel-label "Cancel" \
+    --menu "OnTheLink_QGIS-REMOVAL | EVA-BUSTER | All Options" $HEIGHT $WIDTH 0 \
+    "1" "Remove QGIS + Flatpak (This will break other Flatpak apps!!!)" \
+    "2" "Remove QGIS" \
+    "3" "Restore settings" \
+    "4" "Exit to the QGIS-MENU" \
+    2>&1 1>&3)
+
 case $selection in
-    1 ) 
-		## Start the Spinner:
+    1 )
+      ## Start the Spinner:
 		removeall &
 		## Make a note of its Process ID (PID):
 		PROGRESS_PID=$!
@@ -122,8 +129,8 @@ case $selection in
 		tput reset
 		tput clear
 		;;
-	2 ) 
-		tput reset
+    2 )
+      tput reset
 		tput clear
 		tput setaf 1
 		echo "Removing QGIS..."
@@ -174,8 +181,8 @@ case $selection in
 		tput clear
 		tput sgr0
 		;;
-	3 ) 
-		tput reset
+    3 )
+      tput reset
 		tput clear
 		tput setaf 1
 		echo "Restoring settings..."
@@ -206,20 +213,33 @@ case $selection in
 		tput clear
 		tput sgr0
 		;;
-	4 ) 
-		cd $STARTDIR
+    4 )
+      cd $STARTDIR
 		sudo rm -rf Removal_EN.sh
 		tput reset
 		tput clear
 		tput sgr0
 		exit
 		;;
-    * ) 
-        tput setaf 202
-		echo "Please enter choice 1, 2, 3 or 4..."
-		sleep 1
-		tput reset
-		tput clear
-		;;
+  esac
+  
+response=$?
+case $response in
+   1) 
+      cd $STARTDIR
+      sudo rm -rf Removal_EN.sh
+      tput reset
+      tput clear
+      tput sgr0
+      exit
+      ;;
+   255) 
+      tput setaf 1
+      cd $STARTDIR
+      sudo rm -rf Removal_EN.sh
+      echo "[ESC] Button has been pressed, Installation will be aborted"
+      tput sgr0
+      tput reset
+      tput clear
+      exit 255;;
 esac
-done

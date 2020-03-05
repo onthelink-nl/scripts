@@ -44,8 +44,8 @@ case $selection in
     else
         echo $i
     fi
-done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
-		 sudo flatpak uninstall --force-remove org.qgis.qgis
+done \
+| sudo flatpak uninstall --force-remove org.qgis.qgis
 		sudo flatpak remote-delete --force org.qgis.qgis-origin
 		sudo flatpak remote-delete --force org.qgis.qgis-1-origin
 		sudo flatpak remote-delete --force org.qgis.qgis-2-origin
@@ -109,7 +109,8 @@ done | dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		tput reset
-		tput clear
+		tput clear \
+| dialog --title 'REMOVING QGIS + FLATPAK' --gauge "${phases[0]}" 6 60 0
 		;;
 	2 ) 
 		tput reset

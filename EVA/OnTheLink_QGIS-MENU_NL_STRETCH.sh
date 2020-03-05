@@ -48,12 +48,12 @@ case $selection in
 		bash OnTheLink_QGIS-MENU_NL_STRETCH.sh
       ;;
     2 )
-      sudo rm -rf Removal_NL.sh
+      sudo rm -rf Removal_NL_STRETCH.sh
 		tput setaf 5
 		echo "QGIS-VERWIJDERING voorbereiden..."
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/Removal_NL.sh
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/Removal_NL_STRETCH.sh
 		sleep 2
-		bash Removal_NL.sh
+		bash Removal_NL_STRETCH.sh
 		cd $STARTDIR
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_NL_STRETCH.sh
 		bash OnTheLink_QGIS-MENU_NL_STRETCH.sh

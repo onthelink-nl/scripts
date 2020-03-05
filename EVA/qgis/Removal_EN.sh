@@ -53,6 +53,8 @@ case $selection in
     1 ) 
 		## Start the Spinner:
 		removeall &
+		## Make a note of its Process ID (PID):
+		PROGRESS_PID=$!
 		sudo flatpak uninstall --force-remove org.qgis.qgis > /dev/null 2>&1
 		sudo flatpak remote-delete --force org.qgis.qgis-origin > /dev/null 2>&1
 		sudo flatpak remote-delete --force org.qgis.qgis-1-origin > /dev/null 2>&1
@@ -117,6 +119,8 @@ case $selection in
 		sudo chmod 777 /home/"$name"/.bashrc > /dev/null 2>&1
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc > /home/"$name"/.bashrc
 		tput sgr0
+		kill -9 $PROGRESS_PID
+		dialog --msgbox "QGIS and Flatpak have been removed!" 5 39 
 		;;
 	2 ) 
 		tput reset

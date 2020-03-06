@@ -167,7 +167,7 @@ case $response in
    255) 
       tput reset
       tput clear
-      dialog --msgbox "[ESC] Button has been pressed, Installation will be aborted" 5 42
+      dialog --msgbox "[ESC] Button has been pressed, \nInstallation will be aborted" 6 35
       tput reset
       tput clear
       tput sgr0
@@ -349,7 +349,7 @@ case $response in
    255) 
       tput reset
       tput clear
-      dialog --msgbox "[ESC] Button has been pressed, Installation will be aborted" 5 42
+      dialog --msgbox "[ESC] Button has been pressed, \nInstallation will be aborted" 6 35
       tput reset
       tput clear
       tput sgr0

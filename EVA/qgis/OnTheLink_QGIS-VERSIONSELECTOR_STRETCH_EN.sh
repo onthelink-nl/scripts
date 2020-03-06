@@ -49,7 +49,7 @@ case $selection in
 		printf "%*s\n" $(((${#echod}+$COLUMNS)/2)) "$echod"
         sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Startup/QgisStartEN.sh
         sleep 2
-		sudo bash QgisStartEN.sh
+		bash QgisStartEN.sh
 		sudo rm -rf /home/$USER/QgisStartEN.sh 2> /dev/null | exec 1> /dev/tty
 		tput reset
 		tput clear
@@ -62,7 +62,7 @@ case $selection in
 		printf "%*s\n" $(((${#echoe}+$COLUMNS)/2)) "$echoe"
         sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Startup/QgisStart3.6EN.sh
         sleep 2
-		sudo bash QgisStart3.6EN.sh
+		bash QgisStart3.6EN.sh
 		sudo rm -rf /home/$USER/QgisStart3.6EN.sh 2> /dev/null | exec 1> /dev/tty
 		tput reset
 		tput clear
@@ -72,7 +72,7 @@ case $selection in
 		tput reset
 		tput clear
 		tput sgr0
-		sudo flatpak update
+		flatpak update
 		tput setaf 2
 		#echof
 		printf "%*s\n" $(((${#echof}+$COLUMNS)/2)) "$echof"

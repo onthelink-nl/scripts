@@ -27,7 +27,7 @@ tput sgr0
 sleep 3
 
 #DIT IS HET DOORVERWIJSSCRIPT VOOR QGIS
-sudo bash QgisInstaller3.6NL.sh
+bash QgisInstaller3.6NL.sh
 cd $STARTDIR
 sudo rm -rf /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
 sudo rm -rf QgisStart3.6NL.sh 2> /dev/null | exec 1> /dev/tty

@@ -177,6 +177,10 @@ esac
 [ $? == 1 ] && exit 0;
 [ $? == 255 ] && exit 0;
 
+#CLEAR THE SCREEN
+tput reset
+tput clear
+
 ## Start the Spinner:
 spin &
 
@@ -358,6 +362,10 @@ esac
 
 [ $? == 1 ] && exit;
 [ $? == 255 ] && exit;
+
+#CLEAR THE SCREEN
+tput reset
+tput clear
 
 ## Start the Spinner:
 spin &

@@ -27,7 +27,7 @@ tput sgr0
 sleep 3
 
 #Execute the script
-sudo bash QgisInstallerEN.sh
+bash QgisInstallerEN.sh
 cd $STARTDIR
 sudo rm -rf /home/"$name"/qgis 2> /dev/null | exec 1> /dev/tty
 sudo rm -rf QgisStartEN.sh 2> /dev/null | exec 1> /dev/tty

@@ -176,6 +176,9 @@ case $response in
       exit 255;;
 esac
 
+[ $? == 1 ] && exit 0;
+[ $? == 255 ] && exit 0;
+
 ## Start the Spinner:
 spin &
 
@@ -356,6 +359,9 @@ case $response in
       tput sgr0
       exit 255;;
 esac
+
+[ $? == 1 ] && exit 0;
+[ $? == 255 ] && exit 0;
 
 ## Start the Spinner:
 spin &

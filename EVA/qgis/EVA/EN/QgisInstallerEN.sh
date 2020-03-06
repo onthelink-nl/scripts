@@ -140,14 +140,12 @@ tput reset
 tput clear
 
 #Continue Dialog
-dialog --backtitle "QGIS Installation - Created by OnTheLink" --title "Confirm" --ok-label "Continue" --cancel-label "Cancel" --yesno "Do you want to continue?" 0 0
-
 export NCURSES_NO_UTF8_ACS=1
 dialog --title "Confirm" \
 --backtitle "QGIS Installation - Created by OnTheLink" \
 --ok-label "Continue" \
 --cancel-label "Cancel" \
---yesno "Use newest update? \nPress No for update MUFU" 0 0
+--yesno "Do you want to continue?" 0 0
 
 # Get exit status
 # 0 means user hit [yes] button.
@@ -324,14 +322,12 @@ tput reset
 tput clear
 
 #Continue Dialog
-dialog --backtitle "QGIS Installation - Created by OnTheLink" --title "Confirm" --ok-label "Continue" --cancel-label "Cancel" --yesno "Do you want to continue?" 0 0
-
 export NCURSES_NO_UTF8_ACS=1
 dialog --title "Confirm" \
 --backtitle "QGIS Installation - Created by OnTheLink" \
 --ok-label "Continue" \
 --cancel-label "Cancel" \
---yesno "Use newest update? \nPress No for update MUFU" 0 0
+--yesno "Do you want to continue?" 0 0
 
 # Get exit status
 # 0 means user hit [yes] button.
@@ -360,8 +356,8 @@ case $response in
       exit 255;;
 esac
 
-[ $? == 1 ] && exit 0;
-[ $? == 255 ] && exit 0;
+[ $? == 1 ] && exit;
+[ $? == 255 ] && exit;
 
 ## Start the Spinner:
 spin &

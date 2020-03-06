@@ -132,12 +132,49 @@ tput sgr0
 tput setaf 3
 
 ##Waiting for user response
-read -n 1 -s -r -p "Press any key to continue..."
+read -n 1 -s -r -p "[ANY-KEY]"
 
 ##sending positive reaction
-echo ";)"
+echo "!"
 tput reset
 tput clear
+
+#Continue Dialog
+dialog --backtitle "QGIS Installation - Created by OnTheLink" --title "Confirm" --ok-label "Continue" --cancel-label "Cancel" --yesno "Do you want to continue?" 0 0
+
+export NCURSES_NO_UTF8_ACS=1
+dialog --title "Confirm" \
+--backtitle "QGIS Installation - Created by OnTheLink" \
+--ok-label "Continue" \
+--cancel-label "Cancel" \
+--yesno "Use newest update? \nPress No for update MUFU" 0 0
+
+# Get exit status
+# 0 means user hit [yes] button.
+# 1 means user hit [no] button.
+# 255 means user hit [Esc] key.
+response=$?
+case $response in
+   0) 
+      ;;
+   1) 
+      tput reset
+      tput clear
+      dialog --msgbox "Installation was aborted by "$name"" 5 42
+      tput reset
+      tput clear
+      tput sgr0
+      exit
+      ;;
+   255) 
+      tput reset
+      tput clear
+      dialog --msgbox "[ESC] Button has been pressed, Installation will be aborted" 5 42
+      tput reset
+      tput clear
+      tput sgr0
+      exit 255;;
+esac
 
 ## Start the Spinner:
 spin &
@@ -276,12 +313,49 @@ tput sgr0
 tput setaf 3
 
 ##Waiting for user response
-read -n 1 -s -r -p "Press any key to continue..."
+read -n 1 -s -r -p "[ANY-KEY]"
 
 ##sending positive reaction
-echo ";)"
+echo "!"
 tput reset
 tput clear
+
+#Continue Dialog
+dialog --backtitle "QGIS Installation - Created by OnTheLink" --title "Confirm" --ok-label "Continue" --cancel-label "Cancel" --yesno "Do you want to continue?" 0 0
+
+export NCURSES_NO_UTF8_ACS=1
+dialog --title "Confirm" \
+--backtitle "QGIS Installation - Created by OnTheLink" \
+--ok-label "Continue" \
+--cancel-label "Cancel" \
+--yesno "Use newest update? \nPress No for update MUFU" 0 0
+
+# Get exit status
+# 0 means user hit [yes] button.
+# 1 means user hit [no] button.
+# 255 means user hit [Esc] key.
+response=$?
+case $response in
+   0) 
+      ;;
+   1) 
+      tput reset
+      tput clear
+      dialog --msgbox "Installation was aborted by "$name"" 5 42
+      tput reset
+      tput clear
+      tput sgr0
+      exit
+      ;;
+   255) 
+      tput reset
+      tput clear
+      dialog --msgbox "[ESC] Button has been pressed, Installation will be aborted" 5 42
+      tput reset
+      tput clear
+      tput sgr0
+      exit 255;;
+esac
 
 ## Start the Spinner:
 spin &

@@ -43,8 +43,6 @@ case $selection in
         sleep 2
 		bash OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_EN.sh
 		cd $STARTDIR
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
-		bash OnTheLink_QGIS-MENU_EN_BUSTER.sh
       ;;
     2 )
       sudo rm -rf Removal_EN_BUSTER.sh
@@ -54,8 +52,6 @@ case $selection in
 		sleep 2
 		bash Removal_EN_BUSTER.sh
 		cd $STARTDIR
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
-		bash OnTheLink_QGIS-MENU_EN_BUSTER.sh
       ;;
     3 )
       sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgiscopyfiles.sh
@@ -119,8 +115,6 @@ case $selection in
 		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
 		cd $STARTDIR
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
-		bash OnTheLink_QGIS-MENU_EN_BUSTER.sh
       ;;
     7 )
       sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/updaterqgis.sh
@@ -130,8 +124,6 @@ case $selection in
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
 		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		cd $STARTDIR
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
-		bash OnTheLink_QGIS-MENU_EN_BUSTER.sh
       ;;
     a )
       sudo rm -rf OnTheLink_QGIS-VERSIONSELECTOR_BUSTER_EN.sh
@@ -258,8 +250,6 @@ case $selection in
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab - 
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
 		cd $STARTDIR
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
-		bash OnTheLink_QGIS-MENU_EN_BUSTER.sh
       ;;
     e )
       		tput reset
@@ -295,8 +285,6 @@ case $selection in
 		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
 		cd $STARTDIR
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
-		bash OnTheLink_QGIS-MENU_EN_BUSTER.sh
       ;;
   esac
   

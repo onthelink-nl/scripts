@@ -247,7 +247,7 @@ sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-
 kill -9 $SPIN_PID
 tput reset
 tput clear
-flatpak -y install qgis.flatpakref
+sudo flatpak -y --user install qgis.flatpakref
 tput reset
 tput clear
 tput bold
@@ -433,7 +433,7 @@ sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-
 kill -9 $SPIN_PID
 tput reset
 tput clear
-flatpak -y install qgis.flatpakref
+flatpak -y --user install qgis.flatpakref
 tput reset
 tput clear
 tput bold

@@ -102,32 +102,32 @@ case $selection in
 		removeall &
 		## Make a note of its Process ID (PID):
 		PROGRESS_PID=$!
-		sudo flatpak uninstall --force-remove org.qgis.qgis > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-1-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-2-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-3-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-4-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-5-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-6-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-7-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-8-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-9-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-10-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub-1 > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub-2 > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub-3 > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub-4 > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub-5 > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub-6 > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub-7 > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub-8 > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub-9 > /dev/null 2>&1
-		sudo flatpak remote-delete --force flathub-10> /dev/null 2>&1
-		sudo flatpak uninstall --force-remove org.kde.Platform > /dev/null 2>&1
-		sudo flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs > /dev/null 2>&1
-		sudo flatpak uninstall --unused > /dev/null 2>&1
+		flatpak uninstall --force-remove org.qgis.qgis > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-1-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-2-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-3-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-4-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-5-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-6-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-7-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-8-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-9-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-10-origin > /dev/null 2>&1
+		flatpak remote-delete --force flathub > /dev/null 2>&1
+		flatpak remote-delete --force flathub-1 > /dev/null 2>&1
+		flatpak remote-delete --force flathub-2 > /dev/null 2>&1
+		flatpak remote-delete --force flathub-3 > /dev/null 2>&1
+		flatpak remote-delete --force flathub-4 > /dev/null 2>&1
+		flatpak remote-delete --force flathub-5 > /dev/null 2>&1
+		flatpak remote-delete --force flathub-6 > /dev/null 2>&1
+		flatpak remote-delete --force flathub-7 > /dev/null 2>&1
+		flatpak remote-delete --force flathub-8 > /dev/null 2>&1
+		flatpak remote-delete --force flathub-9 > /dev/null 2>&1
+		flatpak remote-delete --force flathub-10> /dev/null 2>&1
+		flatpak uninstall --force-remove org.kde.Platform > /dev/null 2>&1
+		flatpak uninstall --force-remove org.freedesktop.Platform.html5-codecs > /dev/null 2>&1
+		flatpak uninstall --unused > /dev/null 2>&1
 		sudo rm -rf "/home/$name/.var/app/org.qgis.qgis" > /dev/null 2>&1
 		sudo rm -rf "/home/$name/.var/app/org.kde.Platform" > /dev/null 2>&1
 		sudo rm -rf "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" > /dev/null 2>&1
@@ -178,19 +178,19 @@ case $selection in
 		removeqgis &
 		## Make a note of its Process ID (PID):
 		PROGRESS_PID=$!
-		sudo flatpak uninstall --force-remove org.qgis.qgis > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-1-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-2-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-3-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-4-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-5-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-6-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-7-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-8-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-9-origin > /dev/null 2>&1
-		sudo flatpak remote-delete --force org.qgis.qgis-10-origin > /dev/null 2>&1
-		sudo flatpak uninstall --unused > /dev/null 2>&1
+		flatpak uninstall --force-remove org.qgis.qgis > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-1-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-2-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-3-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-4-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-5-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-6-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-7-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-8-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-9-origin > /dev/null 2>&1
+		flatpak remote-delete --force org.qgis.qgis-10-origin > /dev/null 2>&1
+		flatpak uninstall --unused > /dev/null 2>&1
 		sudo rm -rf "/home/$name/.var/app/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -

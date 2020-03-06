@@ -1,7 +1,7 @@
 #!/bin/bash
-if [[ $EUID -ne 0 ]]; then
+if [[ $EUID -ne 1000 ]]; then
    tput setaf 1
-   echo "Dit script moet uitgevoerd worden met root toegang (met sudo werkt het best)"
+   echo "Dit script kan niet met root toegang worden uitgevoerd"
    sleep 3
    tput reset
    tput clear
@@ -131,11 +131,53 @@ tput sgr0 && tput setaf 4; echo "WAARSCHUWING: Het wordt aangeraden om altijd ee
 tput sgr0
 tput setaf 3
 
-##Wachten op reactie van de gebruiker
-read -n 1 -s -r -p "Druk op een willekeurige toets om verder te gaan..."
+##Waiting for user response
+read -n 1 -s -r -p "[ANY-KEY]"
 
 ##sending positive reaction
-echo ";)"
+echo "!"
+tput reset
+tput clear
+
+#Continue Dialog
+export NCURSES_NO_UTF8_ACS=1
+dialog --title "Bevestiging" \
+--backtitle "QGIS Installatie - Created by OnTheLink" \
+--ok-label "Ga verder" \
+--cancel-label "Annuleer" \
+--yesno "Wilt u verdergaan?" 0 0
+
+# Get exit status
+# 0 means user hit [yes] button.
+# 1 means user hit [no] button.
+# 255 means user hit [Esc] key.
+response=$?
+case $response in
+   0) 
+      ;;
+   1) 
+      tput reset
+      tput clear
+      dialog --msgbox "Installatie is gestopt door "$name"" 5 42
+      tput reset
+      tput clear
+      tput sgr0
+      exit
+      ;;
+   255) 
+      tput reset
+      tput clear
+      dialog --msgbox "[ESC] knop is ingedrukt, \nInstallatie is gestopt" 6 35
+      tput reset
+      tput clear
+      tput sgr0
+      exit 255;;
+esac
+
+[ $? == 1 ] && exit 0;
+[ $? == 255 ] && exit 0;
+
+#CLEAR THE SCREEN
 tput reset
 tput clear
 
@@ -205,10 +247,10 @@ sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-
 kill -9 $SPIN_PID
 tput reset
 tput clear
-flatpak -y install qgis.flatpakref
+flatpak -y --user install qgis.flatpakref
 tput reset
 tput clear
-flatpak -y update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis
+flatpak -y --user update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis
 tput bold
 tput setaf 5
 echo "QGIS 3.6 is geïnstalleerd!!!"
@@ -276,11 +318,53 @@ tput sgr0 && tput setaf 4; echo "WAARSCHUWING: Het wordt aangeraden om altijd ee
 tput sgr0
 tput setaf 3
 
-##Wachten op reactie van de gebruiker
-read -n 1 -s -r -p "Druk op een willekeurige toets om verder te gaan..."
+##Waiting for user response
+read -n 1 -s -r -p "[ANY-KEY]"
 
 ##sending positive reaction
-echo ";)"
+echo "!"
+tput reset
+tput clear
+
+#Continue Dialog
+export NCURSES_NO_UTF8_ACS=1
+dialog --title "Bevestiging" \
+--backtitle "QGIS Installatie - Created by OnTheLink" \
+--ok-label "Ga verder" \
+--cancel-label "Annuleer" \
+--yesno "Wilt u verdergaan?" 0 0
+
+# Get exit status
+# 0 means user hit [yes] button.
+# 1 means user hit [no] button.
+# 255 means user hit [Esc] key.
+response=$?
+case $response in
+   0) 
+      ;;
+   1) 
+      tput reset
+      tput clear
+      dialog --msgbox "Installatie is gestopt door "$name"" 5 42
+      tput reset
+      tput clear
+      tput sgr0
+      exit
+      ;;
+   255) 
+      tput reset
+      tput clear
+      dialog --msgbox "[ESC] knop is ingedrukt, \nInstallatie is gestopt" 6 35
+      tput reset
+      tput clear
+      tput sgr0
+      exit 255;;
+esac
+
+[ $? == 1 ] && exit 0;
+[ $? == 255 ] && exit 0;
+
+#CLEAR THE SCREEN
 tput reset
 tput clear
 
@@ -350,10 +434,10 @@ sudo wget -q --no-check-certificate https://raw.githubusercontent.com/onthelink-
 kill -9 $SPIN_PID
 tput reset
 tput clear
-flatpak -y install qgis.flatpakref
+flatpak -y --user install qgis.flatpakref
 tput reset
 tput clear
-flatpak -y update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis
+flatpak -y --user update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis
 tput bold
 tput setaf 5
 echo "QGIS 3.6 is geïnstalleerd!!!"

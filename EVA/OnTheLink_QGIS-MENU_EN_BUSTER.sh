@@ -114,7 +114,7 @@ case $selection in
 		sudo rm -rf /etc/init.d/.bashrc
 		sudo mv /home/"$name"/.bashrc /etc/init.d/
 		sudo rm -rf /home/"$name"/.bashrc
-		sudo ln -s /etc/init.d/.bashrc ~/.bashrc
+		sudo ln -s /etc/init.d/.bashrc /home/"$name"/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
 		sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
@@ -218,7 +218,7 @@ case $selection in
 		sudo rm -rf /etc/init.d/.bashrc
 		sudo mv /home/"$name"/.bashrc /etc/init.d/
 		sudo rm -rf /home/"$name"/.bashrc
-		sudo ln -s /etc/init.d/.bashrc ~/.bashrc
+		sudo ln -s /etc/init.d/.bashrc /home/"$name"/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
 		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
@@ -304,7 +304,7 @@ case $selection in
 		sudo rm -rf /etc/init.d/.bashrc
 		sudo mv /home/"$name"/.bashrc /etc/init.d/
 		sudo rm -rf /home/"$name"/.bashrc
-		sudo ln -s /etc/init.d/.bashrc ~/.bashrc
+		sudo ln -s /etc/init.d/.bashrc /home/"$name"/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
 		sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh

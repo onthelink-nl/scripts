@@ -111,7 +111,9 @@ case $selection in
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
-		sudo chmod 444 /home/"$name"/.bashrc
+		sudo mv /home/"$name"/.bashrc /etc/init.d/
+		sudo rm -rf /home/"$name"/.bashrc
+		sudo ln -s /etc/init.d/.bashrc ~/.bashrc
 		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
 		cd $STARTDIR

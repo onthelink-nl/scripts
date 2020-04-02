@@ -15,6 +15,16 @@ case $MACHINE_VERSION in
 if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
   qgisr="/etc/init.d/qgisremovefiles.sh"
   qgisc="/etc/init.d/qgiscopyfiles.sh" 
+  qgisp="/etc/init.d/protectionsoftware.sh" 
+if [ -f "$qgisp" ]; then
+	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
+	sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
+	sudo chmod +x /etc/init.d/protectionsoftware.sh
+	sudo rm -rf "protectionsoftware.sh"
+	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
+	crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/protectionsoftware.sh"; } | crontab -
+fi
+
 if [ -f "$qgisr" ]; then
 	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 	sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh
@@ -56,6 +66,16 @@ fi
 if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
   qgisr="/etc/init.d/qgisremovefiles.sh"
   qgisc="/etc/init.d/qgiscopyfiles.sh" 
+  qgisp="/etc/init.d/protectionsoftware.sh" 
+if [ -f "$qgisp" ]; then
+	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
+	sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
+	sudo chmod +x /etc/init.d/protectionsoftware.sh
+	sudo rm -rf "protectionsoftware.sh"
+	crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
+	crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/protectionsoftware.sh"; } | crontab -
+fi
+
 if [ -f "$qgisr" ]; then
 	sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
 	sudo cp -f qgisremovefiles.sh /etc/init.d/qgisremovefiles.sh

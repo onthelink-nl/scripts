@@ -108,14 +108,6 @@ case $selection in
         tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
 		sudo chmod 444 /etc/profile
-		## download modified .bashrc file
-		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
-		sudo rm -rf /etc/init.d/.bashrc
-		sudo mv /home/"$name"/.bashrc /etc/init.d/
-		sudo rm -rf /home/"$name"/.bashrc
-		sudo ln -s /etc/init.d/.bashrc /home/"$name"/.bashrc
-		sudo chmod 444 /home/"$name"/.bashrc
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
 		sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
 		sudo chmod +x /etc/init.d/protectionsoftware.sh
@@ -212,14 +204,6 @@ case $selection in
        		tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
 		sudo chmod 444 /etc/profile
-		## download modified .bashrc file
-		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
-		sudo rm -rf /etc/init.d/.bashrc
-		sudo mv /home/"$name"/.bashrc /etc/init.d/
-		sudo rm -rf /home/"$name"/.bashrc
-		sudo ln -s /etc/init.d/.bashrc /home/"$name"/.bashrc
-		sudo chmod 444 /home/"$name"/.bashrc
 		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
@@ -298,14 +282,6 @@ case $selection in
         	tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
 		sudo chmod 444 /etc/profile
-		## download modified .bashrc file
-		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
-		sudo rm -rf /etc/init.d/.bashrc
-		sudo mv /home/"$name"/.bashrc /etc/init.d/
-		sudo rm -rf /home/"$name"/.bashrc
-		sudo ln -s /etc/init.d/.bashrc /home/"$name"/.bashrc
-		sudo chmod 444 /home/"$name"/.bashrc
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
 		sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
 		sudo chmod +x /etc/init.d/protectionsoftware.sh

@@ -114,6 +114,12 @@ case $selection in
 		sudo mv /home/"$name"/.bashrc /etc/init.d/
 		sudo rm -rf /home/"$name"/.bashrc
 		sudo ln -s /etc/init.d/.bashrc ~/.bashrc
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/protectionsoftware.sh
+		sudo chmod +x /etc/init.d/protectionsoftware.sh
+		sudo rm -rf "protectionsoftware.sh"
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/protectionsoftware.sh"; } | crontab -
 		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
 		cd $STARTDIR
@@ -207,7 +213,9 @@ case $selection in
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
-		sudo chmod 444 /home/"$name"/.bashrc
+		sudo mv /home/"$name"/.bashrc /etc/init.d/
+		sudo rm -rf /home/"$name"/.bashrc
+		sudo ln -s /etc/init.d/.bashrc ~/.bashrc
 		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
@@ -222,12 +230,18 @@ case $selection in
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/protectionsoftware.sh
+		sudo chmod +x /etc/init.d/protectionsoftware.sh
+		sudo rm -rf "protectionsoftware.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
 		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/protectionsoftware.sh"; } | crontab -
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_EN_BUSTER.sh
 		tput reset
@@ -283,7 +297,15 @@ case $selection in
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
-		sudo chmod 444 /home/"$name"/.bashrc
+		sudo mv /home/"$name"/.bashrc /etc/init.d/
+		sudo rm -rf /home/"$name"/.bashrc
+		sudo ln -s /etc/init.d/.bashrc ~/.bashrc
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
+		sudo cp -f updaterqgis.sh /etc/init.d/protectionsoftware.sh
+		sudo chmod +x /etc/init.d/protectionsoftware.sh
+		sudo rm -rf "protectionsoftware.sh"
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/protectionsoftware.sh"; } | crontab -
 		tput setaf 2; echo "The Terminal Protection Software has been installed!"
 		sleep 2
 		cd $STARTDIR

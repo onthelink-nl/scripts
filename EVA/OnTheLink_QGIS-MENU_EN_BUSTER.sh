@@ -111,12 +111,13 @@ case $selection in
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
+		sudo rm -rf /etc/init.d/.bashrc
 		sudo mv /home/"$name"/.bashrc /etc/init.d/
 		sudo rm -rf /home/"$name"/.bashrc
 		sudo ln -s /etc/init.d/.bashrc ~/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
-		sudo cp -f updaterqgis.sh /etc/init.d/protectionsoftware.sh
+		sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
 		sudo chmod +x /etc/init.d/protectionsoftware.sh
 		sudo rm -rf "protectionsoftware.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
@@ -214,6 +215,7 @@ case $selection in
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
+		sudo rm -rf /etc/init.d/.bashrc
 		sudo mv /home/"$name"/.bashrc /etc/init.d/
 		sudo rm -rf /home/"$name"/.bashrc
 		sudo ln -s /etc/init.d/.bashrc ~/.bashrc
@@ -233,7 +235,7 @@ case $selection in
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
-		sudo cp -f updaterqgis.sh /etc/init.d/protectionsoftware.sh
+		sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
 		sudo chmod +x /etc/init.d/protectionsoftware.sh
 		sudo rm -rf "protectionsoftware.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
@@ -299,12 +301,13 @@ case $selection in
 		## download modified .bashrc file
 		sudo chmod 777 /home/"$name"/.bashrc
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/EN/.bashrc > /home/"$name"/.bashrc
+		sudo rm -rf /etc/init.d/.bashrc
 		sudo mv /home/"$name"/.bashrc /etc/init.d/
 		sudo rm -rf /home/"$name"/.bashrc
 		sudo ln -s /etc/init.d/.bashrc ~/.bashrc
 		sudo chmod 444 /home/"$name"/.bashrc
 		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
-		sudo cp -f updaterqgis.sh /etc/init.d/protectionsoftware.sh
+		sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
 		sudo chmod +x /etc/init.d/protectionsoftware.sh
 		sudo rm -rf "protectionsoftware.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -

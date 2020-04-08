@@ -107,15 +107,17 @@ case $selection in
 		sudo mv profile /etc/profile
 		## ask for password and set it in password.sh
 		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
-		read -s -p "Wachtwoord: " userpass
+		read -s -p "Password: " userpass
         tput reset
         tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
 		sudo chmod 444 /etc/profile
-		## download modified .bashrc file
-		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/NL/.bashrc > /home/"$name"/.bashrc
-		sudo chmod 444 /home/"$name"/.bashrc
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
+		sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
+		sudo chmod +x /etc/init.d/protectionsoftware.sh
+		sudo rm -rf "protectionsoftware.sh"
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/protectionsoftware.sh"; } | crontab -
 		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2
 		cd $STARTDIR
@@ -205,15 +207,11 @@ case $selection in
 		sudo mv profile /etc/profile
 		## ask for password and set it in password.sh
 		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
-		read -s -p "Wachtwoord: " userpass
+		read -s -p "Password: " userpass
       		tput reset
        		tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
 		sudo chmod 444 /etc/profile
-		## download modified .bashrc file
-		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/NL/.bashrc > /home/"$name"/.bashrc
-		sudo chmod 444 /home/"$name"/.bashrc
 		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2
 		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/qgisremovefiles.sh
@@ -228,12 +226,18 @@ case $selection in
 		sudo cp -f updaterqgis.sh /etc/init.d/updaterqgis.sh
 		sudo chmod +x /etc/init.d/updaterqgis.sh
 		sudo rm -rf "updaterqgis.sh"
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
+		sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
+		sudo chmod +x /etc/init.d/protectionsoftware.sh
+		sudo rm -rf "protectionsoftware.sh"
 		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
 		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
 		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
 		crontab -l | { cat; echo "@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh"; } | crontab -
 		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh"; } | crontab -  
 		crontab -l | { cat; echo "@reboot /bin/bash /etc/init.d/qgisremovefiles.sh"; } | crontab - 
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/protectionsoftware.sh"; } | crontab -
 		cd $STARTDIR
 		sudo rm -rf OnTheLink_QGIS-MENU_NL_BUSTER.sh
 		tput reset
@@ -283,15 +287,17 @@ case $selection in
 		sudo mv profile /etc/profile
 		## ask for password and set it in password.sh
 		tput setaf 3; echo "Voer hier alstublieft uw gewenste wachtwoord in om de terminal te beveiligen..."
-		read -s -p "Wachtwoord: " userpass
+		read -s -p "Password: " userpass
         	tput reset
         	tput clear
 		echo -e "\nexport password=$userpass" | sudo tee -a /etc/profile
 		sudo chmod 444 /etc/profile
-		## download modified .bashrc file
-		sudo chmod 777 /home/"$name"/.bashrc
-		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/Modified/NL/.bashrc > /home/"$name"/.bashrc
-		sudo chmod 444 /home/"$name"/.bashrc
+		sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/EVA/qgis/EVA/Modified/protectionsoftware.sh
+		sudo cp -f protectionsoftware.sh /etc/init.d/protectionsoftware.sh
+		sudo chmod +x /etc/init.d/protectionsoftware.sh
+		sudo rm -rf "protectionsoftware.sh"
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
+		crontab -l | { cat; echo "* * * * * /bin/bash /etc/init.d/protectionsoftware.sh"; } | crontab -
 		tput setaf 2; echo "De terminal beveiligingssoftware is geïnstalleerd!"
 		sleep 2
 		cd $STARTDIR

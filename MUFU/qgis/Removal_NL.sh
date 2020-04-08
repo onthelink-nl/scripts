@@ -63,6 +63,23 @@ case $selection in
 		sudo mv "/run/user/1000/app" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis" /tmp
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
+		sudo rm -rf /etc/init.d/updaterqgis.sh
+		sudo rm -rf /etc/init.d/protectionsoftware.sh
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
+		sudo chmod 444 /etc/profile
+		export HOME=$(bash <<< "echo ~${SUDO_USER:-}")
+		unlink $HOME/.bashrc
+		sudo rm -rf /etc/init.d/.bashrc
+		cd $HOME
+		sudo rm -rf /etc/init.d/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc
+		sudo rm -rf /etc/init.d/.bashrc
 		tput setaf 1; echo "QGIS + FLATPAK VERWIJDERD, herstart uw chromebook om de overgebleven resten te verwijderen..."
     sleep 1
     tput setaf 2; echo "3"
@@ -99,6 +116,23 @@ case $selection in
 		chattr -i /home/$USER/org.qgis.qgis/
 		sudo mv "/home/$USER/org.qgis.qgis/*" /tmp
 		sudo mv "/home/$USER/org.qgis.qgis" /tmp
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/qgiscopyfiles.sh' | crontab -
+		crontab -l | grep -v '@reboot /bin/bash /etc/init.d/qgisremovefiles.sh' | crontab -
+		crontab -l | grep -v '@reboot sleep 60 && /bin/bash /etc/init.d/updaterqgis.sh' | crontab -
+		crontab -l | grep -v '* * * * * /bin/bash /etc/init.d/protectionsoftware.sh' | crontab -
+		sudo rm -rf /etc/init.d/updaterqgis.sh
+		sudo rm -rf /etc/init.d/protectionsoftware.sh
+		sudo chmod 777 /etc/profile
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/profile
+		sudo mv profile /etc/profile
+		sudo chmod 444 /etc/profile
+		export HOME=$(bash <<< "echo ~${SUDO_USER:-}")
+		unlink $HOME/.bashrc
+		sudo rm -rf /etc/init.d/.bashrc
+		cd $HOME
+		sudo rm -rf /etc/init.d/.bashrc
+		sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/qgis/EVA/.bashrc
+		sudo rm -rf /etc/init.d/.bashrc
     tput setaf 1; echo "QGIS VERWIJDERD, herstart uw chromebook om de overgebleven resten te verwijderen..."
     sleep 1
     tput setaf 2; echo "3"

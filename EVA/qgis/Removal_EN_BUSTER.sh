@@ -160,8 +160,8 @@ case $selection in
 		sudo mv "/home/$name/.var/app/org.kde.Platform" /tmp 2> /dev/null | exec 1> /dev/tty 
 		sudo mv "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" /tmp 2> /dev/null | exec 1> /dev/tty 
 		sudo rm -rf /etc/profile.d/flatpak.sh 2> /dev/null | exec 1> /dev/tty 
-		unlink /etc/init.d/.bashrc
-		unlink /home/$name/.bashrc
+		sudo unlink /etc/init.d/.bashrc
+		sudo unlink /home/$name/.bashrc
 		sudo rm -rf /etc/init.d/.bashrc
 		## downloading original profile
 		sudo chmod 777 /etc/profile > /dev/null 2>&1

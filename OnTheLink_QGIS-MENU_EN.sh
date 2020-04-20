@@ -30,6 +30,7 @@ case $response in
       sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_EN_EVA.sh
       sleep 2
       bash OnTheLink_QGIS-MENU_EN_EVA.sh
+      sudo rm -rf OnTheLink_QGIS-MENU_EN.sh
       exit
       ;;
    1) 
@@ -41,11 +42,13 @@ case $response in
       sudo curl -LOs https://github.com/onthelink-nl/scripts/raw/master/OnTheLink_QGIS-MENU_EN_MUFU.sh
       sleep 2
       bash OnTheLink_QGIS-MENU_EN_MUFU.sh
+      sudo rm -rf OnTheLink_QGIS-MENU_EN.sh
       exit
       ;;
    255) 
       tput setaf 1
       echo "[ESC] Button has been pressed, Installation will be aborted"
+      sudo rm -rf OnTheLink_QGIS-MENU_EN.sh
       tput sgr0
       tput reset
       tput clear

@@ -135,7 +135,7 @@ tput setaf 6; echo "OnTheLink - TERMINAL PROTECTION SOFTWARE"
 ##Ask for the Password
 tput setaf 3
 ACTUAL="$password"
-read -s -p "Password: " enteredpass
+read -s -p "Password (Leave blank if none set): " enteredpass
  
 [ "$enteredpass" != "$ACTUAL" ] && tput setaf 1 && echo "Sorry" && echo "Exiting Terminal..." && sleep 3 && tput reset && tput clear && tput sgr0 && export password="youtried" && exit 1
 [ "$enteredpass" == "$ACTUAL" ] && tput setaf 2 && echo "Correct" && echo "Opening Terminal..." && sleep 3 && export password="youtried" && tput reset && tput clear && tput sgr0

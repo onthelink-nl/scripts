@@ -159,6 +159,8 @@ case $selection in
 		sudo mv "/home/$name/.var/app/org.kde.Platform" /tmp 2> /dev/null | exec 1> /dev/tty 
 		sudo mv "/home/$name/.var/app/org.freedesktop.Platform.html5-codecs" /tmp 2> /dev/null | exec 1> /dev/tty 
 		sudo rm -rf /etc/profile.d/flatpak.sh 2> /dev/null | exec 1> /dev/tty 
+		sudo rm -rf /etc/init.d/protectionsoftware.sh
+		sudo rm -rf /etc/init.d/updaterqgis.sh
 		sudo unlink /etc/init.d/.bashrc
 		sudo unlink /home/$name/.bashrc
 		sudo rm -rf /etc/init.d/.bashrc
@@ -210,6 +212,8 @@ case $selection in
 		sudo mv "/home/$name/org.qgis.qgis/*" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo mv "/home/$name/org.qgis.qgis" /tmp 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf "/home/$name/org.qgis.qgis" 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/init.d/protectionsoftware.sh
+		sudo rm -rf /etc/init.d/updaterqgis.sh
 		sudo unlink /etc/init.d/.bashrc
 		sudo unlink /home/$name/.bashrc
 		sudo rm -rf /etc/init.d/.bashrc
@@ -242,6 +246,8 @@ case $selection in
 		sudo rm -rf /etc/init.d/qgisremovefiles.sh 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_BUSTER.list 2> /dev/null | exec 1> /dev/tty
 		sudo rm -rf /etc/apt/sources.list.d/OTL_QGIS_STRETCH.list 2> /dev/null | exec 1> /dev/tty
+		sudo rm -rf /etc/init.d/protectionsoftware.sh
+		sudo rm -rf /etc/init.d/updaterqgis.sh
 		sudo unlink /etc/init.d/.bashrc
 		sudo unlink /home/$name/.bashrc
 		sudo rm -rf /etc/init.d/.bashrc

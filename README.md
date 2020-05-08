@@ -391,7 +391,7 @@ A: [Install this chrome extension](https://chrome.google.com/webstore/detail/sec
 
 # Credits
 Creating: Misha Opstal, Eva Looijestein & Leopold Siccama Hiemstra  
-Special thanks to: Dalton Voorburg
+Special thanks to: [Dalton Voorburg](https://www.daltonvoorburg.nl/ "Scholengemeenschap Dalton Voorburg")
 
 WARNING: WE DO NOT OWN THE SOFTWARE THAT WE CREATE THE INSTALLERS FOR, ALL COPYRIGHTS GO TO THE CREATORS OF THE SOFTWARE AND WE DO *NOT* CLAIM IT AS OURS!
 

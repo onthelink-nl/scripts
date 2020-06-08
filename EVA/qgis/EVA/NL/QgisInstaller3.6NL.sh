@@ -250,7 +250,19 @@ tput clear
 flatpak -y --user install qgis.flatpakref
 tput reset
 tput clear
+sudo -u $name gsettings set org.gnome.software allow-updates false
+sudo -u $name gsettings set org.gnome.software download-updates-notify false
+sudo -u $name gsettings set org.gnome.software download-updates false
+tput reset
+tput clear
 flatpak -y --user update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis
+tput reset
+tput clear
+sudo -u $name gsettings set org.gnome.software allow-updates false
+sudo -u $name gsettings set org.gnome.software download-updates-notify false
+sudo -u $name gsettings set org.gnome.software download-updates false
+tput reset
+tput clear
 tput bold
 tput setaf 5
 echo "QGIS 3.6 is geïnstalleerd!!!"
@@ -437,7 +449,19 @@ tput clear
 flatpak -y --user install qgis.flatpakref
 tput reset
 tput clear
+sudo -u $name gsettings set org.gnome.software allow-updates false
+sudo -u $name gsettings set org.gnome.software download-updates-notify false
+sudo -u $name gsettings set org.gnome.software download-updates false
+tput reset
+tput clear
 flatpak -y --user update --commit=f3e180bb9ddc0cc9fc304e899b7c71405d10db81a8200f3d34dfb6288fec15b9 org.qgis.qgis
+tput reset
+tput clear
+sudo -u $name gsettings set org.gnome.software allow-updates false
+sudo -u $name gsettings set org.gnome.software download-updates-notify false
+sudo -u $name gsettings set org.gnome.software download-updates false
+tput reset
+tput clear
 tput bold
 tput setaf 5
 echo "QGIS 3.6 is geïnstalleerd!!!"

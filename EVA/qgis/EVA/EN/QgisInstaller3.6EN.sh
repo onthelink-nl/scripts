@@ -263,6 +263,7 @@ sudo -u $name gsettings set org.gnome.software download-updates-notify false
 sudo -u $name gsettings set org.gnome.software download-updates false
 tput reset
 tput clear
+flatpak -y --user install runtime/org.kde.Platform/x86_64/5.12
 tput bold
 tput setaf 5
 echo "QGIS 3.6 has been installed!!!"
@@ -462,6 +463,7 @@ sudo -u $name gsettings set org.gnome.software download-updates-notify false
 sudo -u $name gsettings set org.gnome.software download-updates false
 tput reset
 tput clear
+flatpak -y --user install runtime/org.kde.Platform/x86_64/5.12
 tput bold
 tput setaf 5
 echo "QGIS 3.6 has been installed!!!"

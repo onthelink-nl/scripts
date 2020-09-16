@@ -127,7 +127,7 @@ echo "Architecture added and linux is updated!"
 tput setaf 1
 echo "Installing Dependencies..."
 tput setaf 6
-sudo apt-get --yes --assume-yes install curl wget apt-utils cron nautilus mono-complete libgl1-mesa-dri:i386 libgl1-mesa-glx:i386 libglapi-mesa:i386 2> /dev/null | exec 1> /dev/tty
+sudo apt-get --yes --assume-yes install curl wget apt-utils cron nautilus winbind mono-complete libgl1-mesa-dri:i386 libgl1-mesa-glx:i386 libglapi-mesa:i386 2> /dev/null | exec 1> /dev/tty
 tput setaf 2
 echo "Dependencies are installed!"
 

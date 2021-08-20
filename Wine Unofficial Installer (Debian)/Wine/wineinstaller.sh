@@ -135,7 +135,7 @@ echo "Dependencies are installed!"
 tput setaf 1
 echo "Installing Wine and Winetricks..."
 tput setaf 6
-sudo apt-get --yes --assume-yes install wine 2> /dev/null | exec 1> /dev/tty
+sudo apt-get --yes --assume-yes install wine wine32 2> /dev/null | exec 1> /dev/tty
 sudo curl -LOs "https://github.com/onthelink-nl/scripts/raw/master/Wine%20Unofficial%20Installer%20(Debian)/winetricks.deb"
 sudo apt-get --yes --assume-yes install ./winetricks.deb
 tput setaf 2

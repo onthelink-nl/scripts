@@ -213,6 +213,13 @@ sudo ufw allow 3306 2> /dev/null | exec 1> /dev/tty
 sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/my.cnf"
 sudo rm -rf /etc/mysql/my.cnf
 sudo cp my.cnf /etc/mysql/my.cnf
+sudo mkdir /var/lib/mysql/
+sudo mkdir /var/lib/mysql/mysql
+sudo mkdir /var/lib/mysql-files
+sudo mkdir /var/log/mysql
+sudo chown -R mysql:mysql /var/log/mysql
+sudo chown -R mysql:mysql /var/lib/mysql
+sudo mysqld
 sudo systemctl restart mysql
 $succeeded
 echo "LAMP has been installed!"

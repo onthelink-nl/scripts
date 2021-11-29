@@ -243,7 +243,7 @@ do
 
 	if [[ $wwwlocation == "" ]];
 	then
-		usedlocation="$SUB"
+		wwwlocation="/var/www/"
 	fi
 
 	if [[ $wwwlocation != */ ]];
@@ -384,7 +384,8 @@ exit
 
 $log
 sudo mkdir -p "$usedlocation"/pterodactyl
-cd "$usedlocation"/pterodactyl || exit
+cd "$usedlocation"/pterodactyl
+echo "I will sleep now"
 sudo curl -LOs panel.tar.gz https://github.com/pterodactyl/panel/releases/latest/download/panel.tar.gz
 sudo tar -xzvf panel.tar.gz
 sudo chmod -R 755 storage/* bootstrap/cache/

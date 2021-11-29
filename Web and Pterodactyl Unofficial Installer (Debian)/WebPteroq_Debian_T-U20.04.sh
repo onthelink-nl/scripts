@@ -153,6 +153,10 @@ then
 fi
 
 # Refreshing apt & Installing Dependencies
+PHP="/etc/apt/sources.list.d/ondrej-ubuntu-php*"
+REDIS="/etc/apt/sources.list.d/chris-lea-ubuntu-redis-server*"
+MARIADB="/etc/apt/sources.list.d/mariadb.list"
+
 $info
 echo "Refreshing apt for up-to-date packages..."
 $log
@@ -161,10 +165,36 @@ $info
 echo "Installing dependencies"
 $log
 sudo apt-get -y install software-properties-common curl apt-transport-https ca-certificates gnupg tar unzip git redis-server 2> /dev/null | exec 1> /dev/tty
-sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y 2> /dev/null | exec 1> /dev/tty
-sudo add-apt-repository ppa:chris-lea/redis-server -y 2> /dev/null | exec 1> /dev/tty
-curl -LOs "https://downloads.mariadb.com/MariaDB/mariadb_repo_setup"
-sudo bash mariadb_repo_setup
+
+if [ -f "$PHP" ];
+then
+	$succeeded
+	echo "The PHP repository had already been added!"
+	$log
+else
+	sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y 2> /dev/null | exec 1> /dev/tty
+fi
+
+if [ -f "$REDIS" ];
+then
+	$succeeded
+	echo "The redis-server repository had already been added!"
+	$log
+else
+	sudo add-apt-repository ppa:chris-lea/redis-server -y 2> /dev/null | exec 1> /dev/tty
+fi
+
+if [ -f "$MARIADB" ];
+then
+	$succeeded
+	echo "The MariaDB repository had already been added!"
+	$log
+else
+	curl -LOs "https://downloads.mariadb.com/MariaDB/mariadb_repo_setup"
+	sudo bash mariadb_repo_setup
+fi
+
+sleep 5
 sudo apt-get -y update 2> /dev/null | exec 1> /dev/tty
 sudo apt-add-repository universe -y 2> /dev/null | exec 1> /dev/tty
 $succeeded
@@ -189,7 +219,7 @@ $log
 
 # Composer
 cd /home/"$name"/tmp-webpteroqinstaller || exit
-curl -Lo https://getcomposer.org/installer
+sudo curl -LOs "https://getcomposer.org/installer"
 php installer --install-dir=/usr/local/bin --filename=composer
 
 ## var/www/pterodactyl location
@@ -355,7 +385,7 @@ exit
 $log
 sudo mkdir -p "$usedlocation"/pterodactyl
 cd "$usedlocation"/pterodactyl || exit
-sudo curl -Lo panel.tar.gz https://github.com/pterodactyl/panel/releases/latest/download/panel.tar.gz
+sudo curl -LOs panel.tar.gz https://github.com/pterodactyl/panel/releases/latest/download/panel.tar.gz
 sudo tar -xzvf panel.tar.gz
 sudo chmod -R 755 storage/* bootstrap/cache/
 sudo rm -rf panel.tar.gz

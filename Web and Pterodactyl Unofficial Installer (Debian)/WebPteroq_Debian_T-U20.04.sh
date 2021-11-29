@@ -206,6 +206,7 @@ sleep 7
 
 # LAMP
 MySQL_Question="unanswered"
+$info
 while [[ $MySQL_Question != "answered" ]]
 do
 	$info
@@ -215,6 +216,7 @@ do
 	read -p "Do you already have a MySQL server installed and configured? " MySQL_Configured
 	if [[ $MySQL_Configured == "Y" || $MySQL_Configured == "y" ]];
 	then
+		$info
 		echo "You have already installed and set-up a MySQL server"
 		read -p "Is this correct? " MySQL_Confirm
 		if [[ $MySQL_Confirm == "Y" || $MySQL_Confirm == "y" ]];
@@ -229,6 +231,7 @@ do
 
 	if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
 	then
+		$info
 		echo "You don't have a MySQL server already installed and set-up"
 		read -p "Is this correct? " MySQL_Confirm
 		if [[ $MySQL_Confirm == "Y" || $MySQL_Confirm == "y" ]];
@@ -490,17 +493,6 @@ then
 	echo "$DBROOTPASS" > /home/"$name"/pterodactyl_db_rootpass.txt
 
 	$log
-
-	# Make sure that NOBODY can access the server without a password
-	sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$DBROOTPASS';" 2> /dev/null | exec 1> /dev/tty
-	# Kill the anonymous users
-	sudo mysql -e "DROP USER ''@'localhost'" 2> /dev/null | exec 1> /dev/tty
-	# Because our hostname varies we'll use some Bash magic here.
-	sudo mysql -e "DROP USER ''@'$(hostname)'" 2> /dev/null | exec 1> /dev/tty
-	# Kill off the demo database
-	sudo mysql -e "DROP DATABASE test" 2> /dev/null | exec 1> /dev/tty
-	# Make our changes take effect
-	sudo mysql -e "FLUSH PRIVILEGES" 2> /dev/null | exec 1> /dev/tty
 
 	# Did it work?
 	sudo mysql -uroot -p"${DBROOTPASS}" -e "CREATE DATABASE ${DB};" 2> /dev/null | exec 1> /dev/tty

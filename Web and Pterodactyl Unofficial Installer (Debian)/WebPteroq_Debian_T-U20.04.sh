@@ -153,8 +153,8 @@ then
 fi
 
 # Refreshing apt & Installing Dependencies
-PHP="/etc/apt/sources.list.d/ondrej-ubuntu-php*"
-REDIS="/etc/apt/sources.list.d/chris-lea-ubuntu-redis-server*"
+PHP="/etc/apt/sources.list.d/ondrej-ubuntu-php-*"
+REDIS="/etc/apt/sources.list.d/chris-lea-ubuntu-redis-server-*"
 MARIADB="/etc/apt/sources.list.d/mariadb.list"
 
 $info
@@ -166,7 +166,7 @@ echo "Installing dependencies"
 $log
 sudo apt-get -y install software-properties-common curl apt-transport-https ca-certificates gnupg tar unzip git redis-server 2> /dev/null | exec 1> /dev/tty
 
-if [ -f "$PHP" ];
+if [ 0 -lt $(ls $PHP 2>/dev/null | wc -w) ];
 then
 	$succeeded
 	echo "The PHP repository had already been added!"
@@ -175,7 +175,7 @@ else
 	sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y 2> /dev/null | exec 1> /dev/tty
 fi
 
-if [ -f "$REDIS" ];
+if [ 0 -lt $(ls $REDIS 2>/dev/null | wc -w) ];
 then
 	$succeeded
 	echo "The redis-server repository had already been added!"
@@ -184,7 +184,7 @@ else
 	sudo add-apt-repository ppa:chris-lea/redis-server -y 2> /dev/null | exec 1> /dev/tty
 fi
 
-if [ -f "$MARIADB" ];
+if [ 0 -lt $(ls $MARIADB 2>/dev/null | wc -w) ];
 then
 	$succeeded
 	echo "The MariaDB repository had already been added!"
@@ -423,7 +423,7 @@ sudo mysql -uroot -p"${DBROOTPASS}" -e "FLUSH PRIVILEGES;" 2> /dev/null | exec 1
 
 # Environment
 sudo cp .env.example .env
-composer install --no-dev --optimize-autoloader
+sudo composer install --no-dev --optimize-autoloader
 php artisan key:generate --force
 sudo mkdir /home/"$name"/important_env_backup
 sudo cp .env /home/"$name"/important_env_backup/.env

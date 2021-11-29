@@ -210,6 +210,8 @@ $log
 sudo apt-get -y install apache2 libapache2-mod-php certbot python3-certbot-apache mysql-server php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} 2> /dev/null | exec 1> /dev/tty
 sudo ufw allow "Apache Full" 2> /dev/null | exec 1> /dev/tty
 sudo ufw allow 3306 2> /dev/null | exec 1> /dev/tty
+sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/my.cnf"
+sudo cp my.cnf /etc/mysql/my.cnf
 $succeeded
 echo "LAMP has been installed!"
 $log

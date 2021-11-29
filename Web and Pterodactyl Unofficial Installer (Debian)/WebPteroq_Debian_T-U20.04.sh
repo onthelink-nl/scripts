@@ -45,6 +45,8 @@ mkdir /home/"$name"/tmp-webpteroqinstaller
 cd /home/"$name"/tmp-webpteroqinstaller || exit
 
 ## WSL Detection
+tput reset
+tput clear
 if [[ $(grep Microsoft /proc/version) ]];
 then
 	$info
@@ -58,6 +60,7 @@ then
 	echo "WSL1 is currently unsupported since there is no workaround to get systemd working"
 	echo "Please update to WSL2 to be able to run the installer (https://docs.microsoft.com/en-us/windows/wsl/install)"
 	$error
+	echo
 	echo "Aborting..."
 	$log
 	sleep 3
@@ -78,6 +81,9 @@ then
     echo
     echo "The script will now try to install the necassery components to run systemd"
     echo "Checking if this has already been done before by the script..."
+    echo
+    echo
+    echo
 
     WSLcheck=/etc/wsl2exists.conf
     WSLreboot="history -a && cmd.exe /C wsl --shutdown"
@@ -94,7 +100,7 @@ then
         sudo apt-get -y install git 2> /dev/null | exec 1> /dev/tty
         git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git 2> /dev/null | exec 1> /dev/tty
         cd ubuntu-wsl2-systemd-script/ || exit
-        sudo bash ubuntu-wsl2-systemd-script.sh
+        sudo bash ubuntu-wsl2-systemd-script.sh --force
         echo "WSL2_Systemd: Installed" | sudo tee -a /etc/wsl2exists.conf 2> /dev/null | exec 1> /dev/tty
         $info
         echo "The systemd component for WSL2 has succesfully been installed and enabled!"

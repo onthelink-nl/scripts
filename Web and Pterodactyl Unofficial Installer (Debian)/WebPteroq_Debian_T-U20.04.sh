@@ -424,6 +424,32 @@ sudo mysql -uroot -p"${DBROOTPASS}" -e "CREATE USER '${DBPANELUSER}'@'${DBHOST}'
 sudo mysql -uroot -p"${DBROOTPASS}" -e "GRANT ALL PRIVILEGES ON ${MAINDB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;" 2> /dev/null | exec 1> /dev/tty
 sudo mysql -uroot -p"${DBROOTPASS}" -e "FLUSH PRIVILEGES;" 2> /dev/null | exec 1> /dev/tty
 
+# WARNING ABOUT PASSWORD
+consent="no"
+while [[ $consent != "yes" ]]
+do
+	$error
+	echo $typo
+	$info
+	echo "MySQL has been configured and we have generated a random password for the login's"
+	echo "The passwords have been stored in your home directory"
+	echo "Navigate there in a new terminal (if on a non gui system use CTRL + ALT + F2)"
+	echo
+	echo "Find the file pterodactyl_db_pass.txt and open it using 'cat filename'"
+	echo "Now write it down or keep this terminal open because you will need it again soon!"
+	echo "Tip: If on non gui system you could do CTRL + ALT + F1(Or F2) to move between the two terminals"
+	$log
+	read -p "Type 'I know the password' to continue " doYou
+	if [[ doYou == "I know the password" ]];
+	then
+		consent="yes"
+		typo=""
+	else
+		consent="no"
+		typo="It appears you've made a typo!"
+	fi
+done
+
 
 # Environment
 sudo cp .env.example .env

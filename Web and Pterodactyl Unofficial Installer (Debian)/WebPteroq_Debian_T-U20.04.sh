@@ -220,7 +220,7 @@ $log
 # Composer
 cd /home/"$name"/tmp-webpteroqinstaller || exit
 sudo curl -LOs "https://getcomposer.org/installer"
-php installer --install-dir=/usr/local/bin --filename=composer
+sudo php installer --install-dir=/usr/local/bin --filename=composer
 
 ## var/www/pterodactyl location
 

@@ -41,8 +41,8 @@ info="tput setaf 3"
 log="tput setaf 5"
 
 # Create TEMP Folder
-mkdir /home/"$name"/tmp-webmcinstaller
-cd /home/"$name"/tmp-webmcinstaller || exit
+mkdir /home/"$name"/tmp-webpteroqinstaller
+cd /home/"$name"/tmp-webpteroqinstaller || exit
 
 ## WSL Detection
 if [[ $(grep Microsoft /proc/version) ]];
@@ -144,7 +144,7 @@ $log
 ### Pterodactyl Install
 
 # Composer
-cd /home/"$name"/tmp-webmcinstaller || exit
+cd /home/"$name"/tmp-webpteroqinstaller || exit
 curl -Lo https://getcomposer.org/installer
 php installer --install-dir=/usr/local/bin --filename=composer
 
@@ -560,7 +560,7 @@ done
 
 
 cd /etc/pterodactyl && sudo wings configure --panel-url https://"$replace" --token "$token" --node 1
-cd /home/"$name"/tmp-webmcinstaller || exit
+cd /home/"$name"/tmp-webpteroqinstaller || exit
 sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/wings.service"
 sudo cp wings.service /etc/systemd/system/wings.service
 sudo systemctl enable --now wings
@@ -570,13 +570,13 @@ sudo systemctl enable --now wings
 cd "$STARTDIR" || exit
 $succeeded
 echo "The installation of the LAMP and pterodactyl server has finished"
-echo "Temp files are located within /home/'$name'/tmp-webmcinstaller/"
+echo "Temp files are located within /home/'$name'/tmp-webpteroqinstaller/"
 read -p "Would you like to remove the temp files? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	$log
-	sudo rm -rf "/home/$name/tmp-webmcinstaller"
+	sudo rm -rf "/home/$name/tmp-webpteroqinstaller"
 	$succeeded
 	echo "The temp files have been removed from this device!"
 	echo "The script will close within 5 seconds..."

@@ -199,36 +199,91 @@ sudo apt-get -y update 2> /dev/null | exec 1> /dev/tty
 sudo apt-add-repository universe -y 2> /dev/null | exec 1> /dev/tty
 $succeeded
 echo "Dependencies have been installed!"
+sleep 7
 
 
 ### Webserver Install
 
 # LAMP
-$info
+MySQL_Question="unanswered"
+while [[ $MySQL_Question != "answered" ]]
+do
+	$info
+	tput reset
+	tput clear
+	echo "Please answer the following"
+	read -p "Do you already have a MySQL server installed and configured? " MySQL_Configured
+	if [[ $MySQL_Configured == "Y" || $MySQL_Configured == "y" ]];
+	then
+		echo "You have already installed and set-up a MySQL server"
+		read -p "Is this correct? " MySQL_Confirm
+		if [[ $MySQL_Confirm == "Y" || $MySQL_Confirm == "y" ]];
+		then
+			MySQL_Question="answered"
+		fi
+		if [[ $MySQL_Confirm == "N" || $MySQL_Confirm == "n" ]];
+		then
+			MySQL_Question="unanswered"
+		fi
+	fi
+
+	if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
+	then
+		echo "You don't have a MySQL server already installed and set-up"
+		read -p "Is this correct? " MySQL_Confirm
+		if [[ $MySQL_Confirm == "Y" || $MySQL_Confirm == "y" ]];
+		then
+			MySQL_Question="answered"
+		fi
+		if [[ $MySQL_Confirm == "N" || $MySQL_Confirm == "n" ]];
+		then
+			MySQL_Question="unanswered"
+		fi
+	fi
+done
+echo
+echo
+echo
 echo "We will now start installing LAMP (Apache2 + Mysql-server + PHP8.0)"
 $log
 sudo apt-get -y install apache2 libapache2-mod-php certbot python3-certbot-apache mysql-server php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} 2> /dev/null | exec 1> /dev/tty
 sudo ufw allow "Apache Full" 2> /dev/null | exec 1> /dev/tty
-sudo ufw allow 3306 2> /dev/null | exec 1> /dev/tty
-sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/my.cnf"
-sudo rm -rf /etc/mysql/my.cnf
-sudo cp my.cnf /etc/mysql/my.cnf
-sudo mkdir /var/lib/mysql/
-sudo mkdir /var/lib/mysql/mysql
-sudo mkdir /var/lib/mysql-files
-sudo mkdir /var/log/mysql
-sudo chown -R mysql:mysql /var/log/mysql
-sudo chown -R mysql:mysql /var/lib/mysql
-sudo mysqld
-sudo systemctl restart mysql
+
+if [[ $MySQL_Configured == "Y" || $MySQL_Configured == "y" ]];
+then
+	sudo /etc/init.d/mysql start
+	sudo systemctl restart mysql
+fi
+
+if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
+then
+	sudo ufw allow 3306 2> /dev/null | exec 1> /dev/tty
+	sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/my.cnf"
+	sudo rm -rf /etc/mysql/my.cnf
+	sudo cp my.cnf /etc/mysql/my.cnf
+	sudo rm -rf /var/lib/mysql/
+	sudo rm -rf /var/lib/mysql-files/
+	sudo mkdir /var/lib/mysql/
+	sudo mkdir /var/lib/mysql-files/
+	sudo mkdir /var/log/mysql/
+	sudo chown -R mysql:mysql /var/log/mysql/
+	sudo chown -R mysql:mysql /var/lib/mysql/
+	sudo mysqld --initialize
+	sudo /etc/init.d/mysql start
+	sudo systemctl restart mysql
+fi
+
 $succeeded
 echo "LAMP has been installed!"
 $log
+sleep 7
 
 
 ### Pterodactyl Install
 
 # Composer
+tput reset
+tput clear
 cd /home/"$name"/tmp-webpteroqinstaller || exit
 sudo curl -LOs "https://getcomposer.org/installer"
 sudo php installer --install-dir=/usr/local/bin --filename=composer
@@ -394,7 +449,7 @@ done
 
 $log
 sudo mkdir -p "$usedlocation"/pterodactyl
-cd "$usedlocation"/pterodactyl
+cd "$usedlocation"/pterodactyl || exit
 sudo curl -Lo panel.tar.gz https://github.com/pterodactyl/panel/releases/latest/download/panel.tar.gz
 sudo tar -xzvf panel.tar.gz
 sudo chmod -R 755 storage/* bootstrap/cache/
@@ -403,33 +458,56 @@ sudo rm -rf panel.tar.gz
 ## MySQL Database Configuration
 
 # LOGIN INFO
-DBHOST="127.0.0.1"
-DBPANELUSER="pterodactyl"
-DBPASS="$(openssl rand -base64 12)"
-DBROOTPASS="$(openssl rand -base64 12)"
-DB="panel"
+if [[ $MySQL_Configured == "Y" || $MySQL_Configured == "y" ]];
+then
+	read -p "Enter the remote server host (e.g. mysql.example.com / 192.168.1.2 / localhost / 127.0.0.1): " DBSERVERHOST
+	DBHOST="%"
+	DBPANELUSER="pterodactyl"
+	DBPASS="$(openssl rand -base64 12)"
+	read -p "Enter your root MySQL account password (Used to login with 'sudo mysql -u root -p password', please verify before entering..): " DBROOTPASS
+	DB="panel"
 
-echo "$DBPASS" > /home/"$name"/pterodactyl_db_pass.txt
-echo "$DBROOTPASS" > /home/"$name"/pterodactyl_db_rootpass.txt
+	echo "$DBPASS" > /home/"$name"/pterodactyl_db_pass.txt
 
-$log
+	$log
 
-# Make sure that NOBODY can access the server without a password
-sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$DBROOTPASS';" 2> /dev/null | exec 1> /dev/tty
-# Kill the anonymous users
-sudo mysql -e "DROP USER ''@'localhost'" 2> /dev/null | exec 1> /dev/tty
-# Because our hostname varies we'll use some Bash magic here.
-sudo mysql -e "DROP USER ''@'$(hostname)'" 2> /dev/null | exec 1> /dev/tty
-# Kill off the demo database
-sudo mysql -e "DROP DATABASE test" 2> /dev/null | exec 1> /dev/tty
-# Make our changes take effect
-sudo mysql -e "FLUSH PRIVILEGES" 2> /dev/null | exec 1> /dev/tty
+	# Did it work?
+	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "CREATE DATABASE ${DB};" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "CREATE USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBPASS}';" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "GRANT ALL PRIVILEGES ON ${MAINDB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "FLUSH PRIVILEGES;" 2> /dev/null | exec 1> /dev/tty
+fi
 
-# Did it work?
-sudo mysql -uroot -p"${DBROOTPASS}" -e "CREATE DATABASE ${DB};" 2> /dev/null | exec 1> /dev/tty
-sudo mysql -uroot -p"${DBROOTPASS}" -e "CREATE USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBPASS}';" 2> /dev/null | exec 1> /dev/tty
-sudo mysql -uroot -p"${DBROOTPASS}" -e "GRANT ALL PRIVILEGES ON ${MAINDB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;" 2> /dev/null | exec 1> /dev/tty
-sudo mysql -uroot -p"${DBROOTPASS}" -e "FLUSH PRIVILEGES;" 2> /dev/null | exec 1> /dev/tty
+if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
+then
+	DBHOST="127.0.0.1"
+	DBPANELUSER="pterodactyl"
+	DBPASS="$(openssl rand -base64 12)"
+	DBROOTPASS="$(openssl rand -base64 12)"
+	DB="panel"
+
+	echo "$DBPASS" > /home/"$name"/pterodactyl_db_pass.txt
+	echo "$DBROOTPASS" > /home/"$name"/pterodactyl_db_rootpass.txt
+
+	$log
+
+	# Make sure that NOBODY can access the server without a password
+	sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$DBROOTPASS';" 2> /dev/null | exec 1> /dev/tty
+	# Kill the anonymous users
+	sudo mysql -e "DROP USER ''@'localhost'" 2> /dev/null | exec 1> /dev/tty
+	# Because our hostname varies we'll use some Bash magic here.
+	sudo mysql -e "DROP USER ''@'$(hostname)'" 2> /dev/null | exec 1> /dev/tty
+	# Kill off the demo database
+	sudo mysql -e "DROP DATABASE test" 2> /dev/null | exec 1> /dev/tty
+	# Make our changes take effect
+	sudo mysql -e "FLUSH PRIVILEGES" 2> /dev/null | exec 1> /dev/tty
+
+	# Did it work?
+	sudo mysql -uroot -p"${DBROOTPASS}" -e "CREATE DATABASE ${DB};" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -p"${DBROOTPASS}" -e "CREATE USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBPASS}';" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -p"${DBROOTPASS}" -e "GRANT ALL PRIVILEGES ON ${MAINDB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -p"${DBROOTPASS}" -e "FLUSH PRIVILEGES;" 2> /dev/null | exec 1> /dev/tty
+fi
 
 # WARNING ABOUT PASSWORD
 consent="no"
@@ -447,7 +525,7 @@ do
 	echo "Tip: If on non gui system you could do CTRL + ALT + F1(Or F2) to move between the two terminals"
 	$log
 	read -p "Type 'I know the password' to continue " doYou
-	if [[ doYou == "I know the password" ]];
+	if [[ $doYou == "I know the password" ]];
 	then
 		consent="yes"
 		typo=""

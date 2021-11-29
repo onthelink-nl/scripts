@@ -86,7 +86,6 @@ then
     echo
 
     WSLcheck=/etc/wsl2exists.conf
-    WSLreboot="history -a && cmd.exe /C wsl --shutdown"
     if [ -f "$WSLcheck" ];
     then
         $succeeded
@@ -110,7 +109,7 @@ then
         tput reset
         tput clear
         tput sgr0
-        $WSLreboot
+        history -a && cmd.exe /C wsl --shutdown
     fi
 fi
 

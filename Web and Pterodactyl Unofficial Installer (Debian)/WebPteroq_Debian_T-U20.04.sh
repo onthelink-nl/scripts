@@ -252,30 +252,6 @@ $log
 sudo apt-get -y install apache2 libapache2-mod-php certbot python3-certbot-apache mysql-server php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} 2> /dev/null | exec 1> /dev/tty
 sudo ufw allow "Apache Full" 2> /dev/null | exec 1> /dev/tty
 
-if [[ $MySQL_Configured == "Y" || $MySQL_Configured == "y" ]];
-then
-	sudo /etc/init.d/mysql start
-	sudo systemctl restart mysql
-fi
-
-if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
-then
-	sudo ufw allow 3306 2> /dev/null | exec 1> /dev/tty
-	sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/my.cnf"
-	sudo rm -rf /etc/mysql/my.cnf
-	sudo cp my.cnf /etc/mysql/my.cnf
-	sudo rm -rf /var/lib/mysql/
-	sudo rm -rf /var/lib/mysql-files/
-	sudo mkdir /var/lib/mysql/
-	sudo mkdir /var/lib/mysql-files/
-	sudo mkdir /var/log/mysql/
-	sudo chown -R mysql:mysql /var/log/mysql/
-	sudo chown -R mysql:mysql /var/lib/mysql/
-	sudo mysqld --initialize
-	sudo /etc/init.d/mysql start
-	sudo systemctl restart mysql
-fi
-
 $succeeded
 echo "LAMP has been installed!"
 $log
@@ -471,6 +447,8 @@ then
 	DB="panel"
 
 	echo "$DBPASS" > /home/"$name"/pterodactyl_db_pass.txt
+	sudo /etc/init.d/mysql start
+	sudo systemctl restart mysql
 
 	$log
 
@@ -492,6 +470,31 @@ then
 	echo "$DBPASS" > /home/"$name"/pterodactyl_db_pass.txt
 	echo "$DBROOTPASS" > /home/"$name"/pterodactyl_db_rootpass.txt
 
+	sudo ufw allow 3306 2> /dev/null | exec 1> /dev/tty
+	sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/my.cnf"
+	sudo rm -rf /etc/mysql/my.cnf
+	sudo cp my.cnf /etc/mysql/my.cnf
+	sudo rm -rf /var/lib/mysql/
+	sudo rm -rf /var/lib/mysql-files/
+	sudo mkdir /var/lib/mysql/
+	sudo mkdir /var/lib/mysql-files/
+	sudo mkdir /var/log/mysql/
+	sudo mkdir /var/run/mysqld/
+	sudo chown -R mysql:mysql /var/run/mysqld/
+	sudo chown -R mysql:mysql /var/log/mysql/
+	sudo chown -R mysql:mysql /var/lib/mysql/
+	sudo mysqld --initialize
+	sudo /etc/init.d/mysql start
+	sudo systemctl restart mysql
+	sudo /etc/init.d/mysql stop
+	sudo mysqld_safe --skip-grant-tables --skip-networking &
+	sudo mysql -uroot -e "FLUSH PRIVILEGES;" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${DBROOTPASS}';" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -e "FLUSH PRIVILEGES;" 2> /dev/null | exec 1> /dev/tty
+	sudo /etc/init.d/mysql stop 2> /dev/null | exec 1> /dev/tty
+	sudo killall -KILL mysql mysqld_safe mysqld 2> /dev/null | exec 1> /dev/tty
+	sudo /etc/init.d/mysql start
+	sudo systemctl restart mysql
 	$log
 
 	# Did it work?

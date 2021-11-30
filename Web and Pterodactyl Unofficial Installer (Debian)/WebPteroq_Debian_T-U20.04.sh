@@ -533,7 +533,7 @@ then
 	sleep 2
 	sudo mysqld_safe --skip-grant-tables --skip-networking &
 	sleep 5
-	sudo mysql -uroot -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '${DBUSEDROOTPASS}';FLUSH PRIVILEGES;CREATE DATABASE ${DB};CREATE USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDPASS}';GRANT ALL PRIVILEGES ON ${MAINDB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;FLUSH PRIVILEGES;"
+	sudo mysql -uroot -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '${DBUSEDROOTPASS}';FLUSH PRIVILEGES;CREATE DATABASE ${DB};CREATE USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDPASS}';GRANT ALL PRIVILEGES ON ${DB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;FLUSH PRIVILEGES;"
 	sudo /etc/init.d/mysql stop 2> /dev/null | exec 1> /dev/tty
 	sudo killall -KILL mysql mysqld_safe mysqld 2> /dev/null | exec 1> /dev/tty
 	sudo /etc/init.d/mysql start

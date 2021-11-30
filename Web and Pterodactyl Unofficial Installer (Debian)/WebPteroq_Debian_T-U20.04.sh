@@ -446,14 +446,24 @@ then
 	read -p "Enter your root MySQL account password (Used to login with 'sudo mysql -u root -p password', please verify before entering..): " DBROOTPASS
 	DB="panel"
 
-	echo "$DBPASS" > /home/"$name"/pterodactyl_db_pass.txt
-	DBUSEDPASS="$(cat /home/$name/pterodactyl_db_pass.txt)"
+	pteroqpass="/home/$name/pterodactyl_db_pass.txt"
+
+	if [[ -e $pteroqpass || -L $pteroqpass ]] ; then
+	    i=0
+	    while [[ -e $pteroqpass-$i || -L $pteroqpass-$i ]] ; do
+	        let i++
+	    done
+	    pteroqpass=$pteroqpass-$i
+	fi
+
+	echo "$DBPASS" > $pteroqpass
+	DBUSEDPASS="$(cat $pteroqpass)"
 	sudo /etc/init.d/mysql start
 	sudo systemctl restart mysql
 
 	$log
 
-	# Did it work?
+	# Creating Pterodactyl Data
 	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "CREATE DATABASE ${DB};" 2> /dev/null | exec 1> /dev/tty
 	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "CREATE USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDPASS}';" 2> /dev/null | exec 1> /dev/tty
 	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "GRANT ALL PRIVILEGES ON ${MAINDB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;" 2> /dev/null | exec 1> /dev/tty
@@ -468,10 +478,29 @@ then
 	DBROOTPASS="$(openssl rand -base64 12)"
 	DB="panel"
 
-	echo "$DBPASS" > /home/"$name"/pterodactyl_db_pass.txt
-	DBUSEDPASS="$(cat /home/$name/pterodactyl_db_pass.txt)"
-	echo "$DBROOTPASS" > /home/"$name"/pterodactyl_db_rootpass.txt
-	DBUSEDROOTPASS="$(cat /home/$name/pterodactyl_db_rootpass.txt)"
+	pteroqpass="/home/$name/pterodactyl_db_pass.txt"
+	pteroqrootpass="/home/$name/pterodactyl_db_rootpass.txt"
+
+	if [[ -e $pteroqpass || -L $pteroqpass ]] ; then
+	    i=0
+	    while [[ -e $pteroqpass-$i || -L $pteroqpass-$i ]] ; do
+	        let i++
+	    done
+	    pteroqpass=$pteroqpass-$i
+	fi
+
+	if [[ -e $pteroqrootpass || -L $pteroqrootpass ]] ; then
+	    i=0
+	    while [[ -e $pteroqrootpass-$i || -L $pteroqrootpass-$i ]] ; do
+	        let i++
+	    done
+	    pteroqrootpass=$pteroqrootpass-$i
+	fi
+
+	echo "$DBPASS" > $pteroqpass
+	DBUSEDPASS="$(cat $pteroqpass)"
+	echo "$DBROOTPASS" > $pteroqrootpass
+	DBUSEDROOTPASS="$(cat $pteroqrootpass)"
 
 	sudo ufw allow 3306 2> /dev/null | exec 1> /dev/tty
 	sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/my.cnf"
@@ -479,28 +508,33 @@ then
 	sudo cp my.cnf /etc/mysql/my.cnf
 	sudo rm -rf /var/lib/mysql/
 	sudo rm -rf /var/lib/mysql-files/
-	sudo mkdir /var/lib/mysql/
-	sudo mkdir /var/lib/mysql-files/
-	sudo mkdir /var/log/mysql/
-	sudo mkdir /var/run/mysqld/
-	sudo chown -R mysql:mysql /var/run/mysqld/
+	sudo rm -rf /var/log/mysql/
+	sudo rm -rf /var/run/mysqld/
+	sudo mkdir -p /var/lib/mysql/
+	sudo mkdir -p /var/lib/mysql-files/
+	sudo mkdir -p /var/log/mysql/
 	sudo chown -R mysql:mysql /var/log/mysql/
+	sudo chown -R mysql:mysql /var/lib/mysql-files/
 	sudo chown -R mysql:mysql /var/lib/mysql/
 	sudo mysqld --initialize
 	sudo /etc/init.d/mysql start
 	sudo systemctl restart mysql
 	sudo /etc/init.d/mysql stop
+	sudo rm -rf /var/run/mysqld/
+	sudo mkdir -p /var/run/mysqld/
+	sudo chown mysql:mysql /var/run/mysqld/
+	sleep 2
 	sudo mysqld_safe --skip-grant-tables --skip-networking &
-	sudo mysql -uroot -e "FLUSH PRIVILEGES;" 2> /dev/null | exec 1> /dev/tty
-	sudo mysql -uroot -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${DBUSEDROOTPASS}';" 2> /dev/null | exec 1> /dev/tty
-	sudo mysql -uroot -e "FLUSH PRIVILEGES;" 2> /dev/null | exec 1> /dev/tty
+	sleep 5
+	sudo mysql -uroot -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '${DBUSEDROOTPASS}';FLUSH PRIVILEGES;"
 	sudo /etc/init.d/mysql stop 2> /dev/null | exec 1> /dev/tty
 	sudo killall -KILL mysql mysqld_safe mysqld 2> /dev/null | exec 1> /dev/tty
 	sudo /etc/init.d/mysql start
 	sudo systemctl restart mysql
+	echo ${DBUSEDROOTPASS}
 	$log
 
-	# Did it work?
+	# Creating Pterodactyl Data
 	sudo mysql -uroot -p"${DBUSEDROOTPASS}" -e "CREATE DATABASE ${DB};" 2> /dev/null | exec 1> /dev/tty
 	sudo mysql -uroot -p"${DBUSEDROOTPASS}" -e "CREATE USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDPASS}';" 2> /dev/null | exec 1> /dev/tty
 	sudo mysql -uroot -p"${DBUSEDROOTPASS}" -e "GRANT ALL PRIVILEGES ON ${MAINDB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;" 2> /dev/null | exec 1> /dev/tty

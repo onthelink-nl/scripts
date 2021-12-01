@@ -458,12 +458,15 @@ then
 	$log
 	DBHOST="%"
 	DBPANELUSER="pterodactyl"
+	DBPANELGUEST="pterodactyluser"
 	DBPASS="$(openssl rand -base64 12)"
+	DBGUESTPASS="$(openssl rand -base64 12)"
 	$ask
 	read -p "Enter your root MySQL account password (Used to login with 'sudo mysql -u root -p password', please verify before entering..): " DBROOTPASS
 	$log
 	DB="panel"
 
+	pteroqguestpass="/home/$name/pterodactyl_db_guestpass.txt"
 	pteroqpass="/home/$name/pterodactyl_db_pass.txt"
 
 	if [[ -e $pteroqpass || -L $pteroqpass ]] ; then
@@ -474,8 +477,19 @@ then
 	    pteroqpass=$pteroqpass-$i
 	fi
 
+	if [[ -e $pteroqguestpass || -L $pteroqguestpass ]] ; then
+	    i=0
+	    while [[ -e $pteroqguestpass-$i || -L $pteroqguestpass-$i ]] ; do
+	        let i++
+	    done
+	    pteroqguestpass=$pteroqguestpass-$i
+	fi
+
 	echo "$DBPASS" > $pteroqpass
 	DBUSEDPASS="$(cat $pteroqpass)"
+	echo "$DBGUESTPASS" > $pteroqguestpass
+	DBUSEDGUESTPASS="$(cat $pteroqguestpass)"
+
 	sudo /etc/init.d/mysql start
 	sudo systemctl restart mysql
 
@@ -484,8 +498,11 @@ then
 	# Creating Pterodactyl Data
 	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "CREATE DATABASE ${DB};" 2> /dev/null | exec 1> /dev/tty
 	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "CREATE USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDPASS}';" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "CREATE USER '${DBPANELGUEST}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDGUESTPASS}';" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "ALTER USER '${DBPANELGUEST}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDGUESTPASS}';" 2> /dev/null | exec 1> /dev/tty
 	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "ALTER USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDPASS}';" 2> /dev/null | exec 1> /dev/tty
 	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "GRANT ALL PRIVILEGES ON ${MAINDB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;" 2> /dev/null | exec 1> /dev/tty
+	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "GRANT ALL PRIVILEGES ON *.* TO '${DBPANELGUEST}'@'${DBHOST}' WITH GRANT OPTION;" 2> /dev/null | exec 1> /dev/tty
 	sudo mysql -uroot -h"${DBSERVERHOST}" -p"${DBROOTPASS}" -e "FLUSH PRIVILEGES;" 2> /dev/null | exec 1> /dev/tty
 fi
 
@@ -493,11 +510,14 @@ if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
 then
 	DBHOST="127.0.0.1"
 	DBPANELUSER="pterodactyl"
+	DBPANELGUEST="pterodactyluser"
 	DBPASS="$(openssl rand -base64 12)"
+	DBGUESTPASS="$(openssl rand -base64 12)"
 	DBROOTPASS="$(openssl rand -base64 12)"
 	DB="panel"
 
 	pteroqpass="/home/$name/pterodactyl_db_pass.txt"
+	pteroqguestpass="/home/$name/pterodactyl_db_guestpass.txt"
 	pteroqrootpass="/home/$name/pterodactyl_db_rootpass.txt"
 
 	if [[ -e $pteroqpass || -L $pteroqpass ]] ; then
@@ -516,10 +536,20 @@ then
 	    pteroqrootpass=$pteroqrootpass-$i
 	fi
 
+	if [[ -e $pteroqguestpass || -L $pteroqguestpass ]] ; then
+	    i=0
+	    while [[ -e $pteroqguestpass-$i || -L $pteroqguestpass-$i ]] ; do
+	        let i++
+	    done
+	    pteroqguestpass=$pteroqguestpass-$i
+	fi
+
 	echo "$DBPASS" > $pteroqpass
 	DBUSEDPASS="$(cat $pteroqpass)"
 	echo "$DBROOTPASS" > $pteroqrootpass
 	DBUSEDROOTPASS="$(cat $pteroqrootpass)"
+	echo "$DBGUESTPASS" > $pteroqguestpass
+	DBUSEDGUESTPASS="$(cat $pteroqguestpass)"
 
 	sudo ufw allow 3306 2> /dev/null | exec 1> /dev/tty
 	sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/my.cnf"
@@ -545,7 +575,7 @@ then
 	sleep 2
 	sudo mysqld_safe --skip-grant-tables --skip-networking &
 	sleep 5
-	sudo mysql -uroot -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '${DBUSEDROOTPASS}';FLUSH PRIVILEGES;CREATE DATABASE ${DB};CREATE USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDPASS}';GRANT ALL PRIVILEGES ON ${DB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;FLUSH PRIVILEGES;"
+	sudo mysql -uroot -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '${DBUSEDROOTPASS}';FLUSH PRIVILEGES;CREATE DATABASE ${DB};CREATE USER '${DBPANELUSER}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDPASS}';GRANT ALL PRIVILEGES ON ${DB}.* TO '${DBPANELUSER}'@'${DBHOST}' WITH GRANT OPTION;CREATE USER '${DBPANELGUEST}'@'${DBHOST}' IDENTIFIED BY '${DBUSEDGUESTPASS}';GRANT ALL PRIVILEGES ON *.* TO '${DBPANELGUEST}'@'${DBHOST}' WITH GRANT OPTION;FLUSH PRIVILEGES;"
 	sudo /etc/init.d/mysql stop 2> /dev/null | exec 1> /dev/tty
 	sudo killall -KILL mysql mysqld_safe mysqld 2> /dev/null | exec 1> /dev/tty
 	sudo /etc/init.d/mysql start
@@ -931,6 +961,44 @@ sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/We
 sudo cp wings.service /etc/systemd/system/wings.service
 sudo systemctl enable --now wings
 sudo systemctl start wings
+
+# Configure Database Hosts
+panelconfigured="no"
+while [[ $panelconfigured != "yes" ]];
+then
+	tput reset
+	tput clear
+	$error
+	echo $failure
+	echo
+	$info
+	echo "The installation has reached it's final step!"
+	echo "Right now everything should be working like it should."
+	echo "However, the panel doesn't know which database to use to store server data and we cannot (yet) set this automatically."
+	echo
+	echo "Go to the panel again and navigate to the 'Databases' tab"
+	echo "Create a new database host and put $replace in the 'Host' field."
+	echo "The username should be pterodactyluser and the password is located under /home/$name/pterodactyl_db_guestpass.txt"
+	echo "You may also link it to the previous created node if you want to."
+	echo
+	echo
+	$ask
+	read -p "Did you set-up the database host within the panel?: " setupcompleted
+	$log
+
+	if [[ $setupcompleted != "n" ]];
+	then
+		$succeeded
+		echo "Thanks for using our installation script!"
+		echo "Consider leaving a comment or help to improve the project by reporting bugs you may find or sending push requests."
+		$log
+		panelconfigured="yes"
+	else
+		failure="It is required to complete setting up a database host for the pterodactyl panel."
+		$log
+		panelconfigured="no"
+	fi
+done
 
 ### Cleanup
 cd "$STARTDIR" || exit

@@ -710,6 +710,7 @@ then
 	$info
 	echo "ufw will not be enabled since you are running WSL2"
 	echo "You can safely ignore this message"
+	sleep 7
 	$log
 else
 	$log

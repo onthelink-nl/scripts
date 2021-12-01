@@ -967,4 +967,5 @@ fi
 tput reset
 tput clear
 tput sgr0
+sudo rm -rf /home/$name/WebPteroq_Debian_T-U20.04.sh
 exit

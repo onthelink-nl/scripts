@@ -251,19 +251,32 @@ $info
 echo
 echo
 echo
-echo "We will now start installing LAMP (Apache2 + Mysql-server + PHP8.0)"
-$log
-sudo rm -rf /usr/share/mysql-common/
-sudo mkdir -p /usr/share/mysql-common/
-sudo chmod 777 /usr/share/mysql-common/
-sudo chmod -R 777 /usr/share/mysql-common/
-echo "#Nothing" | sudo tee /usr/share/mysql-common/configure-symlinks
-sudo chmod 777 /usr/share/mysql-common/configure-symlinks
-sudo apt-get -y install apache2 libapache2-mod-php certbot python3-certbot-apache mysql-server php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} 2> /dev/null | exec 1> /dev/tty
-sudo ufw allow "Apache Full" 2> /dev/null | exec 1> /dev/tty
-sudo chmod 777 /etc/apache2/apache2.conf
-sudo chmod 777 /usr/share/mysql-common/
-sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+
+if [[ $MySQL_Configured == "Y" || $MySQL_Configured == "y" ]];
+then
+	echo "We will now start installing LAMP (Apache2 + PHP8.0)"
+	$log
+	sudo apt-get -y install apache2 libapache2-mod-php certbot python3-certbot-apache php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} 2> /dev/null | exec 1> /dev/tty
+	sudo ufw allow "Apache Full" 2> /dev/null | exec 1> /dev/tty
+	sudo chmod 777 /etc/apache2/apache2.conf
+fi
+
+if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
+then
+	echo "We will now start installing LAMP (Apache2 + Mysql-server + PHP8.0)"
+	$log
+	sudo rm -rf /usr/share/mysql-common/
+	sudo mkdir -p /usr/share/mysql-common/
+	sudo chmod 777 /usr/share/mysql-common/
+	sudo chmod -R 777 /usr/share/mysql-common/
+	echo "#Nothing" | sudo tee /usr/share/mysql-common/configure-symlinks
+	sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+	sudo apt-get -y install apache2 libapache2-mod-php certbot python3-certbot-apache mysql-server php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} 2> /dev/null | exec 1> /dev/tty
+	sudo ufw allow "Apache Full" 2> /dev/null | exec 1> /dev/tty
+	sudo chmod 777 /etc/apache2/apache2.conf
+	sudo chmod 777 /usr/share/mysql-common/
+	sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+fi
 
 $succeeded
 echo "LAMP has been installed!"
@@ -449,8 +462,11 @@ sudo rm -rf panel.tar.gz
 
 ## MySQL Database Configuration
 
-sudo chmod 777 /usr/share/mysql-common/
-sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
+then
+	sudo chmod 777 /usr/share/mysql-common/
+	sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+fi
 
 # LOGIN INFO
 if [[ $MySQL_Configured == "Y" || $MySQL_Configured == "y" ]];
@@ -586,8 +602,11 @@ then
 	$log
 fi
 
-sudo chmod 777 /usr/share/mysql-common/
-sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
+then
+	sudo chmod 777 /usr/share/mysql-common/
+	sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+fi
 
 # WARNING ABOUT PASSWORD
 consent="no"
@@ -716,8 +735,12 @@ else
 	$log
 	sudo ufw enable
 fi
-sudo chmod 777 /usr/share/mysql-common/
-sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+
+if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
+then
+	sudo chmod 777 /usr/share/mysql-common/
+	sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+fi
 
 # Default
 cd /etc/apache2/sites-available || exit
@@ -879,8 +902,11 @@ done
 
 # Docker Install
 
-sudo chmod 777 /usr/share/mysql-common/
-sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+if [[ $MySQL_Configured == "N" || $MySQL_Configured == "n" ]];
+then
+	sudo chmod 777 /usr/share/mysql-common/
+	sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+fi
 
 $log
 sudo curl -sSL https://get.docker.com/ | CHANNEL=stable bash

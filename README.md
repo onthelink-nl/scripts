@@ -180,7 +180,7 @@ We are not responsible for any damage done to your device by using our scripts!!
 <b><h2 align="center">==================================================</h2></b>
 
 <H2 align="center">
-Web-Pterodactyl INSTALLER
+Web-Pterodactyl INSTALLER (WSL2 Compatible)
 </H2>
 
 <b><h2 align="center">==================================================</h2></b>

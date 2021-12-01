@@ -851,6 +851,8 @@ sudo chmod 777 /usr/share/mysql-common/configure-symlinks
 
 $log
 sudo curl -sSL https://get.docker.com/ | CHANNEL=stable bash
+sudo apt-get -y install -f
+sudo curl -sSL https://get.docker.com/ | CHANNEL=stable bash
 sudo systemctl enable --now docker
 
 # Wings Install

@@ -168,7 +168,8 @@ We are not responsible for any damage done to your device by using our scripts!!
 
 <b><h1 align="center">=======================================</h1></b>
 
-!copyrights, trademarks and other intellectual property belong to Pterodactyl, Apache and MySQL!
+<h3 align="center">!copyrights, trademarks and other intellectual property belong to Apache and MySQL!</h3>
+<h3 align="center">Pterodactyl software is MIT Licensed | Copyright © 2015 - 2021 Dane Everitt & Contributors.</h3>
 
 # HOW TO USE:
 

@@ -24,6 +24,8 @@
 #                                                                 $$ |                                        
 #                                                                 \__|                                        
 
+# Pterodactyl software is MIT Licensed | Copyright © 2015 - 2021 Dane Everitt & Contributors.
+
 # Get current user
 name="$(logname)"
 

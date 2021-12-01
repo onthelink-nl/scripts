@@ -157,6 +157,44 @@ Copy and paste this command into the terminal and hit "Return" (ENTER):<br>
 
   </details>
   
+  ## - Apache2 + MySQL + PHP + Pterodactyl Installer
+  <details>
+  <summary>Click to show installer</summary>
+<b><h1 align="center">=======================================</h1></b>
+
+<H3 align="center">
+We are not responsible for any damage done to your device by using our scripts!!
+</H3>
+
+<b><h1 align="center">=======================================</h1></b>
+
+!copyrights, trademarks and other intellectual property belong to Pterodactyl, Apache and MySQL!
+
+# HOW TO USE:
+
+1. Open a terminal
+2. Copy the command below and paste it in the terminal
+3. Press "Return" (ENTER)
+4. Follow the instructions on your screen
+
+<b><h2 align="center">==================================================</h2></b>
+
+<H2 align="center">
+Web-Pterodactyl INSTALLER
+</H2>
+
+<b><h2 align="center">==================================================</h2></b>
+
+# Install script:
+<details>
+  <summary>Click to show installer</summary>
+
+## Apache2 + MySQL + PHP + Pterodactyl INSTALLER WITH VERSION MENU
+`cd && sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/WebPteroq_Debian_T-U20.04.sh" && sudo bash WebPteroq_Debian_T-U20.04.sh`
+</details>
+<b><h1 align="center">=======================================</h1></b>
+</details>
+
   ## - The Java Installer
   <details>
   <summary>Click to show installer</summary>
@@ -350,6 +388,16 @@ WE ALSO HAVE CREATED A COMPLETE INSTRUCTIONS PDF WITH MORE DETAILS ABOUT THE QGI
 
 ### **1.8.11** - *WIP INSTALLER OF ARDUINO 1.8.11, If you find out that something is wrong about the installer please report it in an issue...*
 </details>
+
+<details>
+  <summary>WebPteroq</summary>
+
+## Web + Pterodactyl
+==========
+
+### **0.1.1** - *ALPHA INSTALLER OF APACHE + MYSQL + PHP + PTERODACTYL (AND WINGS), The script can currently install Apache2, MySQL-server, PHP8.0, Pterodactyl and Wings. It also configures them according to your choices, it has the possibility to install a brand new MySQL server to configure but it can also use an existing one (That includes external ones). After it's done with the basic configuration (Allowing ports, setting directory's and a FQDN) it will continue to install and configure wings where you will have to enter the token given inside the (in that part of the script) already working pterodactyl webserver. Later versions of the script will include more flexible options, better detections for if statements and more customization for your packages such as creating additional databases from within the script, creating additional Apache virtualhosts and possibly in the future also the option to select nginx instead of apache. The script is also compatible in the latest ubuntu package of WSL2 (We do recommend to not use the impish distribution since it caused troubles at our end when testing. We've tested and can confirm the script does work in Ubuntu 20.04 (And in the WSL2 Ubuntu version 20.04))
+</details>
+
 <details>
   <summary>Java</summary>
 

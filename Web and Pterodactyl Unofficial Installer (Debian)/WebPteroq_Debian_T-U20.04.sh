@@ -673,12 +673,23 @@ sudo systemctl enable --now pteroq.service
 
 sudo ufw allow 2022
 sudo ufw allow 8080
-sudo ufw enable
+if [[ $(grep microsoft /proc/version) ]];
+then
+	$info
+	echo "ufw will not be enabled since you are running WSL2"
+	echo "You can safely ignore this message"
+	$log
+else
+	$log
+	sudo ufw enable
+fi
 sudo chmod 777 /usr/share/mysql-common/
 sudo chmod 777 /usr/share/mysql-common/configure-symlinks
 
 # Default
 cd /etc/apache2/sites-available || exit
+tput reset
+tput clear
 
 while [[ "$PWCdone" != "valid" ]];
 do
@@ -921,6 +932,8 @@ sudo systemctl start wings
 
 ### Cleanup
 cd "$STARTDIR" || exit
+tput reset
+tput clear
 $succeeded
 echo "The installation of the LAMP and pterodactyl server has finished"
 echo "Temp files are located within /home/$name/tmp-webpteroqinstaller/"

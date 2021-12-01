@@ -251,6 +251,12 @@ echo
 echo
 echo "We will now start installing LAMP (Apache2 + Mysql-server + PHP8.0)"
 $log
+sudo rm -rf /usr/share/mysql-common/
+sudo mkdir -p /usr/share/mysql-common/
+sudo chmod 777 /usr/share/mysql-common/
+sudo chmod -R 777 /usr/share/mysql-common/
+echo "#Nothing" | sudo tee /usr/share/mysql-common/configure-symlinks
+sudo chmod 777 /etc/apache2/apache2.conf
 sudo apt-get -y install apache2 libapache2-mod-php certbot python3-certbot-apache mysql-server php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} 2> /dev/null | exec 1> /dev/tty
 sudo ufw allow "Apache Full" 2> /dev/null | exec 1> /dev/tty
 
@@ -580,9 +586,64 @@ sudo composer install --no-dev --optimize-autoloader
 php artisan key:generate --force
 sudo mkdir /home/"$name"/important_env_backup
 sudo cp .env /home/"$name"/important_env_backup/.env
-php artisan p:environment:setup
-php artisan p:environment:database
-php artisan p:environment:mail
+
+tryagainstate="goback"
+trysetup="yes"
+trydb="yes"
+trymail="yes"
+happy="n"
+while [[ $tryagainstate != "continue" ]];
+do
+	if [[ $trysetup != "no" ]];
+	then
+		php artisan p:environment:setup
+		$ask
+		echo "You've just configured the environment setup"
+		read -p "Do you want to continue with the settings you chose?: " happy
+		if [[ $happy == "y" ]];
+		then
+			trysetup="no"
+		else
+			trysetup="yes"
+		fi
+	fi
+
+	if [[ $trydb != "no" ]];
+	then
+		php artisan p:environment:database
+		$ask
+		echo "You've just configured the environment database"
+		read -p "Do you want to continue with the settings you chose?: " happy
+		if [[ $happy == "y" ]];
+		then
+			trydb="no"
+		else
+			trydb="yes"
+		fi
+	fi
+
+	if [[ $trymail != "no" ]];
+	then
+		php artisan p:environment:mail
+		$ask
+		echo "You've just configured the environment mail"
+		read -p "Do you want to continue with the settings you chose?: " happy
+		if [[ $happy == "y" ]];
+		then
+			trymail="no"
+		else
+			trymail="yes"
+		fi
+	fi
+
+	if [[ $trysetup == "no" && $trydb == "no" && $trymail == "no" ]];
+	then
+		tryagainstate="continue"
+	else
+		tryagainstate="goback"
+	fi
+done
+	
 php artisan migrate --seed --force
 php artisan p:user:make
 
@@ -590,7 +651,8 @@ php artisan p:user:make
 sudo chown -R www-data:www-data "$usedlocation"/pterodactyl/
 
 # Crontab Configuration
-crontab -l | { cat; echo "* * * * * php '$usedlocation'/pterodactyl/artisan schedule:run >> /dev/null 2>&1"; } | crontab -
+artisan="pterodactyl/artisan"
+crontab -l | { cat; echo "* * * * * php $usedlocation$artisan schedule:run >> /dev/null 2>&1"; } | crontab -
 
 # Queue Worker
 curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/pteroq.service"
@@ -620,7 +682,7 @@ do
 		then
 			$log
 			## SSL Method
-			curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/ssl/pterodactyl.conf"
+			sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/ssl/pterodactyl.conf"
 
 			# Assign the filename
 			filename="pterodactyl.conf"
@@ -648,12 +710,12 @@ do
 
 			if [[ "$usedlocation" != "/var/www/" ]];
 			then
-				echo "" >> "$filename2"
-				echo "<Directory $usedlocation>" >> "$filename2"
-				echo "	Options Indexes FollowSymLinks" >> "$filename2"
-				echo "	AllowOverride All" >> "$filename2"
-				echo "	Require all granted" >> "$filename2"
-				echo "</Directory>" >> "$filename2"
+				echo "" | sudo tee -a "$filename2"
+				echo "<Directory $usedlocation>" | sudo tee -a "$filename2"
+				echo "	Options Indexes FollowSymLinks" | sudo tee -a "$filename2"
+				echo "	AllowOverride All" | sudo tee -a "$filename2"
+				echo "	Require all granted" | sudo tee -a "$filename2"
+				echo "</Directory>" | sudo tee -a "$filename2"
 			fi
 
 			tput reset
@@ -677,7 +739,7 @@ do
 		then
 			$log
 			## Unencrypted Method
-			curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/nonssl/pterodactyl.conf"
+			sudo curl -LOs "https://raw.githubusercontent.com/onthelink-nl/scripts/master/Web%20and%20Pterodactyl%20Unofficial%20Installer%20(Debian)/nonssl/pterodactyl.conf"
 
 			# Assign the filename
 			filename="pterodactyl.conf"
@@ -705,12 +767,12 @@ do
 
 			if [[ "$usedlocation" != "/var/www/" ]];
 			then
-				echo "" >> "$filename2"
-				echo "<Directory $usedlocation>" >> "$filename2"
-				echo "	Options Indexes FollowSymLinks" >> "$filename2"
-				echo "	AllowOverride All" >> "$filename2"
-				echo "	Require all granted" >> "$filename2"
-				echo "</Directory>" >> "$filename2"
+				echo "" | sudo tee -a "$filename2"
+				echo "<Directory $usedlocation>" | sudo tee -a "$filename2"
+				echo "	Options Indexes FollowSymLinks" | sudo tee -a "$filename2"
+				echo "	AllowOverride All" | sudo tee -a "$filename2"
+				echo "	Require all granted" | sudo tee -a "$filename2"
+				echo "</Directory>" | sudo tee -a "$filename2"
 			fi
 
 			tput reset

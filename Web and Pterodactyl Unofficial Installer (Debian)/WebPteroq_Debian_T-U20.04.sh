@@ -256,9 +256,9 @@ sudo mkdir -p /usr/share/mysql-common/
 sudo chmod 777 /usr/share/mysql-common/
 sudo chmod -R 777 /usr/share/mysql-common/
 echo "#Nothing" | sudo tee /usr/share/mysql-common/configure-symlinks
-sudo chmod 777 /etc/apache2/apache2.conf
 sudo apt-get -y install apache2 libapache2-mod-php certbot python3-certbot-apache mysql-server php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} 2> /dev/null | exec 1> /dev/tty
 sudo ufw allow "Apache Full" 2> /dev/null | exec 1> /dev/tty
+sudo chmod 777 /etc/apache2/apache2.conf
 
 $succeeded
 echo "LAMP has been installed!"

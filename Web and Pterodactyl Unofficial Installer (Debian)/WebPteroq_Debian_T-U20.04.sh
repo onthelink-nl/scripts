@@ -994,6 +994,7 @@ then
 		$succeeded
 		echo "Thanks for using our installation script!"
 		echo "Consider leaving a comment or help to improve the project by reporting bugs you may find or sending push requests."
+		sleep 7
 		$log
 		panelconfigured="yes"
 	else

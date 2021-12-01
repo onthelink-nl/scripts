@@ -256,9 +256,12 @@ sudo mkdir -p /usr/share/mysql-common/
 sudo chmod 777 /usr/share/mysql-common/
 sudo chmod -R 777 /usr/share/mysql-common/
 echo "#Nothing" | sudo tee /usr/share/mysql-common/configure-symlinks
+sudo chmod 777 /usr/share/mysql-common/configure-symlinks
 sudo apt-get -y install apache2 libapache2-mod-php certbot python3-certbot-apache mysql-server php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} 2> /dev/null | exec 1> /dev/tty
 sudo ufw allow "Apache Full" 2> /dev/null | exec 1> /dev/tty
 sudo chmod 777 /etc/apache2/apache2.conf
+sudo chmod 777 /usr/share/mysql-common/
+sudo chmod 777 /usr/share/mysql-common/configure-symlinks
 
 $succeeded
 echo "LAMP has been installed!"
@@ -444,6 +447,9 @@ sudo rm -rf panel.tar.gz
 
 ## MySQL Database Configuration
 
+sudo chmod 777 /usr/share/mysql-common/
+sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+
 # LOGIN INFO
 if [[ $MySQL_Configured == "Y" || $MySQL_Configured == "y" ]];
 then
@@ -547,6 +553,9 @@ then
 	echo ${DBUSEDROOTPASS}
 	$log
 fi
+
+sudo chmod 777 /usr/share/mysql-common/
+sudo chmod 777 /usr/share/mysql-common/configure-symlinks
 
 # WARNING ABOUT PASSWORD
 consent="no"
@@ -661,6 +670,9 @@ sudo systemctl enable --now redis-server
 sudo systemctl enable --now pteroq.service
 
 ### Pterodactyl Webserver Configuration
+
+sudo chmod 777 /usr/share/mysql-common/
+sudo chmod 777 /usr/share/mysql-common/configure-symlinks
 
 # Default
 cd /etc/apache2/sites-available || exit
@@ -789,6 +801,10 @@ do
 done
 
 # Docker Install
+
+sudo chmod 777 /usr/share/mysql-common/
+sudo chmod 777 /usr/share/mysql-common/configure-symlinks
+
 $log
 sudo curl -sSL https://get.docker.com/ | CHANNEL=stable bash
 sudo systemctl enable --now docker

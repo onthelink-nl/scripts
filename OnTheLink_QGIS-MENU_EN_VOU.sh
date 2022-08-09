@@ -34,31 +34,8 @@ sleep 3
 #Script execution
 MACHINE_VERSION=`cat /etc/debian_version`
 case $MACHINE_VERSION in
-9|9.1|9.2|9.3|9.4|9.5|9.6|9.7|9.8|9.9)
-   ## Stretch stuff here
-
-##STRETCH CHECK COMPLETED
-tput setaf 2
-echo "STRETCH FOUND!"
-sleep 2
-
-##Commando's nadat de gebruiker heeft gedrukt op de willekeurige toets
-tput sgr0
-tput setaf 9
-echo "Downloading stretch version..."
-tput sgr0
-sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_STRETCH.sh
-bash OnTheLink_QGIS-MENU_EN_STRETCH.sh
-cd $STARTDIR
-sudo rm -rf /home/"$name"/qgis
-sudo rm -rf OnTheLink_QGIS-MENU_EN_EVA.sh
-tput reset
-tput clear
-tput sgr0
-exit
-;;
-10|10.1|10.2|10.3|10.4|10.5|10.6|10.7|10.8|10.9)
-   ## Buster stuff here
+11|11.1|11.2|11.3|11.4|11.5|11.6|11.7|11.8|11.9)
+## Bullseye stuff here
 
 ##BUSTER CHECK COMPLETED
 tput setaf 2
@@ -68,13 +45,13 @@ sleep 2
 ##Commando's nadat de gebruiker heeft gedrukt op de willekeurige toets
 tput sgr0
 tput setaf 9
-echo "Downloading buster version..."
+echo "Downloading bullseye version..."
 tput sgr0
-sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/EVA/OnTheLink_QGIS-MENU_EN_BUSTER.sh
-bash OnTheLink_QGIS-MENU_EN_BUSTER.sh
+sudo curl -LOs https://raw.githubusercontent.com/onthelink-nl/scripts/master/VOU/OnTheLink_QGIS-MENU_EN_BULLSEYE.sh
+bash OnTheLink_QGIS-MENU_EN_BULLSEYE.sh
 cd $STARTDIR
 sudo rm -rf /home/"$name"/qgis
-sudo rm -rf OnTheLink_QGIS-MENU_EN_EVA.sh
+sudo rm -rf OnTheLink_QGIS-MENU_EN_VOU.sh
 tput reset
 tput clear
 tput sgr0
@@ -83,7 +60,7 @@ exit
 *)
 ## FAILSAFE
   tput setaf 3
-  echo "Stretch and Buster not found, your debian version is not supported yet..."
+  echo "Bullseye not found, please refer to the installation guide for more information..."
   sleep 1
   tput setaf 1
   echo "4"
@@ -98,7 +75,7 @@ exit
   echo "1"
   cd $STARTDIR
   sudo rm -rf /home/"$name"/qgis
-  sudo rm -rf OnTheLink_QGIS-MENU_EN_EVA.sh
+  sudo rm -rf OnTheLink_QGIS-MENU_EN_VOU.sh
   tput reset
   tput clear
   tput sgr0
